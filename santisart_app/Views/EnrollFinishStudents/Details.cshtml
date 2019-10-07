@@ -1,0 +1,66 @@
+﻿@model santisart_app.Models.EnrollFinishStudent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EnrollFinishStudent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeStam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeStam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Staff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Staff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinishCouse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinishCouse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Students.Student_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Students.Student_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinishType.FormName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinishType.FormName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FinishId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

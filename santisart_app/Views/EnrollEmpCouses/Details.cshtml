@@ -1,0 +1,50 @@
+﻿@model santisart_app.Models.EnrollEmpCouse
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EnrollEmpCouse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EnEmpCosTimestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnEmpCosTimestamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmpTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmpTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnrollCouse.CouseTxtId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrollCouse.CouseTxtId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnrollYearSemester.EnrollYearSemesterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrollYearSemester.EnrollYearSemesterId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EnrollEmpCouseId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model santisart_app.Models.Enroll_Emp_Pos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Enroll_Emp_Pos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EnrEmpPosStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrEmpPosStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnrEmpPosTimestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrEmpPosTimestamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmpTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmpTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Position.PosName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position.PosName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EnrEmpPosId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

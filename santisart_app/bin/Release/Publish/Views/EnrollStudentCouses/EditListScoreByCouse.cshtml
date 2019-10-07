@@ -1,0 +1,111 @@
+﻿@model IEnumerable<santisart_app.Models.EnrollStudentCouse>
+@{int indexList = 0; }
+<p>
+    <b>วิชา : </b>@Model.First().EnrollEmpCouseClass.EnrollEmpCouse.EnrollCouse.Course.CourseName
+</p>
+<p>
+    <b>ครูผู้สอน : </b>@Model.First().EnrollEmpCouseClass.EnrollEmpCouse.Employee.EmpTitle
+    @Model.First().EnrollEmpCouseClass.EnrollEmpCouse.Employee.EmpName
+    @Model.First().EnrollEmpCouseClass.EnrollEmpCouse.Employee.EmpLname
+</p>
+<p>
+    <b>ชั้นเรียน : </b>@Model.First().Enroll_student_class.EnrollClass.ClassInSchool.ClassShortName/@Model.First().Enroll_student_class.EnrollClass.Class_room
+</p>
+<p>
+    <b>ปีการศึกษา : </b>@Model.First().EnrollEmpCouseClass.EnrollEmpCouse.EnrollYearSemester.YearEdu.yearName
+</p>
+<p>
+    <b>เทอม : </b>@Model.First().EnrollEmpCouseClass.EnrollEmpCouse.EnrollYearSemester.Semester
+</p>
+@using (Html.BeginForm())
+{
+ 
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+  
+    @Html.AntiForgeryToken()
+        <table class="table">
+            <tr>
+                <th class="col-md-1">
+                    ลำดับ
+                </th>
+                <th class="col-md-2">
+                    ชื่อ - นามสกุล
+                </th>
+                <th class="col-md-1">
+                    คะแนนระหว่างภาค
+                </th>
+                <th class="col-md-1">
+                    คะแนนปลายภาค
+
+                </th>
+                <th class="col-md-1">เกรด</th>
+
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+
+                @Html.HiddenFor(modelItem => item.EnrollStudentCouseId,
+            new
+            {
+                Name = "EnrollStudentCouse[" + indexList + "].EnrollStudentCouseId"
+            ,
+                @Id = "EnrollStudentCouse[" + indexList + "].EnrollStudentCouseId"
+            })
+                @Html.HiddenFor(modelItem => item.EnEmpCouseClassId,
+            new
+            {
+                Name = "EnrollStudentCouse[" + indexList + "].EnEmpCouseClassId"
+            ,
+                @Id = "EnrollStudentCouse[" + indexList + "].EnEmpCouseClassId"
+            })
+                <tr>
+                    <td>@indexList</td>
+                    <td>
+                        @item.Enroll_student_class.Students.Student_title
+                        @item.Enroll_student_class.Students.Student_name
+                        @item.Enroll_student_class.Students.Student_lname
+
+                    <td class="mx-sm-3 mb-2">
+                        @Html.EditorFor(modelItem => item.Score1, new { htmlAttributes = new { @type = "number"
+                       , @class = "form-control"
+                   ,Name= "EnrollStudentCouse[" + indexList+ "].Score1"
+                   } })
+
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => item.Score2, new { htmlAttributes = new { @type = "number"
+                       ,
+                       @class = "form-control"
+                   ,
+                       Name = "EnrollStudentCouse[" + indexList + "].Score2"
+                   }
+                   })
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => item.Grade, new { htmlAttributes = new { @type = "number"
+                       ,
+                       @class = "form-control"
+                   ,
+                       Name = "EnrollStudentCouse[" + indexList + "].Grade"
+                   }
+                   })
+                    </td>
+
+
+
+                </tr>
+                indexList++;
+            }
+
+        </table>
+
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ceec5178dd504a8b8061194f8dcf15e7" Name="Diagram1" ZoomLevel="78">
+        <EntityTypeShape EntityType="santisar_Model.Enroll_paid" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="santisar_Model.Enroll_student_class" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="santisar_Model.Food" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="santisar_Model.Monthly" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="santisar_Model.Students" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="santisar_Model.Enroll_pay" Width="1.5" PointX="7.375" PointY="4.75" />
+        <EntityTypeShape EntityType="santisar_Model.attendance_day" Width="1.5" PointX="9.125" PointY="0.5" />
+        <EntityTypeShape EntityType="santisar_Model.Enroll_student_all_event" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="santisar_Model.student2561" Width="1.5" PointX="9.5" PointY="5.125" />
+        <EntityTypeShape EntityType="santisar_Model.attendance" Width="1.5" PointX="5.375" PointY="9.75" />
+        <EntityTypeShape EntityType="santisar_Model.C_enrollattstudent" Width="1.5" PointX="7.375" PointY="9.75" />
+        <EntityTypeShape EntityType="santisar_Model.student2561_copy1" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="santisar_Model.EnrollStudentAttdance" Width="1.5" PointX="11.375" PointY="9.75" />
+        <EntityTypeShape EntityType="santisar_Model.Class" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="santisar_Model.student2561_food" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="santisar_Model.ContestEducationSchool" Width="1.5" PointX="12.375" PointY="3.75" />
+        <EntityTypeShape EntityType="santisar_Model.Enroll_EduContest" Width="1.5" PointX="12.375" PointY="6.75" />
+        <EntityTypeShape EntityType="santisar_Model.studentEduContest2561" Width="1.5" PointX="3.375" PointY="13.75" />
+        <EntityTypeShape EntityType="santisar_Model.ViewEmpPos" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="santisar_Model.Employee" Width="1.5" PointX="24.25" PointY="8.5" />
+        <EntityTypeShape EntityType="santisar_Model.Enroll_Emp_Pos" Width="1.5" PointX="22.125" PointY="7.625" />
+        <EntityTypeShape EntityType="santisar_Model.Position" Width="1.5" PointX="19.75" PointY="8.5" />
+        <AssociationConnector Association="santisar_Model.Fk_emp_enr" />
+        <AssociationConnector Association="santisar_Model.Fk_enr_pos" />
+        <EntityTypeShape EntityType="santisar_Model.ClassInSchool" Width="1.5" PointX="21.375" PointY="5.625" />
+        <EntityTypeShape EntityType="santisar_Model.Course" Width="1.5" PointX="16.375" PointY="1.5" />
+        <EntityTypeShape EntityType="santisar_Model.Department" Width="1.5" PointX="22.75" PointY="2.75" />
+        <EntityTypeShape EntityType="santisar_Model.EnrollCouse" Width="1.5" PointX="18.75" PointY="2.125" />
+        <EntityTypeShape EntityType="santisar_Model.YearEdu" Width="1.5" PointX="5.375" PointY="13.75" />
+        <AssociationConnector Association="santisar_Model.FK_class1" />
+        <AssociationConnector Association="santisar_Model.Fk_couse1" />
+        <AssociationConnector Association="santisar_Model.FK_depart1" />
+        <EntityTypeShape EntityType="santisar_Model.EnrollStudentCouse" Width="1.5" PointX="26.5" PointY="3.375" />
+        <EntityTypeShape EntityType="santisar_Model.View_Couse" Width="1.5" PointX="13.625" PointY="11.875" />
+        <AssociationConnector Association="santisar_Model.Fk_TeacherId" />
+        <AssociationConnector Association="santisar_Model.Fk_EnrCouseId" />
+        <AssociationConnector Association="santisar_Model.Fk_student" />
+        <EntityTypeShape EntityType="santisar_Model.EnrollFinishStudent" Width="1.5" PointX="11" PointY="2.125" />
+        <EntityTypeShape EntityType="santisar_Model.FinishType" Width="1.5" PointX="9.375" PointY="14" />
+        <AssociationConnector Association="santisar_Model.Fk_finish_student" />
+        <AssociationConnector Association="santisar_Model.Fk_finsh_form" />
+        <EntityTypeShape EntityType="santisar_Model.EnrollFamilyStudent" Width="1.5" PointX="5" PointY="0.5" />
+        <EntityTypeShape EntityType="santisar_Model.Family" Width="1.5" PointX="6.375" PointY="20.375" />
+        <AssociationConnector Association="santisar_Model.Fk_enroll_fam" />
+        <AssociationConnector Association="santisar_Model.Fk_enroll_Studnet" />
+        <EntityTypeShape EntityType="santisar_Model.UserProfile" Width="1.5" PointX="14.375" PointY="6.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

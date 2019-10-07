@@ -1,0 +1,74 @@
+﻿@model santisart_app.Models.EnrollCouse
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EnrollCouse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CouseTxtId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CouseTxtId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CouseTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CouseTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CouseWeight__)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CouseWeight__)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.semester__)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.semester__)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassInSchool.ClassShortName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassInSchool.ClassShortName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.DepartName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.DepartName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EnrollCouseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

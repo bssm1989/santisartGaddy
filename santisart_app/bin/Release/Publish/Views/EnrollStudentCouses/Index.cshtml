@@ -1,0 +1,81 @@
+﻿@model IEnumerable<santisart_app.Models.EnrollStudentCouse>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Score)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Timestamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearEdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Staff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Semester)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Enroll_Emp_Pos.EnrEmpPosId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollCouse.CouseTxtId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Students.Student_title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Score)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Timestamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearEdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Staff)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Semester)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Enroll_Emp_Pos.EnrEmpPosId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnrollCouse.CouseTxtId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Students.Student_title)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EnrollStudentCouseId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EnrollStudentCouseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EnrollStudentCouseId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,1255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="santisartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="attendance">
+    <Key>
+      <PropertyRef Name="att_id" />
+    </Key>
+    <Property Name="att_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_id" Type="int" />
+    <Property Name="datestamp" Type="date" />
+    <Property Name="Staff_id" Type="int" />
+    <Property Name="qira_id" Type="int" />
+    <Property Name="page" Type="int" />
+    <Property Name="attday_id" Type="int" />
+    <Property Name="Timestamp_teach" Type="datetime" />
+  </EntityType>
+  <EntityType Name="attendance_day">
+    <Key>
+      <PropertyRef Name="attday_id" />
+    </Key>
+    <Property Name="attday_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="attday_date" Type="date" />
+    <Property Name="Timestamp" Type="datetime" />
+    <Property Name="status" Type="int" />
+    <Property Name="staff_id" Type="int" />
+    <Property Name="year_index" Type="int" />
+    <Property Name="Comment" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="Class_id" />
+    </Key>
+    <Property Name="Class_id" Type="int" Nullable="false" />
+    <Property Name="Status_class" Type="int" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Teacher_id" Type="int" />
+    <Property Name="Class_room" Type="int" />
+    <Property Name="Class_year_index" Type="int" />
+  </EntityType>
+  <EntityType Name="ClassInSchool">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Name="ClassShortName" Type="varchar" MaxLength="5" />
+    <Property Name="ClassName" Type="varchar" MaxLength="20" />
+    <Property Name="ClassID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContestEducationSchool">
+    <Key>
+      <PropertyRef Name="TypeContest_id" />
+    </Key>
+    <Property Name="TypeContest_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameContest" Type="char" MaxLength="255" />
+    <Property Name="Staff_id" Type="int" />
+    <Property Name="Timestamp" Type="datetime" />
+    <Property Name="group" Type="int" />
+    <Property Name="Day_contest" Type="date" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseName" Type="varchar" MaxLength="100" />
+    <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseType" Type="varchar" MaxLength="50" />
+    <Property Name="CourseStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Depart_Id" />
+    </Key>
+    <Property Name="DepartName" Type="varchar" MaxLength="50" />
+    <Property Name="DepartStatus" Type="varchar" MaxLength="50" />
+    <Property Name="Depart_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpTitle" Type="varchar" MaxLength="20" />
+    <Property Name="EmpName" Type="varchar" MaxLength="150" />
+    <Property Name="EmpLname" Type="varchar" MaxLength="150" />
+    <Property Name="EmpBirthday" Type="date" />
+    <Property Name="EmpIdcard" Type="int" />
+    <Property Name="EmpPsis_id" Type="int" />
+    <Property Name="EmpStatus" Type="int" />
+    <Property Name="EmpTimestamp" Type="datetime" />
+    <Property Name="EmpTelephone" Type="char" MaxLength="20" />
+    <Property Name="Empbank_id" Type="char" MaxLength="30" />
+    <Property Name="EmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpGender" Type="int" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+    <Property Name="UserName" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Enroll_EduContest">
+    <Key>
+      <PropertyRef Name="EduContest_id" />
+    </Key>
+    <Property Name="EduContest_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type_id" Type="int" />
+    <Property Name="Student_id" Type="int" />
+    <Property Name="Timestamp&#xD;&#xA;" Type="datetime" />
+    <Property Name="result" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Enroll_Emp_Pos">
+    <Key>
+      <PropertyRef Name="EnrEmpPosId" />
+    </Key>
+    <Property Name="Employee_id" Type="int" />
+    <Property Name="Position_id" Type="int" />
+    <Property Name="EnrEmpPosStatus" Type="int" />
+    <Property Name="EnrEmpPosTimestamp" Type="datetime" />
+    <Property Name="EnrEmpPosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Enroll_paid">
+    <Key>
+      <PropertyRef Name="Paid_id" />
+    </Key>
+    <Property Name="Paid_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_id" Type="int" />
+    <Property Name="Monthly_id" Type="int" />
+    <Property Name="Timestamp" Type="datetime" />
+    <Property Name="Staff_paid_id" Type="int" />
+    <Property Name="Student_type_id" Type="int" />
+    <Property Name="Paid" Type="int" />
+    <Property Name="Class_id" Type="int" />
+    <Property Name="Pay_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Enroll_pay">
+    <Key>
+      <PropertyRef Name="Pay_id" />
+    </Key>
+    <Property Name="Pay_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Paid_id" Type="int" />
+    <Property Name="Student_id" Type="int" />
+    <Property Name="Pay" Type="int" />
+    <Property Name="Staff_id" Type="int" />
+    <Property Name="Timestamp" Type="datetime" />
+    <Property Name="Id_token" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Enroll_RoomSession_Emp">
+    <Key>
+      <PropertyRef Name="EnrollRoomEmpId" />
+    </Key>
+    <Property Name="EnrollRoomEmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int" />
+    <Property Name="timestamp" Type="datetime" />
+    <Property Name="staft" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="varchar" MaxLength="255" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="RoomSessionId" Type="int" />
+  </EntityType>
+  <EntityType Name="Enroll_student_all_event">
+    <Key>
+      <PropertyRef Name="Enrol_stu_class_id" />
+    </Key>
+    <Property Name="Student_id" Type="int" Nullable="false" />
+    <Property Name="Class_id" Type="int" Nullable="false" />
+    <Property Name="Enrol_stu_class_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Enroll_student_class">
+    <Key>
+      <PropertyRef Name="Enrol_stu_class_id" />
+    </Key>
+    <Property Name="Student_id" Type="int" />
+    <Property Name="Class_id" Type="int" />
+    <Property Name="Enrol_stu_class_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EnrollClass">
+    <Key>
+      <PropertyRef Name="EnrollClass_id" />
+    </Key>
+    <Property Name="Status_class" Type="int" />
+    <Property Name="ClassSchoolid" Type="int" />
+    <Property Name="Teacher_id" Type="int" />
+    <Property Name="Class_room" Type="int" />
+    <Property Name="Class_year_index" Type="int" />
+    <Property Name="EnrollClass_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EnrollCouse">
+    <Key>
+      <PropertyRef Name="EnrollCouseID" />
+    </Key>
+    <Property Name="CouseTxtId" Type="varchar" MaxLength="10" />
+    <Property Name="CouseId" Type="int" />
+    <Property Name="DepartId" Type="int" />
+    <Property Name="CouseTime" Type="int" />
+    <Property Name="CouseWeight&#xD;&#xA;" Type="real" />
+    <Property Name="ClassId" Type="int" />
+    <Property Name="semester&#xD;&#xA;" Type="int" />
+    <Property Name="EnrollCouseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CouseExcel" Type="varchar" MaxLength="15" />
+    <Property Name="ExcelAdress" Type="varchar" MaxLength="10" />
+    <Property Name="IndexSort" Type="int" />
+    <Property Name="EmpId" Type="int" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EnrollEmpCouse">
+    <Key>
+      <PropertyRef Name="EnrollEmpCouseId" />
+    </Key>
+    <Property Name="EnCouseId" Type="int" />
+    <Property Name="EnEmpCosTimestamp" Type="datetime" />
+    <Property Name="EnrollEmpCouseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EnEmpId" Type="int" />
+    <Property Name="EnYearSemId" Type="int" />
+  </EntityType>
+  <EntityType Name="EnrollEmpCouseClass">
+    <Key>
+      <PropertyRef Name="EnrollEmpCouseClassId" />
+    </Key>
+    <Property Name="EnrollEmpCouseClassId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EnEmpCouseId" Type="int" />
+    <Property Name="EnClassId" Type="int" />
+    <Property Name="Timestamp" Type="date" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="EnrollFamilyStudent">
+    <Key>
+      <PropertyRef Name="EnrollFamStudentId" />
+    </Key>
+    <Property Name="EnrollFamStudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentId" Type="int" />
+    <Property Name="FamilyId" Type="int" />
+    <Property Name="TypeFamily" Type="varchar" MaxLength="100" />
+    <Property Name="Timestamp" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="255" />
+    <Property Name="staftId" Type="int" />
+  </EntityType>
+  <EntityType Name="EnrollFinishStudent">
+    <Key>
+      <PropertyRef Name="FinishId" />
+    </Key>
+    <Property Name="StudentId" Type="int" />
+    <Property Name="FinishTypeId" Type="int" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="TimeStam" Type="datetime" />
+    <Property Name="Staff" Type="int" />
+    <Property Name="FinishId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FinishCouse" Type="int" />
+    <Property Name="DayRequstFinish" Type="datetime" />
+    <Property Name="DayFinished" Type="datetime" />
+    <Property Name="DayToFinished" Type="datetime" />
+    <Property Name="Reader" Type="varchar" MaxLength="15" />
+    <Property Name="Physical" Type="varchar" MaxLength="15" />
+    <Property Name="Activity" Type="varchar" MaxLength="15" />
+    <Property Name="CouseBasic" Type="varchar" MaxLength="15" />
+    <Property Name="CouseAdd" Type="varchar" MaxLength="15" />
+    <Property Name="Reader2" Type="varchar" MaxLength="15" />
+    <Property Name="Activity2" Type="varchar" MaxLength="15" />
+    <Property Name="physical2" Type="varchar" MaxLength="15" />
+    <Property Name="ExcelForm" Type="int" />
+  </EntityType>
+  <EntityType Name="EnrollStudentCouse">
+    <Key>
+      <PropertyRef Name="EnrollStudentCouseId" />
+    </Key>
+    <Property Name="studentId" Type="int" />
+    <Property Name="EnrollCouseId" Type="int" />
+    <Property Name="Score1" Type="float" />
+    <Property Name="Grade" Type="float" />
+    <Property Name="TeacerId" Type="int" />
+    <Property Name="Timestamp" Type="datetime" />
+    <Property Name="YearEdu" Type="int" />
+    <Property Name="Staff" Type="int" />
+    <Property Name="Semester" Type="int" />
+    <Property Name="EnrollStudentClassId" Type="int" />
+    <Property Name="EnYearSemId" Type="int" />
+    <Property Name="EnEmpCouseId" Type="int" />
+    <Property Name="EnEmpCouseClassId" Type="int" />
+    <Property Name="EnrollStudentCouseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Score2" Type="float" />
+    <Property Name="Score3" Type="float" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="EnrollYearSemester">
+    <Key>
+      <PropertyRef Name="EnrollYearSemesterId" />
+    </Key>
+    <Property Name="YearEduId" Type="int" />
+    <Property Name="Semester" Type="int" />
+    <Property Name="EnrollYearSemesterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Family">
+    <Key>
+      <PropertyRef Name="FamilyId" />
+    </Key>
+    <Property Name="FamilyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fam_Title" Type="varchar" MaxLength="20" />
+    <Property Name="Fam_Name" Type="varchar" MaxLength="150" />
+    <Property Name="Fam_Lname" Type="varchar" MaxLength="150" />
+    <Property Name="birthday" Type="date" />
+    <Property Name="Career" Type="varchar" MaxLength="100" />
+    <Property Name="Income" Type="int" />
+    <Property Name="Education" Type="varchar" MaxLength="100" />
+    <Property Name="Timestam" Type="datetime" />
+    <Property Name="Staft" Type="int" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="Idcard" Type="varchar" MaxLength="13" />
+  </EntityType>
+  <EntityType Name="FinishType">
+    <Key>
+      <PropertyRef Name="FinishFormID" />
+    </Key>
+    <Property Name="FormName" Type="varchar" MaxLength="50" />
+    <Property Name="FormIndex" Type="int" />
+    <Property Name="FinishFormID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="Food_id" />
+    </Key>
+    <Property Name="Food_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Food_id_student" Type="varchar" MaxLength="6" />
+    <Property Name="Food_name" Type="varchar" MaxLength="50" />
+    <Property Name="Food_lastname" Type="varchar" MaxLength="50" />
+    <Property Name="Food_month_th" Type="varchar" MaxLength="20" />
+    <Property Name="Food_month_index" Type="varchar" MaxLength="2" />
+    <Property Name="Food_paid" Type="int" />
+    <Property Name="Food_full_paid" Type="int" />
+    <Property Name="Food_class" Type="varchar" MaxLength="5" />
+    <Property Name="Food_year" Type="varchar" MaxLength="4" />
+    <Property Name="Food_timesatamp" Type="datetime" />
+    <Property Name="Food_update" Type="varchar" MaxLength="50" />
+    <Property Name="Food_paid_id" Type="int" />
+    <Property Name="Food_title" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Monthly">
+    <Key>
+      <PropertyRef Name="Monthly_id" />
+    </Key>
+    <Property Name="Monthly_id" Type="int" Nullable="false" />
+    <Property Name="Month_name" Type="varchar" MaxLength="25" />
+    <Property Name="Month_year" Type="int" />
+    <Property Name="Month_course" Type="int" />
+    <Property Name="Month_status" Type="bit" />
+    <Property Name="Month_yearindex" Type="int" />
+    <Property Name="Month_Sort" Type="int" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="PosId" />
+    </Key>
+    <Property Name="PosName" Type="varchar" MaxLength="50" />
+    <Property Name="PosLevel" Type="int" />
+    <Property Name="PosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomSession">
+    <Key>
+      <PropertyRef Name="RoomSessionId" />
+    </Key>
+    <Property Name="RoomName" Type="varchar" MaxLength="255" />
+    <Property Name="Timestamp" Type="datetime" />
+    <Property Name="Value" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="RoomSessionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="Student_id" />
+    </Key>
+    <Property Name="Student_id" Type="int" Nullable="false" />
+    <Property Name="Student_title" Type="varchar" MaxLength="10" />
+    <Property Name="Student_name" Type="varchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_birthday" Type="datetime" />
+    <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
+    <Property Name="Student_psis_id" Type="int" />
+    <Property Name="Student_status" Type="varchar" MaxLength="25" />
+    <Property Name="Student_timestamp" Type="datetime" />
+    <Property Name="Student_ArabName" Type="varchar" MaxLength="150" />
+    <Property Name="Student_OldSchool" Type="varchar" MaxLength="255" />
+    <Property Name="Studnet_Gender" Type="varchar" MaxLength="10" />
+    <Property Name="Student_firsttime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Students_food">
+    <Key>
+      <PropertyRef Name="Student_id" />
+    </Key>
+    <Property Name="Student_id" Type="int" Nullable="false" />
+    <Property Name="Student_title" Type="varchar" MaxLength="10" />
+    <Property Name="Student_name" Type="varchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_birthday" Type="datetime" />
+    <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
+    <Property Name="Student_psis_id" Type="int" />
+    <Property Name="Student_status" Type="varchar" MaxLength="25" />
+    <Property Name="Student_timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="YearEdu">
+    <Key>
+      <PropertyRef Name="YearEduId" />
+    </Key>
+    <Property Name="yearName" Type="int" />
+    <Property Name="YearEduId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="YearNameEng" Type="int" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'santisart.santisart._enrollattstudent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="_enrollattstudent">
+    <Key>
+      <PropertyRef Name="Student_id" />
+    </Key>
+    <Property Name="Student_id" Type="int" Nullable="false" />
+    <Property Name="Student_title" Type="varchar" MaxLength="10" />
+    <Property Name="Student_name" Type="varchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="att_id" Type="int" />
+    <Property Name="Staff_id" Type="int" />
+    <Property Name="qira_id" Type="int" />
+    <Property Name="page" Type="int" />
+    <Property Name="attday_id" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'santisart.santisart.EnrollStudentAttdance' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EnrollStudentAttdance">
+    <Key>
+      <PropertyRef Name="att_id" />
+    </Key>
+    <Property Name="att_id" Type="int" Nullable="false" />
+    <Property Name="qira_id" Type="int" />
+    <Property Name="page" Type="int" />
+    <Property Name="Staff_id" Type="int" />
+    <Property Name="Student_id" Type="int" />
+    <Property Name="Student_title" Type="varchar" MaxLength="10" />
+    <Property Name="Student_name" Type="varchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_timestamp" Type="datetime" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Class_room" Type="int" />
+    <Property Name="Class_year_index" Type="int" />
+    <Property Name="Teacher_id" Type="int" />
+    <Property Name="Class_id" Type="int" />
+    <Property Name="attday_id" Type="int" />
+    <Property Name="attday_date" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'santisart.santisart.student2561' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="student2561">
+    <Key>
+      <PropertyRef Name="Student_id" />
+      <PropertyRef Name="Class_id" />
+    </Key>
+    <Property Name="Student_id" Type="int" Nullable="false" />
+    <Property Name="Student_title" Type="varchar" MaxLength="10" />
+    <Property Name="Student_name" Type="varchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_birthday" Type="datetime" />
+    <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
+    <Property Name="Student_psis_id" Type="int" />
+    <Property Name="Student_status" Type="varchar" MaxLength="25" />
+    <Property Name="Student_timestamp" Type="datetime" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Class_room" Type="int" />
+    <Property Name="Class_year_index" Type="int" />
+    <Property Name="Teacher_id" Type="int" />
+    <Property Name="Class_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'santisart.santisart.student2561_copy1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="student2561_copy1">
+    <Key>
+      <PropertyRef Name="Student_id" />
+      <PropertyRef Name="Class_id" />
+    </Key>
+    <Property Name="Student_id" Type="int" Nullable="false" />
+    <Property Name="Student_title" Type="varchar" MaxLength="10" />
+    <Property Name="Student_name" Type="varchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_birthday" Type="datetime" />
+    <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
+    <Property Name="Student_psis_id" Type="int" />
+    <Property Name="Student_status" Type="varchar" MaxLength="25" />
+    <Property Name="Student_timestamp" Type="datetime" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Class_room" Type="int" />
+    <Property Name="Class_year_index" Type="int" />
+    <Property Name="Teacher_id" Type="int" />
+    <Property Name="Class_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'santisart.santisart.student2561_food' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="student2561_food">
+    <Key>
+      <PropertyRef Name="Student_id" />
+      <PropertyRef Name="Class_id" />
+    </Key>
+    <Property Name="Student_id" Type="int" Nullable="false" />
+    <Property Name="Student_title" Type="varchar" MaxLength="10" />
+    <Property Name="Student_name" Type="varchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_birthday" Type="datetime" />
+    <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
+    <Property Name="Student_psis_id" Type="int" />
+    <Property Name="Student_status" Type="varchar" MaxLength="25" />
+    <Property Name="Student_timestamp" Type="datetime" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Class_room" Type="int" />
+    <Property Name="Class_year_index" Type="int" />
+    <Property Name="Teacher_id" Type="int" />
+    <Property Name="Class_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'santisart.santisart.studentEduContest2561' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="studentEduContest2561">
+    <Key>
+      <PropertyRef Name="Student_id" />
+      <PropertyRef Name="Class_id" />
+      <PropertyRef Name="TypeContest_id" />
+      <PropertyRef Name="EduContest_id" />
+    </Key>
+    <Property Name="Student_id" Type="int" Nullable="false" />
+    <Property Name="Student_title" Type="varchar" MaxLength="10" />
+    <Property Name="Student_name" Type="varchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Class_room" Type="int" />
+    <Property Name="Class_year_index" Type="int" />
+    <Property Name="Teacher_id" Type="int" />
+    <Property Name="Class_id" Type="int" Nullable="false" />
+    <Property Name="TypeContest_id" Type="int" Nullable="false" />
+    <Property Name="NameContest" Type="char" MaxLength="255" />
+    <Property Name="Staff_id" Type="int" />
+    <Property Name="Timestamp" Type="datetime" />
+    <Property Name="group" Type="int" />
+    <Property Name="Day_contest" Type="date" />
+    <Property Name="EduContest_id" Type="int" Nullable="false" />
+    <Property Name="result" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'santisart.santisart.View_Couse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Couse">
+    <Key>
+      <PropertyRef Name="EnrollCouseID" />
+      <PropertyRef Name="EnrollStudentCouseId" />
+      <PropertyRef Name="EnrEmpPosId" />
+      <PropertyRef Name="EmpId" />
+      <PropertyRef Name="Student_id" />
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CouseTxtId" Type="varchar" MaxLength="10" />
+    <Property Name="DepartId" Type="int" />
+    <Property Name="CouseTime" Type="int" />
+    <Property Name="CouseWeight&#xD;&#xA;" Type="real" />
+    <Property Name="ClassId" Type="int" />
+    <Property Name="semester&#xD;&#xA;" Type="int" />
+    <Property Name="EnrollCouseID" Type="int" Nullable="false" />
+    <Property Name="CouseExcel" Type="varchar" MaxLength="15" />
+    <Property Name="CouseId" Type="int" />
+    <Property Name="CourseName" Type="varchar" MaxLength="100" />
+    <Property Name="CourseType" Type="varchar" MaxLength="50" />
+    <Property Name="CourseStatus" Type="int" />
+    <Property Name="EnrollStudentCouseId" Type="int" Nullable="false" />
+    <Property Name="Score1" Type="float" />
+    <Property Name="Grade" Type="float" />
+    <Property Name="Timestamp" Type="datetime" />
+    <Property Name="YearEdu" Type="int" />
+    <Property Name="Staff" Type="int" />
+    <Property Name="Semester" Type="int" />
+    <Property Name="Student_title" Type="varchar" MaxLength="10" />
+    <Property Name="Student_name" Type="varchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_birthday" Type="datetime" />
+    <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
+    <Property Name="Student_psis_id" Type="int" />
+    <Property Name="Student_status" Type="varchar" MaxLength="25" />
+    <Property Name="Student_timestamp" Type="datetime" />
+    <Property Name="Employee_id" Type="int" />
+    <Property Name="Position_id" Type="int" />
+    <Property Name="EnrEmpPosStatus" Type="int" />
+    <Property Name="EnrEmpPosTimestamp" Type="datetime" />
+    <Property Name="EnrEmpPosId" Type="int" Nullable="false" />
+    <Property Name="EmpTitle" Type="varchar" MaxLength="20" />
+    <Property Name="EmpName" Type="varchar" MaxLength="150" />
+    <Property Name="EmpLname" Type="varchar" MaxLength="150" />
+    <Property Name="EmpBirthday" Type="date" />
+    <Property Name="EmpIdcard" Type="int" />
+    <Property Name="EmpPsis_id" Type="int" />
+    <Property Name="EmpStatus" Type="int" />
+    <Property Name="EmpTimestamp" Type="datetime" />
+    <Property Name="EmpTelephone" Type="char" MaxLength="20" />
+    <Property Name="Empbank_id" Type="char" MaxLength="30" />
+    <Property Name="EmpId" Type="int" Nullable="false" />
+    <Property Name="EmpGender" Type="int" />
+    <Property Name="Student_id" Type="int" Nullable="false" />
+    <Property Name="CourseId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewEmpPos">
+    <Key>
+      <PropertyRef Name="EnrEmpPosId" />
+    </Key>
+    <Property Name="EmpTitle" Type="varchar" MaxLength="20" />
+    <Property Name="EmpName" Type="varchar" MaxLength="150" />
+    <Property Name="EmpLname" Type="varchar" MaxLength="150" />
+    <Property Name="EmpBirthday" Type="date" />
+    <Property Name="EmpIdcard" Type="int" />
+    <Property Name="EmpPsis_id" Type="int" />
+    <Property Name="EmpStatus" Type="int" />
+    <Property Name="EmpTimestamp" Type="datetime" />
+    <Property Name="EmpTelephone" Type="char" MaxLength="20" />
+    <Property Name="Empbank_id" Type="char" MaxLength="30" />
+    <Property Name="EmpId" Type="int" />
+    <Property Name="EmpGender" Type="int" />
+    <Property Name="EnrEmpPosId" Type="int" Nullable="false" />
+    <Property Name="EnrEmpPosStatus" Type="int" />
+    <Property Name="EnrEmpPosTimestamp" Type="datetime" />
+    <Property Name="PosName" Type="varchar" MaxLength="50" />
+    <Property Name="PosLevel" Type="int" />
+    <Property Name="PosId" Type="int" />
+  </EntityType>
+  <Association Name="  fk_class">
+    <End Role="ClassInSchool" Type="Self.ClassInSchool" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollClass" Type="Self.EnrollClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClassInSchool">
+        <PropertyRef Name="ClassID" />
+      </Principal>
+      <Dependent Role="EnrollClass">
+        <PropertyRef Name="ClassSchoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_class">
+    <End Role="EnrollClass" Type="Self.EnrollClass" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_student_class" Type="Self.Enroll_student_class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollClass">
+        <PropertyRef Name="EnrollClass_id" />
+      </Principal>
+      <Dependent Role="Enroll_student_class">
+        <PropertyRef Name="Class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_class1">
+    <End Role="ClassInSchool" Type="Self.ClassInSchool" Multiplicity="0..1" />
+    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClassInSchool">
+        <PropertyRef Name="ClassID" />
+      </Principal>
+      <Dependent Role="EnrollCouse">
+        <PropertyRef Name="ClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_couse1">
+    <End Role="Course" Type="Self.Course" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="EnrollCouse">
+        <PropertyRef Name="CouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_couse2">
+    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollEmpCouse" Type="Self.EnrollEmpCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollCouse">
+        <PropertyRef Name="EnrollCouseID" />
+      </Principal>
+      <Dependent Role="EnrollEmpCouse">
+        <PropertyRef Name="EnCouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_depart1">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Depart_Id" />
+      </Principal>
+      <Dependent Role="EnrollCouse">
+        <PropertyRef Name="DepartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_emp">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_RoomSession_Emp" Type="Self.Enroll_RoomSession_Emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="Enroll_RoomSession_Emp">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_emp_enr">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_Emp_Pos" Type="Self.Enroll_Emp_Pos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="Enroll_Emp_Pos">
+        <PropertyRef Name="Employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_emp2">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollEmpCouse" Type="Self.EnrollEmpCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="EnrollEmpCouse">
+        <PropertyRef Name="EnEmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_EmpCouse">
+    <End Role="EnrollEmpCouse" Type="Self.EnrollEmpCouse" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollEmpCouseClass" Type="Self.EnrollEmpCouseClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollEmpCouse">
+        <PropertyRef Name="EnrollEmpCouseId" />
+      </Principal>
+      <Dependent Role="EnrollEmpCouseClass">
+        <PropertyRef Name="EnEmpCouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_EmpCouseClass">
+    <End Role="EnrollEmpCouseClass" Type="Self.EnrollEmpCouseClass" Multiplicity="0..1" />
+    <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollEmpCouseClass">
+        <PropertyRef Name="EnrollEmpCouseClassId" />
+      </Principal>
+      <Dependent Role="EnrollStudentCouse">
+        <PropertyRef Name="EnEmpCouseClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_EnClass">
+    <End Role="EnrollClass" Type="Self.EnrollClass" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollEmpCouseClass" Type="Self.EnrollEmpCouseClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollClass">
+        <PropertyRef Name="EnrollClass_id" />
+      </Principal>
+      <Dependent Role="EnrollEmpCouseClass">
+        <PropertyRef Name="EnClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_enr_pos">
+    <End Role="Position" Type="Self.Position" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_Emp_Pos" Type="Self.Enroll_Emp_Pos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="PosId" />
+      </Principal>
+      <Dependent Role="Enroll_Emp_Pos">
+        <PropertyRef Name="Position_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_enroll_fam">
+    <End Role="Family" Type="Self.Family" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollFamilyStudent" Type="Self.EnrollFamilyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Family">
+        <PropertyRef Name="FamilyId" />
+      </Principal>
+      <Dependent Role="EnrollFamilyStudent">
+        <PropertyRef Name="FamilyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_enroll_Studnet">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollFamilyStudent" Type="Self.EnrollFamilyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="Student_id" />
+      </Principal>
+      <Dependent Role="EnrollFamilyStudent">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_enrollStudent">
+    <End Role="Enroll_student_class" Type="Self.Enroll_student_class" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Enroll_student_class">
+        <PropertyRef Name="Enrol_stu_class_id" />
+      </Principal>
+      <Dependent Role="EnrollStudentCouse">
+        <PropertyRef Name="EnrollStudentClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_finsh_form">
+    <End Role="FinishType" Type="Self.FinishType" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollFinishStudent" Type="Self.EnrollFinishStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FinishType">
+        <PropertyRef Name="FinishFormID" />
+      </Principal>
+      <Dependent Role="EnrollFinishStudent">
+        <PropertyRef Name="FinishTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_room">
+    <End Role="RoomSession" Type="Self.RoomSession" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_RoomSession_Emp" Type="Self.Enroll_RoomSession_Emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomSession">
+        <PropertyRef Name="RoomSessionId" />
+      </Principal>
+      <Dependent Role="Enroll_RoomSession_Emp">
+        <PropertyRef Name="RoomSessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_stud">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollFinishStudent" Type="Self.EnrollFinishStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="Student_id" />
+      </Principal>
+      <Dependent Role="EnrollFinishStudent">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_student2">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_student_class" Type="Self.Enroll_student_class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="Student_id" />
+      </Principal>
+      <Dependent Role="Enroll_student_class">
+        <PropertyRef Name="Student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Year">
+    <End Role="YearEdu" Type="Self.YearEdu" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollYearSemester" Type="Self.EnrollYearSemester" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YearEdu">
+        <PropertyRef Name="YearEduId" />
+      </Principal>
+      <Dependent Role="EnrollYearSemester">
+        <PropertyRef Name="YearEduId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_year2">
+    <End Role="EnrollYearSemester" Type="Self.EnrollYearSemester" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollEmpCouse" Type="Self.EnrollEmpCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollYearSemester">
+        <PropertyRef Name="EnrollYearSemesterId" />
+      </Principal>
+      <Dependent Role="EnrollEmpCouse">
+        <PropertyRef Name="EnYearSemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_yearSem">
+    <End Role="EnrollYearSemester" Type="Self.EnrollYearSemester" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollYearSemester">
+        <PropertyRef Name="EnrollYearSemesterId" />
+      </Principal>
+      <Dependent Role="EnrollStudentCouse">
+        <PropertyRef Name="EnYearSemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="santisartModelStoreContainer">
+    <EntitySet Name="attendance" EntityType="Self.attendance" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="attendance_day" EntityType="Self.attendance_day" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Class" EntityType="Self.Class" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="ClassInSchool" EntityType="Self.ClassInSchool" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="ContestEducationSchool" EntityType="Self.ContestEducationSchool" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Enroll_EduContest" EntityType="Self.Enroll_EduContest" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Enroll_Emp_Pos" EntityType="Self.Enroll_Emp_Pos" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Enroll_paid" EntityType="Self.Enroll_paid" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Enroll_pay" EntityType="Self.Enroll_pay" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Enroll_RoomSession_Emp" EntityType="Self.Enroll_RoomSession_Emp" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Enroll_student_all_event" EntityType="Self.Enroll_student_all_event" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Enroll_student_class" EntityType="Self.Enroll_student_class" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="EnrollClass" EntityType="Self.EnrollClass" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="EnrollCouse" EntityType="Self.EnrollCouse" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="EnrollEmpCouse" EntityType="Self.EnrollEmpCouse" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="EnrollEmpCouseClass" EntityType="Self.EnrollEmpCouseClass" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="EnrollFamilyStudent" EntityType="Self.EnrollFamilyStudent" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="EnrollFinishStudent" EntityType="Self.EnrollFinishStudent" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="EnrollStudentCouse" EntityType="Self.EnrollStudentCouse" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="EnrollYearSemester" EntityType="Self.EnrollYearSemester" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Family" EntityType="Self.Family" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="FinishType" EntityType="Self.FinishType" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Food" EntityType="Self.Food" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Monthly" EntityType="Self.Monthly" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Position" EntityType="Self.Position" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="RoomSession" EntityType="Self.RoomSession" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Students" EntityType="Self.Students" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="Students_food" EntityType="Self.Students_food" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="YearEdu" EntityType="Self.YearEdu" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="_enrollattstudent" EntityType="Self._enrollattstudent" store:Type="Views" store:Schema="santisart">
+      <DefiningQuery>SELECT 
+    [_enrollattstudent].[Student_id] AS [Student_id], 
+    [_enrollattstudent].[Student_title] AS [Student_title], 
+    [_enrollattstudent].[Student_name] AS [Student_name], 
+    [_enrollattstudent].[Student_lname] AS [Student_lname], 
+    [_enrollattstudent].[att_id] AS [att_id], 
+    [_enrollattstudent].[Staff_id] AS [Staff_id], 
+    [_enrollattstudent].[qira_id] AS [qira_id], 
+    [_enrollattstudent].[page] AS [page], 
+    [_enrollattstudent].[attday_id] AS [attday_id]
+    FROM [santisart].[_enrollattstudent] AS [_enrollattstudent]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EnrollStudentAttdance" EntityType="Self.EnrollStudentAttdance" store:Type="Views" store:Schema="santisart">
+      <DefiningQuery>SELECT 
+    [EnrollStudentAttdance].[att_id] AS [att_id], 
+    [EnrollStudentAttdance].[qira_id] AS [qira_id], 
+    [EnrollStudentAttdance].[page] AS [page], 
+    [EnrollStudentAttdance].[Staff_id] AS [Staff_id], 
+    [EnrollStudentAttdance].[Student_id] AS [Student_id], 
+    [EnrollStudentAttdance].[Student_title] AS [Student_title], 
+    [EnrollStudentAttdance].[Student_name] AS [Student_name], 
+    [EnrollStudentAttdance].[Student_lname] AS [Student_lname], 
+    [EnrollStudentAttdance].[Student_timestamp] AS [Student_timestamp], 
+    [EnrollStudentAttdance].[Class_name_id] AS [Class_name_id], 
+    [EnrollStudentAttdance].[Class_room] AS [Class_room], 
+    [EnrollStudentAttdance].[Class_year_index] AS [Class_year_index], 
+    [EnrollStudentAttdance].[Teacher_id] AS [Teacher_id], 
+    [EnrollStudentAttdance].[Class_id] AS [Class_id], 
+    [EnrollStudentAttdance].[attday_id] AS [attday_id], 
+    [EnrollStudentAttdance].[attday_date] AS [attday_date]
+    FROM [santisart].[EnrollStudentAttdance] AS [EnrollStudentAttdance]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="student2561" EntityType="Self.student2561" store:Type="Views" store:Schema="santisart">
+      <DefiningQuery>SELECT 
+    [student2561].[Student_id] AS [Student_id], 
+    [student2561].[Student_title] AS [Student_title], 
+    [student2561].[Student_name] AS [Student_name], 
+    [student2561].[Student_lname] AS [Student_lname], 
+    [student2561].[Student_birthday] AS [Student_birthday], 
+    [student2561].[Student_idcard] AS [Student_idcard], 
+    [student2561].[Student_psis_id] AS [Student_psis_id], 
+    [student2561].[Student_status] AS [Student_status], 
+    [student2561].[Student_timestamp] AS [Student_timestamp], 
+    [student2561].[Class_name_id] AS [Class_name_id], 
+    [student2561].[Class_room] AS [Class_room], 
+    [student2561].[Class_year_index] AS [Class_year_index], 
+    [student2561].[Teacher_id] AS [Teacher_id], 
+    [student2561].[Class_id] AS [Class_id]
+    FROM [santisart].[student2561] AS [student2561]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="student2561_copy1" EntityType="Self.student2561_copy1" store:Type="Views" store:Schema="santisart">
+      <DefiningQuery>SELECT 
+    [student2561_copy1].[Student_id] AS [Student_id], 
+    [student2561_copy1].[Student_title] AS [Student_title], 
+    [student2561_copy1].[Student_name] AS [Student_name], 
+    [student2561_copy1].[Student_lname] AS [Student_lname], 
+    [student2561_copy1].[Student_birthday] AS [Student_birthday], 
+    [student2561_copy1].[Student_idcard] AS [Student_idcard], 
+    [student2561_copy1].[Student_psis_id] AS [Student_psis_id], 
+    [student2561_copy1].[Student_status] AS [Student_status], 
+    [student2561_copy1].[Student_timestamp] AS [Student_timestamp], 
+    [student2561_copy1].[Class_name_id] AS [Class_name_id], 
+    [student2561_copy1].[Class_room] AS [Class_room], 
+    [student2561_copy1].[Class_year_index] AS [Class_year_index], 
+    [student2561_copy1].[Teacher_id] AS [Teacher_id], 
+    [student2561_copy1].[Class_id] AS [Class_id]
+    FROM [santisart].[student2561_copy1] AS [student2561_copy1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="student2561_food" EntityType="Self.student2561_food" store:Type="Views" store:Schema="santisart">
+      <DefiningQuery>SELECT 
+    [student2561_food].[Student_id] AS [Student_id], 
+    [student2561_food].[Student_title] AS [Student_title], 
+    [student2561_food].[Student_name] AS [Student_name], 
+    [student2561_food].[Student_lname] AS [Student_lname], 
+    [student2561_food].[Student_birthday] AS [Student_birthday], 
+    [student2561_food].[Student_idcard] AS [Student_idcard], 
+    [student2561_food].[Student_psis_id] AS [Student_psis_id], 
+    [student2561_food].[Student_status] AS [Student_status], 
+    [student2561_food].[Student_timestamp] AS [Student_timestamp], 
+    [student2561_food].[Class_name_id] AS [Class_name_id], 
+    [student2561_food].[Class_room] AS [Class_room], 
+    [student2561_food].[Class_year_index] AS [Class_year_index], 
+    [student2561_food].[Teacher_id] AS [Teacher_id], 
+    [student2561_food].[Class_id] AS [Class_id]
+    FROM [santisart].[student2561_food] AS [student2561_food]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="studentEduContest2561" EntityType="Self.studentEduContest2561" store:Type="Views" store:Schema="santisart">
+      <DefiningQuery>SELECT 
+    [studentEduContest2561].[Student_id] AS [Student_id], 
+    [studentEduContest2561].[Student_title] AS [Student_title], 
+    [studentEduContest2561].[Student_name] AS [Student_name], 
+    [studentEduContest2561].[Student_lname] AS [Student_lname], 
+    [studentEduContest2561].[Class_name_id] AS [Class_name_id], 
+    [studentEduContest2561].[Class_room] AS [Class_room], 
+    [studentEduContest2561].[Class_year_index] AS [Class_year_index], 
+    [studentEduContest2561].[Teacher_id] AS [Teacher_id], 
+    [studentEduContest2561].[Class_id] AS [Class_id], 
+    [studentEduContest2561].[TypeContest_id] AS [TypeContest_id], 
+    [studentEduContest2561].[NameContest] AS [NameContest], 
+    [studentEduContest2561].[Staff_id] AS [Staff_id], 
+    [studentEduContest2561].[Timestamp] AS [Timestamp], 
+    [studentEduContest2561].[group] AS [group], 
+    [studentEduContest2561].[Day_contest] AS [Day_contest], 
+    [studentEduContest2561].[EduContest_id] AS [EduContest_id], 
+    [studentEduContest2561].[result] AS [result]
+    FROM [santisart].[studentEduContest2561] AS [studentEduContest2561]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Couse" EntityType="Self.View_Couse" store:Type="Views" store:Schema="santisart">
+      <DefiningQuery>SELECT 
+    [View_Couse].[CouseTxtId] AS [CouseTxtId], 
+    [View_Couse].[DepartId] AS [DepartId], 
+    [View_Couse].[CouseTime] AS [CouseTime], 
+    [View_Couse].[CouseWeight
+] AS [CouseWeight
+], 
+    [View_Couse].[ClassId] AS [ClassId], 
+    [View_Couse].[semester
+] AS [semester
+], 
+    [View_Couse].[EnrollCouseID] AS [EnrollCouseID], 
+    [View_Couse].[CouseExcel] AS [CouseExcel], 
+    [View_Couse].[CouseId] AS [CouseId], 
+    [View_Couse].[CourseName] AS [CourseName], 
+    [View_Couse].[CourseType] AS [CourseType], 
+    [View_Couse].[CourseStatus] AS [CourseStatus], 
+    [View_Couse].[EnrollStudentCouseId] AS [EnrollStudentCouseId], 
+    [View_Couse].[Score1] AS [Score1], 
+    [View_Couse].[Grade] AS [Grade], 
+    [View_Couse].[Timestamp] AS [Timestamp], 
+    [View_Couse].[YearEdu] AS [YearEdu], 
+    [View_Couse].[Staff] AS [Staff], 
+    [View_Couse].[Semester] AS [Semester], 
+    [View_Couse].[Student_title] AS [Student_title], 
+    [View_Couse].[Student_name] AS [Student_name], 
+    [View_Couse].[Student_lname] AS [Student_lname], 
+    [View_Couse].[Student_birthday] AS [Student_birthday], 
+    [View_Couse].[Student_idcard] AS [Student_idcard], 
+    [View_Couse].[Student_psis_id] AS [Student_psis_id], 
+    [View_Couse].[Student_status] AS [Student_status], 
+    [View_Couse].[Student_timestamp] AS [Student_timestamp], 
+    [View_Couse].[Employee_id] AS [Employee_id], 
+    [View_Couse].[Position_id] AS [Position_id], 
+    [View_Couse].[EnrEmpPosStatus] AS [EnrEmpPosStatus], 
+    [View_Couse].[EnrEmpPosTimestamp] AS [EnrEmpPosTimestamp], 
+    [View_Couse].[EnrEmpPosId] AS [EnrEmpPosId], 
+    [View_Couse].[EmpTitle] AS [EmpTitle], 
+    [View_Couse].[EmpName] AS [EmpName], 
+    [View_Couse].[EmpLname] AS [EmpLname], 
+    [View_Couse].[EmpBirthday] AS [EmpBirthday], 
+    [View_Couse].[EmpIdcard] AS [EmpIdcard], 
+    [View_Couse].[EmpPsis_id] AS [EmpPsis_id], 
+    [View_Couse].[EmpStatus] AS [EmpStatus], 
+    [View_Couse].[EmpTimestamp] AS [EmpTimestamp], 
+    [View_Couse].[EmpTelephone] AS [EmpTelephone], 
+    [View_Couse].[Empbank_id] AS [Empbank_id], 
+    [View_Couse].[EmpId] AS [EmpId], 
+    [View_Couse].[EmpGender] AS [EmpGender], 
+    [View_Couse].[Student_id] AS [Student_id], 
+    [View_Couse].[CourseId] AS [CourseId]
+    FROM [santisart].[View_Couse] AS [View_Couse]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewEmpPos" EntityType="Self.ViewEmpPos" store:Type="Views" store:Schema="santisart">
+      <DefiningQuery>SELECT 
+    [ViewEmpPos].[EmpTitle] AS [EmpTitle], 
+    [ViewEmpPos].[EmpName] AS [EmpName], 
+    [ViewEmpPos].[EmpLname] AS [EmpLname], 
+    [ViewEmpPos].[EmpBirthday] AS [EmpBirthday], 
+    [ViewEmpPos].[EmpIdcard] AS [EmpIdcard], 
+    [ViewEmpPos].[EmpPsis_id] AS [EmpPsis_id], 
+    [ViewEmpPos].[EmpStatus] AS [EmpStatus], 
+    [ViewEmpPos].[EmpTimestamp] AS [EmpTimestamp], 
+    [ViewEmpPos].[EmpTelephone] AS [EmpTelephone], 
+    [ViewEmpPos].[Empbank_id] AS [Empbank_id], 
+    [ViewEmpPos].[EmpId] AS [EmpId], 
+    [ViewEmpPos].[EmpGender] AS [EmpGender], 
+    [ViewEmpPos].[EnrEmpPosId] AS [EnrEmpPosId], 
+    [ViewEmpPos].[EnrEmpPosStatus] AS [EnrEmpPosStatus], 
+    [ViewEmpPos].[EnrEmpPosTimestamp] AS [EnrEmpPosTimestamp], 
+    [ViewEmpPos].[PosName] AS [PosName], 
+    [ViewEmpPos].[PosLevel] AS [PosLevel], 
+    [ViewEmpPos].[PosId] AS [PosId]
+    FROM [santisart].[ViewEmpPos] AS [ViewEmpPos]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="  fk_class" Association="Self.  fk_class">
+      <End Role="ClassInSchool" EntitySet="ClassInSchool" />
+      <End Role="EnrollClass" EntitySet="EnrollClass" />
+    </AssociationSet>
+    <AssociationSet Name="fk_class" Association="Self.fk_class">
+      <End Role="EnrollClass" EntitySet="EnrollClass" />
+      <End Role="Enroll_student_class" EntitySet="Enroll_student_class" />
+    </AssociationSet>
+    <AssociationSet Name="FK_class1" Association="Self.FK_class1">
+      <End Role="ClassInSchool" EntitySet="ClassInSchool" />
+      <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_couse1" Association="Self.Fk_couse1">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_couse2" Association="Self.Fk_couse2">
+      <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+      <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_depart1" Association="Self.FK_depart1">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_emp" Association="Self.Fk_emp">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Enroll_RoomSession_Emp" EntitySet="Enroll_RoomSession_Emp" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_emp_enr" Association="Self.Fk_emp_enr">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_emp2" Association="Self.Fk_emp2">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouse" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_EmpCouse" Association="Self.Fk_EmpCouse">
+      <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouse" />
+      <End Role="EnrollEmpCouseClass" EntitySet="EnrollEmpCouseClass" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_EmpCouseClass" Association="Self.Fk_EmpCouseClass">
+      <End Role="EnrollEmpCouseClass" EntitySet="EnrollEmpCouseClass" />
+      <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_EnClass" Association="Self.Fk_EnClass">
+      <End Role="EnrollClass" EntitySet="EnrollClass" />
+      <End Role="EnrollEmpCouseClass" EntitySet="EnrollEmpCouseClass" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_enr_pos" Association="Self.Fk_enr_pos">
+      <End Role="Position" EntitySet="Position" />
+      <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_enroll_fam" Association="Self.Fk_enroll_fam">
+      <End Role="Family" EntitySet="Family" />
+      <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudent" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_enroll_Studnet" Association="Self.Fk_enroll_Studnet">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudent" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_enrollStudent" Association="Self.Fk_enrollStudent">
+      <End Role="Enroll_student_class" EntitySet="Enroll_student_class" />
+      <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_finsh_form" Association="Self.Fk_finsh_form">
+      <End Role="FinishType" EntitySet="FinishType" />
+      <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudent" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_room" Association="Self.Fk_room">
+      <End Role="RoomSession" EntitySet="RoomSession" />
+      <End Role="Enroll_RoomSession_Emp" EntitySet="Enroll_RoomSession_Emp" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_stud" Association="Self.Fk_stud">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudent" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_student2" Association="Self.Fk_student2">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Enroll_student_class" EntitySet="Enroll_student_class" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Year" Association="Self.Fk_Year">
+      <End Role="YearEdu" EntitySet="YearEdu" />
+      <End Role="EnrollYearSemester" EntitySet="EnrollYearSemester" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_year2" Association="Self.Fk_year2">
+      <End Role="EnrollYearSemester" EntitySet="EnrollYearSemester" />
+      <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouse" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_yearSem" Association="Self.Fk_yearSem">
+      <End Role="EnrollYearSemester" EntitySet="EnrollYearSemester" />
+      <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

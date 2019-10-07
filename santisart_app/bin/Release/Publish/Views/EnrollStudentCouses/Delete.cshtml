@@ -1,0 +1,96 @@
+﻿@model santisart_app.Models.EnrollStudentCouse
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EnrollStudentCouse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Timestamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearEdu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearEdu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Staff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Staff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Enroll_Emp_Pos.EnrEmpPosId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Enroll_Emp_Pos.EnrEmpPosId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnrollCouse.CouseTxtId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrollCouse.CouseTxtId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Students.Student_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Students.Student_title)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

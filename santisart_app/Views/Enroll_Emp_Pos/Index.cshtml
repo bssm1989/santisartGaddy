@@ -1,0 +1,51 @@
+﻿@model IEnumerable<santisart_app.Models.Enroll_Emp_Pos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrEmpPosStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrEmpPosTimestamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.EmpTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position.PosName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnrEmpPosStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnrEmpPosTimestamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.EmpTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position.PosName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EnrEmpPosId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EnrEmpPosId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EnrEmpPosId })
+        </td>
+    </tr>
+}
+
+</table>

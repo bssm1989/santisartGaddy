@@ -1,0 +1,144 @@
+﻿@model IEnumerable<santisart_app.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<form class="example">
+    <div class="input-group mb-3">
+        <input type="text" id="postTitle" data-autocomplete="@Url.Action("Search","SurveyStudents")" placeholder="Search.." name="search">
+        <div class="input-group-addon">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+</form>
+
+    <script>
+        $(document).ready(function () {
+            
+            $("#postTitle").autocomplete({
+                source: '/SurveyStudents/Search'
+            });
+
+        });
+    </script>
+    
+    
+<div class="row">
+    <div class="table-responsive">
+        <table id="datatable1" class="table table-striped jambo_table bulk_action hover display nowrap" role="grid" aria-describedby="datatable_info">
+            <thead>
+                <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_lname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_birthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_idcard)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_psis_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_timestamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_ArabName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_OldSchool)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Studnet_Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_firsttime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_tel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.enrolladdress.tambol)
+            </th>
+            <th></th>
+            </tr>
+            <thead/>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_lname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_birthday)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_idcard)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_psis_id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_timestamp)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_ArabName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_OldSchool)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Studnet_Gender)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_firsttime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student_tel)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.enrolladdress.tambol)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Student_id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Student_id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Student_id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+    </div>
+<script>
+    $(document).ready(function() {
+        $('#datatable1').DataTable();
+} );
+</script>

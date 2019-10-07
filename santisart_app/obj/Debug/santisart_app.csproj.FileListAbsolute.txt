@@ -1,0 +1,455 @@
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\VBCSCompiler.exe
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.IO.Compression.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\santisart_app.dll.config
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\santisart_app.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\santisart_app.pdb
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\csc.exe
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\csc.exe.config
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\csc.rsp
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\csi.exe
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\csi.exe.config
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\csi.rsp
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.AppContext.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Console.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.IO.Compression.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.IO.Pipes.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Security.Claims.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Threading.Thread.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.ValueTuple.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Xml.XPath.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\vbc.exe
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\vbc.exe.config
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\vbc.rsp
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\VBCSCompiler.exe
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\Antlr3.Runtime.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\EntityFramework.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\EntityFramework.SqlServer.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\Newtonsoft.Json.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\Rotativa.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\RouteJs.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\RouteJs.Mvc5.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.Helpers.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.Mvc.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.Optimization.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.Razor.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.WebPages.Deployment.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.WebPages.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.WebPages.Razor.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\WebActivatorEx.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\WebGrease.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\WebHelpers.Mvc5.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\EntityFramework.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\EntityFramework.SqlServer.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\Antlr3.Runtime.pdb
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\Newtonsoft.Json.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.Helpers.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.Razor.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.WebPages.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.WebPages.Deployment.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.WebPages.Razor.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.Mvc.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\System.Web.Optimization.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\bin\WebHelpers.Mvc5.xml
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\obj\Debug\santisart_app.csprojAssemblyReference.cache
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\obj\Debug\santisart_app.csproj.CoreCompileInputs.cache
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\obj\Debug\santisart_app.csproj.CopyComplete
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\obj\Debug\santisart_app.dll
+C:\Users\mumee\Downloads\santisart_app\santisart_app\santisart_app\obj\Debug\santisart_app.pdb
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\santisart_app.dll.config
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\santisart_app.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\santisart_app.pdb
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\csc.exe
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\csc.exe.config
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\csc.rsp
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\csi.exe
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\csi.exe.config
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\csi.rsp
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.AppContext.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Console.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.ValueTuple.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Xml.XPath.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\vbc.exe
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\vbc.exe.config
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\vbc.rsp
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Antlr3.Runtime.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\EntityFramework.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\EntityFramework.SqlServer.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\EPPlus.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Newtonsoft.Json.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\NinjaNye.SearchExtensions.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Rotativa.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\RouteJs.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\RouteJs.Mvc5.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Spire.Common.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Spire.License.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Spire.Pdf.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Spire.XLS.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.Helpers.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.Mvc.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.Optimization.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.Razor.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.WebPages.Deployment.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.WebPages.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.WebPages.Razor.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\WebActivatorEx.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\WebGrease.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\WebHelpers.Mvc5.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Microsoft.mshtml.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\EntityFramework.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\EntityFramework.SqlServer.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\EPPlus.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Spire.Common.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Spire.License.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Spire.Pdf.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Spire.XLS.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Antlr3.Runtime.pdb
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Newtonsoft.Json.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.Helpers.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.Razor.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.WebPages.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.WebPages.Deployment.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.WebPages.Razor.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.Mvc.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\System.Web.Optimization.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\WebHelpers.Mvc5.xml
+C:\Users\mumee\source\repos\santisart_app\santisart_app\obj\Debug\santisart_app.csproj.CoreCompileInputs.cache
+C:\Users\mumee\source\repos\santisart_app\santisart_app\obj\Debug\santisart_app.csproj.CopyComplete
+C:\Users\mumee\source\repos\santisart_app\santisart_app\obj\Debug\santisart_app.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\obj\Debug\santisart_app.pdb
+C:\Users\mumee\source\repos\santisart_app\santisart_app\obj\Debug\santisart_app.csprojAssemblyReference.cache
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\Microsoft.Data.Tools.Components.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Net.Http.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Net.Sockets.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\mumee\source\repos\santisart_app\santisart_app\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\obj\Debug\santisart_app.csprojAssemblyReference.cache
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\obj\Debug\santisart_app.csproj.CoreCompileInputs.cache
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\santisart_app.dll.config
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\santisart_app.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\santisart_app.pdb
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csc.exe
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csc.exe.config
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csc.rsp
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csi.exe
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csi.exe.config
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csi.rsp
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.AppContext.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Collections.Immutable.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Console.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.Process.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Globalization.Calendars.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.Compression.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.FileSystem.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.Pipes.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Net.Http.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Net.Sockets.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Reflection.Metadata.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.AccessControl.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Claims.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Threading.Thread.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.ValueTuple.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Xml.XPath.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\vbc.exe
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\vbc.exe.config
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\vbc.rsp
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\VBCSCompiler.exe
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\VBCSCompiler.exe.config
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Antlr3.Runtime.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\EntityFramework.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\EntityFramework.SqlServer.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\EPPlus.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.Web.Infrastructure.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Newtonsoft.Json.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\NinjaNye.SearchExtensions.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Rotativa.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\RouteJs.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\RouteJs.Mvc5.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Spire.Common.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Spire.License.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Spire.Pdf.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Spire.XLS.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Helpers.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Mvc.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Optimization.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Razor.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.Deployment.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.Razor.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\WebActivatorEx.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\WebGrease.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\WebHelpers.Mvc5.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.mshtml.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.Build.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.Build.Framework.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Collections.Immutable.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.IO.Compression.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Threading.Tasks.Dataflow.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\EntityFramework.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\EntityFramework.SqlServer.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\EPPlus.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Newtonsoft.Json.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Spire.Common.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Spire.License.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Spire.Pdf.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Spire.XLS.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Helpers.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Mvc.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Razor.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.Deployment.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.Razor.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\WebHelpers.Mvc5.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\Antlr3.Runtime.pdb
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Optimization.xml
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\cs\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\de\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\en\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\es\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\fr\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\it\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\ja\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\ko\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\pl\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\pt-BR\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\ru\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\tr\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\zh-Hans\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\bin\zh-Hant\Microsoft.Build.resources.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\obj\Debug\santisart_app.csproj.CopyComplete
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\obj\Debug\santisart_app.dll
+C:\Xamarin\New folder\santisart_app (1)\santisart_app\santisart_app\obj\Debug\santisart_app.pdb
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\santisart_app.dll.config
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\santisart_app.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\santisart_app.pdb
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csc.exe
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csc.exe.config
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csc.rsp
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csi.exe
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csi.exe.config
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\csi.rsp
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.AppContext.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Collections.Immutable.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Console.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.Process.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Globalization.Calendars.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.Compression.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.FileSystem.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.IO.Pipes.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Net.Http.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Net.Sockets.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Reflection.Metadata.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.AccessControl.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Claims.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Threading.Thread.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.ValueTuple.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Xml.XPath.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\vbc.exe
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\vbc.exe.config
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\vbc.rsp
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\VBCSCompiler.exe
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\roslyn\VBCSCompiler.exe.config
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Antlr3.Runtime.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\EntityFramework.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\EntityFramework.SqlServer.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\EPPlus.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.Web.Infrastructure.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Newtonsoft.Json.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\NinjaNye.SearchExtensions.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Rotativa.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\RouteJs.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\RouteJs.Mvc5.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Spire.Common.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Spire.License.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Spire.Pdf.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Spire.XLS.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Helpers.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Mvc.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Optimization.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Razor.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.Deployment.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.Razor.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\WebActivatorEx.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\WebGrease.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\WebHelpers.Mvc5.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.mshtml.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.Build.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.Build.Framework.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Collections.Immutable.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.IO.Compression.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Threading.Tasks.Dataflow.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\EntityFramework.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\EntityFramework.SqlServer.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\EPPlus.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Newtonsoft.Json.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Spire.Common.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Spire.License.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Spire.Pdf.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Spire.XLS.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Helpers.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Mvc.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Razor.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.Deployment.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.WebPages.Razor.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\WebHelpers.Mvc5.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\Antlr3.Runtime.pdb
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\System.Web.Optimization.xml
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\cs\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\de\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\en\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\es\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\fr\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\it\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\ja\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\ko\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\pl\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\pt-BR\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\ru\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\tr\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\zh-Hans\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\bin\zh-Hant\Microsoft.Build.resources.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\obj\Debug\santisart_app.csprojAssemblyReference.cache
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\obj\Debug\santisart_app.csproj.CoreCompileInputs.cache
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\obj\Debug\santisart_app.csproj.CopyComplete
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\obj\Debug\santisart_app.dll
+C:\Xamarin\santisart_app (1)\santisart_app\santisart_app\obj\Debug\santisart_app.pdb

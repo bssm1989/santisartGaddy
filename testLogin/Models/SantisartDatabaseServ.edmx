@@ -1,0 +1,2329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="santisar_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="attendance">
+          <Key>
+            <PropertyRef Name="att_id" />
+          </Key>
+          <Property Name="att_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Student_id" Type="int" />
+          <Property Name="datestamp" Type="date" />
+          <Property Name="Staff_id" Type="int" />
+          <Property Name="qira_id" Type="int" />
+          <Property Name="page" Type="int" />
+          <Property Name="attday_id" Type="int" />
+          <Property Name="Timestamp_teach" Type="datetime" />
+        </EntityType>
+        <EntityType Name="attendance_day">
+          <Key>
+            <PropertyRef Name="attday_id" />
+          </Key>
+          <Property Name="attday_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="attday_date" Type="date" />
+          <Property Name="Timestamp" Type="datetime" />
+          <Property Name="status" Type="int" />
+          <Property Name="staff_id" Type="int" />
+          <Property Name="year_index" Type="int" />
+          <Property Name="Comment" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="Class_id" />
+          </Key>
+          <Property Name="Class_id" Type="int" Nullable="false" />
+          <Property Name="Status_class" Type="int" />
+          <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+          <Property Name="Teacher_id" Type="int" />
+          <Property Name="Class_room" Type="int" />
+          <Property Name="Class_year_index" Type="int" />
+        </EntityType>
+        <EntityType Name="ClassInSchool">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassShortName" Type="varchar" MaxLength="5" />
+          <Property Name="ClassName" Type="varchar" MaxLength="20" />
+          <Property Name="ClassID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContestEducationSchool">
+          <Key>
+            <PropertyRef Name="TypeContest_id" />
+          </Key>
+          <Property Name="TypeContest_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameContest" Type="char" MaxLength="255" />
+          <Property Name="Staff_id" Type="int" />
+          <Property Name="Timestamp" Type="datetime" />
+          <Property Name="group" Type="int" />
+          <Property Name="Day_contest" Type="date" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="CourseName" Type="varchar" MaxLength="100" />
+          <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseType" Type="varchar" MaxLength="50" />
+          <Property Name="CourseStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Depart_Id" />
+          </Key>
+          <Property Name="DepartName" Type="varchar" MaxLength="50" />
+          <Property Name="DepartStatus" Type="varchar" MaxLength="50" />
+          <Property Name="Depart_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpTitle" Type="varchar" MaxLength="20" />
+          <Property Name="EmpName" Type="varchar" MaxLength="150" />
+          <Property Name="EmpLname" Type="varchar" MaxLength="150" />
+          <Property Name="EmpBirthday" Type="date" />
+          <Property Name="EmpIdcard" Type="int" />
+          <Property Name="EmpPsis_id" Type="int" />
+          <Property Name="EmpStatus" Type="int" />
+          <Property Name="EmpTimestamp" Type="datetime" />
+          <Property Name="EmpTelephone" Type="char" MaxLength="20" />
+          <Property Name="Empbank_id" Type="char" MaxLength="30" />
+          <Property Name="EmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpGender" Type="int" />
+        </EntityType>
+        <EntityType Name="Enroll_EduContest">
+          <Key>
+            <PropertyRef Name="EduContest_id" />
+          </Key>
+          <Property Name="EduContest_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type_id" Type="int" />
+          <Property Name="Student_id" Type="int" />
+          <Property Name="Timestamp&#xD;&#xA;" Type="datetime" />
+          <Property Name="result" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Enroll_Emp_Pos">
+          <Key>
+            <PropertyRef Name="EnrEmpPosId" />
+          </Key>
+          <Property Name="Employee_id" Type="int" />
+          <Property Name="Position_id" Type="int" />
+          <Property Name="EnrEmpPosStatus" Type="int" />
+          <Property Name="EnrEmpPosTimestamp" Type="datetime" />
+          <Property Name="EnrEmpPosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Enroll_paid">
+          <Key>
+            <PropertyRef Name="Paid_id" />
+          </Key>
+          <Property Name="Paid_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Student_id" Type="int" />
+          <Property Name="Monthly_id" Type="int" />
+          <Property Name="Timestamp" Type="datetime" />
+          <Property Name="Staff_paid_id" Type="int" />
+          <Property Name="Student_type_id" Type="int" />
+          <Property Name="Paid" Type="int" />
+          <Property Name="Class_id" Type="int" />
+          <Property Name="Pay_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Enroll_pay">
+          <Key>
+            <PropertyRef Name="Pay_id" />
+          </Key>
+          <Property Name="Pay_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Paid_id" Type="int" />
+          <Property Name="Student_id" Type="int" />
+          <Property Name="Pay" Type="int" />
+          <Property Name="Staff_id" Type="int" />
+          <Property Name="Timestamp" Type="datetime" />
+          <Property Name="Id_token" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Enroll_student_all_event">
+          <Key>
+            <PropertyRef Name="Enrol_stu_class_id" />
+          </Key>
+          <Property Name="Student_id" Type="int" Nullable="false" />
+          <Property Name="Class_id" Type="int" Nullable="false" />
+          <Property Name="Enrol_stu_class_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Enroll_student_class">
+          <Key>
+            <PropertyRef Name="Enrol_stu_class_id" />
+          </Key>
+          <Property Name="Student_id" Type="int" />
+          <Property Name="Class_id" Type="int" />
+          <Property Name="Enrol_stu_class_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Timestamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EnrollCouse">
+          <Key>
+            <PropertyRef Name="EnrollCouseID" />
+          </Key>
+          <Property Name="CouseTxtId" Type="varchar" MaxLength="10" />
+          <Property Name="CouseId" Type="int" />
+          <Property Name="DepartId" Type="int" />
+          <Property Name="CouseTime" Type="int" />
+          <Property Name="CouseWeight&#xD;&#xA;" Type="real" />
+          <Property Name="ClassId" Type="int" />
+          <Property Name="semester&#xD;&#xA;" Type="int" />
+          <Property Name="EnrollCouseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CouseExcel" Type="varchar" MaxLength="15" />
+          <Property Name="ExcelAdress" Type="varchar" MaxLength="10" />
+          <Property Name="IndexSort" Type="int" />
+        </EntityType>
+        <EntityType Name="EnrollFamilyStudent">
+          <Key>
+            <PropertyRef Name="EnrollFamStudentId" />
+          </Key>
+          <Property Name="EnrollFamStudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentId" Type="int" />
+          <Property Name="FamilyId" Type="int" />
+          <Property Name="TypeFamily" Type="varchar" MaxLength="100" />
+          <Property Name="Timestamp" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="255" />
+          <Property Name="staftId" Type="int" />
+        </EntityType>
+        <EntityType Name="EnrollFinishStudent">
+          <Key>
+            <PropertyRef Name="FinishId" />
+          </Key>
+          <Property Name="StudentId" Type="int" />
+          <Property Name="FinishTypeId" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="TimeStam" Type="datetime" />
+          <Property Name="Staff" Type="int" />
+          <Property Name="FinishId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FinishCouse" Type="int" />
+          <Property Name="DayRequstFinish" Type="datetime" />
+          <Property Name="DayFinished" Type="datetime" />
+          <Property Name="DayToFinished" Type="datetime" />
+          <Property Name="Reader" Type="varchar" MaxLength="15" />
+          <Property Name="Physical" Type="varchar" MaxLength="15" />
+          <Property Name="Activity" Type="varchar" MaxLength="15" />
+          <Property Name="CouseBasic" Type="varchar" MaxLength="15" />
+          <Property Name="CouseAdd" Type="varchar" MaxLength="15" />
+          <Property Name="Reader2" Type="varchar" MaxLength="15" />
+          <Property Name="Activity2" Type="varchar" MaxLength="15" />
+          <Property Name="physical2" Type="varchar" MaxLength="15" />
+          <Property Name="ExcelForm" Type="int" />
+        </EntityType>
+        <EntityType Name="EnrollStudentCouse">
+          <Key>
+            <PropertyRef Name="EnrollStudentCouseId" />
+          </Key>
+          <Property Name="EnrollStudentCouseId" Type="int" Nullable="false" />
+          <Property Name="studentId" Type="int" />
+          <Property Name="EnrollCouseId" Type="int" />
+          <Property Name="Score" Type="float" />
+          <Property Name="Grade" Type="float" />
+          <Property Name="TeacerId" Type="int" />
+          <Property Name="Timestamp" Type="datetime" />
+          <Property Name="YearEdu" Type="int" />
+          <Property Name="Staff" Type="int" />
+          <Property Name="Semester" Type="int" />
+        </EntityType>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="FamilyId" />
+          </Key>
+          <Property Name="FamilyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fam_Title" Type="varchar" MaxLength="20" />
+          <Property Name="Fam_Name" Type="varchar" MaxLength="150" />
+          <Property Name="Fam_Lname" Type="varchar" MaxLength="150" />
+          <Property Name="birthday" Type="date" />
+          <Property Name="Career" Type="varchar" MaxLength="100" />
+          <Property Name="Income" Type="int" />
+          <Property Name="Education" Type="varchar" MaxLength="100" />
+          <Property Name="Timestam" Type="datetime" />
+          <Property Name="Staft" Type="int" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="Idcard" Type="varchar" MaxLength="13" />
+        </EntityType>
+        <EntityType Name="FinishType">
+          <Key>
+            <PropertyRef Name="FinishFormID" />
+          </Key>
+          <Property Name="FormName" Type="varchar" MaxLength="50" />
+          <Property Name="FormIndex" Type="int" />
+          <Property Name="FinishFormID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="Food_id" />
+          </Key>
+          <Property Name="Food_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Food_id_student" Type="varchar" MaxLength="6" />
+          <Property Name="Food_name" Type="varchar" MaxLength="50" />
+          <Property Name="Food_lastname" Type="varchar" MaxLength="50" />
+          <Property Name="Food_month_th" Type="varchar" MaxLength="20" />
+          <Property Name="Food_month_index" Type="varchar" MaxLength="2" />
+          <Property Name="Food_paid" Type="int" />
+          <Property Name="Food_full_paid" Type="int" />
+          <Property Name="Food_class" Type="varchar" MaxLength="5" />
+          <Property Name="Food_year" Type="varchar" MaxLength="4" />
+          <Property Name="Food_timesatamp" Type="datetime" />
+          <Property Name="Food_update" Type="varchar" MaxLength="50" />
+          <Property Name="Food_paid_id" Type="int" />
+          <Property Name="Food_title" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Monthly">
+          <Key>
+            <PropertyRef Name="Monthly_id" />
+          </Key>
+          <Property Name="Monthly_id" Type="int" Nullable="false" />
+          <Property Name="Month_name" Type="varchar" MaxLength="25" />
+          <Property Name="Month_year" Type="int" />
+          <Property Name="Month_course" Type="int" />
+          <Property Name="Month_status" Type="bit" />
+          <Property Name="Month_yearindex" Type="int" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="PosId" />
+          </Key>
+          <Property Name="PosName" Type="varchar" MaxLength="50" />
+          <Property Name="PosLevel" Type="int" />
+          <Property Name="PosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="Student_id" />
+          </Key>
+          <Property Name="Student_id" Type="int" Nullable="false" />
+          <Property Name="Student_title" Type="varchar" MaxLength="10" />
+          <Property Name="Student_name" Type="varchar" MaxLength="100" />
+          <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+          <Property Name="Student_birthday" Type="datetime" />
+          <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
+          <Property Name="Student_psis_id" Type="int" />
+          <Property Name="Student_status" Type="varchar" MaxLength="25" />
+          <Property Name="Student_timestamp" Type="datetime" />
+          <Property Name="Student_ArabName" Type="varchar" MaxLength="150" />
+          <Property Name="Student_OldSchool" Type="varchar" MaxLength="255" />
+          <Property Name="Studnet_Gender" Type="varchar" MaxLength="10" />
+          <Property Name="Student_firsttime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="YearEdu">
+          <Key>
+            <PropertyRef Name="YearEduId" />
+          </Key>
+          <Property Name="yearName" Type="int" />
+          <Property Name="YearEduId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'santisar_.santisart._enrollattstudent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="_enrollattstudent">
+          <Key>
+            <PropertyRef Name="Student_id" />
+          </Key>
+          <Property Name="Student_id" Type="int" Nullable="false" />
+          <Property Name="Student_title" Type="varchar" MaxLength="10" />
+          <Property Name="Student_name" Type="varchar" MaxLength="100" />
+          <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+          <Property Name="att_id" Type="int" />
+          <Property Name="Staff_id" Type="int" />
+          <Property Name="qira_id" Type="int" />
+          <Property Name="page" Type="int" />
+          <Property Name="attday_id" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'santisar_.santisart.EnrollStudentAttdance' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EnrollStudentAttdance">
+          <Key>
+            <PropertyRef Name="att_id" />
+          </Key>
+          <Property Name="att_id" Type="int" Nullable="false" />
+          <Property Name="qira_id" Type="int" />
+          <Property Name="page" Type="int" />
+          <Property Name="Staff_id" Type="int" />
+          <Property Name="Student_id" Type="int" />
+          <Property Name="Student_title" Type="varchar" MaxLength="10" />
+          <Property Name="Student_name" Type="varchar" MaxLength="100" />
+          <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+          <Property Name="Student_timestamp" Type="datetime" />
+          <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+          <Property Name="Class_room" Type="int" />
+          <Property Name="Class_year_index" Type="int" />
+          <Property Name="Teacher_id" Type="int" />
+          <Property Name="Class_id" Type="int" />
+          <Property Name="attday_id" Type="int" />
+          <Property Name="attday_date" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'santisar_.santisart.student2561' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="student2561">
+          <Key>
+            <PropertyRef Name="Student_id" />
+            <PropertyRef Name="Class_id" />
+          </Key>
+          <Property Name="Student_id" Type="int" Nullable="false" />
+          <Property Name="Student_title" Type="varchar" MaxLength="10" />
+          <Property Name="Student_name" Type="varchar" MaxLength="100" />
+          <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+          <Property Name="Student_birthday" Type="datetime" />
+          <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
+          <Property Name="Student_psis_id" Type="int" />
+          <Property Name="Student_status" Type="varchar" MaxLength="25" />
+          <Property Name="Student_timestamp" Type="datetime" />
+          <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+          <Property Name="Class_room" Type="int" />
+          <Property Name="Class_year_index" Type="int" />
+          <Property Name="Teacher_id" Type="int" />
+          <Property Name="Class_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'santisar_.santisart.student2561_copy1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="student2561_copy1">
+          <Key>
+            <PropertyRef Name="Student_id" />
+            <PropertyRef Name="Class_id" />
+          </Key>
+          <Property Name="Student_id" Type="int" Nullable="false" />
+          <Property Name="Student_title" Type="varchar" MaxLength="10" />
+          <Property Name="Student_name" Type="varchar" MaxLength="100" />
+          <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+          <Property Name="Student_birthday" Type="datetime" />
+          <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
+          <Property Name="Student_psis_id" Type="int" />
+          <Property Name="Student_status" Type="varchar" MaxLength="25" />
+          <Property Name="Student_timestamp" Type="datetime" />
+          <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+          <Property Name="Class_room" Type="int" />
+          <Property Name="Class_year_index" Type="int" />
+          <Property Name="Teacher_id" Type="int" />
+          <Property Name="Class_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'santisar_.santisart.student2561_food' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="student2561_food">
+          <Key>
+            <PropertyRef Name="Student_id" />
+            <PropertyRef Name="Class_id" />
+          </Key>
+          <Property Name="Student_id" Type="int" Nullable="false" />
+          <Property Name="Student_title" Type="varchar" MaxLength="10" />
+          <Property Name="Student_name" Type="varchar" MaxLength="100" />
+          <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+          <Property Name="Student_birthday" Type="datetime" />
+          <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
+          <Property Name="Student_psis_id" Type="int" />
+          <Property Name="Student_status" Type="varchar" MaxLength="25" />
+          <Property Name="Student_timestamp" Type="datetime" />
+          <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+          <Property Name="Class_room" Type="int" />
+          <Property Name="Class_year_index" Type="int" />
+          <Property Name="Teacher_id" Type="int" />
+          <Property Name="Class_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'santisar_.santisart.studentEduContest2561' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="studentEduContest2561">
+          <Key>
+            <PropertyRef Name="Student_id" />
+            <PropertyRef Name="Class_id" />
+            <PropertyRef Name="TypeContest_id" />
+            <PropertyRef Name="EduContest_id" />
+          </Key>
+          <Property Name="Student_id" Type="int" Nullable="false" />
+          <Property Name="Student_title" Type="varchar" MaxLength="10" />
+          <Property Name="Student_name" Type="varchar" MaxLength="100" />
+          <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+          <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+          <Property Name="Class_room" Type="int" />
+          <Property Name="Class_year_index" Type="int" />
+          <Property Name="Teacher_id" Type="int" />
+          <Property Name="Class_id" Type="int" Nullable="false" />
+          <Property Name="TypeContest_id" Type="int" Nullable="false" />
+          <Property Name="NameContest" Type="char" MaxLength="255" />
+          <Property Name="Staff_id" Type="int" />
+          <Property Name="Timestamp" Type="datetime" />
+          <Property Name="group" Type="int" />
+          <Property Name="Day_contest" Type="date" />
+          <Property Name="EduContest_id" Type="int" Nullable="false" />
+          <Property Name="result" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'santisar_.santisart.View_Couse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Couse">
+          <Key>
+            <PropertyRef Name="EnrollCouseID" />
+            <PropertyRef Name="EnrollStudentCouseId" />
+            <PropertyRef Name="EnrEmpPosId" />
+            <PropertyRef Name="EmpId" />
+            <PropertyRef Name="Student_id" />
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="CouseTxtId" Type="varchar" MaxLength="10" />
+          <Property Name="DepartId" Type="int" />
+          <Property Name="CouseTime" Type="int" />
+          <Property Name="CouseWeight&#xD;&#xA;" Type="real" />
+          <Property Name="ClassId" Type="int" />
+          <Property Name="semester&#xD;&#xA;" Type="int" />
+          <Property Name="EnrollCouseID" Type="int" Nullable="false" />
+          <Property Name="CouseExcel" Type="varchar" MaxLength="15" />
+          <Property Name="CouseId" Type="int" />
+          <Property Name="CourseName" Type="varchar" MaxLength="100" />
+          <Property Name="CourseType" Type="varchar" MaxLength="50" />
+          <Property Name="CourseStatus" Type="int" />
+          <Property Name="EnrollStudentCouseId" Type="int" Nullable="false" />
+          <Property Name="Score" Type="float" />
+          <Property Name="Grade" Type="float" />
+          <Property Name="Timestamp" Type="datetime" />
+          <Property Name="YearEdu" Type="int" />
+          <Property Name="Staff" Type="int" />
+          <Property Name="Semester" Type="int" />
+          <Property Name="Student_title" Type="varchar" MaxLength="10" />
+          <Property Name="Student_name" Type="varchar" MaxLength="100" />
+          <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+          <Property Name="Student_birthday" Type="datetime" />
+          <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
+          <Property Name="Student_psis_id" Type="int" />
+          <Property Name="Student_status" Type="varchar" MaxLength="25" />
+          <Property Name="Student_timestamp" Type="datetime" />
+          <Property Name="Employee_id" Type="int" />
+          <Property Name="Position_id" Type="int" />
+          <Property Name="EnrEmpPosStatus" Type="int" />
+          <Property Name="EnrEmpPosTimestamp" Type="datetime" />
+          <Property Name="EnrEmpPosId" Type="int" Nullable="false" />
+          <Property Name="EmpTitle" Type="varchar" MaxLength="20" />
+          <Property Name="EmpName" Type="varchar" MaxLength="150" />
+          <Property Name="EmpLname" Type="varchar" MaxLength="150" />
+          <Property Name="EmpBirthday" Type="date" />
+          <Property Name="EmpIdcard" Type="int" />
+          <Property Name="EmpPsis_id" Type="int" />
+          <Property Name="EmpStatus" Type="int" />
+          <Property Name="EmpTimestamp" Type="datetime" />
+          <Property Name="EmpTelephone" Type="char" MaxLength="20" />
+          <Property Name="Empbank_id" Type="char" MaxLength="30" />
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="EmpGender" Type="int" />
+          <Property Name="Student_id" Type="int" Nullable="false" />
+          <Property Name="CourseId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'santisar_.santisart.ViewEmpPos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewEmpPos">
+          <Key>
+            <PropertyRef Name="EnrEmpPosId" />
+          </Key>
+          <Property Name="EmpTitle" Type="varchar" MaxLength="20" />
+          <Property Name="EmpName" Type="varchar" MaxLength="150" />
+          <Property Name="EmpLname" Type="varchar" MaxLength="150" />
+          <Property Name="EmpBirthday" Type="date" />
+          <Property Name="EmpIdcard" Type="int" />
+          <Property Name="EmpPsis_id" Type="int" />
+          <Property Name="EmpStatus" Type="int" />
+          <Property Name="EmpTimestamp" Type="datetime" />
+          <Property Name="EmpTelephone" Type="char" MaxLength="20" />
+          <Property Name="Empbank_id" Type="char" MaxLength="30" />
+          <Property Name="EmpId" Type="int" />
+          <Property Name="EmpGender" Type="int" />
+          <Property Name="EnrEmpPosId" Type="int" Nullable="false" />
+          <Property Name="EnrEmpPosStatus" Type="int" />
+          <Property Name="EnrEmpPosTimestamp" Type="datetime" />
+          <Property Name="PosName" Type="varchar" MaxLength="50" />
+          <Property Name="PosLevel" Type="int" />
+          <Property Name="PosId" Type="int" />
+        </EntityType>
+        <Association Name="FK_class1">
+          <End Role="ClassInSchool" Type="Self.ClassInSchool" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassInSchool">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="EnrollCouse">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_couse1">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseId" />
+            </Principal>
+            <Dependent Role="EnrollCouse">
+              <PropertyRef Name="CouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_depart1">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Depart_Id" />
+            </Principal>
+            <Dependent Role="EnrollCouse">
+              <PropertyRef Name="DepartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_emp_enr">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Enroll_Emp_Pos" Type="Self.Enroll_Emp_Pos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="Enroll_Emp_Pos">
+              <PropertyRef Name="Employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_enr_pos">
+          <End Role="Position" Type="Self.Position" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Enroll_Emp_Pos" Type="Self.Enroll_Emp_Pos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="PosId" />
+            </Principal>
+            <Dependent Role="Enroll_Emp_Pos">
+              <PropertyRef Name="Position_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_EnrCouseId">
+          <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnrollCouse">
+              <PropertyRef Name="EnrollCouseID" />
+            </Principal>
+            <Dependent Role="EnrollStudentCouse">
+              <PropertyRef Name="EnrollCouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_enroll_fam">
+          <End Role="Family" Type="Self.Family" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EnrollFamilyStudent" Type="Self.EnrollFamilyStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Family">
+              <PropertyRef Name="FamilyId" />
+            </Principal>
+            <Dependent Role="EnrollFamilyStudent">
+              <PropertyRef Name="FamilyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_enroll_Studnet">
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EnrollFamilyStudent" Type="Self.EnrollFamilyStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="Student_id" />
+            </Principal>
+            <Dependent Role="EnrollFamilyStudent">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_finish_student">
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EnrollFinishStudent" Type="Self.EnrollFinishStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="Student_id" />
+            </Principal>
+            <Dependent Role="EnrollFinishStudent">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_finsh_form">
+          <End Role="FinishType" Type="Self.FinishType" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EnrollFinishStudent" Type="Self.EnrollFinishStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinishType">
+              <PropertyRef Name="FinishFormID" />
+            </Principal>
+            <Dependent Role="EnrollFinishStudent">
+              <PropertyRef Name="FinishTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_student">
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="Student_id" />
+            </Principal>
+            <Dependent Role="EnrollStudentCouse">
+              <PropertyRef Name="studentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_TeacherId">
+          <End Role="Enroll_Emp_Pos" Type="Self.Enroll_Emp_Pos" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Enroll_Emp_Pos">
+              <PropertyRef Name="EnrEmpPosId" />
+            </Principal>
+            <Dependent Role="EnrollStudentCouse">
+              <PropertyRef Name="TeacerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="santisar_ModelStoreContainer">
+          <EntitySet Name="attendance" EntityType="Self.attendance" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="attendance_day" EntityType="Self.attendance_day" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Class" EntityType="Self.Class" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="ClassInSchool" EntityType="Self.ClassInSchool" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="ContestEducationSchool" EntityType="Self.ContestEducationSchool" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Enroll_EduContest" EntityType="Self.Enroll_EduContest" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Enroll_Emp_Pos" EntityType="Self.Enroll_Emp_Pos" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Enroll_paid" EntityType="Self.Enroll_paid" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Enroll_pay" EntityType="Self.Enroll_pay" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Enroll_student_all_event" EntityType="Self.Enroll_student_all_event" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Enroll_student_class" EntityType="Self.Enroll_student_class" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="EnrollCouse" EntityType="Self.EnrollCouse" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="EnrollFamilyStudent" EntityType="Self.EnrollFamilyStudent" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="EnrollFinishStudent" EntityType="Self.EnrollFinishStudent" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="EnrollStudentCouse" EntityType="Self.EnrollStudentCouse" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Family" EntityType="Self.Family" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="FinishType" EntityType="Self.FinishType" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Food" EntityType="Self.Food" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Monthly" EntityType="Self.Monthly" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="Students" EntityType="Self.Students" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="YearEdu" EntityType="Self.YearEdu" Schema="santisart" store:Type="Tables" />
+          <EntitySet Name="_enrollattstudent" EntityType="Self._enrollattstudent" store:Type="Views" store:Schema="santisart">
+            <DefiningQuery>SELECT 
+    [_enrollattstudent].[Student_id] AS [Student_id], 
+    [_enrollattstudent].[Student_title] AS [Student_title], 
+    [_enrollattstudent].[Student_name] AS [Student_name], 
+    [_enrollattstudent].[Student_lname] AS [Student_lname], 
+    [_enrollattstudent].[att_id] AS [att_id], 
+    [_enrollattstudent].[Staff_id] AS [Staff_id], 
+    [_enrollattstudent].[qira_id] AS [qira_id], 
+    [_enrollattstudent].[page] AS [page], 
+    [_enrollattstudent].[attday_id] AS [attday_id]
+    FROM [santisart].[_enrollattstudent] AS [_enrollattstudent]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EnrollStudentAttdance" EntityType="Self.EnrollStudentAttdance" store:Type="Views" store:Schema="santisart">
+            <DefiningQuery>SELECT 
+    [EnrollStudentAttdance].[att_id] AS [att_id], 
+    [EnrollStudentAttdance].[qira_id] AS [qira_id], 
+    [EnrollStudentAttdance].[page] AS [page], 
+    [EnrollStudentAttdance].[Staff_id] AS [Staff_id], 
+    [EnrollStudentAttdance].[Student_id] AS [Student_id], 
+    [EnrollStudentAttdance].[Student_title] AS [Student_title], 
+    [EnrollStudentAttdance].[Student_name] AS [Student_name], 
+    [EnrollStudentAttdance].[Student_lname] AS [Student_lname], 
+    [EnrollStudentAttdance].[Student_timestamp] AS [Student_timestamp], 
+    [EnrollStudentAttdance].[Class_name_id] AS [Class_name_id], 
+    [EnrollStudentAttdance].[Class_room] AS [Class_room], 
+    [EnrollStudentAttdance].[Class_year_index] AS [Class_year_index], 
+    [EnrollStudentAttdance].[Teacher_id] AS [Teacher_id], 
+    [EnrollStudentAttdance].[Class_id] AS [Class_id], 
+    [EnrollStudentAttdance].[attday_id] AS [attday_id], 
+    [EnrollStudentAttdance].[attday_date] AS [attday_date]
+    FROM [santisart].[EnrollStudentAttdance] AS [EnrollStudentAttdance]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="student2561" EntityType="Self.student2561" store:Type="Views" store:Schema="santisart">
+            <DefiningQuery>SELECT 
+    [student2561].[Student_id] AS [Student_id], 
+    [student2561].[Student_title] AS [Student_title], 
+    [student2561].[Student_name] AS [Student_name], 
+    [student2561].[Student_lname] AS [Student_lname], 
+    [student2561].[Student_birthday] AS [Student_birthday], 
+    [student2561].[Student_idcard] AS [Student_idcard], 
+    [student2561].[Student_psis_id] AS [Student_psis_id], 
+    [student2561].[Student_status] AS [Student_status], 
+    [student2561].[Student_timestamp] AS [Student_timestamp], 
+    [student2561].[Class_name_id] AS [Class_name_id], 
+    [student2561].[Class_room] AS [Class_room], 
+    [student2561].[Class_year_index] AS [Class_year_index], 
+    [student2561].[Teacher_id] AS [Teacher_id], 
+    [student2561].[Class_id] AS [Class_id]
+    FROM [santisart].[student2561] AS [student2561]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="student2561_copy1" EntityType="Self.student2561_copy1" store:Type="Views" store:Schema="santisart">
+            <DefiningQuery>SELECT 
+    [student2561_copy1].[Student_id] AS [Student_id], 
+    [student2561_copy1].[Student_title] AS [Student_title], 
+    [student2561_copy1].[Student_name] AS [Student_name], 
+    [student2561_copy1].[Student_lname] AS [Student_lname], 
+    [student2561_copy1].[Student_birthday] AS [Student_birthday], 
+    [student2561_copy1].[Student_idcard] AS [Student_idcard], 
+    [student2561_copy1].[Student_psis_id] AS [Student_psis_id], 
+    [student2561_copy1].[Student_status] AS [Student_status], 
+    [student2561_copy1].[Student_timestamp] AS [Student_timestamp], 
+    [student2561_copy1].[Class_name_id] AS [Class_name_id], 
+    [student2561_copy1].[Class_room] AS [Class_room], 
+    [student2561_copy1].[Class_year_index] AS [Class_year_index], 
+    [student2561_copy1].[Teacher_id] AS [Teacher_id], 
+    [student2561_copy1].[Class_id] AS [Class_id]
+    FROM [santisart].[student2561_copy1] AS [student2561_copy1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="student2561_food" EntityType="Self.student2561_food" store:Type="Views" store:Schema="santisart">
+            <DefiningQuery>SELECT 
+    [student2561_food].[Student_id] AS [Student_id], 
+    [student2561_food].[Student_title] AS [Student_title], 
+    [student2561_food].[Student_name] AS [Student_name], 
+    [student2561_food].[Student_lname] AS [Student_lname], 
+    [student2561_food].[Student_birthday] AS [Student_birthday], 
+    [student2561_food].[Student_idcard] AS [Student_idcard], 
+    [student2561_food].[Student_psis_id] AS [Student_psis_id], 
+    [student2561_food].[Student_status] AS [Student_status], 
+    [student2561_food].[Student_timestamp] AS [Student_timestamp], 
+    [student2561_food].[Class_name_id] AS [Class_name_id], 
+    [student2561_food].[Class_room] AS [Class_room], 
+    [student2561_food].[Class_year_index] AS [Class_year_index], 
+    [student2561_food].[Teacher_id] AS [Teacher_id], 
+    [student2561_food].[Class_id] AS [Class_id]
+    FROM [santisart].[student2561_food] AS [student2561_food]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="studentEduContest2561" EntityType="Self.studentEduContest2561" store:Type="Views" store:Schema="santisart">
+            <DefiningQuery>SELECT 
+    [studentEduContest2561].[Student_id] AS [Student_id], 
+    [studentEduContest2561].[Student_title] AS [Student_title], 
+    [studentEduContest2561].[Student_name] AS [Student_name], 
+    [studentEduContest2561].[Student_lname] AS [Student_lname], 
+    [studentEduContest2561].[Class_name_id] AS [Class_name_id], 
+    [studentEduContest2561].[Class_room] AS [Class_room], 
+    [studentEduContest2561].[Class_year_index] AS [Class_year_index], 
+    [studentEduContest2561].[Teacher_id] AS [Teacher_id], 
+    [studentEduContest2561].[Class_id] AS [Class_id], 
+    [studentEduContest2561].[TypeContest_id] AS [TypeContest_id], 
+    [studentEduContest2561].[NameContest] AS [NameContest], 
+    [studentEduContest2561].[Staff_id] AS [Staff_id], 
+    [studentEduContest2561].[Timestamp] AS [Timestamp], 
+    [studentEduContest2561].[group] AS [group], 
+    [studentEduContest2561].[Day_contest] AS [Day_contest], 
+    [studentEduContest2561].[EduContest_id] AS [EduContest_id], 
+    [studentEduContest2561].[result] AS [result]
+    FROM [santisart].[studentEduContest2561] AS [studentEduContest2561]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Couse" EntityType="Self.View_Couse" store:Type="Views" store:Schema="santisart">
+            <DefiningQuery>SELECT 
+    [View_Couse].[CouseTxtId] AS [CouseTxtId], 
+    [View_Couse].[DepartId] AS [DepartId], 
+    [View_Couse].[CouseTime] AS [CouseTime], 
+    [View_Couse].[CouseWeight
+] AS [CouseWeight
+], 
+    [View_Couse].[ClassId] AS [ClassId], 
+    [View_Couse].[semester
+] AS [semester
+], 
+    [View_Couse].[EnrollCouseID] AS [EnrollCouseID], 
+    [View_Couse].[CouseExcel] AS [CouseExcel], 
+    [View_Couse].[CouseId] AS [CouseId], 
+    [View_Couse].[CourseName] AS [CourseName], 
+    [View_Couse].[CourseType] AS [CourseType], 
+    [View_Couse].[CourseStatus] AS [CourseStatus], 
+    [View_Couse].[EnrollStudentCouseId] AS [EnrollStudentCouseId], 
+    [View_Couse].[Score] AS [Score], 
+    [View_Couse].[Grade] AS [Grade], 
+    [View_Couse].[Timestamp] AS [Timestamp], 
+    [View_Couse].[YearEdu] AS [YearEdu], 
+    [View_Couse].[Staff] AS [Staff], 
+    [View_Couse].[Semester] AS [Semester], 
+    [View_Couse].[Student_title] AS [Student_title], 
+    [View_Couse].[Student_name] AS [Student_name], 
+    [View_Couse].[Student_lname] AS [Student_lname], 
+    [View_Couse].[Student_birthday] AS [Student_birthday], 
+    [View_Couse].[Student_idcard] AS [Student_idcard], 
+    [View_Couse].[Student_psis_id] AS [Student_psis_id], 
+    [View_Couse].[Student_status] AS [Student_status], 
+    [View_Couse].[Student_timestamp] AS [Student_timestamp], 
+    [View_Couse].[Employee_id] AS [Employee_id], 
+    [View_Couse].[Position_id] AS [Position_id], 
+    [View_Couse].[EnrEmpPosStatus] AS [EnrEmpPosStatus], 
+    [View_Couse].[EnrEmpPosTimestamp] AS [EnrEmpPosTimestamp], 
+    [View_Couse].[EnrEmpPosId] AS [EnrEmpPosId], 
+    [View_Couse].[EmpTitle] AS [EmpTitle], 
+    [View_Couse].[EmpName] AS [EmpName], 
+    [View_Couse].[EmpLname] AS [EmpLname], 
+    [View_Couse].[EmpBirthday] AS [EmpBirthday], 
+    [View_Couse].[EmpIdcard] AS [EmpIdcard], 
+    [View_Couse].[EmpPsis_id] AS [EmpPsis_id], 
+    [View_Couse].[EmpStatus] AS [EmpStatus], 
+    [View_Couse].[EmpTimestamp] AS [EmpTimestamp], 
+    [View_Couse].[EmpTelephone] AS [EmpTelephone], 
+    [View_Couse].[Empbank_id] AS [Empbank_id], 
+    [View_Couse].[EmpId] AS [EmpId], 
+    [View_Couse].[EmpGender] AS [EmpGender], 
+    [View_Couse].[Student_id] AS [Student_id], 
+    [View_Couse].[CourseId] AS [CourseId]
+    FROM [santisart].[View_Couse] AS [View_Couse]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewEmpPos" EntityType="Self.ViewEmpPos" store:Type="Views" store:Schema="santisart">
+            <DefiningQuery>SELECT 
+    [ViewEmpPos].[EmpTitle] AS [EmpTitle], 
+    [ViewEmpPos].[EmpName] AS [EmpName], 
+    [ViewEmpPos].[EmpLname] AS [EmpLname], 
+    [ViewEmpPos].[EmpBirthday] AS [EmpBirthday], 
+    [ViewEmpPos].[EmpIdcard] AS [EmpIdcard], 
+    [ViewEmpPos].[EmpPsis_id] AS [EmpPsis_id], 
+    [ViewEmpPos].[EmpStatus] AS [EmpStatus], 
+    [ViewEmpPos].[EmpTimestamp] AS [EmpTimestamp], 
+    [ViewEmpPos].[EmpTelephone] AS [EmpTelephone], 
+    [ViewEmpPos].[Empbank_id] AS [Empbank_id], 
+    [ViewEmpPos].[EmpId] AS [EmpId], 
+    [ViewEmpPos].[EmpGender] AS [EmpGender], 
+    [ViewEmpPos].[EnrEmpPosId] AS [EnrEmpPosId], 
+    [ViewEmpPos].[EnrEmpPosStatus] AS [EnrEmpPosStatus], 
+    [ViewEmpPos].[EnrEmpPosTimestamp] AS [EnrEmpPosTimestamp], 
+    [ViewEmpPos].[PosName] AS [PosName], 
+    [ViewEmpPos].[PosLevel] AS [PosLevel], 
+    [ViewEmpPos].[PosId] AS [PosId]
+    FROM [santisart].[ViewEmpPos] AS [ViewEmpPos]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_class1" Association="Self.FK_class1">
+            <End Role="ClassInSchool" EntitySet="ClassInSchool" />
+            <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_couse1" Association="Self.Fk_couse1">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_depart1" Association="Self.FK_depart1">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_emp_enr" Association="Self.Fk_emp_enr">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_enr_pos" Association="Self.Fk_enr_pos">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_EnrCouseId" Association="Self.Fk_EnrCouseId">
+            <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+            <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_enroll_fam" Association="Self.Fk_enroll_fam">
+            <End Role="Family" EntitySet="Family" />
+            <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudent" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_enroll_Studnet" Association="Self.Fk_enroll_Studnet">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudent" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_finish_student" Association="Self.Fk_finish_student">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudent" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_finsh_form" Association="Self.Fk_finsh_form">
+            <End Role="FinishType" EntitySet="FinishType" />
+            <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudent" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_student" Association="Self.Fk_student">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_TeacherId" Association="Self.Fk_TeacherId">
+            <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
+            <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="santisar_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="santisar_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Enroll_paid" EntityType="santisar_Model.Enroll_paid" />
+          <EntitySet Name="Enroll_student_class" EntityType="santisar_Model.Enroll_student_class" />
+          <EntitySet Name="Food" EntityType="santisar_Model.Food" />
+          <EntitySet Name="Monthly" EntityType="santisar_Model.Monthly" />
+          <EntitySet Name="Students" EntityType="santisar_Model.Students" />
+          <EntitySet Name="Enroll_pay" EntityType="santisar_Model.Enroll_pay" />
+          <EntitySet Name="attendance_day" EntityType="santisar_Model.attendance_day" />
+          <EntitySet Name="Enroll_student_all_event" EntityType="santisar_Model.Enroll_student_all_event" />
+          <EntitySet Name="student2561" EntityType="santisar_Model.student2561" />
+          <EntitySet Name="attendance" EntityType="santisar_Model.attendance" />
+          <EntitySet Name="C_enrollattstudent" EntityType="santisar_Model.C_enrollattstudent" />
+          <EntitySet Name="student2561_copy1" EntityType="santisar_Model.student2561_copy1" />
+          <EntitySet Name="EnrollStudentAttdance" EntityType="santisar_Model.EnrollStudentAttdance" />
+          <EntitySet Name="Class" EntityType="santisar_Model.Class" />
+          <EntitySet Name="student2561_food" EntityType="santisar_Model.student2561_food" />
+          <EntitySet Name="ContestEducationSchool" EntityType="santisar_Model.ContestEducationSchool" />
+          <EntitySet Name="Enroll_EduContest" EntityType="santisar_Model.Enroll_EduContest" />
+          <EntitySet Name="studentEduContest2561" EntityType="santisar_Model.studentEduContest2561" />
+          <EntitySet Name="ViewEmpPos" EntityType="santisar_Model.ViewEmpPos" />
+          <EntitySet Name="Employee" EntityType="santisar_Model.Employee" />
+          <EntitySet Name="Enroll_Emp_Pos" EntityType="santisar_Model.Enroll_Emp_Pos" />
+          <EntitySet Name="Position" EntityType="santisar_Model.Position" />
+          <AssociationSet Name="Fk_emp_enr" Association="santisar_Model.Fk_emp_enr">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_enr_pos" Association="santisar_Model.Fk_enr_pos">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
+          </AssociationSet>
+          <EntitySet Name="ClassInSchool" EntityType="santisar_Model.ClassInSchool" />
+          <EntitySet Name="Course" EntityType="santisar_Model.Course" />
+          <EntitySet Name="Department" EntityType="santisar_Model.Department" />
+          <EntitySet Name="EnrollCouse" EntityType="santisar_Model.EnrollCouse" />
+          <EntitySet Name="YearEdu" EntityType="santisar_Model.YearEdu" />
+          <AssociationSet Name="FK_class1" Association="santisar_Model.FK_class1">
+            <End Role="ClassInSchool" EntitySet="ClassInSchool" />
+            <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_couse1" Association="santisar_Model.Fk_couse1">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_depart1" Association="santisar_Model.FK_depart1">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+          </AssociationSet>
+          <EntitySet Name="EnrollStudentCouse" EntityType="santisar_Model.EnrollStudentCouse" />
+          <EntitySet Name="View_Couse" EntityType="santisar_Model.View_Couse" />
+          <AssociationSet Name="Fk_TeacherId" Association="santisar_Model.Fk_TeacherId">
+            <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
+            <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_EnrCouseId" Association="santisar_Model.Fk_EnrCouseId">
+            <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+            <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_student" Association="santisar_Model.Fk_student">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
+          </AssociationSet>
+          <EntitySet Name="EnrollFinishStudent" EntityType="santisar_Model.EnrollFinishStudent" />
+          <EntitySet Name="FinishType" EntityType="santisar_Model.FinishType" />
+          <AssociationSet Name="Fk_finish_student" Association="santisar_Model.Fk_finish_student">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudent" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_finsh_form" Association="santisar_Model.Fk_finsh_form">
+            <End Role="FinishType" EntitySet="FinishType" />
+            <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudent" />
+          </AssociationSet>
+          <EntitySet Name="EnrollFamilyStudent" EntityType="santisar_Model.EnrollFamilyStudent" />
+          <EntitySet Name="Family" EntityType="santisar_Model.Family" />
+          <AssociationSet Name="Fk_enroll_fam" Association="santisar_Model.Fk_enroll_fam">
+            <End Role="Family" EntitySet="Family" />
+            <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudent" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_enroll_Studnet" Association="santisar_Model.Fk_enroll_Studnet">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudent" />
+          </AssociationSet>
+          <EntitySet Name="UserProfile" EntityType="santisar_Model.UserProfile" />
+          </EntityContainer>
+        <EntityType Name="Enroll_paid">
+          <Key>
+            <PropertyRef Name="Paid_id" />
+          </Key>
+          <Property Name="Paid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Student_id" Type="Int32" />
+          <Property Name="Monthly_id" Type="Int32" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+          <Property Name="Staff_paid_id" Type="Int32" />
+          <Property Name="Student_type_id" Type="Int32" />
+          <Property Name="Paid" Type="Int32" />
+          <Property Name="Class_id" Type="Int32" />
+          <Property Name="Pay_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Enroll_student_class">
+          <Key>
+            <PropertyRef Name="Enrol_stu_class_id" />
+          </Key>
+          <Property Name="Student_id" Type="Int32" />
+          <Property Name="Class_id" Type="Int32" />
+          <Property Name="Enrol_stu_class_id" Type="Int32" Nullable="false" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="Food_id" />
+          </Key>
+          <Property Name="Food_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Food_id_student" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Food_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Food_lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Food_month_th" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Food_month_index" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Food_paid" Type="Int32" />
+          <Property Name="Food_full_paid" Type="Int32" />
+          <Property Name="Food_class" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Food_year" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Food_timesatamp" Type="DateTime" Precision="3" />
+          <Property Name="Food_update" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Food_paid_id" Type="Int32" />
+          <Property Name="Food_title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Monthly">
+          <Key>
+            <PropertyRef Name="Monthly_id" />
+          </Key>
+          <Property Name="Monthly_id" Type="Int32" Nullable="false" />
+          <Property Name="Month_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Month_year" Type="Int32" />
+          <Property Name="Month_course" Type="Int32" />
+          <Property Name="Month_status" Type="Boolean" />
+          <Property Name="Month_yearindex" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="Student_id" />
+          </Key>
+          <Property Name="Student_id" Type="Int32" Nullable="false" />
+          <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+          <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Student_psis_id" Type="Int32" />
+          <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="EnrollStudentCouse" Relationship="santisar_Model.Fk_student" FromRole="Students" ToRole="EnrollStudentCouse" />
+          <NavigationProperty Name="EnrollFinishStudent" Relationship="santisar_Model.Fk_finish_student" FromRole="Students" ToRole="EnrollFinishStudent" />
+          <Property Name="Student_ArabName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Student_OldSchool" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Studnet_Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Student_firsttime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="EnrollFamilyStudent" Relationship="santisar_Model.Fk_enroll_Studnet" FromRole="Students" ToRole="EnrollFamilyStudent" />
+        </EntityType>
+        <EntityType Name="Enroll_pay">
+          <Key>
+            <PropertyRef Name="Pay_id" />
+          </Key>
+          <Property Name="Pay_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Paid_id" Type="Int32" />
+          <Property Name="Student_id" Type="Int32" />
+          <Property Name="Pay" Type="Int32" />
+          <Property Name="Staff_id" Type="Int32" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+          <Property Name="Id_token" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="attendance_day">
+          <Key>
+            <PropertyRef Name="attday_id" />
+          </Key>
+          <Property Name="attday_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="attday_date" Type="DateTime" Precision="0" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="staff_id" Type="Int32" />
+          <Property Name="year_index" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Enroll_student_all_event">
+          <Key>
+            <PropertyRef Name="Enrol_stu_class_id" />
+          </Key>
+          <Property Name="Student_id" Type="Int32" Nullable="false" />
+          <Property Name="Class_id" Type="Int32" Nullable="false" />
+          <Property Name="Enrol_stu_class_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="student2561">
+          <Key>
+            <PropertyRef Name="Student_id" />
+            <PropertyRef Name="Class_id" />
+          </Key>
+          <Property Name="Student_id" Type="Int32" Nullable="false" />
+          <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+          <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Student_psis_id" Type="Int32" />
+          <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+          <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Class_room" Type="Int32" />
+          <Property Name="Class_year_index" Type="Int32" />
+          <Property Name="Teacher_id" Type="Int32" />
+          <Property Name="Class_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="attendance">
+          <Key>
+            <PropertyRef Name="att_id" />
+          </Key>
+          <Property Name="att_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Student_id" Type="Int32" />
+          <Property Name="datestamp" Type="DateTime" Precision="0" />
+          <Property Name="Staff_id" Type="Int32" />
+          <Property Name="qira_id" Type="Int32" />
+          <Property Name="page" Type="Int32" />
+          <Property Name="attday_id" Type="Int32" />
+          <Property Name="Timestamp_teach" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="C_enrollattstudent">
+          <Key>
+            <PropertyRef Name="Student_id" />
+          </Key>
+          <Property Name="Student_id" Type="Int32" Nullable="false" />
+          <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="att_id" Type="Int32" />
+          <Property Name="Staff_id" Type="Int32" />
+          <Property Name="qira_id" Type="Int32" />
+          <Property Name="page" Type="Int32" />
+          <Property Name="attday_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="student2561_copy1">
+          <Key>
+            <PropertyRef Name="Student_id" />
+            <PropertyRef Name="Class_id" />
+          </Key>
+          <Property Name="Student_id" Type="Int32" Nullable="false" />
+          <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+          <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Student_psis_id" Type="Int32" />
+          <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+          <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Class_room" Type="Int32" />
+          <Property Name="Class_year_index" Type="Int32" />
+          <Property Name="Teacher_id" Type="Int32" />
+          <Property Name="Class_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EnrollStudentAttdance">
+          <Key>
+            <PropertyRef Name="att_id" />
+          </Key>
+          <Property Name="att_id" Type="Int32" Nullable="false" />
+          <Property Name="qira_id" Type="Int32" />
+          <Property Name="page" Type="Int32" />
+          <Property Name="Staff_id" Type="Int32" />
+          <Property Name="Student_id" Type="Int32" />
+          <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+          <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Class_room" Type="Int32" />
+          <Property Name="Class_year_index" Type="Int32" />
+          <Property Name="Teacher_id" Type="Int32" />
+          <Property Name="Class_id" Type="Int32" />
+          <Property Name="attday_id" Type="Int32" />
+          <Property Name="attday_date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="Class_id" />
+          </Key>
+          <Property Name="Class_id" Type="Int32" Nullable="false" />
+          <Property Name="Status_class" Type="Int32" />
+          <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Teacher_id" Type="Int32" />
+          <Property Name="Class_room" Type="Int32" />
+          <Property Name="Class_year_index" Type="Int32" />
+        </EntityType>
+        <EntityType Name="student2561_food">
+          <Key>
+            <PropertyRef Name="Student_id" />
+            <PropertyRef Name="Class_id" />
+          </Key>
+          <Property Name="Student_id" Type="Int32" Nullable="false" />
+          <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+          <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Student_psis_id" Type="Int32" />
+          <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+          <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Class_room" Type="Int32" />
+          <Property Name="Class_year_index" Type="Int32" />
+          <Property Name="Teacher_id" Type="Int32" />
+          <Property Name="Class_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContestEducationSchool">
+          <Key>
+            <PropertyRef Name="TypeContest_id" />
+          </Key>
+          <Property Name="TypeContest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameContest" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="Staff_id" Type="Int32" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+          <Property Name="group" Type="Int32" />
+          <Property Name="Day_contest" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Enroll_EduContest">
+          <Key>
+            <PropertyRef Name="EduContest_id" />
+          </Key>
+          <Property Name="EduContest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type_id" Type="Int32" />
+          <Property Name="Student_id" Type="Int32" />
+          <Property Name="Timestamp__" Type="DateTime" Precision="3" />
+          <Property Name="result" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="studentEduContest2561">
+          <Key>
+            <PropertyRef Name="Student_id" />
+            <PropertyRef Name="Class_id" />
+            <PropertyRef Name="TypeContest_id" />
+            <PropertyRef Name="EduContest_id" />
+          </Key>
+          <Property Name="EduContest_id" Type="Int32" Nullable="false" />
+          <Property Name="Student_id" Type="Int32" Nullable="false" />
+          <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Class_room" Type="Int32" />
+          <Property Name="Class_year_index" Type="Int32" />
+          <Property Name="Teacher_id" Type="Int32" />
+          <Property Name="Class_id" Type="Int32" Nullable="false" />
+          <Property Name="TypeContest_id" Type="Int32" Nullable="false" />
+          <Property Name="NameContest" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="Staff_id" Type="Int32" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+          <Property Name="group" Type="Int32" />
+          <Property Name="Day_contest" Type="DateTime" Precision="0" />
+          <Property Name="result" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ViewEmpPos">
+          <Key>
+            <PropertyRef Name="EnrEmpPosId" />
+          </Key>
+          <Property Name="EmpTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EmpName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EmpLname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EmpBirthday" Type="DateTime" Precision="0" />
+          <Property Name="EmpIdcard" Type="Int32" />
+          <Property Name="EmpPsis_id" Type="Int32" />
+          <Property Name="EmpStatus" Type="Int32" />
+          <Property Name="EmpTimestamp" Type="DateTime" Precision="3" />
+          <Property Name="EmpTelephone" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Empbank_id" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="EmpId" Type="Int32" />
+          <Property Name="EmpGender" Type="Int32" />
+          <Property Name="EnrEmpPosId" Type="Int32" Nullable="false" />
+          <Property Name="EnrEmpPosStatus" Type="Int32" />
+          <Property Name="EnrEmpPosTimestamp" Type="DateTime" Precision="3" />
+          <Property Name="PosName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PosLevel" Type="Int32" />
+          <Property Name="PosId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EmpName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EmpLname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EmpBirthday" Type="DateTime" Precision="0" />
+          <Property Name="EmpIdcard" Type="Int32" />
+          <Property Name="EmpPsis_id" Type="Int32" />
+          <Property Name="EmpStatus" Type="Int32" />
+          <Property Name="EmpTimestamp" Type="DateTime" Precision="3" />
+          <Property Name="EmpTelephone" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Empbank_id" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="EmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpGender" Type="Int32" />
+          <NavigationProperty Name="Enroll_Emp_Pos" Relationship="santisar_Model.Fk_emp_enr" FromRole="Employee" ToRole="Enroll_Emp_Pos" />
+        </EntityType>
+        <EntityType Name="Enroll_Emp_Pos">
+          <Key>
+            <PropertyRef Name="EnrEmpPosId" />
+          </Key>
+          <Property Name="Employee_id" Type="Int32" />
+          <Property Name="Position_id" Type="Int32" />
+          <Property Name="EnrEmpPosStatus" Type="Int32" />
+          <Property Name="EnrEmpPosTimestamp" Type="DateTime" Precision="3" />
+          <Property Name="EnrEmpPosId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Employee" Relationship="santisar_Model.Fk_emp_enr" FromRole="Enroll_Emp_Pos" ToRole="Employee" />
+          <NavigationProperty Name="Position" Relationship="santisar_Model.Fk_enr_pos" FromRole="Enroll_Emp_Pos" ToRole="Position" />
+          <NavigationProperty Name="EnrollStudentCouse" Relationship="santisar_Model.Fk_TeacherId" FromRole="Enroll_Emp_Pos" ToRole="EnrollStudentCouse" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="PosId" />
+          </Key>
+          <Property Name="PosName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PosLevel" Type="Int32" />
+          <Property Name="PosId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Enroll_Emp_Pos" Relationship="santisar_Model.Fk_enr_pos" FromRole="Position" ToRole="Enroll_Emp_Pos" />
+        </EntityType>
+        <Association Name="Fk_emp_enr">
+          <End Type="santisar_Model.Employee" Role="Employee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.Enroll_Emp_Pos" Role="Enroll_Emp_Pos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="Enroll_Emp_Pos">
+              <PropertyRef Name="Employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_enr_pos">
+          <End Type="santisar_Model.Position" Role="Position" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.Enroll_Emp_Pos" Role="Enroll_Emp_Pos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="PosId" />
+            </Principal>
+            <Dependent Role="Enroll_Emp_Pos">
+              <PropertyRef Name="Position_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ClassInSchool">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassShortName" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ClassName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ClassID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="EnrollCouse" Relationship="santisar_Model.FK_class1" FromRole="ClassInSchool" ToRole="EnrollCouse" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourseStatus" Type="Int32" />
+          <NavigationProperty Name="EnrollCouse" Relationship="santisar_Model.Fk_couse1" FromRole="Course" ToRole="EnrollCouse" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Depart_Id" />
+          </Key>
+          <Property Name="DepartName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Depart_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="EnrollCouse" Relationship="santisar_Model.FK_depart1" FromRole="Department" ToRole="EnrollCouse" />
+        </EntityType>
+        <EntityType Name="EnrollCouse">
+          <Key>
+            <PropertyRef Name="EnrollCouseID" />
+          </Key>
+          <Property Name="CouseTxtId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CouseId" Type="Int32" />
+          <Property Name="DepartId" Type="Int32" />
+          <Property Name="CouseTime" Type="Int32" />
+          <Property Name="CouseWeight__" Type="Single" />
+          <Property Name="ClassId" Type="Int32" />
+          <Property Name="semester__" Type="Int32" />
+          <Property Name="EnrollCouseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="ClassInSchool" Relationship="santisar_Model.FK_class1" FromRole="EnrollCouse" ToRole="ClassInSchool" />
+          <NavigationProperty Name="Course" Relationship="santisar_Model.Fk_couse1" FromRole="EnrollCouse" ToRole="Course" />
+          <NavigationProperty Name="Department" Relationship="santisar_Model.FK_depart1" FromRole="EnrollCouse" ToRole="Department" />
+          <Property Name="CouseExcel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EnrollStudentCouse" Relationship="santisar_Model.Fk_EnrCouseId" FromRole="EnrollCouse" ToRole="EnrollStudentCouse" />
+          <Property Name="ExcelAdress" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IndexSort" Type="Int32" />
+        </EntityType>
+        <EntityType Name="YearEdu">
+          <Key>
+            <PropertyRef Name="YearEduId" />
+          </Key>
+          <Property Name="yearName" Type="Int32" />
+          <Property Name="YearEduId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="FK_class1">
+          <End Type="santisar_Model.ClassInSchool" Role="ClassInSchool" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.EnrollCouse" Role="EnrollCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassInSchool">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="EnrollCouse">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_couse1">
+          <End Type="santisar_Model.Course" Role="Course" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.EnrollCouse" Role="EnrollCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseId" />
+            </Principal>
+            <Dependent Role="EnrollCouse">
+              <PropertyRef Name="CouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_depart1">
+          <End Type="santisar_Model.Department" Role="Department" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.EnrollCouse" Role="EnrollCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Depart_Id" />
+            </Principal>
+            <Dependent Role="EnrollCouse">
+              <PropertyRef Name="DepartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EnrollStudentCouse">
+          <Key>
+            <PropertyRef Name="EnrollStudentCouseId" />
+          </Key>
+          <Property Name="EnrollStudentCouseId" Type="Int32" Nullable="false" />
+          <Property Name="studentId" Type="Int32" />
+          <Property Name="EnrollCouseId" Type="Int32" />
+          <Property Name="Score" Type="Double" />
+          <Property Name="Grade" Type="Double" />
+          <Property Name="TeacerId" Type="Int32" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+          <Property Name="YearEdu" Type="Int32" />
+          <Property Name="Staff" Type="Int32" />
+          <Property Name="Semester" Type="Int32" />
+          <NavigationProperty Name="Enroll_Emp_Pos" Relationship="santisar_Model.Fk_TeacherId" FromRole="EnrollStudentCouse" ToRole="Enroll_Emp_Pos" />
+          <NavigationProperty Name="EnrollCouse" Relationship="santisar_Model.Fk_EnrCouseId" FromRole="EnrollStudentCouse" ToRole="EnrollCouse" />
+          <NavigationProperty Name="Students" Relationship="santisar_Model.Fk_student" FromRole="EnrollStudentCouse" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="View_Couse">
+          <Key>
+            <PropertyRef Name="EnrollCouseID" />
+            <PropertyRef Name="EnrollStudentCouseId" />
+            <PropertyRef Name="EnrEmpPosId" />
+            <PropertyRef Name="EmpId" />
+            <PropertyRef Name="Student_id" />
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="CouseTxtId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DepartId" Type="Int32" />
+          <Property Name="CouseTime" Type="Int32" />
+          <Property Name="CouseWeight__" Type="Single" />
+          <Property Name="ClassId" Type="Int32" />
+          <Property Name="semester__" Type="Int32" />
+          <Property Name="EnrollCouseID" Type="Int32" Nullable="false" />
+          <Property Name="CouseExcel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CouseId" Type="Int32" />
+          <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CourseType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourseStatus" Type="Int32" />
+          <Property Name="EnrollStudentCouseId" Type="Int32" Nullable="false" />
+          <Property Name="Score" Type="Double" />
+          <Property Name="Grade" Type="Double" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+          <Property Name="YearEdu" Type="Int32" />
+          <Property Name="Staff" Type="Int32" />
+          <Property Name="Semester" Type="Int32" />
+          <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+          <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Student_psis_id" Type="Int32" />
+          <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+          <Property Name="Employee_id" Type="Int32" />
+          <Property Name="Position_id" Type="Int32" />
+          <Property Name="EnrEmpPosStatus" Type="Int32" />
+          <Property Name="EnrEmpPosTimestamp" Type="DateTime" Precision="3" />
+          <Property Name="EnrEmpPosId" Type="Int32" Nullable="false" />
+          <Property Name="EmpTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EmpName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EmpLname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EmpBirthday" Type="DateTime" Precision="0" />
+          <Property Name="EmpIdcard" Type="Int32" />
+          <Property Name="EmpPsis_id" Type="Int32" />
+          <Property Name="EmpStatus" Type="Int32" />
+          <Property Name="EmpTimestamp" Type="DateTime" Precision="3" />
+          <Property Name="EmpTelephone" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Empbank_id" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="EmpGender" Type="Int32" />
+          <Property Name="Student_id" Type="Int32" Nullable="false" />
+          <Property Name="CourseId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="Fk_TeacherId">
+          <End Type="santisar_Model.Enroll_Emp_Pos" Role="Enroll_Emp_Pos" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.EnrollStudentCouse" Role="EnrollStudentCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Enroll_Emp_Pos">
+              <PropertyRef Name="EnrEmpPosId" />
+            </Principal>
+            <Dependent Role="EnrollStudentCouse">
+              <PropertyRef Name="TeacerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_EnrCouseId">
+          <End Type="santisar_Model.EnrollCouse" Role="EnrollCouse" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.EnrollStudentCouse" Role="EnrollStudentCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnrollCouse">
+              <PropertyRef Name="EnrollCouseID" />
+            </Principal>
+            <Dependent Role="EnrollStudentCouse">
+              <PropertyRef Name="EnrollCouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_student">
+          <End Type="santisar_Model.Students" Role="Students" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.EnrollStudentCouse" Role="EnrollStudentCouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="Student_id" />
+            </Principal>
+            <Dependent Role="EnrollStudentCouse">
+              <PropertyRef Name="studentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EnrollFinishStudent">
+          <Key>
+            <PropertyRef Name="FinishId" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" />
+          <Property Name="FinishTypeId" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TimeStam" Type="DateTime" Precision="3" />
+          <Property Name="Staff" Type="Int32" />
+          <Property Name="FinishId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FinishCouse" Type="Int32" />
+          <NavigationProperty Name="Students" Relationship="santisar_Model.Fk_finish_student" FromRole="EnrollFinishStudent" ToRole="Students" />
+          <NavigationProperty Name="FinishType" Relationship="santisar_Model.Fk_finsh_form" FromRole="EnrollFinishStudent" ToRole="FinishType" />
+          <Property Name="DayRequstFinish" Type="DateTime" Precision="3" />
+          <Property Name="DayFinished" Type="DateTime" Precision="3" />
+          <Property Name="DayToFinished" Type="DateTime" Precision="3" />
+          <Property Name="Reader" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Physical" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Activity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CouseBasic" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CouseAdd" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Reader2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Activity2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="physical2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ExcelForm" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FinishType">
+          <Key>
+            <PropertyRef Name="FinishFormID" />
+          </Key>
+          <Property Name="FormName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FormIndex" Type="Int32" />
+          <Property Name="FinishFormID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="EnrollFinishStudent" Relationship="santisar_Model.Fk_finsh_form" FromRole="FinishType" ToRole="EnrollFinishStudent" />
+        </EntityType>
+        <Association Name="Fk_finish_student">
+          <End Type="santisar_Model.Students" Role="Students" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.EnrollFinishStudent" Role="EnrollFinishStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="Student_id" />
+            </Principal>
+            <Dependent Role="EnrollFinishStudent">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_finsh_form">
+          <End Type="santisar_Model.FinishType" Role="FinishType" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.EnrollFinishStudent" Role="EnrollFinishStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinishType">
+              <PropertyRef Name="FinishFormID" />
+            </Principal>
+            <Dependent Role="EnrollFinishStudent">
+              <PropertyRef Name="FinishTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EnrollFamilyStudent">
+          <Key>
+            <PropertyRef Name="EnrollFamStudentId" />
+          </Key>
+          <Property Name="EnrollFamStudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentId" Type="Int32" />
+          <Property Name="FamilyId" Type="Int32" />
+          <Property Name="TypeFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="staftId" Type="Int32" />
+          <NavigationProperty Name="Family" Relationship="santisar_Model.Fk_enroll_fam" FromRole="EnrollFamilyStudent" ToRole="Family" />
+          <NavigationProperty Name="Students" Relationship="santisar_Model.Fk_enroll_Studnet" FromRole="EnrollFamilyStudent" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="FamilyId" />
+          </Key>
+          <Property Name="FamilyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fam_Title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fam_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Fam_Lname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <Property Name="Career" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Income" Type="Int32" />
+          <Property Name="Education" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Timestam" Type="DateTime" Precision="3" />
+          <Property Name="Staft" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EnrollFamilyStudent" Relationship="santisar_Model.Fk_enroll_fam" FromRole="Family" ToRole="EnrollFamilyStudent" />
+        </EntityType>
+        <Association Name="Fk_enroll_fam">
+          <End Type="santisar_Model.Family" Role="Family" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.EnrollFamilyStudent" Role="EnrollFamilyStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Family">
+              <PropertyRef Name="FamilyId" />
+            </Principal>
+            <Dependent Role="EnrollFamilyStudent">
+              <PropertyRef Name="FamilyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_enroll_Studnet">
+          <End Type="santisar_Model.Students" Role="Students" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisar_Model.EnrollFamilyStudent" Role="EnrollFamilyStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="Student_id" />
+            </Principal>
+            <Dependent Role="EnrollFamilyStudent">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="santisar_ModelStoreContainer" CdmEntityContainer="santisar_Entities">
+          <EntitySetMapping Name="Enroll_paid">
+            <EntityTypeMapping TypeName="santisar_Model.Enroll_paid">
+              <MappingFragment StoreEntitySet="Enroll_paid">
+                <ScalarProperty Name="Pay_id" ColumnName="Pay_id" />
+                <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="Student_type_id" ColumnName="Student_type_id" />
+                <ScalarProperty Name="Staff_paid_id" ColumnName="Staff_paid_id" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="Monthly_id" ColumnName="Monthly_id" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+                <ScalarProperty Name="Paid_id" ColumnName="Paid_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enroll_student_class">
+            <EntityTypeMapping TypeName="santisar_Model.Enroll_student_class">
+              <MappingFragment StoreEntitySet="Enroll_student_class">
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="Enrol_stu_class_id" ColumnName="Enrol_stu_class_id" />
+                <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Food">
+            <EntityTypeMapping TypeName="santisar_Model.Food">
+              <MappingFragment StoreEntitySet="Food">
+                <ScalarProperty Name="Food_title" ColumnName="Food_title" />
+                <ScalarProperty Name="Food_paid_id" ColumnName="Food_paid_id" />
+                <ScalarProperty Name="Food_update" ColumnName="Food_update" />
+                <ScalarProperty Name="Food_timesatamp" ColumnName="Food_timesatamp" />
+                <ScalarProperty Name="Food_year" ColumnName="Food_year" />
+                <ScalarProperty Name="Food_class" ColumnName="Food_class" />
+                <ScalarProperty Name="Food_full_paid" ColumnName="Food_full_paid" />
+                <ScalarProperty Name="Food_paid" ColumnName="Food_paid" />
+                <ScalarProperty Name="Food_month_index" ColumnName="Food_month_index" />
+                <ScalarProperty Name="Food_month_th" ColumnName="Food_month_th" />
+                <ScalarProperty Name="Food_lastname" ColumnName="Food_lastname" />
+                <ScalarProperty Name="Food_name" ColumnName="Food_name" />
+                <ScalarProperty Name="Food_id_student" ColumnName="Food_id_student" />
+                <ScalarProperty Name="Food_id" ColumnName="Food_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monthly">
+            <EntityTypeMapping TypeName="santisar_Model.Monthly">
+              <MappingFragment StoreEntitySet="Monthly">
+                <ScalarProperty Name="Month_yearindex" ColumnName="Month_yearindex" />
+                <ScalarProperty Name="Month_status" ColumnName="Month_status" />
+                <ScalarProperty Name="Month_course" ColumnName="Month_course" />
+                <ScalarProperty Name="Month_year" ColumnName="Month_year" />
+                <ScalarProperty Name="Month_name" ColumnName="Month_name" />
+                <ScalarProperty Name="Monthly_id" ColumnName="Monthly_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="santisar_Model.Students">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="Student_firsttime" ColumnName="Student_firsttime" />
+                <ScalarProperty Name="Studnet_Gender" ColumnName="Studnet_Gender" />
+                <ScalarProperty Name="Student_OldSchool" ColumnName="Student_OldSchool" />
+                <ScalarProperty Name="Student_ArabName" ColumnName="Student_ArabName" />
+                <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+                <ScalarProperty Name="Student_status" ColumnName="Student_status" />
+                <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
+                <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
+                <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
+                <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+                <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+                <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enroll_pay">
+            <EntityTypeMapping TypeName="santisar_Model.Enroll_pay">
+              <MappingFragment StoreEntitySet="Enroll_pay">
+                <ScalarProperty Name="Id_token" ColumnName="Id_token" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+                <ScalarProperty Name="Pay" ColumnName="Pay" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+                <ScalarProperty Name="Paid_id" ColumnName="Paid_id" />
+                <ScalarProperty Name="Pay_id" ColumnName="Pay_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="attendance_day">
+            <EntityTypeMapping TypeName="santisar_Model.attendance_day">
+              <MappingFragment StoreEntitySet="attendance_day">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="year_index" ColumnName="year_index" />
+                <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="attday_date" ColumnName="attday_date" />
+                <ScalarProperty Name="attday_id" ColumnName="attday_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enroll_student_all_event">
+            <EntityTypeMapping TypeName="santisar_Model.Enroll_student_all_event">
+              <MappingFragment StoreEntitySet="Enroll_student_all_event">
+                <ScalarProperty Name="Enrol_stu_class_id" ColumnName="Enrol_stu_class_id" />
+                <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="student2561">
+            <EntityTypeMapping TypeName="santisar_Model.student2561">
+              <MappingFragment StoreEntitySet="student2561">
+                <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+                <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+                <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+                <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+                <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+                <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+                <ScalarProperty Name="Student_status" ColumnName="Student_status" />
+                <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
+                <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
+                <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
+                <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+                <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+                <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="attendance">
+            <EntityTypeMapping TypeName="santisar_Model.attendance">
+              <MappingFragment StoreEntitySet="attendance">
+                <ScalarProperty Name="Timestamp_teach" ColumnName="Timestamp_teach" />
+                <ScalarProperty Name="attday_id" ColumnName="attday_id" />
+                <ScalarProperty Name="page" ColumnName="page" />
+                <ScalarProperty Name="qira_id" ColumnName="qira_id" />
+                <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+                <ScalarProperty Name="datestamp" ColumnName="datestamp" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+                <ScalarProperty Name="att_id" ColumnName="att_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C_enrollattstudent">
+            <EntityTypeMapping TypeName="santisar_Model.C_enrollattstudent">
+              <MappingFragment StoreEntitySet="_enrollattstudent">
+                <ScalarProperty Name="attday_id" ColumnName="attday_id" />
+                <ScalarProperty Name="page" ColumnName="page" />
+                <ScalarProperty Name="qira_id" ColumnName="qira_id" />
+                <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+                <ScalarProperty Name="att_id" ColumnName="att_id" />
+                <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+                <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+                <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="student2561_copy1">
+            <EntityTypeMapping TypeName="santisar_Model.student2561_copy1">
+              <MappingFragment StoreEntitySet="student2561_copy1">
+                <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+                <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+                <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+                <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+                <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+                <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+                <ScalarProperty Name="Student_status" ColumnName="Student_status" />
+                <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
+                <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
+                <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
+                <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+                <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+                <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnrollStudentAttdance">
+            <EntityTypeMapping TypeName="santisar_Model.EnrollStudentAttdance">
+              <MappingFragment StoreEntitySet="EnrollStudentAttdance">
+                <ScalarProperty Name="attday_date" ColumnName="attday_date" />
+                <ScalarProperty Name="attday_id" ColumnName="attday_id" />
+                <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+                <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+                <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+                <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+                <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+                <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+                <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+                <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+                <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+                <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+                <ScalarProperty Name="page" ColumnName="page" />
+                <ScalarProperty Name="qira_id" ColumnName="qira_id" />
+                <ScalarProperty Name="att_id" ColumnName="att_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Class">
+            <EntityTypeMapping TypeName="santisar_Model.Class">
+              <MappingFragment StoreEntitySet="Class">
+                <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+                <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+                <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+                <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+                <ScalarProperty Name="Status_class" ColumnName="Status_class" />
+                <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="student2561_food">
+            <EntityTypeMapping TypeName="santisar_Model.student2561_food">
+              <MappingFragment StoreEntitySet="student2561_food">
+                <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+                <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+                <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+                <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+                <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+                <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+                <ScalarProperty Name="Student_status" ColumnName="Student_status" />
+                <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
+                <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
+                <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
+                <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+                <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+                <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContestEducationSchool">
+            <EntityTypeMapping TypeName="santisar_Model.ContestEducationSchool">
+              <MappingFragment StoreEntitySet="ContestEducationSchool">
+                <ScalarProperty Name="Day_contest" ColumnName="Day_contest" />
+                <ScalarProperty Name="group" ColumnName="group" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+                <ScalarProperty Name="NameContest" ColumnName="NameContest" />
+                <ScalarProperty Name="TypeContest_id" ColumnName="TypeContest_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enroll_EduContest">
+            <EntityTypeMapping TypeName="santisar_Model.Enroll_EduContest">
+              <MappingFragment StoreEntitySet="Enroll_EduContest">
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="Timestamp__" ColumnName="Timestamp&#xD;&#xA;" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+                <ScalarProperty Name="Type_id" ColumnName="Type_id" />
+                <ScalarProperty Name="EduContest_id" ColumnName="EduContest_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="studentEduContest2561">
+            <EntityTypeMapping TypeName="santisar_Model.studentEduContest2561">
+              <MappingFragment StoreEntitySet="studentEduContest2561">
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="EduContest_id" ColumnName="EduContest_id" />
+                <ScalarProperty Name="Day_contest" ColumnName="Day_contest" />
+                <ScalarProperty Name="group" ColumnName="group" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+                <ScalarProperty Name="NameContest" ColumnName="NameContest" />
+                <ScalarProperty Name="TypeContest_id" ColumnName="TypeContest_id" />
+                <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+                <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+                <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+                <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+                <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+                <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+                <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+                <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewEmpPos">
+            <EntityTypeMapping TypeName="santisar_Model.ViewEmpPos">
+              <MappingFragment StoreEntitySet="ViewEmpPos">
+                <ScalarProperty Name="PosId" ColumnName="PosId" />
+                <ScalarProperty Name="PosLevel" ColumnName="PosLevel" />
+                <ScalarProperty Name="PosName" ColumnName="PosName" />
+                <ScalarProperty Name="EnrEmpPosTimestamp" ColumnName="EnrEmpPosTimestamp" />
+                <ScalarProperty Name="EnrEmpPosStatus" ColumnName="EnrEmpPosStatus" />
+                <ScalarProperty Name="EnrEmpPosId" ColumnName="EnrEmpPosId" />
+                <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="Empbank_id" ColumnName="Empbank_id" />
+                <ScalarProperty Name="EmpTelephone" ColumnName="EmpTelephone" />
+                <ScalarProperty Name="EmpTimestamp" ColumnName="EmpTimestamp" />
+                <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
+                <ScalarProperty Name="EmpPsis_id" ColumnName="EmpPsis_id" />
+                <ScalarProperty Name="EmpIdcard" ColumnName="EmpIdcard" />
+                <ScalarProperty Name="EmpBirthday" ColumnName="EmpBirthday" />
+                <ScalarProperty Name="EmpLname" ColumnName="EmpLname" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="EmpTitle" ColumnName="EmpTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="santisar_Model.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="Empbank_id" ColumnName="Empbank_id" />
+                <ScalarProperty Name="EmpTelephone" ColumnName="EmpTelephone" />
+                <ScalarProperty Name="EmpTimestamp" ColumnName="EmpTimestamp" />
+                <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
+                <ScalarProperty Name="EmpPsis_id" ColumnName="EmpPsis_id" />
+                <ScalarProperty Name="EmpIdcard" ColumnName="EmpIdcard" />
+                <ScalarProperty Name="EmpBirthday" ColumnName="EmpBirthday" />
+                <ScalarProperty Name="EmpLname" ColumnName="EmpLname" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="EmpTitle" ColumnName="EmpTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enroll_Emp_Pos">
+            <EntityTypeMapping TypeName="santisar_Model.Enroll_Emp_Pos">
+              <MappingFragment StoreEntitySet="Enroll_Emp_Pos">
+                <ScalarProperty Name="EnrEmpPosId" ColumnName="EnrEmpPosId" />
+                <ScalarProperty Name="EnrEmpPosTimestamp" ColumnName="EnrEmpPosTimestamp" />
+                <ScalarProperty Name="EnrEmpPosStatus" ColumnName="EnrEmpPosStatus" />
+                <ScalarProperty Name="Position_id" ColumnName="Position_id" />
+                <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Position">
+            <EntityTypeMapping TypeName="santisar_Model.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="PosId" ColumnName="PosId" />
+                <ScalarProperty Name="PosLevel" ColumnName="PosLevel" />
+                <ScalarProperty Name="PosName" ColumnName="PosName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClassInSchool">
+            <EntityTypeMapping TypeName="santisar_Model.ClassInSchool">
+              <MappingFragment StoreEntitySet="ClassInSchool">
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+                <ScalarProperty Name="ClassShortName" ColumnName="ClassShortName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Course">
+            <EntityTypeMapping TypeName="santisar_Model.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="CourseStatus" ColumnName="CourseStatus" />
+                <ScalarProperty Name="CourseType" ColumnName="CourseType" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department">
+            <EntityTypeMapping TypeName="santisar_Model.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="Depart_Id" ColumnName="Depart_Id" />
+                <ScalarProperty Name="DepartStatus" ColumnName="DepartStatus" />
+                <ScalarProperty Name="DepartName" ColumnName="DepartName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnrollCouse">
+            <EntityTypeMapping TypeName="santisar_Model.EnrollCouse">
+              <MappingFragment StoreEntitySet="EnrollCouse">
+                <ScalarProperty Name="IndexSort" ColumnName="IndexSort" />
+                <ScalarProperty Name="ExcelAdress" ColumnName="ExcelAdress" />
+                <ScalarProperty Name="CouseExcel" ColumnName="CouseExcel" />
+                <ScalarProperty Name="EnrollCouseID" ColumnName="EnrollCouseID" />
+                <ScalarProperty Name="semester__" ColumnName="semester&#xD;&#xA;" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="CouseWeight__" ColumnName="CouseWeight&#xD;&#xA;" />
+                <ScalarProperty Name="CouseTime" ColumnName="CouseTime" />
+                <ScalarProperty Name="DepartId" ColumnName="DepartId" />
+                <ScalarProperty Name="CouseId" ColumnName="CouseId" />
+                <ScalarProperty Name="CouseTxtId" ColumnName="CouseTxtId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YearEdu">
+            <EntityTypeMapping TypeName="santisar_Model.YearEdu">
+              <MappingFragment StoreEntitySet="YearEdu">
+                <ScalarProperty Name="YearEduId" ColumnName="YearEduId" />
+                <ScalarProperty Name="yearName" ColumnName="yearName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnrollStudentCouse">
+            <EntityTypeMapping TypeName="santisar_Model.EnrollStudentCouse">
+              <MappingFragment StoreEntitySet="EnrollStudentCouse">
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="Staff" ColumnName="Staff" />
+                <ScalarProperty Name="YearEdu" ColumnName="YearEdu" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="TeacerId" ColumnName="TeacerId" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="EnrollCouseId" ColumnName="EnrollCouseId" />
+                <ScalarProperty Name="studentId" ColumnName="studentId" />
+                <ScalarProperty Name="EnrollStudentCouseId" ColumnName="EnrollStudentCouseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Couse">
+            <EntityTypeMapping TypeName="santisar_Model.View_Couse">
+              <MappingFragment StoreEntitySet="View_Couse">
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+                <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="Empbank_id" ColumnName="Empbank_id" />
+                <ScalarProperty Name="EmpTelephone" ColumnName="EmpTelephone" />
+                <ScalarProperty Name="EmpTimestamp" ColumnName="EmpTimestamp" />
+                <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
+                <ScalarProperty Name="EmpPsis_id" ColumnName="EmpPsis_id" />
+                <ScalarProperty Name="EmpIdcard" ColumnName="EmpIdcard" />
+                <ScalarProperty Name="EmpBirthday" ColumnName="EmpBirthday" />
+                <ScalarProperty Name="EmpLname" ColumnName="EmpLname" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="EmpTitle" ColumnName="EmpTitle" />
+                <ScalarProperty Name="EnrEmpPosId" ColumnName="EnrEmpPosId" />
+                <ScalarProperty Name="EnrEmpPosTimestamp" ColumnName="EnrEmpPosTimestamp" />
+                <ScalarProperty Name="EnrEmpPosStatus" ColumnName="EnrEmpPosStatus" />
+                <ScalarProperty Name="Position_id" ColumnName="Position_id" />
+                <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+                <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+                <ScalarProperty Name="Student_status" ColumnName="Student_status" />
+                <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
+                <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
+                <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
+                <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+                <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+                <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="Staff" ColumnName="Staff" />
+                <ScalarProperty Name="YearEdu" ColumnName="YearEdu" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="EnrollStudentCouseId" ColumnName="EnrollStudentCouseId" />
+                <ScalarProperty Name="CourseStatus" ColumnName="CourseStatus" />
+                <ScalarProperty Name="CourseType" ColumnName="CourseType" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="CouseId" ColumnName="CouseId" />
+                <ScalarProperty Name="CouseExcel" ColumnName="CouseExcel" />
+                <ScalarProperty Name="EnrollCouseID" ColumnName="EnrollCouseID" />
+                <ScalarProperty Name="semester__" ColumnName="semester&#xD;&#xA;" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="CouseWeight__" ColumnName="CouseWeight&#xD;&#xA;" />
+                <ScalarProperty Name="CouseTime" ColumnName="CouseTime" />
+                <ScalarProperty Name="DepartId" ColumnName="DepartId" />
+                <ScalarProperty Name="CouseTxtId" ColumnName="CouseTxtId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnrollFinishStudent">
+            <EntityTypeMapping TypeName="santisar_Model.EnrollFinishStudent">
+              <MappingFragment StoreEntitySet="EnrollFinishStudent">
+                <ScalarProperty Name="ExcelForm" ColumnName="ExcelForm" />
+                <ScalarProperty Name="physical2" ColumnName="physical2" />
+                <ScalarProperty Name="Activity2" ColumnName="Activity2" />
+                <ScalarProperty Name="Reader2" ColumnName="Reader2" />
+                <ScalarProperty Name="CouseAdd" ColumnName="CouseAdd" />
+                <ScalarProperty Name="CouseBasic" ColumnName="CouseBasic" />
+                <ScalarProperty Name="Activity" ColumnName="Activity" />
+                <ScalarProperty Name="Physical" ColumnName="Physical" />
+                <ScalarProperty Name="Reader" ColumnName="Reader" />
+                <ScalarProperty Name="DayToFinished" ColumnName="DayToFinished" />
+                <ScalarProperty Name="DayFinished" ColumnName="DayFinished" />
+                <ScalarProperty Name="DayRequstFinish" ColumnName="DayRequstFinish" />
+                <ScalarProperty Name="FinishCouse" ColumnName="FinishCouse" />
+                <ScalarProperty Name="FinishId" ColumnName="FinishId" />
+                <ScalarProperty Name="Staff" ColumnName="Staff" />
+                <ScalarProperty Name="TimeStam" ColumnName="TimeStam" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="FinishTypeId" ColumnName="FinishTypeId" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinishType">
+            <EntityTypeMapping TypeName="santisar_Model.FinishType">
+              <MappingFragment StoreEntitySet="FinishType">
+                <ScalarProperty Name="FinishFormID" ColumnName="FinishFormID" />
+                <ScalarProperty Name="FormIndex" ColumnName="FormIndex" />
+                <ScalarProperty Name="FormName" ColumnName="FormName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnrollFamilyStudent">
+            <EntityTypeMapping TypeName="santisar_Model.EnrollFamilyStudent">
+              <MappingFragment StoreEntitySet="EnrollFamilyStudent">
+                <ScalarProperty Name="staftId" ColumnName="staftId" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="TypeFamily" ColumnName="TypeFamily" />
+                <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="EnrollFamStudentId" ColumnName="EnrollFamStudentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Family">
+            <EntityTypeMapping TypeName="santisar_Model.Family">
+              <MappingFragment StoreEntitySet="Family">
+                <ScalarProperty Name="Idcard" ColumnName="Idcard" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Staft" ColumnName="Staft" />
+                <ScalarProperty Name="Timestam" ColumnName="Timestam" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="Income" ColumnName="Income" />
+                <ScalarProperty Name="Career" ColumnName="Career" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="Fam_Lname" ColumnName="Fam_Lname" />
+                <ScalarProperty Name="Fam_Name" ColumnName="Fam_Name" />
+                <ScalarProperty Name="Fam_Title" ColumnName="Fam_Title" />
+                <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfile">
+            <EntityTypeMapping TypeName="santisar_Model.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,99 @@
+﻿@model IEnumerable<santisart_app.Models.studentEduContest2561>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Class_name_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Class_room)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Class_year_index)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacher_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameContest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Staff_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Timestamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.group)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Day_contest)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_lname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Class_name_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Class_room)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Class_year_index)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Teacher_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameContest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Staff_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Timestamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.group)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Day_contest)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,106 @@
+﻿@model santisart_app.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpLname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpLname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpBirthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpBirthday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpIdcard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpIdcard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpPsis_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpPsis_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpTimestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpTimestamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpTelephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpTelephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empbank_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empbank_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpGender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpGender)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmpId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

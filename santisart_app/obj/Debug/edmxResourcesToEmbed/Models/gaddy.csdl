@@ -1,0 +1,1109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="santisartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="attendance">
+    <Key>
+      <PropertyRef Name="att_id" />
+    </Key>
+    <Property Name="att_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Student_id" Type="Int32" />
+    <Property Name="datestamp" Type="DateTime" Precision="0" />
+    <Property Name="Staff_id" Type="Int32" />
+    <Property Name="qira_id" Type="Int32" />
+    <Property Name="page" Type="Int32" />
+    <Property Name="attday_id" Type="Int32" />
+    <Property Name="Timestamp_teach" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="attendance_day">
+    <Key>
+      <PropertyRef Name="attday_id" />
+    </Key>
+    <Property Name="attday_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="attday_date" Type="DateTime" Precision="0" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="staff_id" Type="Int32" />
+    <Property Name="year_index" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="Class_id" />
+    </Key>
+    <Property Name="Class_id" Type="Int32" Nullable="false" />
+    <Property Name="Status_class" Type="Int32" />
+    <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Teacher_id" Type="Int32" />
+    <Property Name="Class_room" Type="Int32" />
+    <Property Name="Class_year_index" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ClassInSchool">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Name="ClassShortName" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ClassName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ClassID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="EnrollClasses" Relationship="Self.C__fk_class" FromRole="ClassInSchool" ToRole="EnrollClass" />
+    <NavigationProperty Name="EnrollCouses" Relationship="Self.FK_class1" FromRole="ClassInSchool" ToRole="EnrollCouse" />
+  </EntityType>
+  <EntityType Name="ContestEducationSchool">
+    <Key>
+      <PropertyRef Name="TypeContest_id" />
+    </Key>
+    <Property Name="TypeContest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameContest" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+    <Property Name="Staff_id" Type="Int32" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <Property Name="group" Type="Int32" />
+    <Property Name="Day_contest" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourseStatus" Type="Int32" />
+    <NavigationProperty Name="EnrollCouses" Relationship="Self.Fk_couse1" FromRole="Course" ToRole="EnrollCouse" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Depart_Id" />
+    </Key>
+    <Property Name="DepartName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Depart_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="EnrollCouses" Relationship="Self.FK_depart1" FromRole="Department" ToRole="EnrollCouse" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EmpName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="EmpLname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="EmpBirthday" Type="DateTime" Precision="0" />
+    <Property Name="EmpIdcard" Type="Int32" />
+    <Property Name="EmpPsis_id" Type="Int32" />
+    <Property Name="EmpStatus" Type="Int32" />
+    <Property Name="EmpTimestamp" Type="DateTime" Precision="3" />
+    <Property Name="EmpTelephone" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="Empbank_id" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="EmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpGender" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Enroll_RoomSession_Emp" Relationship="Self.Fk_emp" FromRole="Employee" ToRole="Enroll_RoomSession_Emp" />
+    <NavigationProperty Name="Enroll_Emp_Pos" Relationship="Self.Fk_emp_enr" FromRole="Employee" ToRole="Enroll_Emp_Pos" />
+    <NavigationProperty Name="EnrollEmpCouses" Relationship="Self.Fk_emp2" FromRole="Employee" ToRole="EnrollEmpCouse" />
+  </EntityType>
+  <EntityType Name="Enroll_EduContest">
+    <Key>
+      <PropertyRef Name="EduContest_id" />
+    </Key>
+    <Property Name="EduContest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type_id" Type="Int32" />
+    <Property Name="Student_id" Type="Int32" />
+    <Property Name="Timestamp__" Type="DateTime" Precision="3" />
+    <Property Name="result" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Enroll_Emp_Pos">
+    <Key>
+      <PropertyRef Name="EnrEmpPosId" />
+    </Key>
+    <Property Name="Employee_id" Type="Int32" />
+    <Property Name="Position_id" Type="Int32" />
+    <Property Name="EnrEmpPosStatus" Type="Int32" />
+    <Property Name="EnrEmpPosTimestamp" Type="DateTime" Precision="3" />
+    <Property Name="EnrEmpPosId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Employee" Relationship="Self.Fk_emp_enr" FromRole="Enroll_Emp_Pos" ToRole="Employee" />
+    <NavigationProperty Name="Position" Relationship="Self.Fk_enr_pos" FromRole="Enroll_Emp_Pos" ToRole="Position" />
+  </EntityType>
+  <EntityType Name="Enroll_paid">
+    <Key>
+      <PropertyRef Name="Paid_id" />
+    </Key>
+    <Property Name="Paid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Student_id" Type="Int32" />
+    <Property Name="Monthly_id" Type="Int32" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <Property Name="Staff_paid_id" Type="Int32" />
+    <Property Name="Student_type_id" Type="Int32" />
+    <Property Name="Paid" Type="Int32" />
+    <Property Name="Class_id" Type="Int32" />
+    <Property Name="Pay_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Enroll_pay">
+    <Key>
+      <PropertyRef Name="Pay_id" />
+    </Key>
+    <Property Name="Pay_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Paid_id" Type="Int32" />
+    <Property Name="Student_id" Type="Int32" />
+    <Property Name="Pay" Type="Int32" />
+    <Property Name="Staff_id" Type="Int32" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <Property Name="Id_token" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Enroll_RoomSession_Emp">
+    <Key>
+      <PropertyRef Name="EnrollRoomEmpId" />
+    </Key>
+    <Property Name="EnrollRoomEmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="timestamp" Type="DateTime" Precision="3" />
+    <Property Name="staft" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RoomSessionId" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="Self.Fk_emp" FromRole="Enroll_RoomSession_Emp" ToRole="Employee" />
+    <NavigationProperty Name="RoomSession" Relationship="Self.Fk_room" FromRole="Enroll_RoomSession_Emp" ToRole="RoomSession" />
+  </EntityType>
+  <EntityType Name="Enroll_student_all_event">
+    <Key>
+      <PropertyRef Name="Enrol_stu_class_id" />
+    </Key>
+    <Property Name="Student_id" Type="Int32" Nullable="false" />
+    <Property Name="Class_id" Type="Int32" Nullable="false" />
+    <Property Name="Enrol_stu_class_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Enroll_student_class">
+    <Key>
+      <PropertyRef Name="Enrol_stu_class_id" />
+    </Key>
+    <Property Name="Student_id" Type="Int32" />
+    <Property Name="Class_id" Type="Int32" />
+    <Property Name="Enrol_stu_class_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="EnrollClass" Relationship="Self.fk_class" FromRole="Enroll_student_class" ToRole="EnrollClass" />
+    <NavigationProperty Name="EnrollStudentCouses" Relationship="Self.Fk_enrollStudent" FromRole="Enroll_student_class" ToRole="EnrollStudentCouse" />
+    <NavigationProperty Name="Student" Relationship="Self.Fk_student2" FromRole="Enroll_student_class" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="EnrollClass">
+    <Key>
+      <PropertyRef Name="EnrollClass_id" />
+    </Key>
+    <Property Name="Status_class" Type="Int32" />
+    <Property Name="ClassSchoolid" Type="Int32" />
+    <Property Name="Teacher_id" Type="Int32" />
+    <Property Name="Class_room" Type="Int32" />
+    <Property Name="Class_year_index" Type="Int32" />
+    <Property Name="EnrollClass_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="ClassInSchool" Relationship="Self.C__fk_class" FromRole="EnrollClass" ToRole="ClassInSchool" />
+    <NavigationProperty Name="Enroll_student_class" Relationship="Self.fk_class" FromRole="EnrollClass" ToRole="Enroll_student_class" />
+    <NavigationProperty Name="EnrollEmpCouseClasses" Relationship="Self.Fk_EnClass" FromRole="EnrollClass" ToRole="EnrollEmpCouseClass" />
+  </EntityType>
+  <EntityType Name="EnrollCouse">
+    <Key>
+      <PropertyRef Name="EnrollCouseID" />
+    </Key>
+    <Property Name="CouseTxtId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CouseId" Type="Int32" />
+    <Property Name="DepartId" Type="Int32" />
+    <Property Name="CouseTime" Type="Int32" />
+    <Property Name="CouseWeight__" Type="Single" />
+    <Property Name="ClassId" Type="Int32" />
+    <Property Name="semester__" Type="Int32" />
+    <Property Name="EnrollCouseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CouseExcel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ExcelAdress" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IndexSort" Type="Int32" />
+    <Property Name="EmpId" Type="Int32" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ClassInSchool" Relationship="Self.FK_class1" FromRole="EnrollCouse" ToRole="ClassInSchool" />
+    <NavigationProperty Name="Course" Relationship="Self.Fk_couse1" FromRole="EnrollCouse" ToRole="Course" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_depart1" FromRole="EnrollCouse" ToRole="Department" />
+    <NavigationProperty Name="EnrollEmpCouses" Relationship="Self.Fk_couse2" FromRole="EnrollCouse" ToRole="EnrollEmpCouse" />
+  </EntityType>
+  <EntityType Name="EnrollEmpCouse">
+    <Key>
+      <PropertyRef Name="EnrollEmpCouseId" />
+    </Key>
+    <Property Name="EnCouseId" Type="Int32" />
+    <Property Name="EnEmpCosTimestamp" Type="DateTime" Precision="3" />
+    <Property Name="EnrollEmpCouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EnEmpId" Type="Int32" />
+    <Property Name="EnYearSemId" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="Self.Fk_emp2" FromRole="EnrollEmpCouse" ToRole="Employee" />
+    <NavigationProperty Name="EnrollCouse" Relationship="Self.Fk_couse2" FromRole="EnrollEmpCouse" ToRole="EnrollCouse" />
+    <NavigationProperty Name="EnrollEmpCouseClasses" Relationship="Self.Fk_EmpCouse" FromRole="EnrollEmpCouse" ToRole="EnrollEmpCouseClass" />
+    <NavigationProperty Name="EnrollYearSemester" Relationship="Self.Fk_year2" FromRole="EnrollEmpCouse" ToRole="EnrollYearSemester" />
+  </EntityType>
+  <EntityType Name="EnrollEmpCouseClass">
+    <Key>
+      <PropertyRef Name="EnrollEmpCouseClassId" />
+    </Key>
+    <Property Name="EnrollEmpCouseClassId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EnEmpCouseId" Type="Int32" />
+    <Property Name="EnClassId" Type="Int32" />
+    <Property Name="Timestamp" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="EnrollClass" Relationship="Self.Fk_EnClass" FromRole="EnrollEmpCouseClass" ToRole="EnrollClass" />
+    <NavigationProperty Name="EnrollEmpCouse" Relationship="Self.Fk_EmpCouse" FromRole="EnrollEmpCouseClass" ToRole="EnrollEmpCouse" />
+    <NavigationProperty Name="EnrollStudentCouses" Relationship="Self.Fk_EmpCouseClass" FromRole="EnrollEmpCouseClass" ToRole="EnrollStudentCouse" />
+  </EntityType>
+  <EntityType Name="EnrollFamilyStudent">
+    <Key>
+      <PropertyRef Name="EnrollFamStudentId" />
+    </Key>
+    <Property Name="EnrollFamStudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="FamilyId" Type="Int32" />
+    <Property Name="TypeFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="staftId" Type="Int32" />
+    <NavigationProperty Name="Family" Relationship="Self.Fk_enroll_fam" FromRole="EnrollFamilyStudent" ToRole="Family" />
+    <NavigationProperty Name="Student" Relationship="Self.Fk_enroll_Studnet" FromRole="EnrollFamilyStudent" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="EnrollFinishStudent">
+    <Key>
+      <PropertyRef Name="FinishId" />
+    </Key>
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="FinishTypeId" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeStam" Type="DateTime" Precision="3" />
+    <Property Name="Staff" Type="Int32" />
+    <Property Name="FinishId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FinishCouse" Type="Int32" />
+    <Property Name="DayRequstFinish" Type="DateTime" Precision="3" />
+    <Property Name="DayFinished" Type="DateTime" Precision="3" />
+    <Property Name="DayToFinished" Type="DateTime" Precision="3" />
+    <Property Name="Reader" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Physical" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Activity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CouseBasic" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CouseAdd" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Reader2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Activity2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="physical2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ExcelForm" Type="Int32" />
+    <NavigationProperty Name="FinishType" Relationship="Self.Fk_finsh_form" FromRole="EnrollFinishStudent" ToRole="FinishType" />
+    <NavigationProperty Name="Student" Relationship="Self.Fk_stud" FromRole="EnrollFinishStudent" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="EnrollStudentCouse">
+    <Key>
+      <PropertyRef Name="EnrollStudentCouseId" />
+    </Key>
+    <Property Name="studentId" Type="Int32" />
+    <Property Name="EnrollCouseId" Type="Int32" />
+    <Property Name="Score1" Type="Double" />
+    <Property Name="Grade" Type="Double" />
+    <Property Name="TeacerId" Type="Int32" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <Property Name="YearEdu" Type="Int32" />
+    <Property Name="Staff" Type="Int32" />
+    <Property Name="Semester" Type="Int32" />
+    <Property Name="EnrollStudentClassId" Type="Int32" />
+    <Property Name="EnYearSemId" Type="Int32" />
+    <Property Name="EnEmpCouseId" Type="Int32" />
+    <Property Name="EnEmpCouseClassId" Type="Int32" />
+    <Property Name="EnrollStudentCouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Score2" Type="Double" />
+    <Property Name="Score3" Type="Double" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Enroll_student_class" Relationship="Self.Fk_enrollStudent" FromRole="EnrollStudentCouse" ToRole="Enroll_student_class" />
+    <NavigationProperty Name="EnrollEmpCouseClass" Relationship="Self.Fk_EmpCouseClass" FromRole="EnrollStudentCouse" ToRole="EnrollEmpCouseClass" />
+    <NavigationProperty Name="EnrollYearSemester" Relationship="Self.Fk_yearSem" FromRole="EnrollStudentCouse" ToRole="EnrollYearSemester" />
+  </EntityType>
+  <EntityType Name="EnrollYearSemester">
+    <Key>
+      <PropertyRef Name="EnrollYearSemesterId" />
+    </Key>
+    <Property Name="YearEduId" Type="Int32" />
+    <Property Name="Semester" Type="Int32" />
+    <Property Name="EnrollYearSemesterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="EnrollEmpCouses" Relationship="Self.Fk_year2" FromRole="EnrollYearSemester" ToRole="EnrollEmpCouse" />
+    <NavigationProperty Name="EnrollStudentCouses" Relationship="Self.Fk_yearSem" FromRole="EnrollYearSemester" ToRole="EnrollStudentCouse" />
+    <NavigationProperty Name="YearEdu" Relationship="Self.Fk_Year" FromRole="EnrollYearSemester" ToRole="YearEdu" />
+  </EntityType>
+  <EntityType Name="Family">
+    <Key>
+      <PropertyRef Name="FamilyId" />
+    </Key>
+    <Property Name="FamilyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fam_Title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Fam_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Fam_Lname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="birthday" Type="DateTime" Precision="0" />
+    <Property Name="Career" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Income" Type="Int32" />
+    <Property Name="Education" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Timestam" Type="DateTime" Precision="3" />
+    <Property Name="Staft" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EnrollFamilyStudents" Relationship="Self.Fk_enroll_fam" FromRole="Family" ToRole="EnrollFamilyStudent" />
+  </EntityType>
+  <EntityType Name="FinishType">
+    <Key>
+      <PropertyRef Name="FinishFormID" />
+    </Key>
+    <Property Name="FormName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FormIndex" Type="Int32" />
+    <Property Name="FinishFormID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="EnrollFinishStudents" Relationship="Self.Fk_finsh_form" FromRole="FinishType" ToRole="EnrollFinishStudent" />
+  </EntityType>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="Food_id" />
+    </Key>
+    <Property Name="Food_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Food_id_student" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Food_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Food_lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Food_month_th" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Food_month_index" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Food_paid" Type="Int32" />
+    <Property Name="Food_full_paid" Type="Int32" />
+    <Property Name="Food_class" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Food_year" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Food_timesatamp" Type="DateTime" Precision="3" />
+    <Property Name="Food_update" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Food_paid_id" Type="Int32" />
+    <Property Name="Food_title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Monthly">
+    <Key>
+      <PropertyRef Name="Monthly_id" />
+    </Key>
+    <Property Name="Monthly_id" Type="Int32" Nullable="false" />
+    <Property Name="Month_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Month_year" Type="Int32" />
+    <Property Name="Month_course" Type="Int32" />
+    <Property Name="Month_status" Type="Boolean" />
+    <Property Name="Month_yearindex" Type="Int32" />
+    <Property Name="Month_Sort" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="PosId" />
+    </Key>
+    <Property Name="PosName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PosLevel" Type="Int32" />
+    <Property Name="PosId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Enroll_Emp_Pos" Relationship="Self.Fk_enr_pos" FromRole="Position" ToRole="Enroll_Emp_Pos" />
+  </EntityType>
+  <EntityType Name="RoomSession">
+    <Key>
+      <PropertyRef Name="RoomSessionId" />
+    </Key>
+    <Property Name="RoomName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <Property Name="Value" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="RoomSessionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Enroll_RoomSession_Emp" Relationship="Self.Fk_room" FromRole="RoomSession" ToRole="Enroll_RoomSession_Emp" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Student_id" />
+    </Key>
+    <Property Name="Student_id" Type="Int32" Nullable="false" />
+    <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+    <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Student_psis_id" Type="Int32" />
+    <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+    <Property Name="Student_ArabName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Student_OldSchool" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Studnet_Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Student_firsttime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Enroll_student_class" Relationship="Self.Fk_student2" FromRole="Students" ToRole="Enroll_student_class" />
+    <NavigationProperty Name="EnrollFamilyStudents" Relationship="Self.Fk_enroll_Studnet" FromRole="Students" ToRole="EnrollFamilyStudent" />
+    <NavigationProperty Name="EnrollFinishStudents" Relationship="Self.Fk_stud" FromRole="Students" ToRole="EnrollFinishStudent" />
+  </EntityType>
+  <EntityType Name="Students_food">
+    <Key>
+      <PropertyRef Name="Student_id" />
+    </Key>
+    <Property Name="Student_id" Type="Int32" Nullable="false" />
+    <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+    <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Student_psis_id" Type="Int32" />
+    <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="YearEdu">
+    <Key>
+      <PropertyRef Name="YearEduId" />
+    </Key>
+    <Property Name="yearName" Type="Int32" />
+    <Property Name="YearEduId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YearNameEng" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="EnrollYearSemesters" Relationship="Self.Fk_Year" FromRole="YearEdu" ToRole="EnrollYearSemester" />
+  </EntityType>
+  <EntityType Name="C_enrollattstudent">
+    <Key>
+      <PropertyRef Name="Student_id" />
+    </Key>
+    <Property Name="Student_id" Type="Int32" Nullable="false" />
+    <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="att_id" Type="Int32" />
+    <Property Name="Staff_id" Type="Int32" />
+    <Property Name="qira_id" Type="Int32" />
+    <Property Name="page" Type="Int32" />
+    <Property Name="attday_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EnrollStudentAttdance">
+    <Key>
+      <PropertyRef Name="att_id" />
+    </Key>
+    <Property Name="att_id" Type="Int32" Nullable="false" />
+    <Property Name="qira_id" Type="Int32" />
+    <Property Name="page" Type="Int32" />
+    <Property Name="Staff_id" Type="Int32" />
+    <Property Name="Student_id" Type="Int32" />
+    <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+    <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Class_room" Type="Int32" />
+    <Property Name="Class_year_index" Type="Int32" />
+    <Property Name="Teacher_id" Type="Int32" />
+    <Property Name="Class_id" Type="Int32" />
+    <Property Name="attday_id" Type="Int32" />
+    <Property Name="attday_date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="student2561">
+    <Key>
+      <PropertyRef Name="Student_id" />
+      <PropertyRef Name="Class_id" />
+    </Key>
+    <Property Name="Student_id" Type="Int32" Nullable="false" />
+    <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+    <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Student_psis_id" Type="Int32" />
+    <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+    <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Class_room" Type="Int32" />
+    <Property Name="Class_year_index" Type="Int32" />
+    <Property Name="Teacher_id" Type="Int32" />
+    <Property Name="Class_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student2561_copy1">
+    <Key>
+      <PropertyRef Name="Student_id" />
+      <PropertyRef Name="Class_id" />
+    </Key>
+    <Property Name="Student_id" Type="Int32" Nullable="false" />
+    <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+    <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Student_psis_id" Type="Int32" />
+    <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+    <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Class_room" Type="Int32" />
+    <Property Name="Class_year_index" Type="Int32" />
+    <Property Name="Teacher_id" Type="Int32" />
+    <Property Name="Class_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student2561_food">
+    <Key>
+      <PropertyRef Name="Student_id" />
+      <PropertyRef Name="Class_id" />
+    </Key>
+    <Property Name="Student_id" Type="Int32" Nullable="false" />
+    <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+    <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Student_psis_id" Type="Int32" />
+    <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+    <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Class_room" Type="Int32" />
+    <Property Name="Class_year_index" Type="Int32" />
+    <Property Name="Teacher_id" Type="Int32" />
+    <Property Name="Class_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="studentEduContest2561">
+    <Key>
+      <PropertyRef Name="Student_id" />
+      <PropertyRef Name="Class_id" />
+      <PropertyRef Name="TypeContest_id" />
+      <PropertyRef Name="EduContest_id" />
+    </Key>
+    <Property Name="Student_id" Type="Int32" Nullable="false" />
+    <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Class_name_id" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Class_room" Type="Int32" />
+    <Property Name="Class_year_index" Type="Int32" />
+    <Property Name="Teacher_id" Type="Int32" />
+    <Property Name="Class_id" Type="Int32" Nullable="false" />
+    <Property Name="TypeContest_id" Type="Int32" Nullable="false" />
+    <Property Name="NameContest" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+    <Property Name="Staff_id" Type="Int32" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <Property Name="group" Type="Int32" />
+    <Property Name="Day_contest" Type="DateTime" Precision="0" />
+    <Property Name="EduContest_id" Type="Int32" Nullable="false" />
+    <Property Name="result" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="View_Couse">
+    <Key>
+      <PropertyRef Name="EnrollCouseID" />
+      <PropertyRef Name="EnrollStudentCouseId" />
+      <PropertyRef Name="EnrEmpPosId" />
+      <PropertyRef Name="EmpId" />
+      <PropertyRef Name="Student_id" />
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CouseTxtId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DepartId" Type="Int32" />
+    <Property Name="CouseTime" Type="Int32" />
+    <Property Name="CouseWeight__" Type="Single" />
+    <Property Name="ClassId" Type="Int32" />
+    <Property Name="semester__" Type="Int32" />
+    <Property Name="EnrollCouseID" Type="Int32" Nullable="false" />
+    <Property Name="CouseExcel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CouseId" Type="Int32" />
+    <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CourseType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourseStatus" Type="Int32" />
+    <Property Name="EnrollStudentCouseId" Type="Int32" Nullable="false" />
+    <Property Name="Score1" Type="Double" />
+    <Property Name="Grade" Type="Double" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <Property Name="YearEdu" Type="Int32" />
+    <Property Name="Staff" Type="Int32" />
+    <Property Name="Semester" Type="Int32" />
+    <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+    <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Student_psis_id" Type="Int32" />
+    <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+    <Property Name="Employee_id" Type="Int32" />
+    <Property Name="Position_id" Type="Int32" />
+    <Property Name="EnrEmpPosStatus" Type="Int32" />
+    <Property Name="EnrEmpPosTimestamp" Type="DateTime" Precision="3" />
+    <Property Name="EnrEmpPosId" Type="Int32" Nullable="false" />
+    <Property Name="EmpTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EmpName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="EmpLname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="EmpBirthday" Type="DateTime" Precision="0" />
+    <Property Name="EmpIdcard" Type="Int32" />
+    <Property Name="EmpPsis_id" Type="Int32" />
+    <Property Name="EmpStatus" Type="Int32" />
+    <Property Name="EmpTimestamp" Type="DateTime" Precision="3" />
+    <Property Name="EmpTelephone" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="Empbank_id" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="EmpId" Type="Int32" Nullable="false" />
+    <Property Name="EmpGender" Type="Int32" />
+    <Property Name="Student_id" Type="Int32" Nullable="false" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ViewEmpPos">
+    <Key>
+      <PropertyRef Name="EnrEmpPosId" />
+    </Key>
+    <Property Name="EmpTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EmpName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="EmpLname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="EmpBirthday" Type="DateTime" Precision="0" />
+    <Property Name="EmpIdcard" Type="Int32" />
+    <Property Name="EmpPsis_id" Type="Int32" />
+    <Property Name="EmpStatus" Type="Int32" />
+    <Property Name="EmpTimestamp" Type="DateTime" Precision="3" />
+    <Property Name="EmpTelephone" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="Empbank_id" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="EmpId" Type="Int32" />
+    <Property Name="EmpGender" Type="Int32" />
+    <Property Name="EnrEmpPosId" Type="Int32" Nullable="false" />
+    <Property Name="EnrEmpPosStatus" Type="Int32" />
+    <Property Name="EnrEmpPosTimestamp" Type="DateTime" Precision="3" />
+    <Property Name="PosName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PosLevel" Type="Int32" />
+    <Property Name="PosId" Type="Int32" />
+  </EntityType>
+  <Association Name="C__fk_class">
+    <End Role="ClassInSchool" Type="Self.ClassInSchool" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollClass" Type="Self.EnrollClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClassInSchool">
+        <PropertyRef Name="ClassID" />
+      </Principal>
+      <Dependent Role="EnrollClass">
+        <PropertyRef Name="ClassSchoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_class1">
+    <End Role="ClassInSchool" Type="Self.ClassInSchool" Multiplicity="0..1" />
+    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClassInSchool">
+        <PropertyRef Name="ClassID" />
+      </Principal>
+      <Dependent Role="EnrollCouse">
+        <PropertyRef Name="ClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_couse1">
+    <End Role="Course" Type="Self.Course" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="EnrollCouse">
+        <PropertyRef Name="CouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_depart1">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Depart_Id" />
+      </Principal>
+      <Dependent Role="EnrollCouse">
+        <PropertyRef Name="DepartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_emp">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_RoomSession_Emp" Type="Self.Enroll_RoomSession_Emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="Enroll_RoomSession_Emp">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_emp_enr">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_Emp_Pos" Type="Self.Enroll_Emp_Pos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="Enroll_Emp_Pos">
+        <PropertyRef Name="Employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_emp2">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollEmpCouse" Type="Self.EnrollEmpCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="EnrollEmpCouse">
+        <PropertyRef Name="EnEmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_enr_pos">
+    <End Role="Position" Type="Self.Position" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_Emp_Pos" Type="Self.Enroll_Emp_Pos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="PosId" />
+      </Principal>
+      <Dependent Role="Enroll_Emp_Pos">
+        <PropertyRef Name="Position_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_room">
+    <End Role="RoomSession" Type="Self.RoomSession" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_RoomSession_Emp" Type="Self.Enroll_RoomSession_Emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomSession">
+        <PropertyRef Name="RoomSessionId" />
+      </Principal>
+      <Dependent Role="Enroll_RoomSession_Emp">
+        <PropertyRef Name="RoomSessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_class">
+    <End Role="EnrollClass" Type="Self.EnrollClass" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_student_class" Type="Self.Enroll_student_class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollClass">
+        <PropertyRef Name="EnrollClass_id" />
+      </Principal>
+      <Dependent Role="Enroll_student_class">
+        <PropertyRef Name="Class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_enrollStudent">
+    <End Role="Enroll_student_class" Type="Self.Enroll_student_class" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Enroll_student_class">
+        <PropertyRef Name="Enrol_stu_class_id" />
+      </Principal>
+      <Dependent Role="EnrollStudentCouse">
+        <PropertyRef Name="EnrollStudentClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_student2">
+    <End Role="Students" Type="Self.Student" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Enroll_student_class" Type="Self.Enroll_student_class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="Student_id" />
+      </Principal>
+      <Dependent Role="Enroll_student_class">
+        <PropertyRef Name="Student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_EnClass">
+    <End Role="EnrollClass" Type="Self.EnrollClass" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollEmpCouseClass" Type="Self.EnrollEmpCouseClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollClass">
+        <PropertyRef Name="EnrollClass_id" />
+      </Principal>
+      <Dependent Role="EnrollEmpCouseClass">
+        <PropertyRef Name="EnClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_couse2">
+    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollEmpCouse" Type="Self.EnrollEmpCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollCouse">
+        <PropertyRef Name="EnrollCouseID" />
+      </Principal>
+      <Dependent Role="EnrollEmpCouse">
+        <PropertyRef Name="EnCouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_EmpCouse">
+    <End Role="EnrollEmpCouse" Type="Self.EnrollEmpCouse" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollEmpCouseClass" Type="Self.EnrollEmpCouseClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollEmpCouse">
+        <PropertyRef Name="EnrollEmpCouseId" />
+      </Principal>
+      <Dependent Role="EnrollEmpCouseClass">
+        <PropertyRef Name="EnEmpCouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_year2">
+    <End Role="EnrollYearSemester" Type="Self.EnrollYearSemester" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollEmpCouse" Type="Self.EnrollEmpCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollYearSemester">
+        <PropertyRef Name="EnrollYearSemesterId" />
+      </Principal>
+      <Dependent Role="EnrollEmpCouse">
+        <PropertyRef Name="EnYearSemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_EmpCouseClass">
+    <End Role="EnrollEmpCouseClass" Type="Self.EnrollEmpCouseClass" Multiplicity="0..1" />
+    <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollEmpCouseClass">
+        <PropertyRef Name="EnrollEmpCouseClassId" />
+      </Principal>
+      <Dependent Role="EnrollStudentCouse">
+        <PropertyRef Name="EnEmpCouseClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_enroll_fam">
+    <End Role="Family" Type="Self.Family" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollFamilyStudent" Type="Self.EnrollFamilyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Family">
+        <PropertyRef Name="FamilyId" />
+      </Principal>
+      <Dependent Role="EnrollFamilyStudent">
+        <PropertyRef Name="FamilyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_enroll_Studnet">
+    <End Role="Students" Type="Self.Student" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollFamilyStudent" Type="Self.EnrollFamilyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="Student_id" />
+      </Principal>
+      <Dependent Role="EnrollFamilyStudent">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_finsh_form">
+    <End Role="FinishType" Type="Self.FinishType" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollFinishStudent" Type="Self.EnrollFinishStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FinishType">
+        <PropertyRef Name="FinishFormID" />
+      </Principal>
+      <Dependent Role="EnrollFinishStudent">
+        <PropertyRef Name="FinishTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_stud">
+    <End Role="Students" Type="Self.Student" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollFinishStudent" Type="Self.EnrollFinishStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="Student_id" />
+      </Principal>
+      <Dependent Role="EnrollFinishStudent">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_yearSem">
+    <End Role="EnrollYearSemester" Type="Self.EnrollYearSemester" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollYearSemester">
+        <PropertyRef Name="EnrollYearSemesterId" />
+      </Principal>
+      <Dependent Role="EnrollStudentCouse">
+        <PropertyRef Name="EnYearSemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Year">
+    <End Role="YearEdu" Type="Self.YearEdu" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollYearSemester" Type="Self.EnrollYearSemester" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YearEdu">
+        <PropertyRef Name="YearEduId" />
+      </Principal>
+      <Dependent Role="EnrollYearSemester">
+        <PropertyRef Name="YearEduId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="attendances" EntityType="Self.attendance" />
+    <EntitySet Name="attendance_day" EntityType="Self.attendance_day" />
+    <EntitySet Name="Classes" EntityType="Self.Class" />
+    <EntitySet Name="ClassInSchools" EntityType="Self.ClassInSchool" />
+    <EntitySet Name="ContestEducationSchools" EntityType="Self.ContestEducationSchool" />
+    <EntitySet Name="Courses" EntityType="Self.Course" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Enroll_EduContest" EntityType="Self.Enroll_EduContest" />
+    <EntitySet Name="Enroll_Emp_Pos" EntityType="Self.Enroll_Emp_Pos" />
+    <EntitySet Name="Enroll_paid" EntityType="Self.Enroll_paid" />
+    <EntitySet Name="Enroll_pay" EntityType="Self.Enroll_pay" />
+    <EntitySet Name="Enroll_RoomSession_Emp" EntityType="Self.Enroll_RoomSession_Emp" />
+    <EntitySet Name="Enroll_student_all_event" EntityType="Self.Enroll_student_all_event" />
+    <EntitySet Name="Enroll_student_class" EntityType="Self.Enroll_student_class" />
+    <EntitySet Name="EnrollClasses" EntityType="Self.EnrollClass" />
+    <EntitySet Name="EnrollCouses" EntityType="Self.EnrollCouse" />
+    <EntitySet Name="EnrollEmpCouses" EntityType="Self.EnrollEmpCouse" />
+    <EntitySet Name="EnrollEmpCouseClasses" EntityType="Self.EnrollEmpCouseClass" />
+    <EntitySet Name="EnrollFamilyStudents" EntityType="Self.EnrollFamilyStudent" />
+    <EntitySet Name="EnrollFinishStudents" EntityType="Self.EnrollFinishStudent" />
+    <EntitySet Name="EnrollStudentCouses" EntityType="Self.EnrollStudentCouse" />
+    <EntitySet Name="EnrollYearSemesters" EntityType="Self.EnrollYearSemester" />
+    <EntitySet Name="Families" EntityType="Self.Family" />
+    <EntitySet Name="FinishTypes" EntityType="Self.FinishType" />
+    <EntitySet Name="Foods" EntityType="Self.Food" />
+    <EntitySet Name="Monthlies" EntityType="Self.Monthly" />
+    <EntitySet Name="Positions" EntityType="Self.Position" />
+    <EntitySet Name="RoomSessions" EntityType="Self.RoomSession" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <EntitySet Name="Students_food" EntityType="Self.Students_food" />
+    <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+    <EntitySet Name="YearEdus" EntityType="Self.YearEdu" />
+    <EntitySet Name="C_enrollattstudent" EntityType="Self.C_enrollattstudent" />
+    <EntitySet Name="EnrollStudentAttdances" EntityType="Self.EnrollStudentAttdance" />
+    <EntitySet Name="student2561" EntityType="Self.student2561" />
+    <EntitySet Name="student2561_copy1" EntityType="Self.student2561_copy1" />
+    <EntitySet Name="student2561_food" EntityType="Self.student2561_food" />
+    <EntitySet Name="studentEduContest2561" EntityType="Self.studentEduContest2561" />
+    <EntitySet Name="View_Couse" EntityType="Self.View_Couse" />
+    <EntitySet Name="ViewEmpPos" EntityType="Self.ViewEmpPos" />
+    <AssociationSet Name="C__fk_class" Association="Self.C__fk_class">
+      <End Role="ClassInSchool" EntitySet="ClassInSchools" />
+      <End Role="EnrollClass" EntitySet="EnrollClasses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_class1" Association="Self.FK_class1">
+      <End Role="ClassInSchool" EntitySet="ClassInSchools" />
+      <End Role="EnrollCouse" EntitySet="EnrollCouses" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_couse1" Association="Self.Fk_couse1">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="EnrollCouse" EntitySet="EnrollCouses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_depart1" Association="Self.FK_depart1">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="EnrollCouse" EntitySet="EnrollCouses" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_emp" Association="Self.Fk_emp">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Enroll_RoomSession_Emp" EntitySet="Enroll_RoomSession_Emp" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_emp_enr" Association="Self.Fk_emp_enr">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_emp2" Association="Self.Fk_emp2">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouses" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_enr_pos" Association="Self.Fk_enr_pos">
+      <End Role="Position" EntitySet="Positions" />
+      <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_room" Association="Self.Fk_room">
+      <End Role="RoomSession" EntitySet="RoomSessions" />
+      <End Role="Enroll_RoomSession_Emp" EntitySet="Enroll_RoomSession_Emp" />
+    </AssociationSet>
+    <AssociationSet Name="fk_class" Association="Self.fk_class">
+      <End Role="EnrollClass" EntitySet="EnrollClasses" />
+      <End Role="Enroll_student_class" EntitySet="Enroll_student_class" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_enrollStudent" Association="Self.Fk_enrollStudent">
+      <End Role="Enroll_student_class" EntitySet="Enroll_student_class" />
+      <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouses" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_student2" Association="Self.Fk_student2">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Enroll_student_class" EntitySet="Enroll_student_class" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_EnClass" Association="Self.Fk_EnClass">
+      <End Role="EnrollClass" EntitySet="EnrollClasses" />
+      <End Role="EnrollEmpCouseClass" EntitySet="EnrollEmpCouseClasses" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_couse2" Association="Self.Fk_couse2">
+      <End Role="EnrollCouse" EntitySet="EnrollCouses" />
+      <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouses" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_EmpCouse" Association="Self.Fk_EmpCouse">
+      <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouses" />
+      <End Role="EnrollEmpCouseClass" EntitySet="EnrollEmpCouseClasses" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_year2" Association="Self.Fk_year2">
+      <End Role="EnrollYearSemester" EntitySet="EnrollYearSemesters" />
+      <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouses" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_EmpCouseClass" Association="Self.Fk_EmpCouseClass">
+      <End Role="EnrollEmpCouseClass" EntitySet="EnrollEmpCouseClasses" />
+      <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouses" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_enroll_fam" Association="Self.Fk_enroll_fam">
+      <End Role="Family" EntitySet="Families" />
+      <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudents" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_enroll_Studnet" Association="Self.Fk_enroll_Studnet">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudents" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_finsh_form" Association="Self.Fk_finsh_form">
+      <End Role="FinishType" EntitySet="FinishTypes" />
+      <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudents" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_stud" Association="Self.Fk_stud">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudents" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_yearSem" Association="Self.Fk_yearSem">
+      <End Role="EnrollYearSemester" EntitySet="EnrollYearSemesters" />
+      <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouses" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Year" Association="Self.Fk_Year">
+      <End Role="YearEdu" EntitySet="YearEdus" />
+      <End Role="EnrollYearSemester" EntitySet="EnrollYearSemesters" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

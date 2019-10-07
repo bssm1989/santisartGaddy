@@ -1,0 +1,105 @@
+﻿@model IEnumerable<santisart_app.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpLname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpBirthday)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpIdcard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpPsis_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpTimestamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpTelephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empbank_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpGender)
+        </th>
+        <th>
+            ตำแหน่ง
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpLname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpBirthday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpIdcard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpPsis_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpTimestamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpTelephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empbank_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpGender)
+        </td>
+        <td>
+
+            @foreach (var items in item.Enroll_Emp_Pos)
+            {
+                @Html.DisplayFor(modelItem => items.Position.PosName)
+            }
+
+
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmpId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmpId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmpId })
+        </td>
+    </tr>
+}
+
+</table>

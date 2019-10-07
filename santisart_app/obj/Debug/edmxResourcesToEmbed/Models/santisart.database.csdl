@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="santisar_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="santisar_serv" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Enroll_paid" EntityType="santisar_Model.Enroll_paid" />
+    <EntitySet Name="Enroll_pay" EntityType="santisar_Model.Enroll_pay" />
+    <EntitySet Name="Enroll_student_class" EntityType="santisar_Model.Enroll_student_class" />
+    <EntitySet Name="Food" EntityType="santisar_Model.Food" />
+    <EntitySet Name="Monthly" EntityType="santisar_Model.Monthly" />
+    <EntitySet Name="Students" EntityType="santisar_Model.Students" />
+  </EntityContainer>
+  <EntityType Name="Enroll_paid">
+    <Key>
+      <PropertyRef Name="Paid_id" />
+    </Key>
+    <Property Name="Paid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Student_id" Type="Int32" />
+    <Property Name="Monthly_id" Type="Int32" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <Property Name="Staff_paid_id" Type="Int32" />
+    <Property Name="Student_type_id" Type="Int32" />
+    <Property Name="Paid" Type="Int32" />
+    <Property Name="Class_id" Type="Int32" />
+    <Property Name="Pay_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Enroll_pay">
+    <Key>
+      <PropertyRef Name="Pay_id" />
+    </Key>
+    <Property Name="Pay_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Paid_id" Type="Int32" />
+    <Property Name="Student_id" Type="Int32" />
+    <Property Name="Pay" Type="Int32" />
+    <Property Name="Staff_id" Type="Int32" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Enroll_student_class">
+    <Key>
+      <PropertyRef Name="Enrol_stu_class_id" />
+    </Key>
+    <Property Name="Student_id" Type="Int32" Nullable="false" />
+    <Property Name="Class_id" Type="Int32" Nullable="false" />
+    <Property Name="Enrol_stu_class_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="Food_id" />
+    </Key>
+    <Property Name="Food_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Food_id_student" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Food_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Food_lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Food_month_th" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Food_month_index" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Food_paid" Type="Int32" />
+    <Property Name="Food_full_paid" Type="Int32" />
+    <Property Name="Food_class" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Food_year" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Food_timesatamp" Type="DateTime" Precision="3" />
+    <Property Name="Food_update" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Food_paid_id" Type="Int32" />
+    <Property Name="Food_title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Monthly">
+    <Key>
+      <PropertyRef Name="Monthly_id" />
+    </Key>
+    <Property Name="Monthly_id" Type="Int32" Nullable="false" />
+    <Property Name="Month_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Month_year" Type="Int32" />
+    <Property Name="Month_course" Type="Int32" />
+    <Property Name="Month_status" Type="Boolean" />
+    <Property Name="Month_yearindex" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="Student_id" />
+    </Key>
+    <Property Name="Student_id" Type="Int32" Nullable="false" />
+    <Property Name="Student_title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Student_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Student_birthday" Type="DateTime" Precision="3" />
+    <Property Name="Student_idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Student_psis_id" Type="Int32" />
+    <Property Name="Student_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Student_timestamp" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

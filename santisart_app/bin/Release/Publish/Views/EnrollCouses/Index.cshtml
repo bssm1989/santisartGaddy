@@ -1,0 +1,57 @@
+﻿@model IEnumerable<santisart_app.Models.EnrollCouse>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CouseTxtId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.semester__)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassInSchool.ClassShortName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.DepartName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CouseTxtId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.semester__)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassInSchool.ClassShortName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.DepartName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EnrollCouseID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EnrollCouseID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EnrollCouseID })
+        </td>
+    </tr>
+}
+
+</table>
