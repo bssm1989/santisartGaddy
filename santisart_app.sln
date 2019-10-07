@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "santisart_app", "santisart_app\santisart_app.csproj", "{343E3FC0-25E1-47AA-A011-DBEDCEAB1310}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{343E3FC0-25E1-47AA-A011-DBEDCEAB1310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{343E3FC0-25E1-47AA-A011-DBEDCEAB1310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{343E3FC0-25E1-47AA-A011-DBEDCEAB1310}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{343E3FC0-25E1-47AA-A011-DBEDCEAB1310}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {546251A8-ED85-4251-B390-9CEF9B6A65A8}
+	EndGlobalSection
+EndGlobal
