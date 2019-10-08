@@ -17,7 +17,7 @@ namespace santisart_app.Controllers
         // GET: UserProfiles
         public ActionResult Index()
         {
-            return View(db.UserProfile.ToList());
+            return View(db.UserProfiles.ToList());
         }
         public ActionResult Login(string ReturnUrl)
         {
@@ -29,13 +29,13 @@ namespace santisart_app.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(UserProfile objUser)
+        public ActionResult Login(UserProfiles objUser)
         {
             if (ModelState.IsValid)
             {
                 using (santisartEntities2 db2 = new santisartEntities2())
                 {
-                    var obj = db2.Employee.Where(a => a.UserName.Equals(objUser.UserName) && a.Password.Equals(objUser.Password)).FirstOrDefault();
+                    var obj = db2.Employees.Where(a => a.UserName.Equals(objUser.UserName) && a.Password.Equals(objUser.Password)).FirstOrDefault();
                     if (obj != null)
                     {
                         Session["UserID"] = obj.EmpId.ToString();
@@ -90,12 +90,12 @@ namespace santisart_app.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserProfile userProfile = db.UserProfile.Find(id);
-            if (userProfile == null)
+            UserProfiles UserProfiles = db.UserProfiles.Find(id);
+            if (UserProfiles == null)
             {
                 return HttpNotFound();
             }
-            return View(userProfile);
+            return View(UserProfiles);
         }
 
         // GET: UserProfiles/Create
@@ -109,16 +109,16 @@ namespace santisart_app.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserId,UserName,Password,IsActive")] UserProfile userProfile)
+        public ActionResult Create([Bind(Include = "UserId,UserName,Password,IsActive")] UserProfiles UserProfiles)
         {
             if (ModelState.IsValid)
             {
-                db.UserProfile.Add(userProfile);
+                db.UserProfiles.Add(UserProfiles);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(userProfile);
+            return View(UserProfiles);
         }
 
         // GET: UserProfiles/Edit/5
@@ -128,12 +128,12 @@ namespace santisart_app.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserProfile userProfile = db.UserProfile.Find(id);
-            if (userProfile == null)
+            UserProfiles UserProfiles = db.UserProfiles.Find(id);
+            if (UserProfiles == null)
             {
                 return HttpNotFound();
             }
-            return View(userProfile);
+            return View(UserProfiles);
         }
 
         // POST: UserProfiles/Edit/5
@@ -141,15 +141,15 @@ namespace santisart_app.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserId,UserName,Password,IsActive")] UserProfile userProfile)
+        public ActionResult Edit([Bind(Include = "UserId,UserName,Password,IsActive")] UserProfiles UserProfiles)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(userProfile).State = EntityState.Modified;
+                db.Entry(UserProfiles).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(userProfile);
+            return View(UserProfiles);
         }
 
         // GET: UserProfiles/Delete/5
@@ -159,12 +159,12 @@ namespace santisart_app.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserProfile userProfile = db.UserProfile.Find(id);
-            if (userProfile == null)
+            UserProfiles UserProfiles = db.UserProfiles.Find(id);
+            if (UserProfiles == null)
             {
                 return HttpNotFound();
             }
-            return View(userProfile);
+            return View(UserProfiles);
         }
 
         // POST: UserProfiles/Delete/5
@@ -172,8 +172,8 @@ namespace santisart_app.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            UserProfile userProfile = db.UserProfile.Find(id);
-            db.UserProfile.Remove(userProfile);
+            UserProfiles UserProfiles = db.UserProfiles.Find(id);
+            db.UserProfiles.Remove(UserProfiles);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

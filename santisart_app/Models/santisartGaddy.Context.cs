@@ -24,51 +24,51 @@ namespace santisart_app.Models
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<attendance> attendances { get; set; }
         public virtual DbSet<attendance_day> attendance_day { get; set; }
-        public virtual DbSet<Class> Class { get; set; }
-        public virtual DbSet<ClassInSchool> ClassInSchool { get; set; }
-        public virtual DbSet<ContestEducationSchool> ContestEducationSchool { get; set; }
-        public virtual DbSet<Course> Course { get; set; }
-        public virtual DbSet<Department> Department { get; set; }
-        public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<Class> Classes { get; set; }
+        public virtual DbSet<ClassInSchool> ClassInSchools { get; set; }
+        public virtual DbSet<ContestEducationSchools> ContestEducationSchools { get; set; }
+        public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<District> Districts { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Enroll_EduContest> Enroll_EduContest { get; set; }
-        public virtual DbSet<Enroll_Emp_Pos> Enroll_Emp_Po { get; set; }
+        public virtual DbSet<Enroll_Emp_Pos> Enroll_Emp_Pos { get; set; }
         public virtual DbSet<Enroll_paid> Enroll_paid { get; set; }
         public virtual DbSet<Enroll_pay> Enroll_pay { get; set; }
         public virtual DbSet<Enroll_RoomSession_Emp> Enroll_RoomSession_Emp { get; set; }
         public virtual DbSet<Enroll_student_all_event> Enroll_student_all_event { get; set; }
         public virtual DbSet<Enroll_student_class> Enroll_student_class { get; set; }
-        public virtual DbSet<EnrollClass> EnrollClass { get; set; }
-        public virtual DbSet<EnrollCouse> EnrollCouse { get; set; }
-        public virtual DbSet<EnrollEmpCouse> EnrollEmpCouse { get; set; }
-        public virtual DbSet<EnrollEmpCouseClass> EnrollEmpCouseClass { get; set; }
-        public virtual DbSet<EnrollFamilyStudent> EnrollFamilyStudent { get; set; }
-        public virtual DbSet<EnrollFinishStudent> EnrollFinishStudent { get; set; }
-        public virtual DbSet<EnrollStudentCouse> EnrollStudentCouse { get; set; }
-        public virtual DbSet<EnrollYearSemester> EnrollYearSemester { get; set; }
-        public virtual DbSet<Family> Familie { get; set; }
-        public virtual DbSet<FinishType> FinishType { get; set; }
-        public virtual DbSet<Food> Food { get; set; }
-        public virtual DbSet<Monthly> Monthly { get; set; }
-        public virtual DbSet<Position> Position { get; set; }
-        public virtual DbSet<RoomSession> RoomSession { get; set; }
+        public virtual DbSet<enrolladdress> enrolladdresses { get; set; }
+        public virtual DbSet<EnrollClass> EnrollClasses { get; set; }
+        public virtual DbSet<EnrollCouse> EnrollCouses { get; set; }
+        public virtual DbSet<EnrollEmpCouse> EnrollEmpCouses { get; set; }
+        public virtual DbSet<EnrollEmpCouseClass> EnrollEmpCouseClasses { get; set; }
+        public virtual DbSet<EnrollFamilyStudent> EnrollFamilyStudents { get; set; }
+        public virtual DbSet<EnrollFinishStudent> EnrollFinishStudents { get; set; }
+        public virtual DbSet<EnrollStudentCouse> EnrollStudentCouses { get; set; }
+        public virtual DbSet<EnrollYearSemester> EnrollYearSemesters { get; set; }
+        public virtual DbSet<Family> Families { get; set; }
+        public virtual DbSet<FinishType> FinishTypes { get; set; }
+        public virtual DbSet<Food> Foods { get; set; }
+        public virtual DbSet<Monthly> Monthlies { get; set; }
+        public virtual DbSet<Position> Positions { get; set; }
+        public virtual DbSet<Province> Provinces { get; set; }
+        public virtual DbSet<RoomSession> RoomSessions { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Students_food> Students_food { get; set; }
-        public virtual DbSet<UserProfile> UserProfile { get; set; }
-        public virtual DbSet<YearEdu> YearEdu { get; set; }
+        public virtual DbSet<Subdistrict> Subdistricts { get; set; }
+        public virtual DbSet<UserProfiles> UserProfiles { get; set; }
+        public virtual DbSet<YearEdu> YearEdus { get; set; }
         public virtual DbSet<C_enrollattstudent> C_enrollattstudent { get; set; }
-        public virtual DbSet<EnrollStudentAttdance> EnrollStudentAttdance { get; set; }
+        public virtual DbSet<EnrollStudentAttdance> EnrollStudentAttdances { get; set; }
         public virtual DbSet<student2561> student2561 { get; set; }
         public virtual DbSet<student2561_copy1> student2561_copy1 { get; set; }
         public virtual DbSet<student2561_food> student2561_food { get; set; }
         public virtual DbSet<studentEduContest2561> studentEduContest2561 { get; set; }
         public virtual DbSet<View_Couse> View_Couse { get; set; }
         public virtual DbSet<ViewEmpPos> ViewEmpPos { get; set; }
-        public virtual DbSet<District> Districts { get; set; }
-        public virtual DbSet<enrolladdress> enrolladdresses { get; set; }
-        public virtual DbSet<Province> Provinces { get; set; }
-        public virtual DbSet<Subdistrict> Subdistricts { get; set; }
     }
 }

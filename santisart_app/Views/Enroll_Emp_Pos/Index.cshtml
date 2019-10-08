@@ -18,10 +18,10 @@
             @Html.DisplayNameFor(model => model.EnrEmpPosTimestamp)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Employee.EmpTitle)
+            @Html.DisplayNameFor(model => model.Employees.EmpTitle)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Position.PosName)
+            @Html.DisplayNameFor(model => model.Positions.PosName)
         </th>
         <th></th>
     </tr>
@@ -35,10 +35,10 @@
             @Html.DisplayFor(modelItem => item.EnrEmpPosTimestamp)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Employee.EmpTitle)
+            @Html.DisplayFor(modelItem => item.Employees.EmpTitle)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Position.PosName)
+            @Html.DisplayFor(modelItem => item.Positions.PosName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.EnrEmpPosId }) |

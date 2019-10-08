@@ -1,4 +1,4 @@
-﻿@model IEnumerable<santisart_app.Models.EnrollStudentCouse>
+﻿@model IEnumerable<santisart_app.Models.EnrollStudentCouses>
 @using System.Linq
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
 <div id="vue-app">
@@ -15,8 +15,8 @@
         //var listScore2 = ;
         //ViewBag.studentCouse;
         int[] enrollClass = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
-        //Model.Where(x => x.EnrollCouse.ClassId == 13);
-        //foreach (var item in Model.Where(x=>x.EnrollCouse.ClassId==13).toList())
+        //Model.Where(x => x.EnrollCouses.ClassesId == 13);
+        //foreach (var item in Model.Where(x=>x.EnrollCouses.ClassesId==13).toList())
         //{
         //foreach (var item2 in)
         //{
@@ -26,8 +26,8 @@
     }
     @foreach (var itemClass in enrollClass)
     {
-        //var itemCouseByClass = Model.Where(x => x.EnrollCouse.ClassId == itemClass);
-        if (Model.Where(x => x.EnrollCouse.ClassId == itemClass).Count() != 0)
+        //var itemCouseByClass = Model.Where(x => x.EnrollCouses.ClassesId == itemClass);
+        if (Model.Where(x => x.EnrollCouses.ClassesId == itemClass).Count() != 0)
         {
             for (int i = 1; i < 3; i++)
             {
@@ -35,7 +35,7 @@
                     <div class="col-md-12 col-sm-6 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>ปีการศึกษา @Model.Where(x => x.EnrollCouse.ClassId == itemClass && x.Semester == i).First().YearEdu <small>เทรอม @i</small></h2>
+                                <h2>ปีการศึกษา @Model.Where(x => x.EnrollCouses.ClassesId == itemClass && x.Semester == i).First().YearEdu <small>เทรอม @i</small></h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li>
                                         <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -63,10 +63,10 @@
 
 
                                         <th>
-                                            @Html.DisplayNameFor(model => model.EnrollCouse.CouseTxtId)
+                                            @Html.DisplayNameFor(model => model.EnrollCouses.CouseTxtId)
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.EnrollCouse.Course.CourseName)
+                                            @Html.DisplayNameFor(model => model.EnrollCouses.Course.CourseName)
                                         </th>
                                         <th>
                                             @Html.DisplayNameFor(model => model.Score)
@@ -81,16 +81,16 @@
                                         <th></th>
                                     </tr>
 
-                                    @foreach (var item in Model.Where(x => x.EnrollCouse.ClassId == itemClass && x.Semester == i))
+                                    @foreach (var item in Model.Where(x => x.EnrollCouses.ClassesId == itemClass && x.Semester == i))
                                     {
                                         <tr>
 
 
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.EnrollCouse.CouseTxtId)
+                                                @Html.DisplayFor(modelItem => item.EnrollCouses.CouseTxtId)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.EnrollCouse.Course.CourseName)
+                                                @Html.DisplayFor(modelItem => item.EnrollCouses.Course.CourseName)
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.Score)

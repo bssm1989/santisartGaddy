@@ -12,7 +12,7 @@ namespace santisart_app.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ContestEducationSchool
+    public partial class ContestEducationSchools
     {
         public int TypeContest_id { get; set; }
         public string NameContest { get; set; }

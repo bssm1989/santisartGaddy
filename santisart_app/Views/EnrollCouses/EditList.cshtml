@@ -1,4 +1,4 @@
-﻿@model IEnumerable<santisart_app.Models.EnrollCouse>
+﻿@model IEnumerable<santisart_app.Models.EnrollCouses>
 
 @using (Html.BeginForm())
 { var indexEnroll = 0;
@@ -82,11 +82,11 @@
 
                     <div class="form-group">
                         <div class="col-md-12">
-                            <select class="form-control"  Name ="EnrollCouse[@indexEnroll].ClassId">
-                                @foreach (SelectListItem option in ViewBag.ClassId)
+                            <select class="form-control"  Name ="EnrollCouse[@indexEnroll].ClassesId">
+                                @foreach (SelectListItem option in ViewBag.ClassesId)
                                 {
                                     var trueTxT = "";
-                                    if (Convert.ToInt32(option.Value) == item.ClassId)
+                                    if (Convert.ToInt32(option.Value) == item.ClassesId)
                                     {
                                         trueTxT = "selected";
                                     }

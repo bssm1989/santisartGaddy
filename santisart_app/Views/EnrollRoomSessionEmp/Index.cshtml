@@ -15,7 +15,7 @@
             ชื่อ - สกุล
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RoomSession.RoomName)
+            @Html.DisplayNameFor(model => model.RoomSessions.RoomName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.staft)
@@ -35,10 +35,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Employee.EmpTitle) @Html.DisplayFor(modelItem => item.Employee.EmpName) @Html.DisplayFor(modelItem => item.Employee.EmpLname)
+            @Html.DisplayFor(modelItem => item.Employees.EmpTitle) @Html.DisplayFor(modelItem => item.Employees.EmpName) @Html.DisplayFor(modelItem => item.Employees.EmpLname)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.RoomSession.RoomName)
+            @Html.DisplayFor(modelItem => item.RoomSessions.RoomName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.staft)

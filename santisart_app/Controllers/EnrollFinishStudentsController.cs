@@ -17,7 +17,7 @@ namespace santisart_app.Controllers
         // GET: EnrollFinishStudents
         public ActionResult Index()
         {
-            var enrollFinishStudent = db.EnrollFinishStudent.Include(e => e.Student).Include(e => e.FinishType);
+            var enrollFinishStudent = db.EnrollFinishStudents.Include(e => e.Student).Include(e => e.FinishType);
             return View(enrollFinishStudent.ToList());
         }
 
@@ -28,7 +28,7 @@ namespace santisart_app.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EnrollFinishStudent enrollFinishStudent = db.EnrollFinishStudent.Find(id);
+            EnrollFinishStudent enrollFinishStudent = db.EnrollFinishStudents.Find(id);
             if (enrollFinishStudent == null)
             {
                 return HttpNotFound();
@@ -40,7 +40,7 @@ namespace santisart_app.Controllers
         public ActionResult Create()
         {
             ViewBag.StudentId = new SelectList(db.Students, "Student_id", "Student_title");
-            ViewBag.FinishTypeId = new SelectList(db.FinishType, "FinishFormID", "FormName");
+            ViewBag.FinishTypeId = new SelectList(db.FinishTypes, "FinishFormID", "FormName");
             return View();
         }
 
@@ -53,13 +53,13 @@ namespace santisart_app.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.EnrollFinishStudent.Add(enrollFinishStudent);
+                db.EnrollFinishStudents.Add(enrollFinishStudent);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.StudentId = new SelectList(db.Students, "Student_id", "Student_title", enrollFinishStudent.StudentId);
-            ViewBag.FinishTypeId = new SelectList(db.FinishType, "FinishFormID", "FormName", enrollFinishStudent.FinishTypeId);
+            ViewBag.FinishTypeId = new SelectList(db.FinishTypes, "FinishFormID", "FormName", enrollFinishStudent.FinishTypeId);
             return View(enrollFinishStudent);
         }
 
@@ -70,13 +70,13 @@ namespace santisart_app.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EnrollFinishStudent enrollFinishStudent = db.EnrollFinishStudent.Find(id);
+            EnrollFinishStudent enrollFinishStudent = db.EnrollFinishStudents.Find(id);
             if (enrollFinishStudent == null)
             {
                 return HttpNotFound();
             }
             ViewBag.StudentId = new SelectList(db.Students, "Student_id", "Student_title", enrollFinishStudent.StudentId);
-            ViewBag.FinishTypeId = new SelectList(db.FinishType, "FinishFormID", "FormName", enrollFinishStudent.FinishTypeId);
+            ViewBag.FinishTypeId = new SelectList(db.FinishTypes, "FinishFormID", "FormName", enrollFinishStudent.FinishTypeId);
             return View(enrollFinishStudent);
         }
 
@@ -94,7 +94,7 @@ namespace santisart_app.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.StudentId = new SelectList(db.Students, "Student_id", "Student_title", enrollFinishStudent.StudentId);
-            ViewBag.FinishTypeId = new SelectList(db.FinishType, "FinishFormID", "FormName", enrollFinishStudent.FinishTypeId);
+            ViewBag.FinishTypeId = new SelectList(db.FinishTypes, "FinishFormID", "FormName", enrollFinishStudent.FinishTypeId);
             return View(enrollFinishStudent);
         }
 
@@ -105,7 +105,7 @@ namespace santisart_app.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EnrollFinishStudent enrollFinishStudent = db.EnrollFinishStudent.Find(id);
+            EnrollFinishStudent enrollFinishStudent = db.EnrollFinishStudents.Find(id);
             if (enrollFinishStudent == null)
             {
                 return HttpNotFound();
@@ -118,8 +118,8 @@ namespace santisart_app.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            EnrollFinishStudent enrollFinishStudent = db.EnrollFinishStudent.Find(id);
-            db.EnrollFinishStudent.Remove(enrollFinishStudent);
+            EnrollFinishStudent enrollFinishStudent = db.EnrollFinishStudents.Find(id);
+            db.EnrollFinishStudents.Remove(enrollFinishStudent);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

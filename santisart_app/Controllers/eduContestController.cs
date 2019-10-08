@@ -37,7 +37,7 @@ namespace santisart_app.Controllers
         public ActionResult getDepartment()
         {
           
-            return Json(db.ContestEducationSchool.Select(x => new
+            return Json(db.ContestEducationSchools.Select(x => new
             {
                 DepartmentID = x.TypeContest_id,
                 DepartmentName = x.NameContest

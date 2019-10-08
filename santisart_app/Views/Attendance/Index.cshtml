@@ -34,7 +34,7 @@
 <div class="col-lg-3">
     <form action="@Url.Action("index", "Attendance")">
 
-        @Html.DropDownList("classId", (IEnumerable<SelectListItem>)Model.classList, new { @class = "form-control", onchange = "this.form.submit();" })
+        @Html.DropDownList("classId", (IEnumerable<SelectListItem>)Model.ClassesList, new { @class = "form-control", onchange = "this.form.submit();" })
 
         <noscript><input type="submit" value="Submit"></noscript>
     </form>

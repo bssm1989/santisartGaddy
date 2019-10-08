@@ -1,4 +1,4 @@
-﻿@model IEnumerable<santisart_app.Models.Employee>
+﻿@model IEnumerable<santisart_app.Models.Employees>
 
 @{
     ViewBag.Title = "Index";
@@ -89,7 +89,7 @@
 
             @foreach (var items in item.Enroll_Emp_Pos)
             {
-                @Html.DisplayFor(modelItem => items.Position.PosName)
+                @Html.DisplayFor(modelItem => items.Positions.PosName)
             }
 
 

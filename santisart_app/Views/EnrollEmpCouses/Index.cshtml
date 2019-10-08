@@ -1,4 +1,4 @@
-﻿@model IEnumerable<santisart_app.Models.EnrollEmpCouse>
+﻿@model IEnumerable<santisart_app.Models.EnrollEmpCouses>
 @using System.Linq;
 @{
     ViewBag.Title = "Index";
@@ -35,29 +35,29 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @item.Employee.EmpTitle @item.Employee.EmpName @item.Employee.EmpLname
+            @item.Employees.EmpTitle @item.Employees.EmpName @item.Employees.EmpLname
         </td>
         <td>
-            @item.EnrollCouse.CouseTxtId
+            @item.EnrollCouses.CouseTxtId
         </td>
         <td>
-            @item.EnrollCouse.Course.CourseName
+            @item.EnrollCouses.Course.CourseName
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EnrollCouse.ClassInSchool.ClassShortName)
+            @Html.DisplayFor(modelItem => item.EnrollCouses.ClassesInSchool.ClassesShortName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EnrollYearSemester.YearEdu.yearName)
+            @Html.DisplayFor(modelItem => item.EnrollYearSemesters.YearEdu.yearName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EnrollYearSemester.Semester)
+            @Html.DisplayFor(modelItem => item.EnrollYearSemesters.Semester)
         </td>
         <td>
 
-            @foreach (var items in item.EnrollEmpCouseClass.Where(x => x.Status != 0))
+            @foreach (var items in item.EnrollEmpCouseClasses.Where(x => x.Status != 0))
             {
                 <a href="@Url.Action("IndexByIdEmpcouseClass", "EnrollStudentCouses", new { id = items.EnrollEmpCouseClassId })">
-                    <span class="badge badge-primary">@items.EnrollClass.ClassInSchool.ClassShortName/@items.EnrollClass.Class_room</span>
+                    <span class="badge badge-primary">@items.EnrollClass.ClassesInSchool.ClassesShortName/@items.EnrollClass.Classes_room</span>
                 </a>
             }
         </td> 

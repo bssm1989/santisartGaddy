@@ -17,7 +17,7 @@ namespace santisart_app.Controllers
         // GET: EnrollEmpCouses
         public ActionResult Index()
         {
-            var enrollEmpCouse = db.EnrollEmpCouse
+            var enrollEmpCouse = db.EnrollEmpCouses
                 .Include(e => e.Employee)
                 .Include(e => e.EnrollCouse)
                 .Include(e => e.EnrollYearSemester)
@@ -27,35 +27,35 @@ namespace santisart_app.Controllers
         }
         public ActionResult AddClassRoom(int? id)
         {
-            EnrollEmpCouse EnEmpCoues = db.EnrollEmpCouse.Find(id);
-            ViewBag.Emp = db.Employee.Find(EnEmpCoues.EnEmpId);
-            ViewBag.Couse = db.EnrollCouse.Find(EnEmpCoues.EnCouseId);
+            EnrollEmpCouse EnEmpCoues = db.EnrollEmpCouses.Find(id);
+            ViewBag.Emp = db.Employees.Find(EnEmpCoues.EnEmpId);
+            ViewBag.Couse = db.EnrollCouses.Find(EnEmpCoues.EnCouseId);
             ViewBag.EnEmpCouseId = id;
             int itemGetEnrollCouseID = EnEmpCoues.EnrollCouse.EnrollCouseID ;
-            ViewBag.enCouseClassAllEmp = db.EnrollEmpCouseClass.Where(x => x.EnrollEmpCouse.EnrollCouse.EnrollCouseID == itemGetEnrollCouseID&&x.Status!=0).ToList();
-            return View(db.EnrollClass.Where(x => x.ClassSchoolid == EnEmpCoues.EnrollCouse.ClassInSchool.ClassID&& x.Status_class==1)
+            ViewBag.enCouseClassAllEmp = db.EnrollEmpCouseClasses.Where(x => x.EnrollEmpCouse.EnrollCouse.EnrollCouseID == itemGetEnrollCouseID&&x.Status!=0).ToList();
+            return View(db.EnrollClasses.Where(x => x.ClassSchoolid == EnEmpCoues.EnrollCouse.ClassInSchool.ClassID&& x.Status_class==1)
             .ToList());
         }
         [HttpPost]
         public ActionResult AddClassRoom(List<EnrollEmpCouseClass> EnrollEmpCouseClass2)
         {
 
-            //EnrollCouse EditListEdit = db.EnrollCouse.Find(item.EnrollCouseID);
+            //EnrollCouse EditListEdit = db.EnrollCouses.Find(item.EnrollCouseID);
             //IEnumerable<EnrollEmpCouseClass> getFirst = EnrollEmpCouseClass.Where(x => x.EnClassId != 0 && x.EnClassId != null);
             var firstRow = EnrollEmpCouseClass2.First();
                 //int itemGEtClassId = EnrollEmpCouseClass2.First().Status  ?? default(int);//EnrollClass_id
                 int itemGEtClassId = firstRow.Status ?? default(int);
             int itemGetEnempCouseId=firstRow.EnEmpCouseId ?? default(int);//EnrollClass_id
-            //var  getDataEnEmpCouseClass = db.EnrollEmpCouseClass.Where(y => y.EnEmpCouseId==7).ToList();
-            //var getDataEnEmpCouseClass = db.EnrollEmpCouseClass.Where(x => x.EnrollClass.ClassSchoolid == itemGEtClassId ).ToList();
-            var getDataEnEmpCouseClass = db.EnrollEmpCouseClass.Where(x => x.EnrollClass.ClassSchoolid == itemGEtClassId && x.EnEmpCouseId == itemGetEnempCouseId).ToList();
-            //var getDataEnEmpCouseClass = db.EnrollEmpCouseClass.Where(x => x.EnrollClass.ClassSchoolid == itemGEtClassId && x.EnEmpCouseId == EnrollEmpCouseClass2.First().EnEmpCouseId).ToList();
+            //var  getDataEnEmpCouseClass = db.EnrollEmpCouseClasses.Where(y => y.EnEmpCouseId==7).ToList();
+            //var getDataEnEmpCouseClass = db.EnrollEmpCouseClasses.Where(x => x.EnrollClass.ClassSchoolid == itemGEtClassId ).ToList();
+            var getDataEnEmpCouseClass = db.EnrollEmpCouseClasses.Where(x => x.EnrollClass.ClassSchoolid == itemGEtClassId && x.EnEmpCouseId == itemGetEnempCouseId).ToList();
+            //var getDataEnEmpCouseClass = db.EnrollEmpCouseClasses.Where(x => x.EnrollClass.ClassSchoolid == itemGEtClassId && x.EnEmpCouseId == EnrollEmpCouseClass2.First().EnEmpCouseId).ToList();
             var countClassIdInEnEmpCouseClass = EnrollEmpCouseClass2.Where(x => x.EnClassId != 0&&x.EnClassId!=null).Count();
                 if (ModelState.IsValid)
                 {//มีมาก่อนแล้ว
                 if (getDataEnEmpCouseClass.Count() >= countClassIdInEnEmpCouseClass)
                 {
-                    IEnumerable<EnrollEmpCouseClass> getdata = db.EnrollEmpCouseClass.Where(y => y.EnrollClass.ClassSchoolid == itemGEtClassId &&y.EnEmpCouseId == itemGetEnempCouseId && y.EnrollClass.Status_class==1);
+                    IEnumerable<EnrollEmpCouseClass> getdata = db.EnrollEmpCouseClasses.Where(y => y.EnrollClass.ClassSchoolid == itemGEtClassId &&y.EnEmpCouseId == itemGetEnempCouseId && y.EnrollClass.Status_class==1);
                     foreach (var item in getdata)
                     {
                         if (EnrollEmpCouseClass2.Where(x => x.EnClassId == item.EnClassId).Count()>0)
@@ -79,10 +79,10 @@ namespace santisart_app.Controllers
               
                     foreach (var item in EnrollEmpCouseClass2)
                     {
-                        IEnumerable< EnrollEmpCouseClass > getData = db.EnrollEmpCouseClass.Where(x => x.EnClassId == item.EnClassId && x.EnEmpCouseId == itemGetEnempCouseId);
+                        IEnumerable< EnrollEmpCouseClass > getData = db.EnrollEmpCouseClasses.Where(x => x.EnClassId == item.EnClassId && x.EnEmpCouseId == itemGetEnempCouseId);
                         if (getData.Count()>0)
                         {
-                            EnrollEmpCouseClass  getRow=db.EnrollEmpCouseClass.Find(getData.First().EnrollEmpCouseClassId);
+                            EnrollEmpCouseClass  getRow=db.EnrollEmpCouseClasses.Find(getData.First().EnrollEmpCouseClassId);
                             getRow.Status = 1;
                             getRow.Timestamp = System.DateTime.Now;
                             
@@ -91,7 +91,7 @@ namespace santisart_app.Controllers
                         {if (item.EnClassId != null)
                             {
 
-                                db.EnrollEmpCouseClass.Add(new EnrollEmpCouseClass
+                                db.EnrollEmpCouseClasses.Add(new EnrollEmpCouseClass
                                 {
                                     EnClassId = item.EnClassId,
                                     EnEmpCouseId = item.EnEmpCouseId,
@@ -114,7 +114,7 @@ namespace santisart_app.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EnrollEmpCouse enrollEmpCouse = db.EnrollEmpCouse.Find(id);
+            EnrollEmpCouse enrollEmpCouse = db.EnrollEmpCouses.Find(id);
             if (enrollEmpCouse == null)
             {
                 return HttpNotFound();
@@ -126,21 +126,21 @@ namespace santisart_app.Controllers
         public ActionResult Create()
         {
             List<object> newListEmp = new List<object>();
-            foreach (var member in db.Employee)
+            foreach (var member in db.Employees)
                 newListEmp.Add(new
                 {
                     Id = member.EmpId,
                     Name = member.EmpName + " " + member.EmpLname
                 });
             List<object> newListYear = new List<object>();
-            foreach (var year in db.EnrollYearSemester.Include(x=>x.YearEdu))
+            foreach (var year in db.EnrollYearSemesters.Include(x=>x.YearEdu))
                 newListYear.Add(new
                 {
                     Id = year.EnrollYearSemesterId,
                     Name = "ปีการศึกษา " + year.YearEdu.yearName + " เทอม" + year.Semester
                 });
             List<object> newListCouse = new List<object>();
-            foreach (var Couse in db.EnrollCouse)
+            foreach (var Couse in db.EnrollCouses)
                 newListCouse.Add(new
                 {
                     Id = Couse.EnrollCouseID,
@@ -164,14 +164,14 @@ namespace santisart_app.Controllers
             enrollEmpCouse.EnEmpCosTimestamp = System.DateTime.Now;
             if (ModelState.IsValid)
             {
-                db.EnrollEmpCouse.Add(enrollEmpCouse);
+                db.EnrollEmpCouses.Add(enrollEmpCouse);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EnEmpId =       new SelectList(db.Employee, "EmpId", "EmpTitle", enrollEmpCouse.EnEmpId);
-            ViewBag.EnCouseId =     new SelectList(db.EnrollCouse, "EnrollCouseID", "CouseTxtId", enrollEmpCouse.EnCouseId);
-            ViewBag.EnYearSemId =   new SelectList(db.EnrollYearSemester, "EnrollYearSemesterId", "EnrollYearSemesterId", enrollEmpCouse.EnYearSemId);
+            ViewBag.EnEmpId =       new SelectList(db.Employees, "EmpId", "EmpTitle", enrollEmpCouse.EnEmpId);
+            ViewBag.EnCouseId =     new SelectList(db.EnrollCouses, "EnrollCouseID", "CouseTxtId", enrollEmpCouse.EnCouseId);
+            ViewBag.EnYearSemId =   new SelectList(db.EnrollYearSemesters, "EnrollYearSemesterId", "EnrollYearSemesterId", enrollEmpCouse.EnYearSemId);
             return View(enrollEmpCouse);
         }
 
@@ -182,27 +182,27 @@ namespace santisart_app.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EnrollEmpCouse enrollEmpCouse = db.EnrollEmpCouse.Find(id);
+            EnrollEmpCouse enrollEmpCouse = db.EnrollEmpCouses.Find(id);
             if (enrollEmpCouse == null)
             {
                 return HttpNotFound();
             }
             List<object> newListEmp = new List<object>();
-            foreach (var member in db.Employee)
+            foreach (var member in db.Employees)
                 newListEmp.Add(new
                 {
                     Id = member.EmpId,
                     Name = member.EmpName + " " + member.EmpLname
                 });
             List<object> newListYear = new List<object>();
-            foreach (var year in db.EnrollYearSemester.Include(x => x.YearEdu))
+            foreach (var year in db.EnrollYearSemesters.Include(x => x.YearEdu))
                 newListYear.Add(new
                 {
                     Id = year.EnrollYearSemesterId,
                     Name = "ปีการศึกษา " + year.YearEdu.yearName + " เทอม" + year.Semester
                 });
             List<object> newListCouse = new List<object>();
-            foreach (var Couse in db.EnrollCouse)
+            foreach (var Couse in db.EnrollCouses)
                 newListCouse.Add(new
                 {
                     Id = Couse.EnrollCouseID,
@@ -218,20 +218,20 @@ namespace santisart_app.Controllers
         public void ddClass()
         {
             List<object> newListClass = new List<object>();
-            foreach (var Couse in db.ClassInSchool)
+            foreach (var Couse in db.ClassInSchools)
                 newListClass.Add(new
                 {
                     Id = Couse.ClassID,
                     Name = Couse.ClassName
 
                 });
-            ViewBag.ClassInSchool = new SelectList(newListClass, "Id", "Name");
+            ViewBag.ClassInSchools = new SelectList(newListClass, "Id", "Name");
         }
         [HttpPost]
         public JsonResult getDdEnCouse(int? id)
         {
             List<object> newListCouse = new List<object>();
-            foreach (var Couse in db.EnrollCouse.Where(x => x.ClassId==id))
+            foreach (var Couse in db.EnrollCouses.Where(x => x.ClassId==id))
                 newListCouse.Add(new
                 {
                     Id = Couse.EnrollCouseID,
@@ -243,7 +243,7 @@ namespace santisart_app.Controllers
         public JsonResult getDdEnYear(int? id)
         {
             List<object> newListYear = new List<object>();
-            foreach (var year in db.EnrollYearSemester)
+            foreach (var year in db.EnrollYearSemesters)
                 newListYear.Add(new
                 {
                     Id = year.YearEduId,
@@ -264,31 +264,31 @@ namespace santisart_app.Controllers
             {
                 db.Entry(enrollEmpCouse).State = EntityState.Modified;
                 db.SaveChanges();
-                IEnumerable<EnrollEmpCouseClass> getEnrollEmpCouseClassXEMpCouseId = db.EnrollEmpCouseClass
+                IEnumerable<EnrollEmpCouseClass> getEnrollEmpCouseClassXEMpCouseId = db.EnrollEmpCouseClasses
                     .Where(x => x.EnEmpCouseId == enrollEmpCouse.EnrollEmpCouseId);
                 foreach (var item in getEnrollEmpCouseClassXEMpCouseId)
                 {
-                    db.EnrollEmpCouseClass.Remove(item);
+                    db.EnrollEmpCouseClasses.Remove(item);
                 }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             List<object> newListEmp = new List<object>();
-            foreach (var member in db.Employee)
+            foreach (var member in db.Employees)
                 newListEmp.Add(new
                 {
                     Id = member.EmpId,
                     Name = member.EmpName + " " + member.EmpLname
                 });
             List<object> newListYear = new List<object>();
-            foreach (var year in db.EnrollYearSemester.Include(x => x.YearEdu))
+            foreach (var year in db.EnrollYearSemesters.Include(x => x.YearEdu))
                 newListYear.Add(new
                 {
                     Id = year.EnrollYearSemesterId,
                     Name = "ปีการศึกษา " + year.YearEdu.yearName + " เทอม" + year.Semester
                 });
             List<object> newListCouse = new List<object>();
-            foreach (var Couse in db.EnrollCouse)
+            foreach (var Couse in db.EnrollCouses)
                 newListCouse.Add(new
                 {
                     Id = Couse.EnrollCouseID,
@@ -308,7 +308,7 @@ namespace santisart_app.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EnrollEmpCouse enrollEmpCouse = db.EnrollEmpCouse.Find(id);
+            EnrollEmpCouse enrollEmpCouse = db.EnrollEmpCouses.Find(id);
             if (enrollEmpCouse == null)
             {
                 return HttpNotFound();
@@ -321,8 +321,8 @@ namespace santisart_app.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            EnrollEmpCouse enrollEmpCouse = db.EnrollEmpCouse.Find(id);
-            db.EnrollEmpCouse.Remove(enrollEmpCouse);
+            EnrollEmpCouse enrollEmpCouse = db.EnrollEmpCouses.Find(id);
+            db.EnrollEmpCouses.Remove(enrollEmpCouse);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<santisart_app.Models.EnrollStudentCouse>
+﻿@model IEnumerable<santisart_app.Models.EnrollStudentCouses>
 
 @{
     ViewBag.Title = "Index";
@@ -33,7 +33,7 @@
             @Html.DisplayNameFor(model => model.Enroll_Emp_Pos.EnrEmpPosId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EnrollCouse.CouseTxtId)
+            @Html.DisplayNameFor(model => model.EnrollCouses.CouseTxtId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Students.Student_title)
@@ -65,7 +65,7 @@
             @Html.DisplayFor(modelItem => item.Enroll_Emp_Pos.EnrEmpPosId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EnrollCouse.CouseTxtId)
+            @Html.DisplayFor(modelItem => item.EnrollCouses.CouseTxtId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Students.Student_title)

@@ -21,15 +21,27 @@ namespace santisart_app.Controllers
             var students = db.Students.Include(s => s.enrolladdress);//.Take(10);
             return View(students.ToList());
         }
+        [HttpGet]
+        public ActionResult Index(string postTitle)
+        {
+            if (postTitle==null)
+            {
+                postTitle = "";
+            }
+           
+                var listDataStudents = db.Students.Where(p => p.Student_name.Contains(postTitle)).Include(s => s.enrolladdress);
+            //var students = db.Students.Include(s => s.enrolladdress);//.Take(10);
+            return View(listDataStudents.ToList());
+        }
         //[Produces("application/json")]
         //[HttpGet]
-        public ActionResult Search(string term)
+        public ActionResult Search()
         {
             try
             {
-                //string term = HttpContext.Request.QueryString["term"].ToString();
-                var postTitle = db.Students.Where(p => p.Student_name.Contains(term))
-                    .Select(p =>new { lable = p.Student_name });
+                string term = HttpContext.Request.QueryString["term"].ToString();
+                var postTitle = db.Students.Where(p => p.Student_name.Contains(term)).Take(5)
+                    .Select(p =>p.Student_name ).ToList();
                 return Json(postTitle, JsonRequestBehavior.AllowGet);
             }
             catch (Exception)

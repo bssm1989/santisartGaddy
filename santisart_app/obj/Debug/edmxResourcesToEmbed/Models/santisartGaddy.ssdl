@@ -370,7 +370,7 @@
     <Key>
       <PropertyRef Name="PosId" />
     </Key>
-    <Property Name="PosName" Type="varchar" MaxLength="50" />
+    <Property Name="PosName" Type="nvarchar" MaxLength="50" />
     <Property Name="PosLevel" Type="int" />
     <Property Name="PosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
@@ -437,14 +437,58 @@ warning 6013: The table/view 'santisart.santisart.Student List' does not have a 
           <Property Name="ความสัมพันธ์" Type="nvarchar" MaxLength="255" />
           <Property Name="ความด้อยโอกาส" Type="nvarchar" MaxLength="255" />
         </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'santisart.santisart.StudentList_copy1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="StudentList_copy1">
+          <Property Name="ลำดับ" Type="nvarchar" MaxLength="255" />
+          <Property Name="เลขประจำตัวประชาชน" Type="nvarchar" MaxLength="255" />
+          <Property Name="เลขประจำตัวนักเรียน " Type="nvarchar" MaxLength="255" />
+          <Property Name="ห้องเรียน" Type="nvarchar" MaxLength="255" />
+          <Property Name="ชื่อ - นามสกุล" Type="nvarchar" MaxLength="255" />
+          <Property Name="ว.ด.ป. เกิด" Type="nvarchar" MaxLength="255" />
+          <Property Name="เพศ" Type="nvarchar" MaxLength="255" />
+          <Property Name="สัญชาติ" Type="nvarchar" MaxLength="255" />
+          <Property Name="ศาสนา" Type="nvarchar" MaxLength="255" />
+          <Property Name="สถานะนักเรียน" Type="nvarchar" MaxLength="255" />
+          <Property Name="วันที่บันทึก" Type="nvarchar" MaxLength="255" />
+          <Property Name="ประเภทความพิการ" Type="nvarchar" MaxLength="255" />
+          <Property Name="รหัสประจำบ้าน" Type="nvarchar" MaxLength="255" />
+          <Property Name="บ้านเลขที่" Type="nvarchar" MaxLength="255" />
+          <Property Name="หมู่ที่" Type="nvarchar" MaxLength="255" />
+          <Property Name="ซอย" Type="nvarchar" MaxLength="255" />
+          <Property Name="ถนน" Type="nvarchar" MaxLength="255" />
+          <Property Name="ตำบล/แขวง" Type="nvarchar" MaxLength="255" />
+          <Property Name="อำเภอ/เขต" Type="nvarchar" MaxLength="255" />
+          <Property Name="จังหวัด" Type="nvarchar" MaxLength="255" />
+          <Property Name="รหัสไปรษณีย์" Type="nvarchar" MaxLength="255" />
+          <Property Name="โทรศัพท์" Type="nvarchar" MaxLength="255" />
+          <Property Name="วันที่เข้าเรียน" Type="nvarchar" MaxLength="255" />
+          <Property Name="เลขประจำตัวประชาชน (บิดา)" Type="nvarchar" MaxLength="255" />
+          <Property Name="คำนำหน้าชื่อ" Type="nvarchar" MaxLength="255" />
+          <Property Name="ชื่อ - นามสกุล1" Type="nvarchar" MaxLength="255" />
+          <Property Name="สถานภาพของบิดา" Type="nvarchar" MaxLength="255" />
+          <Property Name="สัญชาติ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="เลขประจำตัวประชาชน (มารดา)" Type="nvarchar" MaxLength="255" />
+          <Property Name="คำนำหน้าชื่อ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="ชื่อ - นามสกุล2" Type="nvarchar" MaxLength="255" />
+          <Property Name="สถานภาพของมารดา" Type="nvarchar" MaxLength="255" />
+          <Property Name="สัญชาติ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="เลขประจำตัวประชาชน (มารดา)1" Type="nvarchar" MaxLength="255" />
+          <Property Name="คำนำหน้าชื่อ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="ชื่อ - นามสกุล3" Type="nvarchar" MaxLength="255" />
+          <Property Name="อาชีพของผู้ปกครอง" Type="nvarchar" MaxLength="255" />
+          <Property Name="โทรศัพท์1" Type="nvarchar" MaxLength="255" />
+          <Property Name="ความสัมพันธ์" Type="nvarchar" MaxLength="255" />
+          <Property Name="ความด้อยโอกาส" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
   <EntityType Name="Students">
     <Key>
       <PropertyRef Name="Student_id" />
     </Key>
     <Property Name="Student_id" Type="int" Nullable="false" />
     <Property Name="Student_title" Type="varchar" MaxLength="10" />
-    <Property Name="Student_name" Type="varchar" MaxLength="100" />
-    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="nvarchar" MaxLength="100" />
     <Property Name="Student_birthday" Type="datetime" />
     <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
     <Property Name="Student_psis_id" Type="int" />

@@ -152,7 +152,7 @@ $('#autocomplete').autocomplete({
 Generated HTML markup for suggestions is displayed below. You may style it any way you'd like.
 
 ```html
-<div class="autocomplete-suggestions">
+<div class="autocomplete-suggestionssdssssssssssssssssssssssss">
     <div class="autocomplete-group"><strong>NHL</strong></div>
     <div class="autocomplete-suggestion autocomplete-selected">...</div>
     <div class="autocomplete-suggestion">...</div>

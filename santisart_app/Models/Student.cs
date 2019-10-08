@@ -40,10 +40,10 @@ namespace santisart_app.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Enroll_student_class> Enroll_student_class { get; set; }
+        public virtual enrolladdress enrolladdress { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EnrollFamilyStudent> EnrollFamilyStudents { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EnrollFinishStudent> EnrollFinishStudents { get; set; }
-        public virtual enrolladdress enrolladdress { get; set; }
     }
 }
