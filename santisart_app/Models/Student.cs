@@ -11,7 +11,8 @@ namespace santisart_app.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Student
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,19 +24,33 @@ namespace santisart_app.Models
         }
     
         public int Student_id { get; set; }
+        [Display(Name = "คำนำหน้า")]
         public string Student_title { get; set; }
+        [Display(Name = "ชื่อ")]
         public string Student_name { get; set; }
+        [Display(Name = "นามสกุล")]
         public string Student_lname { get; set; }
+        [Display(Name = "วัน เดือนปี เกิด")]
         public Nullable<System.DateTime> Student_birthday { get; set; }
+        [Display(Name = "เลขบัตรประชาชน")]
         public string Student_idcard { get; set; }
+        [Display(Name = "เลข psis")]
         public Nullable<int> Student_psis_id { get; set; }
+        [Display(Name = "สถานะ")]
         public string Student_status { get; set; }
+        [Display(Name = "วันเข้าระบบ")]
         public Nullable<System.DateTime> Student_timestamp { get; set; }
+        [Display(Name = "ชื่ออาหรับ")]
         public string Student_ArabName { get; set; }
+        [Display(Name = "โรงเรียนเก่า")]
         public string Student_OldSchool { get; set; }
+        [Display(Name = "เพศ")]
         public string Studnet_Gender { get; set; }
+        [Display(Name = "วันเข้าโรงเรียน")]
         public Nullable<System.DateTime> Student_firsttime { get; set; }
+        [Display(Name = "เบอร์โทรศัพท์")]
         public string Student_tel { get; set; }
+        [Display(Name = "เบอร์โทรศัพท์")]
         public Nullable<int> adressid { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

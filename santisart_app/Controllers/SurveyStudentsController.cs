@@ -18,20 +18,20 @@ namespace santisart_app.Controllers
         // GET: SurveyStudents
         public ActionResult Index()
         {
-            var students = db.Students.Include(s => s.enrolladdress);//.Take(10);
+            var students = db.Students.Take(10);
             return View(students.ToList());
         }
         [HttpGet]
-        public ActionResult Index(string postTitle)
+        public ActionResult IndexSearch(string postTitle)
         {
             if (postTitle==null)
             {
                 postTitle = "";
             }
            
-                var listDataStudents = db.Students.Where(p => p.Student_name.Contains(postTitle)).Include(s => s.enrolladdress);
+                var listDataStudents = db.Students.Where(p => p.Student_name.Contains(postTitle));
             //var students = db.Students.Include(s => s.enrolladdress);//.Take(10);
-            return View(listDataStudents.ToList());
+            return View("Index",listDataStudents.ToList());
         }
         //[Produces("application/json")]
         //[HttpGet]
@@ -92,6 +92,21 @@ namespace santisart_app.Controllers
 
         // GET: SurveyStudents/Edit/5
         public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Student student = db.Students.Find(id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.adressid = new SelectList(db.enrolladdresses, "addressId", "tambol", student.adressid);
+            ViewBag.ParentA = new SelectList(db.EnrollFamilyStudents, "addressId", "tambol", student.);
+            return View(student);
+        }
+        public ActionResult EditFamily(int? id)
         {
             if (id == null)
             {

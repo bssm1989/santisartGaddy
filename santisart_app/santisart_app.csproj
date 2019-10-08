@@ -4351,6 +4351,7 @@
     <Compile Include="Models\Subdistrict.cs">
       <DependentUpon>santisartGaddy.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SurveyStudent.cs" />
     <Compile Include="Models\UserProfile.cs">
       <DependentUpon>santisartGaddy.tt</DependentUpon>
     </Compile>
