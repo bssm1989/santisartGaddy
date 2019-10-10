@@ -14,7 +14,13 @@ namespace santisart_app.Models
     
     public partial class Subdistrict
     {
-        public int Id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Subdistrict()
+        {
+            this.enrolladdresses = new HashSet<enrolladdress>();
+        }
+    
+        public int Sub_id { get; set; }
         public int Code { get; set; }
         public string NameInThai { get; set; }
         public string NameInEnglish { get; set; }
@@ -24,5 +30,7 @@ namespace santisart_app.Models
         public Nullable<int> ZipCode { get; set; }
     
         public virtual District District { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<enrolladdress> enrolladdresses { get; set; }
     }
 }

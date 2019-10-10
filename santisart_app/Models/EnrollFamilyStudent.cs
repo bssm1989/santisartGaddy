@@ -22,7 +22,7 @@ namespace santisart_app.Models
         public string status { get; set; }
         public Nullable<int> staftId { get; set; }
     
-        public virtual Family Family { get; set; }
         public virtual Student Student { get; set; }
+        public virtual Family Family { get; set; }
     }
 }

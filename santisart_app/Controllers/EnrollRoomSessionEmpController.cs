@@ -12,7 +12,7 @@ namespace santisart_app.Controllers
 {
     public class EnrollRoomSessionEmpController : Controller
     {
-        private santisartEntities2 db = new santisartEntities2();
+        private santisartEntities3 db = new santisartEntities3();
 
         // GET: EnrollRoomSessionEmp
         public ActionResult Index()

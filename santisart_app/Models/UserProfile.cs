@@ -12,7 +12,7 @@ namespace santisart_app.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class UserProfiles
+    public partial class UserProfile
     {
         public int UserId { get; set; }
         public string UserName { get; set; }

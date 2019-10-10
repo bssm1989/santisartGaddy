@@ -13,7 +13,7 @@ namespace santisart_app.Controllers
     public class FoodPaidController : Controller
     {
         // GET: FoodPaid
-        santisartEntities2 db = new santisartEntities2();
+        santisartEntities3 db = new santisartEntities3();
         
         
         public async Task<ActionResult> Index()

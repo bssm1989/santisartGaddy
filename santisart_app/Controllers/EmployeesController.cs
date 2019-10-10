@@ -15,7 +15,7 @@ namespace santisart_app.Controllers
 {
     public class EmployeesController : Controller
     {
-        private santisartEntities2 db = new santisartEntities2();
+        private santisartEntities3 db = new santisartEntities3();
 
         // GET: Employees
         public ActionResult Index()

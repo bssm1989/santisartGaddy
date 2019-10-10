@@ -3326,15 +3326,15 @@
     <Content Include="Global.asax" />
     <Content Include="images\img.jpg" />
     <Content Include="images\user.png" />
-    <Content Include="Models\santisartGaddy.Context.tt">
+    <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>santisartGaddy.edmx</DependentUpon>
-      <LastGenOutput>santisartGaddy.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\santisartGaddy.tt">
+    <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>santisartGaddy.edmx</DependentUpon>
-      <LastGenOutput>santisartGaddy.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Rotativa\help-wkhtmltoimage.txt" />
     <Content Include="Rotativa\help-wkhtmltopdf.txt" />
@@ -4025,12 +4025,12 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <EntityDeploy Include="Models\santisartGaddy.edmx">
+    <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>santisartGaddy.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\santisartGaddy.edmx.diagram">
-      <DependentUpon>santisartGaddy.edmx</DependentUpon>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\admin.santisartwitt.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\admin.santisartwitt.com - Web Deploy1.pubxml" />
@@ -4189,6 +4189,12 @@
     <Content Include="Views\enrolladdresses\Details.cshtml" />
     <Content Include="Views\enrolladdresses\Edit.cshtml" />
     <Content Include="Views\enrolladdresses\Index.cshtml" />
+    <Content Include="Views\EnrollFamilyStudents\Create.cshtml" />
+    <Content Include="Views\EnrollFamilyStudents\Delete.cshtml" />
+    <Content Include="Views\EnrollFamilyStudents\Details.cshtml" />
+    <Content Include="Views\EnrollFamilyStudents\Edit.cshtml" />
+    <Content Include="Views\EnrollFamilyStudents\Index.cshtml" />
+    <Content Include="Views\SurveyStudents\editSurvey.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4203,6 +4209,7 @@
     <Compile Include="Controllers\enrolladdressesController.cs" />
     <Compile Include="Controllers\EnrollCousesController.cs" />
     <Compile Include="Controllers\EnrollEmpCousesController.cs" />
+    <Compile Include="Controllers\EnrollFamilyStudentsController.cs" />
     <Compile Include="Controllers\EnrollFinishStudentsController.cs" />
     <Compile Include="Controllers\EnrollRoomSessionEmpController.cs" />
     <Compile Include="Controllers\EnrollStudentCousesController.cs" />
@@ -4213,150 +4220,150 @@
     <Compile Include="Controllers\UserProfilesController.cs" />
     <Compile Include="Models\attdeanceBymonth.cs" />
     <Compile Include="Models\attendance.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\attendance_day.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Class.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ClassInSchool.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ContestEducationSchool.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Course.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C_enrollattstudent.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Department.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\District.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\enrolladdress.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EnrollClass.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EnrollCouse.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EnrollEmpCouse.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EnrollEmpCouseClass.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EnrollFamilyStudent.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EnrollFinishStudent.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EnrollStudentAttdance.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EnrollStudentCouse.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EnrollYearSemester.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Enroll_EduContest.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Enroll_Emp_Pos.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Enroll_paid.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Enroll_pay.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Enroll_RoomSession_Emp.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Enroll_student_all_event.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Enroll_student_class.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Family.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FinishType.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Food.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Monthly.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Position.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Province.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RoomSession.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\santisartGaddy.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>santisartGaddy.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\santisartGaddy.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\santisartGaddy.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>santisartGaddy.edmx</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Student.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\student2561.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\student2561_copy1.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\student2561_food.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\studentEduContest2561.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\studentEduContest2561Controller.cs" />
     <Compile Include="Models\Students_food.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Subdistrict.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SurveyStudent.cs" />
     <Compile Include="Models\UserProfile.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewEmpPos.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\viewStudentCrossAttday.cs" />
     <Compile Include="Models\AddPaidStudent.cs" />
@@ -4369,10 +4376,10 @@
     <Compile Include="Models\ViewPrintInvoise.cs" />
     <Compile Include="Models\ViewStudentClass.cs" />
     <Compile Include="Models\View_Couse.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\YearEdu.cs">
-      <DependentUpon>santisartGaddy.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Global.asax.cs">

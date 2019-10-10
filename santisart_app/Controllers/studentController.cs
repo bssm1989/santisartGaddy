@@ -10,7 +10,7 @@ namespace santisart_app.Controllers
     public class studentController : Controller
     {
         // GET: student
-        santisartEntities2 db = new santisartEntities2();
+        santisartEntities3 db = new santisartEntities3();
         public ActionResult Index()
         {
 

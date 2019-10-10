@@ -13,7 +13,7 @@ namespace santisart_app.Controllers
 {
     public class SurveyStudentsController : Controller
     {
-        private santisartEntities2 db = new santisartEntities2();
+        private santisartEntities3 db = new santisartEntities3();
 
         // GET: SurveyStudents
         public ActionResult Index()
@@ -49,6 +49,44 @@ namespace santisart_app.Controllers
 
                 throw;
             }
+        }
+        //List<OrderDisplayViewModel> orderList = context.Orders.AsNoTracking()
+        //                   .Where(x => x.CustomerID == customerid)
+        //                   .OrderBy(x => x.OrderDate)
+        //                   .Select(x =>
+        //                  new OrderDisplayViewModel
+        //                   {
+        //                       CustomerID = x.CustomerID,
+        //                       OrderID = x.OrderID,
+        //                       OrderDate = x.OrderDate,
+        //                       Description = x.Description
+        //                   }).ToList();
+        //customerOrdersListVm.Orders = orderList;
+        public ActionResult editSurvey()
+        {
+                var studentSurvey = new SurveyStudent();
+            if (true)
+            {
+                Student student = db.Students.Find(705);
+                if (student != null)
+                {
+                    //baby
+                    studentSurvey.students = student;
+                    //father&mother
+                    List<EnrollFamilyStudent> ParentList = new List<EnrollFamilyStudent>();
+                    ParentList.Add( db.EnrollFamilyStudents.AsNoTracking()
+                        .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "father").FirstOrDefault());
+                    ParentList.Add( db.EnrollFamilyStudents.AsNoTracking()
+                        .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "mother").FirstOrDefault());
+                    enrolladdress adress = db.enrolladdresses.AsNoTracking()
+                        .Where(x => x.addressId == student.adressid).FirstOrDefault();
+                    studentSurvey.address = adress;
+                    studentSurvey.enrollFamily = ParentList;
+                }
+            }
+                return View(studentSurvey);
+            
+            
         }
         // GET: SurveyStudents/Details/5
         public ActionResult Details(int? id)
@@ -102,10 +140,10 @@ namespace santisart_app.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.adressid = new SelectList(db.enrolladdresses, "addressId", "tambol", student.adressid);
-            ViewBag.ParentA = new SelectList(db.EnrollFamilyStudents, "addressId", "tambol", student.);
+            //ViewBag.adressid = new SelectList(db.enrolladdresses, "addressId", "tambol", student.adressid);
+            ViewBag.ParentA = new SelectList(db.EnrollFamilyStudents, "addressId", "tambol", student.adressid);
             return View(student);
-        }
+        }     
         public ActionResult EditFamily(int? id)
         {
             if (id == null)

@@ -476,16 +476,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="UserProfiles">
-      <EntityTypeMapping TypeName="santisartModel.UserProfile">
-        <MappingFragment StoreEntitySet="UserProfile">
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+    <!--<EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="santisartModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>-->
     <EntitySetMapping Name="YearEdus">
       <EntityTypeMapping TypeName="santisartModel.YearEdu">
         <MappingFragment StoreEntitySet="YearEdu">

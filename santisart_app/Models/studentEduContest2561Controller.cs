@@ -11,7 +11,7 @@ namespace santisart_app.Models
 {
     public class studentEduContest2561Controller : Controller
     {
-        private santisartEntities2 db = new santisartEntities2();
+        private santisartEntities3 db = new santisartEntities3();
 
         // GET: studentEduContest2561
         public ActionResult Index()

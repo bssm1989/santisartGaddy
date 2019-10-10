@@ -13,10 +13,10 @@ namespace santisart_app.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class santisartEntities2 : DbContext
+    public partial class santisartEntities3 : DbContext
     {
-        public santisartEntities2()
-            : base("name=santisartEntities2")
+        public santisartEntities3()
+            : base("name=santisartEntities3")
         {
         }
     
@@ -29,10 +29,9 @@ namespace santisart_app.Models
         public virtual DbSet<attendance_day> attendance_day { get; set; }
         public virtual DbSet<Class> Classes { get; set; }
         public virtual DbSet<ClassInSchool> ClassInSchools { get; set; }
-        public virtual DbSet<ContestEducationSchools> ContestEducationSchools { get; set; }
+        public virtual DbSet<ContestEducationSchool> ContestEducationSchools { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
-        public virtual DbSet<District> Districts { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Enroll_EduContest> Enroll_EduContest { get; set; }
         public virtual DbSet<Enroll_Emp_Pos> Enroll_Emp_Pos { get; set; }
@@ -41,7 +40,6 @@ namespace santisart_app.Models
         public virtual DbSet<Enroll_RoomSession_Emp> Enroll_RoomSession_Emp { get; set; }
         public virtual DbSet<Enroll_student_all_event> Enroll_student_all_event { get; set; }
         public virtual DbSet<Enroll_student_class> Enroll_student_class { get; set; }
-        public virtual DbSet<enrolladdress> enrolladdresses { get; set; }
         public virtual DbSet<EnrollClass> EnrollClasses { get; set; }
         public virtual DbSet<EnrollCouse> EnrollCouses { get; set; }
         public virtual DbSet<EnrollEmpCouse> EnrollEmpCouses { get; set; }
@@ -55,12 +53,10 @@ namespace santisart_app.Models
         public virtual DbSet<Food> Foods { get; set; }
         public virtual DbSet<Monthly> Monthlies { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
-        public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<RoomSession> RoomSessions { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Students_food> Students_food { get; set; }
-        public virtual DbSet<Subdistrict> Subdistricts { get; set; }
-        public virtual DbSet<UserProfiles> UserProfiles { get; set; }
+        public virtual DbSet<UserProfile> UserProfiles { get; set; }
         public virtual DbSet<YearEdu> YearEdus { get; set; }
         public virtual DbSet<C_enrollattstudent> C_enrollattstudent { get; set; }
         public virtual DbSet<EnrollStudentAttdance> EnrollStudentAttdances { get; set; }
@@ -70,5 +66,9 @@ namespace santisart_app.Models
         public virtual DbSet<studentEduContest2561> studentEduContest2561 { get; set; }
         public virtual DbSet<View_Couse> View_Couse { get; set; }
         public virtual DbSet<ViewEmpPos> ViewEmpPos { get; set; }
+        public virtual DbSet<District> Districts { get; set; }
+        public virtual DbSet<enrolladdress> enrolladdresses { get; set; }
+        public virtual DbSet<Province> Provinces { get; set; }
+        public virtual DbSet<Subdistrict> Subdistricts { get; set; }
     }
 }
