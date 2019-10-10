@@ -192,8 +192,8 @@
           <Property Name="province" Type="varchar" MaxLength="50" />
           <Property Name="codeCity" Type="varchar" MaxLength="5" />
           <Property Name="status" Type="int" />
-          <Property Name="codeAddress" Type="int" Nullable="false" />
-          <Property Name="nameVil" Type="int" />
+          <Property Name="codeAddress" Type="int" />
+          <Property Name="nameVil" Type="nvarchar" MaxLength="1" />
           <Property Name="EmpId" Type="int" />
           <Property Name="timestamp" Type="datetime" />
           <Property Name="student_id" Type="int" />
@@ -399,94 +399,6 @@
           <Property Name="Status" Type="int" />
           <Property Name="RoomSessionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'santisart.santisart.Student List' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Student List">
-          <Property Name="ลำดับ" Type="nvarchar" MaxLength="255" />
-          <Property Name="เลขประจำตัวประชาชน" Type="nvarchar" MaxLength="255" />
-          <Property Name="เลขประจำตัวนักเรียน " Type="nvarchar" MaxLength="255" />
-          <Property Name="ห้องเรียน" Type="nvarchar" MaxLength="255" />
-          <Property Name="ชื่อ - นามสกุล" Type="nvarchar" MaxLength="255" />
-          <Property Name="ว.ด.ป. เกิด" Type="nvarchar" MaxLength="255" />
-          <Property Name="เพศ" Type="nvarchar" MaxLength="255" />
-          <Property Name="สัญชาติ" Type="nvarchar" MaxLength="255" />
-          <Property Name="ศาสนา" Type="nvarchar" MaxLength="255" />
-          <Property Name="สถานะนักเรียน" Type="nvarchar" MaxLength="255" />
-          <Property Name="วันที่บันทึก" Type="nvarchar" MaxLength="255" />
-          <Property Name="ประเภทความพิการ" Type="nvarchar" MaxLength="255" />
-          <Property Name="รหัสประจำบ้าน" Type="nvarchar" MaxLength="255" />
-          <Property Name="บ้านเลขที่" Type="nvarchar" MaxLength="255" />
-          <Property Name="หมู่ที่" Type="nvarchar" MaxLength="255" />
-          <Property Name="ซอย" Type="nvarchar" MaxLength="255" />
-          <Property Name="ถนน" Type="nvarchar" MaxLength="255" />
-          <Property Name="ตำบล/แขวง" Type="nvarchar" MaxLength="255" />
-          <Property Name="อำเภอ/เขต" Type="nvarchar" MaxLength="255" />
-          <Property Name="จังหวัด" Type="nvarchar" MaxLength="255" />
-          <Property Name="รหัสไปรษณีย์" Type="nvarchar" MaxLength="255" />
-          <Property Name="โทรศัพท์" Type="nvarchar" MaxLength="255" />
-          <Property Name="วันที่เข้าเรียน" Type="nvarchar" MaxLength="255" />
-          <Property Name="เลขประจำตัวประชาชน (บิดา)" Type="nvarchar" MaxLength="255" />
-          <Property Name="คำนำหน้าชื่อ" Type="nvarchar" MaxLength="255" />
-          <Property Name="ชื่อ - นามสกุล1" Type="nvarchar" MaxLength="255" />
-          <Property Name="สถานภาพของบิดา" Type="nvarchar" MaxLength="255" />
-          <Property Name="สัญชาติ1" Type="nvarchar" MaxLength="255" />
-          <Property Name="เลขประจำตัวประชาชน (มารดา)" Type="nvarchar" MaxLength="255" />
-          <Property Name="คำนำหน้าชื่อ1" Type="nvarchar" MaxLength="255" />
-          <Property Name="ชื่อ - นามสกุล2" Type="nvarchar" MaxLength="255" />
-          <Property Name="สถานภาพของมารดา" Type="nvarchar" MaxLength="255" />
-          <Property Name="สัญชาติ2" Type="nvarchar" MaxLength="255" />
-          <Property Name="เลขประจำตัวประชาชน (มารดา)1" Type="nvarchar" MaxLength="255" />
-          <Property Name="คำนำหน้าชื่อ2" Type="nvarchar" MaxLength="255" />
-          <Property Name="ชื่อ - นามสกุล3" Type="nvarchar" MaxLength="255" />
-          <Property Name="อาชีพของผู้ปกครอง" Type="nvarchar" MaxLength="255" />
-          <Property Name="โทรศัพท์1" Type="nvarchar" MaxLength="255" />
-          <Property Name="ความสัมพันธ์" Type="nvarchar" MaxLength="255" />
-          <Property Name="ความด้อยโอกาส" Type="nvarchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'santisart.santisart.StudentList_copy1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="StudentList_copy1">
-          <Property Name="ลำดับ" Type="nvarchar" MaxLength="255" />
-          <Property Name="เลขประจำตัวประชาชน" Type="nvarchar" MaxLength="255" />
-          <Property Name="เลขประจำตัวนักเรียน " Type="nvarchar" MaxLength="255" />
-          <Property Name="ห้องเรียน" Type="nvarchar" MaxLength="255" />
-          <Property Name="ชื่อ - นามสกุล" Type="nvarchar" MaxLength="255" />
-          <Property Name="ว.ด.ป. เกิด" Type="nvarchar" MaxLength="255" />
-          <Property Name="เพศ" Type="nvarchar" MaxLength="255" />
-          <Property Name="สัญชาติ" Type="nvarchar" MaxLength="255" />
-          <Property Name="ศาสนา" Type="nvarchar" MaxLength="255" />
-          <Property Name="สถานะนักเรียน" Type="nvarchar" MaxLength="255" />
-          <Property Name="วันที่บันทึก" Type="nvarchar" MaxLength="255" />
-          <Property Name="ประเภทความพิการ" Type="nvarchar" MaxLength="255" />
-          <Property Name="รหัสประจำบ้าน" Type="nvarchar" MaxLength="255" />
-          <Property Name="บ้านเลขที่" Type="nvarchar" MaxLength="255" />
-          <Property Name="หมู่ที่" Type="nvarchar" MaxLength="255" />
-          <Property Name="ซอย" Type="nvarchar" MaxLength="255" />
-          <Property Name="ถนน" Type="nvarchar" MaxLength="255" />
-          <Property Name="ตำบล/แขวง" Type="nvarchar" MaxLength="255" />
-          <Property Name="อำเภอ/เขต" Type="nvarchar" MaxLength="255" />
-          <Property Name="จังหวัด" Type="nvarchar" MaxLength="255" />
-          <Property Name="รหัสไปรษณีย์" Type="nvarchar" MaxLength="255" />
-          <Property Name="โทรศัพท์" Type="nvarchar" MaxLength="255" />
-          <Property Name="วันที่เข้าเรียน" Type="nvarchar" MaxLength="255" />
-          <Property Name="เลขประจำตัวประชาชน (บิดา)" Type="nvarchar" MaxLength="255" />
-          <Property Name="คำนำหน้าชื่อ" Type="nvarchar" MaxLength="255" />
-          <Property Name="ชื่อ - นามสกุล1" Type="nvarchar" MaxLength="255" />
-          <Property Name="สถานภาพของบิดา" Type="nvarchar" MaxLength="255" />
-          <Property Name="สัญชาติ1" Type="nvarchar" MaxLength="255" />
-          <Property Name="เลขประจำตัวประชาชน (มารดา)" Type="nvarchar" MaxLength="255" />
-          <Property Name="คำนำหน้าชื่อ1" Type="nvarchar" MaxLength="255" />
-          <Property Name="ชื่อ - นามสกุล2" Type="nvarchar" MaxLength="255" />
-          <Property Name="สถานภาพของมารดา" Type="nvarchar" MaxLength="255" />
-          <Property Name="สัญชาติ2" Type="nvarchar" MaxLength="255" />
-          <Property Name="เลขประจำตัวประชาชน (มารดา)1" Type="nvarchar" MaxLength="255" />
-          <Property Name="คำนำหน้าชื่อ2" Type="nvarchar" MaxLength="255" />
-          <Property Name="ชื่อ - นามสกุล3" Type="nvarchar" MaxLength="255" />
-          <Property Name="อาชีพของผู้ปกครอง" Type="nvarchar" MaxLength="255" />
-          <Property Name="โทรศัพท์1" Type="nvarchar" MaxLength="255" />
-          <Property Name="ความสัมพันธ์" Type="nvarchar" MaxLength="255" />
-          <Property Name="ความด้อยโอกาส" Type="nvarchar" MaxLength="255" />
-        </EntityType>-->
         <EntityType Name="Students">
           <Key>
             <PropertyRef Name="Student_id" />
@@ -2582,7 +2494,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
             <End Role="EnrollYearSemester" EntitySet="EnrollYearSemesters" />
           </AssociationSet>
           <EntitySet Name="Districts" EntityType="santisartModel2.District" />
-          <EntitySet Name="enrolladdresses" EntityType="santisartModel2.enrolladdress" />
           <EntitySet Name="Provinces" EntityType="santisartModel2.Province" />
           <EntitySet Name="Subdistricts" EntityType="santisartModel2.Subdistrict" />
           <AssociationSet Name="FK_Districts_Provinces" Association="santisartModel2.FK_Districts_Provinces">
@@ -2593,6 +2504,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
             <End Role="District" EntitySet="Districts" />
             <End Role="Subdistrict" EntitySet="Subdistricts" />
           </AssociationSet>
+          <EntitySet Name="enrolladdresses" EntityType="santisartModel2.enrolladdress" />
           <AssociationSet Name="fk_codeZity" Association="santisartModel2.fk_codeZity">
             <End Role="Subdistrict" EntitySet="Subdistricts" />
             <End Role="enrolladdress" EntitySet="enrolladdresses" />
@@ -2601,7 +2513,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
             <End Role="Student" EntitySet="Students" />
             <End Role="enrolladdress" EntitySet="enrolladdresses" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="District">
           <Key>
             <PropertyRef Name="Id" />
@@ -2613,26 +2525,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
           <Property Name="ProvinceId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Province" Relationship="santisartModel2.FK_Districts_Provinces" FromRole="District" ToRole="Province" />
           <NavigationProperty Name="Subdistricts" Relationship="santisartModel2.FK_Subdistricts_Districts2" FromRole="District" ToRole="Subdistrict" />
-        </EntityType>
-        <EntityType Name="enrolladdress">
-          <Key>
-            <PropertyRef Name="addressId" />
-          </Key>
-          <Property Name="number" Type="Int32" />
-          <Property Name="sub_id" Type="Int32" />
-          <Property Name="tambol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="amper" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="codeCity" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="status" Type="Int32" />
-          <Property Name="codeAddress" Type="Int32" Nullable="false" />
-          <Property Name="nameVil" Type="Int32" />
-          <Property Name="EmpId" Type="Int32" />
-          <Property Name="timestamp" Type="DateTime" Precision="3" />
-          <Property Name="student_id" Type="Int32" />
-          <Property Name="addressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Subdistrict" Relationship="santisartModel2.fk_codeZity" FromRole="enrolladdress" ToRole="Subdistrict" />
-          <NavigationProperty Name="Student" Relationship="santisartModel2.fk_student_address" FromRole="enrolladdress" ToRole="Student" />
         </EntityType>
         <EntityType Name="Province">
           <Key>
@@ -2683,6 +2575,26 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="enrolladdress">
+          <Key>
+            <PropertyRef Name="addressId" />
+          </Key>
+          <Property Name="number" Type="Int32" />
+          <Property Name="sub_id" Type="Int32" />
+          <Property Name="tambol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="amper" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="codeCity" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="codeAddress" Type="Int32" />
+          <Property Name="nameVil" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="EmpId" Type="Int32" />
+          <Property Name="timestamp" Type="DateTime" Precision="3" />
+          <Property Name="student_id" Type="Int32" />
+          <Property Name="addressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Subdistrict" Relationship="santisartModel2.fk_codeZity" FromRole="enrolladdress" ToRole="Subdistrict" />
+          <NavigationProperty Name="Student" Relationship="santisartModel2.fk_student_address" FromRole="enrolladdress" ToRole="Student" />
+        </EntityType>
         <Association Name="fk_codeZity">
           <End Type="santisartModel2.Subdistrict" Role="Subdistrict" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -2711,7 +2623,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -3367,25 +3279,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="enrolladdresses">
-            <EntityTypeMapping TypeName="santisartModel2.enrolladdress">
-              <MappingFragment StoreEntitySet="enrolladdress">
-                <ScalarProperty Name="addressId" ColumnName="addressId" />
-                <ScalarProperty Name="student_id" ColumnName="student_id" />
-                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
-                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
-                <ScalarProperty Name="nameVil" ColumnName="nameVil" />
-                <ScalarProperty Name="codeAddress" ColumnName="codeAddress" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="codeCity" ColumnName="codeCity" />
-                <ScalarProperty Name="province" ColumnName="province" />
-                <ScalarProperty Name="amper" ColumnName="amper" />
-                <ScalarProperty Name="tambol" ColumnName="tambol" />
-                <ScalarProperty Name="sub_id" ColumnName="sub_id" />
-                <ScalarProperty Name="number" ColumnName="number" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Provinces">
             <EntityTypeMapping TypeName="santisartModel2.Province">
               <MappingFragment StoreEntitySet="Provinces">
@@ -3407,6 +3300,25 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
                 <ScalarProperty Name="NameInThai" ColumnName="NameInThai" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Sub_id" ColumnName="Sub_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="enrolladdresses">
+            <EntityTypeMapping TypeName="santisartModel2.enrolladdress">
+              <MappingFragment StoreEntitySet="enrolladdress">
+                <ScalarProperty Name="addressId" ColumnName="addressId" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="nameVil" ColumnName="nameVil" />
+                <ScalarProperty Name="codeAddress" ColumnName="codeAddress" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="codeCity" ColumnName="codeCity" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="amper" ColumnName="amper" />
+                <ScalarProperty Name="tambol" ColumnName="tambol" />
+                <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+                <ScalarProperty Name="number" ColumnName="number" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

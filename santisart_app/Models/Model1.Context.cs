@@ -67,8 +67,8 @@ namespace santisart_app.Models
         public virtual DbSet<View_Couse> View_Couse { get; set; }
         public virtual DbSet<ViewEmpPos> ViewEmpPos { get; set; }
         public virtual DbSet<District> Districts { get; set; }
-        public virtual DbSet<enrolladdress> enrolladdresses { get; set; }
         public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<Subdistrict> Subdistricts { get; set; }
+        public virtual DbSet<enrolladdress> enrolladdresses { get; set; }
     }
 }

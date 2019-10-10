@@ -121,37 +121,7 @@
                                         @Html.DisplayNameFor(model => model.Student_lname)
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Student_birthday)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Student_idcard)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Student_psis_id)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Student_status)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Student_timestamp)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Student_ArabName)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Student_OldSchool)
-                                    </th>
-                                    <th>
                                         @Html.DisplayNameFor(model => model.Studnet_Gender)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Student_firsttime)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Student_tel)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.enrolladdress.tambol)
                                     </th>
                                     <th></th>
                                 </tr>
@@ -171,40 +141,10 @@
                                             @Html.DisplayFor(modelItem => item.Student_lname)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.Student_birthday)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Student_idcard)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Student_psis_id)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Student_status)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Student_timestamp)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Student_ArabName)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Student_OldSchool)
-                                        </td>
-                                        <td>
                                             @Html.DisplayFor(modelItem => item.Studnet_Gender)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.Student_firsttime)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Student_tel)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.enrolladdress.tambol)
-                                        </td>
-                                        <td>
-                                            @Html.ActionLink("Edit", "Edit", new { id = item.Student_id }) |
+                                            @Html.ActionLink("แก้ไขข้อมูล", "editSurvey", new { id = item.Student_id }) |
                                             @Html.ActionLink("Details", "Details", new { id = item.Student_id }) |
                                             @Html.ActionLink("Delete", "Delete", new { id = item.Student_id })
                                         </td>

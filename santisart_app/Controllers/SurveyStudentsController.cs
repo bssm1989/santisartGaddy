@@ -78,8 +78,10 @@ namespace santisart_app.Controllers
                         .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "father").FirstOrDefault());
                     ParentList.Add( db.EnrollFamilyStudents.AsNoTracking()
                         .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "mother").FirstOrDefault());
+                    ParentList.Add( db.EnrollFamilyStudents.AsNoTracking()
+                        .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "potentate").FirstOrDefault());
                     enrolladdress adress = db.enrolladdresses.AsNoTracking()
-                        .Where(x => x.addressId == student.adressid).FirstOrDefault();
+                        .Where(x => x.student_id == student.Student_id).FirstOrDefault();
                     studentSurvey.address = adress;
                     studentSurvey.enrollFamily = ParentList;
                 }
@@ -87,6 +89,50 @@ namespace santisart_app.Controllers
                 return View(studentSurvey);
             
             
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult editSurvey( SurveyStudent student)
+        //public ActionResult editSurvey([Bind(Include = "students.Student_name,students.Student_lname,enrollFamily[0].Family.Fam_Name,enrollFamily[0].Family.Fam_Lname,enrollFamily[0].Family.Career,enrollFamily[1].Family.Fam_Name,enrollFamily[1].Family.Fam_Lname,enrollFamily[1].Family.Career,address.nameVil,address.number,address.Subdistrict.NameInThai,address.Subdistrict.District.NameInThai,address.Subdistrict.District.Province.NameInThai")] SurveyStudent student)
+        {
+            if (ModelState.IsValid)
+            {
+                if (student.enrollFamily != null&&student.address!=null)
+                {
+                    SaveSurvey(student);
+                }
+                return RedirectToAction("Index");
+            }
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
+        public void SaveSurvey(SurveyStudent surveyStudents)
+        {
+            if (surveyStudents != null)
+            {
+               //family
+                    foreach (var  parent in surveyStudents.enrollFamily)
+                    {
+                        var record = db.Families.Find(parent.Family.FamilyId);
+                        if (record != null)
+                        {
+                            
+                            record.FamilyId=parent.Family.FamilyId;
+                            record.Fam_Title=parent.Family.Fam_Title;
+                            record.Fam_Name=parent.Family.Fam_Name;
+                            record.Fam_Lname=parent.Family.Fam_Lname;
+                            record.birthday=parent.Family.birthday;
+                            record.Career=parent.Family.Career;
+                            record.Income=parent.Family.Income;
+                            record.Education=parent.Family.Education;
+                            record.Timestam=parent.Family.Timestam;
+                            record.Staft=parent.Family.Staft;
+                            record.Gender=parent.Family.Gender;
+                            record.Idcard=parent.Family.Idcard;
+                        }
+                }
+                    db.SaveChanges();
+                
+            }
         }
         // GET: SurveyStudents/Details/5
         public ActionResult Details(int? id)

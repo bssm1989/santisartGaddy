@@ -1109,7 +1109,6 @@
       <End Role="EnrollYearSemester" EntitySet="EnrollYearSemesters" />
     </AssociationSet>
     <EntitySet Name="Districts" EntityType="santisartModel2.District" />
-    <EntitySet Name="enrolladdresses" EntityType="santisartModel2.enrolladdress" />
     <EntitySet Name="Provinces" EntityType="santisartModel2.Province" />
     <EntitySet Name="Subdistricts" EntityType="santisartModel2.Subdistrict" />
     <AssociationSet Name="FK_Districts_Provinces" Association="santisartModel2.FK_Districts_Provinces">
@@ -1120,6 +1119,7 @@
       <End Role="District" EntitySet="Districts" />
       <End Role="Subdistrict" EntitySet="Subdistricts" />
     </AssociationSet>
+    <EntitySet Name="enrolladdresses" EntityType="santisartModel2.enrolladdress" />
     <AssociationSet Name="fk_codeZity" Association="santisartModel2.fk_codeZity">
       <End Role="Subdistrict" EntitySet="Subdistricts" />
       <End Role="enrolladdress" EntitySet="enrolladdresses" />
@@ -1140,26 +1140,6 @@
     <Property Name="ProvinceId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Province" Relationship="santisartModel2.FK_Districts_Provinces" FromRole="District" ToRole="Province" />
     <NavigationProperty Name="Subdistricts" Relationship="santisartModel2.FK_Subdistricts_Districts2" FromRole="District" ToRole="Subdistrict" />
-  </EntityType>
-  <EntityType Name="enrolladdress">
-    <Key>
-      <PropertyRef Name="addressId" />
-    </Key>
-    <Property Name="number" Type="Int32" />
-    <Property Name="sub_id" Type="Int32" />
-    <Property Name="tambol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="amper" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="codeCity" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="status" Type="Int32" />
-    <Property Name="codeAddress" Type="Int32" Nullable="false" />
-    <Property Name="nameVil" Type="Int32" />
-    <Property Name="EmpId" Type="Int32" />
-    <Property Name="timestamp" Type="DateTime" Precision="3" />
-    <Property Name="student_id" Type="Int32" />
-    <Property Name="addressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="Subdistrict" Relationship="santisartModel2.fk_codeZity" FromRole="enrolladdress" ToRole="Subdistrict" />
-    <NavigationProperty Name="Student" Relationship="santisartModel2.fk_student_address" FromRole="enrolladdress" ToRole="Student" />
   </EntityType>
   <EntityType Name="Province">
     <Key>
@@ -1210,6 +1190,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="enrolladdress">
+    <Key>
+      <PropertyRef Name="addressId" />
+    </Key>
+    <Property Name="number" Type="Int32" />
+    <Property Name="sub_id" Type="Int32" />
+    <Property Name="tambol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="amper" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="codeCity" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="codeAddress" Type="Int32" />
+    <Property Name="nameVil" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="EmpId" Type="Int32" />
+    <Property Name="timestamp" Type="DateTime" Precision="3" />
+    <Property Name="student_id" Type="Int32" />
+    <Property Name="addressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Subdistrict" Relationship="santisartModel2.fk_codeZity" FromRole="enrolladdress" ToRole="Subdistrict" />
+    <NavigationProperty Name="Student" Relationship="santisartModel2.fk_student_address" FromRole="enrolladdress" ToRole="Student" />
+  </EntityType>
   <Association Name="fk_codeZity">
     <End Type="santisartModel2.Subdistrict" Role="Subdistrict" Multiplicity="0..1">
       <OnDelete Action="Cascade" />

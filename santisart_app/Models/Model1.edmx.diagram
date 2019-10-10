@@ -70,11 +70,11 @@
         <AssociationConnector Association="santisartModel2.Fk_yearSem" ManuallyRouted="false" />
         <AssociationConnector Association="santisartModel2.Fk_Year" ManuallyRouted="false" />
         <EntityTypeShape EntityType="santisartModel2.District" Width="1.5" PointX="7.625" PointY="13.75" />
-        <EntityTypeShape EntityType="santisartModel2.enrolladdress" Width="1.5" PointX="14.125" PointY="7.625" />
         <EntityTypeShape EntityType="santisartModel2.Province" Width="1.5" PointX="5.375" PointY="14" />
         <EntityTypeShape EntityType="santisartModel2.Subdistrict" Width="1.5" PointX="9.875" PointY="13.5" />
         <AssociationConnector Association="santisartModel2.FK_Districts_Provinces" />
         <AssociationConnector Association="santisartModel2.FK_Subdistricts_Districts2" />
+        <EntityTypeShape EntityType="santisartModel2.enrolladdress" Width="1.5" PointX="14.125" PointY="7.625" />
         <AssociationConnector Association="santisartModel2.fk_codeZity" />
         <AssociationConnector Association="santisartModel2.fk_student_address" />
         </Diagram>
