@@ -186,18 +186,19 @@
             <PropertyRef Name="addressId" />
           </Key>
           <Property Name="number" Type="int" />
-          <Property Name="sub_id" Type="int" />
+          <Property Name="Sub_id" Type="int" />
           <Property Name="tambol" Type="varchar" MaxLength="50" />
           <Property Name="amper" Type="varchar" MaxLength="50" />
           <Property Name="province" Type="varchar" MaxLength="50" />
           <Property Name="codeCity" Type="varchar" MaxLength="5" />
           <Property Name="status" Type="int" />
           <Property Name="codeAddress" Type="int" />
-          <Property Name="nameVil" Type="nvarchar" MaxLength="1" />
+          <Property Name="nameVil" Type="nvarchar" MaxLength="100" />
           <Property Name="EmpId" Type="int" />
           <Property Name="timestamp" Type="datetime" />
           <Property Name="student_id" Type="int" />
           <Property Name="addressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="staff_id" Type="int" />
         </EntityType>
         <EntityType Name="EnrollClass">
           <Key>
@@ -730,7 +731,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
               <PropertyRef Name="Sub_id" />
             </Principal>
             <Dependent Role="enrolladdress">
-              <PropertyRef Name="sub_id" />
+              <PropertyRef Name="Sub_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2580,18 +2581,19 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
             <PropertyRef Name="addressId" />
           </Key>
           <Property Name="number" Type="Int32" />
-          <Property Name="sub_id" Type="Int32" />
+          <Property Name="Sub_id" Type="Int32" />
           <Property Name="tambol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="amper" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="codeCity" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="status" Type="Int32" />
           <Property Name="codeAddress" Type="Int32" />
-          <Property Name="nameVil" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="nameVil" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="EmpId" Type="Int32" />
           <Property Name="timestamp" Type="DateTime" Precision="3" />
           <Property Name="student_id" Type="Int32" />
           <Property Name="addressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="staff_id" Type="Int32" />
           <NavigationProperty Name="Subdistrict" Relationship="santisartModel2.fk_codeZity" FromRole="enrolladdress" ToRole="Subdistrict" />
           <NavigationProperty Name="Student" Relationship="santisartModel2.fk_student_address" FromRole="enrolladdress" ToRole="Student" />
         </EntityType>
@@ -2605,7 +2607,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
               <PropertyRef Name="Sub_id" />
             </Principal>
             <Dependent Role="enrolladdress">
-              <PropertyRef Name="sub_id" />
+              <PropertyRef Name="Sub_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3306,6 +3308,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
           <EntitySetMapping Name="enrolladdresses">
             <EntityTypeMapping TypeName="santisartModel2.enrolladdress">
               <MappingFragment StoreEntitySet="enrolladdress">
+                <ScalarProperty Name="staff_id" ColumnName="staff_id" />
                 <ScalarProperty Name="addressId" ColumnName="addressId" />
                 <ScalarProperty Name="student_id" ColumnName="student_id" />
                 <ScalarProperty Name="timestamp" ColumnName="timestamp" />
@@ -3317,7 +3320,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
                 <ScalarProperty Name="province" ColumnName="province" />
                 <ScalarProperty Name="amper" ColumnName="amper" />
                 <ScalarProperty Name="tambol" ColumnName="tambol" />
-                <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+                <ScalarProperty Name="Sub_id" ColumnName="Sub_id" />
                 <ScalarProperty Name="number" ColumnName="number" />
               </MappingFragment>
             </EntityTypeMapping>

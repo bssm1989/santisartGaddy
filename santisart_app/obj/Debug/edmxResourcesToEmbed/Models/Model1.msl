@@ -678,6 +678,7 @@
     <EntitySetMapping Name="enrolladdresses">
       <EntityTypeMapping TypeName="santisartModel2.enrolladdress">
         <MappingFragment StoreEntitySet="enrolladdress">
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
           <ScalarProperty Name="addressId" ColumnName="addressId" />
           <ScalarProperty Name="student_id" ColumnName="student_id" />
           <ScalarProperty Name="timestamp" ColumnName="timestamp" />
@@ -689,7 +690,7 @@
           <ScalarProperty Name="province" ColumnName="province" />
           <ScalarProperty Name="amper" ColumnName="amper" />
           <ScalarProperty Name="tambol" ColumnName="tambol" />
-          <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+          <ScalarProperty Name="Sub_id" ColumnName="Sub_id" />
           <ScalarProperty Name="number" ColumnName="number" />
         </MappingFragment>
       </EntityTypeMapping>

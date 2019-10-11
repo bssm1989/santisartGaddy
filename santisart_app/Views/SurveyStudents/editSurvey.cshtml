@@ -293,6 +293,18 @@
                         <hr />
                         @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.HiddenFor(model => model)*@
+                        <div class="form-group">
+                            @*@Html.LabelFor(model => model.address.sub_id, "subDis", htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            <div class="col-md-10">
+                                @*@Html.DropDownListFor(model => model.address.Sub_id, ViewBag.subDis as SelectList,
+                                    "Select Category", new { @class = "form-control" })
+                                                       @Html.DropDownList("subDis", null, htmlAttributes: new { @class = "form-control" })*@
+                                @*@Html.DropDownList("adressid", null, htmlAttributes: new { @class = "form-control" })*@
+
+                                @*@Html.ValidationMessageFor(model =>model.address.sub_id, "", new { @class = "text-danger" })*@
+                            </div>
+                        </div>
+
                         @Html.HiddenFor(model => model.address.student_id)
                         <div class="form-group">
                             @Html.LabelFor(model => model.address.nameVil, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
@@ -308,24 +320,54 @@
                                 @Html.ValidationMessageFor(model => model.address.number, "", new { @class = "text-danger" })
                             </div>
                         </div>
+                        @*<div class="form-group">
+                                @Html.LabelFor(model => model.address.Subdistrict.NameInThai, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    @Html.EditorFor(model => model.address.Subdistrict.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                    @Html.ValidationMessageFor(model => model.address.Subdistrict.NameInThai, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
+                        @*<div class="form-group">
+                                @Html.LabelFor(model => model.address.Subdistrict.District.NameInThai, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    @Html.EditorFor(model => model.address.Subdistrict.District.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                    @Html.ValidationMessageFor(model => model.address.Subdistrict.District.NameInThai, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
+                        @*<div class="form-group">
+                                @Html.LabelFor(model => model.address.Subdistrict.District.Province.NameInThai, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    @Html.EditorFor(model => model.address.Subdistrict.District.Province.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                    @Html.ValidationMessageFor(model => model.address.Subdistrict.District.Province.NameInThai, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
+
                         <div class="form-group">
-                            @Html.LabelFor(model => model.address.Subdistrict.NameInThai, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            @Html.LabelFor(model => model.address.Subdistrict.District.Province.NameInThai, htmlAttributes: new { @class = "control-label  col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                @Html.EditorFor(model => model.address.Subdistrict.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
-                                @Html.ValidationMessageFor(model => model.address.Subdistrict.NameInThai, "", new { @class = "text-danger" })
+                                @Html.DropDownList("Provices", null, htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
+                                @*@Html.EditorFor(model => model.address.Subdistrict.District.Province.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })*@
+                                @Html.ValidationMessageFor(model => model.address.Subdistrict.District.Province.NameInThai, "", new { @class = "text-danger" })
                             </div>
                         </div>
+
                         <div class="form-group">
-                            @Html.LabelFor(model => model.address.Subdistrict.District.NameInThai, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            @Html.LabelFor(model => model.address.Subdistrict.District.Province.NameInThai, htmlAttributes: new { @class = "control-label  col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                @Html.EditorFor(model => model.address.Subdistrict.District.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
-                                @Html.ValidationMessageFor(model => model.address.Subdistrict.District.NameInThai, "", new { @class = "text-danger" })
+                                @Html.DropDownList("Districts", null,
+                               htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
+
+                                @*@Html.EditorFor(model => model.address.Subdistrict.District.Province.NameInThai,
+                                    new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })*@
+                                @Html.ValidationMessageFor(model => model.address.Subdistrict.District.Province.NameInThai, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(model => model.address.Subdistrict.District.Province.NameInThai, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                @Html.EditorFor(model => model.address.Subdistrict.District.Province.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                @Html.DropDownList("Sub_id", null, htmlAttributes: new { @class = "form-control selectpicker  col-md-7 col-xs-12", @data_live_search = "true" })
+
+                                @*@Html.EditorFor(model => model.address.Subdistrict.District.Province.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })*@
                                 @Html.ValidationMessageFor(model => model.address.Subdistrict.District.Province.NameInThai, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -343,7 +385,82 @@
         </div>
     </div>
 }
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="type" class="col-sm-5 control-label">I'd like to ride</label>
+        <div class="col-sm-5">
+            <select name="type" id="type" class="form-control">
+                <option>--Select your ride--</option>
+                <option value="animals">Animal</option>
+                <option value="vehicles">Vehicle</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="subtype" class="col-sm-5 control-label">More specifically</label>
+        <div class="col-sm-5">
+            <select name="subtype" id="subtype" class="form-control">
+                <option>-- Select type first--</option>
+            </select>
+        </div>
+    </div>
+</form>
+
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+<script>
+
+var Select2Cascade = (function (window, $) {
+
+        function Select2Cascade(parent, child, url, select2Options) {
+            var afterActions = [];
+            var options = select2Options || {};
+
+            // Register functions to be called after cascading data loading done
+            this.then = function (callback) {
+                afterActions.push(callback);
+                return this;
+            };
+
+            parent.select2(select2Options).on("change", function (e) {
+
+                child.prop("disabled", true);
+
+                var _this = this;
+                $.getJSON(url.replace(':parentId:', $(this).val()), function (items) {
+                    var newOptions = '<option value="">-- Select --</option>';
+                    for (var id in items) {
+                        newOptions += '<option value="' + id + '">' + items[id] + '</option>';
+                    }
+
+                    child.select2('destroy').html(newOptions).prop("disabled", false)
+                        .select2(options);
+
+                    afterActions.forEach(function (callback) {
+                        callback(parent, child, items);
+                    });
+                });
+            });
+        }
+
+        return Select2Cascade;
+
+    })(window, $);
+
+    $(document).ready(function () {
+        var select2Options = { width: 'resolve' };
+        // Loading raw JSON files of a secret gist - https://gist.github.com/ajaxray/32c5a57fafc3f6bc4c430153d66a55f5
+        var apiUrl = 'https://gist.githubusercontent.com/ajaxray/32c5a57fafc3f6bc4c430153d66a55f5/raw/260a653e6347fb6d2360e8ec376a2dc4888c1afa/:parentId:.json';
+
+        $('select').select2(select2Options);
+        var cascadLoading = new Select2Cascade($('#type'), $('#subtype'), apiUrl, select2Options);
+        cascadLoading.then(function (parent, child, items) {
+            // Dump response data
+            console.log(items);
+        });
+    });
+
+
+</script>

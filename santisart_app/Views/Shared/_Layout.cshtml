@@ -107,10 +107,10 @@
                                 <li>
                                     <a href='@Url.Action("Index", "eduContest")'><i class="fa fa-graduation-cap"></i> งานวิชาการ <span class="fa fa-chevron-down"></span></a>
                                     @*<ul class="nav child_menu">
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="index2.html">Dashboard2</a></li>
-                <li><a href="index3.html">Dashboard3</a></li>
-            </ul>*@
+                                            <li><a href="index.html">Dashboard</a></li>
+                                            <li><a href="index2.html">Dashboard2</a></li>
+                                            <li><a href="index3.html">Dashboard3</a></li>
+                                        </ul>*@
                                 </li>
                                 <li>
                                     <a href='@Url.Action("Index", "Attendance")'><i class="fa fa-edit"></i> Attendance <span class="fa fa-chevron-down"></span></a>
@@ -135,7 +135,7 @@
                                 </li>
                                 <li><a href='@Url.Action("Index", "EnrollEmpCouses")'><i class="fa fa-edit"></i> การสอน <span class="fa fa-chevron-down"></span></a>     </li>
                             </ul>
-                    </div>
+                        </div>
                     </div>
                     <!-- /sidebar menu -->
                     <!-- /menu footer buttons -->
@@ -163,10 +163,10 @@
                         <div class="nav toggle">
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                         </div>
-                        
+
                         <ul class="nav navbar-nav navbar-right">
-                            @{  var returnUrl ="";
-                                     returnUrl = Server.UrlEncode(Request.Url.PathAndQuery);
+                            @{ var returnUrl = "";
+                                returnUrl = Server.UrlEncode(Request.Url.PathAndQuery);
                                 if (Session["UserID"] == null || Session["UserId"].ToString() == "")
                                 {
 
@@ -174,7 +174,7 @@
                                     <li class="" style="margin-top:10px;">
                                         <button class="btn btn-primary"
                                                 onclick="location.href='@Url.Action("Login","UserProfiles")?ReturnUrl=@returnUrl'">
-                                                
+
                                             Login
                                         </button>
                                     </li>
@@ -317,7 +317,9 @@
     <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="~/Content/js/custom.min.js"></script>
-    
+    <link href="~/Content/vendors/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="~/Content/css/select2-bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Content/vendors/select2/dist/js/select2.min.js"></script>
 </body>
 
 </html>

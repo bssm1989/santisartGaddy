@@ -15,7 +15,7 @@ namespace santisart_app.Models
     public partial class enrolladdress
     {
         public Nullable<int> number { get; set; }
-        public Nullable<int> sub_id { get; set; }
+        public Nullable<int> Sub_id { get; set; }
         public string tambol { get; set; }
         public string amper { get; set; }
         public string province { get; set; }
@@ -27,6 +27,7 @@ namespace santisart_app.Models
         public Nullable<System.DateTime> timestamp { get; set; }
         public Nullable<int> student_id { get; set; }
         public int addressId { get; set; }
+        public Nullable<int> staff_id { get; set; }
     
         public virtual Subdistrict Subdistrict { get; set; }
         public virtual Student Student { get; set; }

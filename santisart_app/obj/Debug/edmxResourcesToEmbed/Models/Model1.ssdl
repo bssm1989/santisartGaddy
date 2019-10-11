@@ -181,18 +181,19 @@
       <PropertyRef Name="addressId" />
     </Key>
     <Property Name="number" Type="int" />
-    <Property Name="sub_id" Type="int" />
+    <Property Name="Sub_id" Type="int" />
     <Property Name="tambol" Type="varchar" MaxLength="50" />
     <Property Name="amper" Type="varchar" MaxLength="50" />
     <Property Name="province" Type="varchar" MaxLength="50" />
     <Property Name="codeCity" Type="varchar" MaxLength="5" />
     <Property Name="status" Type="int" />
     <Property Name="codeAddress" Type="int" />
-    <Property Name="nameVil" Type="nvarchar" MaxLength="1" />
+    <Property Name="nameVil" Type="nvarchar" MaxLength="100" />
     <Property Name="EmpId" Type="int" />
     <Property Name="timestamp" Type="datetime" />
     <Property Name="student_id" Type="int" />
     <Property Name="addressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="staff_id" Type="int" />
   </EntityType>
   <EntityType Name="EnrollClass">
     <Key>
@@ -725,7 +726,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
         <PropertyRef Name="Sub_id" />
       </Principal>
       <Dependent Role="enrolladdress">
-        <PropertyRef Name="sub_id" />
+        <PropertyRef Name="Sub_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

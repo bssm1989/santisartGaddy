@@ -50,18 +50,36 @@ namespace santisart_app.Controllers
                 throw;
             }
         }
-        //List<OrderDisplayViewModel> orderList = context.Orders.AsNoTracking()
-        //                   .Where(x => x.CustomerID == customerid)
-        //                   .OrderBy(x => x.OrderDate)
-        //                   .Select(x =>
-        //                  new OrderDisplayViewModel
-        //                   {
-        //                       CustomerID = x.CustomerID,
-        //                       OrderID = x.OrderID,
-        //                       OrderDate = x.OrderDate,
-        //                       Description = x.Description
-        //                   }).ToList();
-        //customerOrdersListVm.Orders = orderList;
+        [HttpGet]
+        public ActionResult SearchDistrics(int idProvince)
+        {
+            try
+            {
+                //string term = HttpContext.Request.QueryString["term"].ToString();
+                var ListDistricts = db.Districts.Where(p => p.ProvinceId==idProvince).ToList();
+                return Json(ListDistricts, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        [HttpGet]
+        public ActionResult SearchSubDist(int idSubdist)
+        {
+            try
+            {
+                //string term = HttpContext.Request.QueryString["term"].ToString();
+                var ListDistricts = db.Subdistricts.Where(p => p.DistrictId==idSubdist).ToList();
+                return Json(ListDistricts, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public ActionResult editSurvey()
         {
                 var studentSurvey = new SurveyStudent();
@@ -84,11 +102,32 @@ namespace santisart_app.Controllers
                         .Where(x => x.student_id == student.Student_id).FirstOrDefault();
                     studentSurvey.address = adress;
                     studentSurvey.enrollFamily = ParentList;
+                    
+                    var selectProvince = new[] { 75, 76, 77,71 };
+                    var fillterProvince = db.Provinces.Where(x=>selectProvince.Contains(x.Id));
+                    var selectDistrict = fillterProvince.Select(y => y.Id).ToList();
+                    //var filteredOrders = orders.Order.Where(o => allowedStatus.Contains(o.StatusCode));
+                    var fillterDistrict = db.Districts.Where(x => selectProvince.Contains(x.ProvinceId));
+                    var selectSubDis = fillterDistrict.Select(x => x.Id).ToList();
+                    var fillterSubDistrict = db.Subdistricts.Where(x => selectSubDis.Contains(x.DistrictId));
+                    ViewBag.Districts = new SelectList(fillterDistrict, "Id", "NameInThai", 
+                                                    db.enrolladdresses.Where(x=>x.student_id==student.Student_id)
+                                                    .FirstOrDefault().Sub_id);
+                    ViewBag.Sub_id = new SelectList(fillterSubDistrict, "Sub_id", "NameInThai",
+                                                    db.enrolladdresses.Where(x => x.student_id == student.Student_id)
+                                                    .FirstOrDefault().Sub_id);
+                    ViewBag.Provices = new SelectList(fillterProvince, "Id", "NameInThai",
+                                                    db.enrolladdresses.Where(x => x.student_id == student.Student_id)
+                                                    .FirstOrDefault().Sub_id);
                 }
             }
                 return View(studentSurvey);
             
             
+        }public ActionResult testdropdown()
+        {
+            ViewBag.sub_id = new SelectList(db.Districts, "Sub_id", "NameInThai");
+            return View(db.enrolladdresses.Find(1));
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

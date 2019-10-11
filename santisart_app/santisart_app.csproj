@@ -4195,6 +4195,12 @@
     <Content Include="Views\EnrollFamilyStudents\Edit.cshtml" />
     <Content Include="Views\EnrollFamilyStudents\Index.cshtml" />
     <Content Include="Views\SurveyStudents\editSurvey.cshtml" />
+    <Content Include="Views\SurveyStudents\testdropdown.cshtml" />
+    <Content Include="Views\enrolladdresses1\Create.cshtml" />
+    <Content Include="Views\enrolladdresses1\Delete.cshtml" />
+    <Content Include="Views\enrolladdresses1\Details.cshtml" />
+    <Content Include="Views\enrolladdresses1\Edit.cshtml" />
+    <Content Include="Views\enrolladdresses1\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4206,6 +4212,7 @@
     <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\eduContestController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\enrolladdresses1Controller.cs" />
     <Compile Include="Controllers\enrolladdressesController.cs" />
     <Compile Include="Controllers\EnrollCousesController.cs" />
     <Compile Include="Controllers\EnrollEmpCousesController.cs" />
