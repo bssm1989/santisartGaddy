@@ -320,28 +320,7 @@
                                 @Html.ValidationMessageFor(model => model.address.number, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                        @*<div class="form-group">
-                                @Html.LabelFor(model => model.address.Subdistrict.NameInThai, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    @Html.EditorFor(model => model.address.Subdistrict.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
-                                    @Html.ValidationMessageFor(model => model.address.Subdistrict.NameInThai, "", new { @class = "text-danger" })
-                                </div>
-                            </div>*@
-                        @*<div class="form-group">
-                                @Html.LabelFor(model => model.address.Subdistrict.District.NameInThai, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    @Html.EditorFor(model => model.address.Subdistrict.District.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
-                                    @Html.ValidationMessageFor(model => model.address.Subdistrict.District.NameInThai, "", new { @class = "text-danger" })
-                                </div>
-                            </div>*@
-                        @*<div class="form-group">
-                                @Html.LabelFor(model => model.address.Subdistrict.District.Province.NameInThai, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    @Html.EditorFor(model => model.address.Subdistrict.District.Province.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
-                                    @Html.ValidationMessageFor(model => model.address.Subdistrict.District.Province.NameInThai, "", new { @class = "text-danger" })
-                                </div>
-                            </div>*@
-
+                       
                         <div class="form-group">
                             @Html.LabelFor(model => model.address.Subdistrict.District.Province.NameInThai, htmlAttributes: new { @class = "control-label  col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -431,6 +410,7 @@ var Select2Cascade = (function (window, $) {
                 var _this = this;
                 $.getJSON(url.replace(':parentId:', $(this).val()), function (items) {
                     var newOptions = '<option value="">-- Select --</option>';
+
                     for (var id in items) {
                         newOptions += '<option value="' + id + '">' + items[id] + '</option>';
                     }
@@ -452,11 +432,18 @@ var Select2Cascade = (function (window, $) {
     $(document).ready(function () {
         var select2Options = { width: 'resolve' };
         // Loading raw JSON files of a secret gist - https://gist.github.com/ajaxray/32c5a57fafc3f6bc4c430153d66a55f5
-        var apiUrl = 'https://gist.githubusercontent.com/ajaxray/32c5a57fafc3f6bc4c430153d66a55f5/raw/260a653e6347fb6d2360e8ec376a2dc4888c1afa/:parentId:.json';
+        //var apiUrl = 'https://gist.githubusercontent.com/ajaxray/32c5a57fafc3f6bc4c430153d66a55f5/raw/260a653e6347fb6d2360e8ec376a2dc4888c1afa/:parentId:.json';
+        var apiUrl = 'http://localhost:60336/SurveyStudents/SearchDistrics/?idProvince=:parentId:';
+        var apiUrl2 = 'http://localhost:60336/SurveyStudents/SearchSubDist/?idSubdist=:parentId:';
 
         $('select').select2(select2Options);
-        var cascadLoading = new Select2Cascade($('#type'), $('#subtype'), apiUrl, select2Options);
+        var cascadLoading = new Select2Cascade($('#Provices'), $('#Districts'), apiUrl, select2Options);
+        var cascadLoading2 = new Select2Cascade($('#Districts'), $('#Sub_id'), apiUrl2, select2Options);
         cascadLoading.then(function (parent, child, items) {
+            // Dump response data
+            console.log(items);
+        });
+     cascadLoading2.then(function (parent, child, items) {
             // Dump response data
             console.log(items);
         });

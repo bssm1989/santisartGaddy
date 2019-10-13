@@ -7,6 +7,8 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
 using santisart_app.Models;
 
 namespace santisart_app.Controllers
@@ -55,9 +57,26 @@ namespace santisart_app.Controllers
         {
             try
             {
-                //string term = HttpContext.Request.QueryString["term"].ToString();
-                var ListDistricts = db.Districts.Where(p => p.ProvinceId==idProvince).ToList();
-                return Json(ListDistricts, JsonRequestBehavior.AllowGet);
+
+                var ListDistricts = db.Districts.Where(p => p.ProvinceId == idProvince)
+                  .AsEnumerable()
+                .Select(x => new
+                {
+                    x.Id,x.NameInThai
+                }
+                ).ToList();
+            string strJson;
+            strJson = "{";
+            foreach (var item in ListDistricts)
+            {
+                strJson +=  "'" + item.Id + "' : '" +
+                    item.NameInThai+"'," ;
+            }
+            strJson = strJson.Remove(strJson.Length - 1)+ "}";
+            JavaScriptSerializer j = new JavaScriptSerializer();
+            object a = j.Deserialize(strJson, typeof(object));
+           
+            return Json(a, JsonRequestBehavior.AllowGet);
             }
             catch (Exception)
             {
@@ -71,8 +90,25 @@ namespace santisart_app.Controllers
             try
             {
                 //string term = HttpContext.Request.QueryString["term"].ToString();
-                var ListDistricts = db.Subdistricts.Where(p => p.DistrictId==idSubdist).ToList();
-                return Json(ListDistricts, JsonRequestBehavior.AllowGet);
+                var ListDistricts = db.Subdistricts.Where(p => p.DistrictId==idSubdist)
+                    .AsEnumerable()
+                .Select(x => new
+                {
+                    x.Sub_id,
+                    x.NameInThai
+                }
+                ).ToList();
+                string strJson;
+                strJson = "{";
+                foreach (var item in ListDistricts)
+                {
+                    strJson += "'" + item.Sub_id + "' : '" +
+                        item.NameInThai + "',";
+                }
+                strJson = strJson.Remove(strJson.Length - 1) + "}";
+                JavaScriptSerializer j = new JavaScriptSerializer();
+                object a = j.Deserialize(strJson, typeof(object));
+                return Json(a, JsonRequestBehavior.AllowGet);
             }
             catch (Exception)
             {
@@ -132,8 +168,7 @@ namespace santisart_app.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult editSurvey( SurveyStudent student)
-        //public ActionResult editSurvey([Bind(Include = "students.Student_name,students.Student_lname,enrollFamily[0].Family.Fam_Name,enrollFamily[0].Family.Fam_Lname,enrollFamily[0].Family.Career,enrollFamily[1].Family.Fam_Name,enrollFamily[1].Family.Fam_Lname,enrollFamily[1].Family.Career,address.nameVil,address.number,address.Subdistrict.NameInThai,address.Subdistrict.District.NameInThai,address.Subdistrict.District.Province.NameInThai")] SurveyStudent student)
-        {
+         {
             if (ModelState.IsValid)
             {
                 if (student.enrollFamily != null&&student.address!=null)
