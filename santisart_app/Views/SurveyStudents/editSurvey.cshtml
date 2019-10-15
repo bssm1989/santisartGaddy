@@ -44,6 +44,7 @@
                         @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.HiddenFor(model => model)*@
                         @Html.HiddenFor(model => model.students.Student_id)
+                        @Html.HiddenFor(model => model.address.addressId)
                         <div class="form-group">
                             @Html.LabelFor(model => model.students.Student_name, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -331,7 +332,7 @@
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.address.Subdistrict.District.Province.NameInThai, htmlAttributes: new { @class = "control-label  col-md-3 col-sm-3 col-xs-12" })
+                            @Html.LabelFor(model => model.address.Subdistrict.District.NameInThai, htmlAttributes: new { @class = "control-label  col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 @Html.DropDownList("Districts", null,
                                htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
@@ -342,7 +343,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            @Html.LabelFor(model => model.address.Subdistrict.District.Province.NameInThai, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            @Html.LabelFor(model => model.address.Subdistrict.NameInEnglish, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 @Html.DropDownList("Sub_id", null, htmlAttributes: new { @class = "form-control selectpicker  col-md-7 col-xs-12", @data_live_search = "true" })
 
@@ -364,26 +365,7 @@
         </div>
     </div>
 }
-<form class="form-horizontal">
-    <div class="form-group">
-        <label for="type" class="col-sm-5 control-label">I'd like to ride</label>
-        <div class="col-sm-5">
-            <select name="type" id="type" class="form-control">
-                <option>--Select your ride--</option>
-                <option value="animals">Animal</option>
-                <option value="vehicles">Vehicle</option>
-            </select>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="subtype" class="col-sm-5 control-label">More specifically</label>
-        <div class="col-sm-5">
-            <select name="subtype" id="subtype" class="form-control">
-                <option>-- Select type first--</option>
-            </select>
-        </div>
-    </div>
-</form>
+
 
 
 <div>

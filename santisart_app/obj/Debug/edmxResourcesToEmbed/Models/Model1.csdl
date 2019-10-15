@@ -1203,7 +1203,7 @@
     <Property Name="status" Type="Int32" />
     <Property Name="codeAddress" Type="Int32" />
     <Property Name="nameVil" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="EmpId" Type="Int32" />
+    <Property Name="Active" Type="Int32" />
     <Property Name="timestamp" Type="DateTime" Precision="3" />
     <Property Name="student_id" Type="Int32" />
     <Property Name="addressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />

@@ -174,11 +174,37 @@ namespace santisart_app.Controllers
                 if (student.enrollFamily != null&&student.address!=null)
                 {
                     SaveSurvey(student);
+                    SaveAddress(student.address);
                 }
+
                 return RedirectToAction("Index");
             }
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         }
+
+        private ActionResult SaveAddress(enrolladdress address)
+        {
+            
+            try
+            {
+                var unactive=db.enrolladdresses.Find(address.addressId);
+                unactive.Active = 0;
+                address.timestamp = DateTime.Now;
+                address.Active = 1;
+                address.staff_id = Convert.ToInt32(Session["UserID"]);
+                var record = db.enrolladdresses.Add(address);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
+
+        }
+
         public void SaveSurvey(SurveyStudent surveyStudents)
         {
             if (surveyStudents != null)
@@ -205,7 +231,7 @@ namespace santisart_app.Controllers
                         }
                 }
                     db.SaveChanges();
-                
+               
             }
         }
         // GET: SurveyStudents/Details/5

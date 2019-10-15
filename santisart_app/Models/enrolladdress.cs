@@ -23,7 +23,7 @@ namespace santisart_app.Models
         public Nullable<int> status { get; set; }
         public Nullable<int> codeAddress { get; set; }
         public string nameVil { get; set; }
-        public Nullable<int> EmpId { get; set; }
+        public Nullable<int> Active { get; set; }
         public Nullable<System.DateTime> timestamp { get; set; }
         public Nullable<int> student_id { get; set; }
         public int addressId { get; set; }

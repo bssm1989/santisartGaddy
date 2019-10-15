@@ -194,7 +194,7 @@
           <Property Name="status" Type="int" />
           <Property Name="codeAddress" Type="int" />
           <Property Name="nameVil" Type="nvarchar" MaxLength="100" />
-          <Property Name="EmpId" Type="int" />
+          <Property Name="Active" Type="int" />
           <Property Name="timestamp" Type="datetime" />
           <Property Name="student_id" Type="int" />
           <Property Name="addressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
@@ -2589,7 +2589,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
           <Property Name="status" Type="Int32" />
           <Property Name="codeAddress" Type="Int32" />
           <Property Name="nameVil" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="EmpId" Type="Int32" />
+          <Property Name="Active" Type="Int32" />
           <Property Name="timestamp" Type="DateTime" Precision="3" />
           <Property Name="student_id" Type="Int32" />
           <Property Name="addressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
@@ -3312,7 +3312,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
                 <ScalarProperty Name="addressId" ColumnName="addressId" />
                 <ScalarProperty Name="student_id" ColumnName="student_id" />
                 <ScalarProperty Name="timestamp" ColumnName="timestamp" />
-                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="nameVil" ColumnName="nameVil" />
                 <ScalarProperty Name="codeAddress" ColumnName="codeAddress" />
                 <ScalarProperty Name="status" ColumnName="status" />

@@ -189,7 +189,7 @@
     <Property Name="status" Type="int" />
     <Property Name="codeAddress" Type="int" />
     <Property Name="nameVil" Type="nvarchar" MaxLength="100" />
-    <Property Name="EmpId" Type="int" />
+    <Property Name="Active" Type="int" />
     <Property Name="timestamp" Type="datetime" />
     <Property Name="student_id" Type="int" />
     <Property Name="addressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />

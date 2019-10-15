@@ -682,7 +682,7 @@
           <ScalarProperty Name="addressId" ColumnName="addressId" />
           <ScalarProperty Name="student_id" ColumnName="student_id" />
           <ScalarProperty Name="timestamp" ColumnName="timestamp" />
-          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="nameVil" ColumnName="nameVil" />
           <ScalarProperty Name="codeAddress" ColumnName="codeAddress" />
           <ScalarProperty Name="status" ColumnName="status" />
