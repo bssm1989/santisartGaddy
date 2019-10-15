@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8bba9739a5e340ecbf0a385d9c653487" Name="Diagram1" ZoomLevel="85" ShowGrid="true">
+      <Diagram DiagramId="8bba9739a5e340ecbf0a385d9c653487" Name="Diagram1" ZoomLevel="100" ShowGrid="true">
         <EntityTypeShape EntityType="santisartModel2.attendance" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="santisartModel2.attendance_day" Width="1.5" PointX="5.75" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="santisartModel2.Class" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
@@ -28,7 +28,6 @@
         <EntityTypeShape EntityType="santisartModel2.EnrollFinishStudent" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="santisartModel2.EnrollStudentCouse" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="santisartModel2.EnrollYearSemester" Width="1.5" PointX="1.5" PointY="52.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="santisartModel2.Family" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
         <EntityTypeShape EntityType="santisartModel2.FinishType" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="santisartModel2.Food" Width="1.5" PointX="10.75" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="santisartModel2.Monthly" Width="1.5" PointX="11.75" PointY="1.625" IsExpanded="true" />
@@ -64,7 +63,6 @@
         <AssociationConnector Association="santisartModel2.Fk_year2" ManuallyRouted="false" />
         <AssociationConnector Association="santisartModel2.Fk_EmpCouseClass" ManuallyRouted="false" />
         <AssociationConnector Association="santisartModel2.Fk_enroll_Studnet" ManuallyRouted="false" />
-        <AssociationConnector Association="santisartModel2.fk_fam" ManuallyRouted="false" />
         <AssociationConnector Association="santisartModel2.Fk_finsh_form" ManuallyRouted="false" />
         <AssociationConnector Association="santisartModel2.Fk_stud" ManuallyRouted="false" />
         <AssociationConnector Association="santisartModel2.Fk_yearSem" ManuallyRouted="false" />
@@ -74,9 +72,15 @@
         <EntityTypeShape EntityType="santisartModel2.Subdistrict" Width="1.5" PointX="3.75" PointY="0.75" />
         <AssociationConnector Association="santisartModel2.FK_Districts_Provinces" />
         <AssociationConnector Association="santisartModel2.FK_Subdistricts_Districts2" />
-        <EntityTypeShape EntityType="santisartModel2.enrolladdress" Width="1.5" PointX="6" PointY="9.625" />
-        <AssociationConnector Association="santisartModel2.fk_codeZity" />
+        <EntityTypeShape EntityType="santisartModel2.PositionFam" Width="1.5" PointX="15.375" PointY="18.375" />
+        <EntityTypeShape EntityType="santisartModel2.Family" Width="1.5" PointX="17.625" PointY="17" />
+        <AssociationConnector Association="santisartModel2.fk_fam" />
+        <AssociationConnector Association="santisartModel2.Fk_pos_fam" />
+        <EntityTypeShape EntityType="santisartModel2.enrolladdress" Width="1.5" PointX="6" PointY="9.375" />
+        <AssociationConnector Association="santisartModel2.fk_district" />
+        <AssociationConnector Association="santisartModel2.fk_province" />
         <AssociationConnector Association="santisartModel2.fk_student_address" />
+        <AssociationConnector Association="santisartModel2.fk_subdistrict" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

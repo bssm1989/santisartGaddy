@@ -32,8 +32,12 @@ namespace santisart_app.Models
         public Nullable<int> Staft { get; set; }
         public string Gender { get; set; }
         public string Idcard { get; set; }
+        public Nullable<int> PositionFam_id { get; set; }
+        public Nullable<int> Active { get; set; }
+        public string Tel { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EnrollFamilyStudent> EnrollFamilyStudents { get; set; }
+        public virtual PositionFam PositionFam { get; set; }
     }
 }

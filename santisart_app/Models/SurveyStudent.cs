@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,5 +12,13 @@ namespace santisart_app.Models
         public List<EnrollFamilyStudent> enrollFamily{ get; set; }
         
         public enrolladdress address{ get; set; }
+        [DisplayAttribute(Name = "จังหวัด")]
+        public int Provices { get; set; }
+        [DisplayAttribute(Name = "อำเภอ")]
+
+        public int Districts { get; set; }
+        [DisplayAttribute(Name = "ตำบล")]
+
+        public int Sub_id { get; set; }
     }
 }

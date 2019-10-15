@@ -48,7 +48,6 @@ namespace santisart_app.Models
         public virtual DbSet<EnrollFinishStudent> EnrollFinishStudents { get; set; }
         public virtual DbSet<EnrollStudentCouse> EnrollStudentCouses { get; set; }
         public virtual DbSet<EnrollYearSemester> EnrollYearSemesters { get; set; }
-        public virtual DbSet<Family> Families { get; set; }
         public virtual DbSet<FinishType> FinishTypes { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
         public virtual DbSet<Monthly> Monthlies { get; set; }
@@ -69,6 +68,8 @@ namespace santisart_app.Models
         public virtual DbSet<District> Districts { get; set; }
         public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<Subdistrict> Subdistricts { get; set; }
+        public virtual DbSet<PositionFam> PositionFams { get; set; }
+        public virtual DbSet<Family> Families { get; set; }
         public virtual DbSet<enrolladdress> enrolladdresses { get; set; }
     }
 }

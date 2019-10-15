@@ -44,7 +44,6 @@
                         @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.HiddenFor(model => model)*@
                         @Html.HiddenFor(model => model.students.Student_id)
-                        @Html.HiddenFor(model => model.address.addressId)
                         <div class="form-group">
                             @Html.LabelFor(model => model.students.Student_name, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -125,6 +124,22 @@
                                 @Html.ValidationMessageFor(model => model.enrollFamily[0].Family.Career, "", new { @class = "text-danger" })
                             </div>
                         </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.enrollFamily[0].Family.Tel, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.EditorFor(model => model.enrollFamily[0].Family.Tel, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                @Html.ValidationMessageFor(model => model.enrollFamily[0].Family.Tel, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                         <div class="form-group">
+                            @Html.LabelFor(model => model.enrollFamily[0].Family.PositionFam.PositionName, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                             <div class="col-md-6 col-sm-6 col-xs-12">
+                                 @Html.DropDownList("PositionFam", null, "======เลือก==========",
+                                htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
+                                 @Html.ValidationMessageFor(model => model.enrollFamily[0].Family.Tel, "", new { @class = "text-danger" })
+                             </div>
+                        </div>
 
 
 
@@ -187,6 +202,13 @@
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 @Html.EditorFor(model => model.enrollFamily[1].Family.Career, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
                                 @Html.ValidationMessageFor(model => model.enrollFamily[1].Family.Career, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.enrollFamily[1].Family.Tel, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.EditorFor(model => model.enrollFamily[1].Family.Tel, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                @Html.ValidationMessageFor(model => model.enrollFamily[1].Family.Tel, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -253,6 +275,13 @@
                                 @Html.ValidationMessageFor(model => model.enrollFamily[2].Family.Career, "", new { @class = "text-danger" })
                             </div>
                         </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.enrollFamily[2].Family.Tel, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.EditorFor(model => model.enrollFamily[2].Family.Tel, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                @Html.ValidationMessageFor(model => model.enrollFamily[2].Family.Tel, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
 
 
@@ -292,21 +321,14 @@
                     <div class="form-horizontal">
                         <h4>EnrollFamilyStudent</h4>
                         <hr />
-                        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.HiddenFor(model => model)*@
-                        <div class="form-group">
+                         <div class="form-group">
                             @*@Html.LabelFor(model => model.address.sub_id, "subDis", htmlAttributes: new { @class = "control-label col-md-2" })*@
                             <div class="col-md-10">
-                                @*@Html.DropDownListFor(model => model.address.Sub_id, ViewBag.subDis as SelectList,
-                                    "Select Category", new { @class = "form-control" })
-                                                       @Html.DropDownList("subDis", null, htmlAttributes: new { @class = "form-control" })*@
-                                @*@Html.DropDownList("adressid", null, htmlAttributes: new { @class = "form-control" })*@
-
-                                @*@Html.ValidationMessageFor(model =>model.address.sub_id, "", new { @class = "text-danger" })*@
-                            </div>
+                              </div>
                         </div>
 
                         @Html.HiddenFor(model => model.address.student_id)
+                        @Html.HiddenFor(model => model.address.addressId)
                         <div class="form-group">
                             @Html.LabelFor(model => model.address.nameVil, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -315,40 +337,51 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            @Html.LabelFor(model => model.address.number, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            @Html.LabelFor(model => model.address.numberHome, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                @Html.EditorFor(model => model.address.number, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
-                                @Html.ValidationMessageFor(model => model.address.number, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.address.numberHome, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                @Html.ValidationMessageFor(model => model.address.numberHome, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                       
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.address.Subdistrict.District.Province.NameInThai, htmlAttributes: new { @class = "control-label  col-md-3 col-sm-3 col-xs-12" })
+                         <div class="form-group">
+                            @Html.LabelFor(model => model.address.Soi, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                @Html.DropDownList("Provices", null, htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
-                                @*@Html.EditorFor(model => model.address.Subdistrict.District.Province.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })*@
-                                @Html.ValidationMessageFor(model => model.address.Subdistrict.District.Province.NameInThai, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.address.Soi, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                @Html.ValidationMessageFor(model => model.address.Soi, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            @Html.LabelFor(model => model.address.Road, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.EditorFor(model => model.address.Road, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                @Html.ValidationMessageFor(model => model.address.Road, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.address.Subdistrict.District.NameInThai, htmlAttributes: new { @class = "control-label  col-md-3 col-sm-3 col-xs-12" })
+                            @Html.LabelFor(model => model.Provices, htmlAttributes: new { @class = "control-label  col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                @Html.DropDownList("Districts", null,
+                                @Html.DropDownList("Provices", null, "======เลือก==========", htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
+                                @*@Html.EditorFor(model => model.address.Subdistrict.District.Province.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })*@
+                                @Html.ValidationMessageFor(model => model.Provices, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Districts, htmlAttributes: new { @class = "control-label  col-md-3 col-sm-3 col-xs-12" })
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.DropDownList("Districts", null, "======เลือก==========",
                                htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
-
-                                @*@Html.EditorFor(model => model.address.Subdistrict.District.Province.NameInThai,
-                                    new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })*@
-                                @Html.ValidationMessageFor(model => model.address.Subdistrict.District.Province.NameInThai, "", new { @class = "text-danger" })
+                                 @Html.ValidationMessageFor(model => model.Districts, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="form-group">
-                            @Html.LabelFor(model => model.address.Subdistrict.NameInEnglish, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            @Html.LabelFor(model => model.Sub_id, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                @Html.DropDownList("Sub_id", null, htmlAttributes: new { @class = "form-control selectpicker  col-md-7 col-xs-12", @data_live_search = "true" })
+                                @Html.DropDownList("Sub_id", null, "======เลือก==========", htmlAttributes: new { @class = "form-control selectpicker  col-md-7 col-xs-12", @data_live_search = "true" })
 
                                 @*@Html.EditorFor(model => model.address.Subdistrict.District.Province.NameInThai, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })*@
-                                @Html.ValidationMessageFor(model => model.address.Subdistrict.District.Province.NameInThai, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.Sub_id, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -366,14 +399,12 @@
     </div>
 }
 
-
-
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
 <script>
 
-var Select2Cascade = (function (window, $) {
+    var Select2Cascade = (function (window, $) {
 
         function Select2Cascade(parent, child, url, select2Options) {
             var afterActions = [];
@@ -391,7 +422,7 @@ var Select2Cascade = (function (window, $) {
 
                 var _this = this;
                 $.getJSON(url.replace(':parentId:', $(this).val()), function (items) {
-                    var newOptions = '<option value="">-- Select --</option>';
+                    var newOptions = '<option value="0">======เลือก==========</option>';
 
                     for (var id in items) {
                         newOptions += '<option value="' + id + '">' + items[id] + '</option>';
@@ -423,9 +454,12 @@ var Select2Cascade = (function (window, $) {
         var cascadLoading2 = new Select2Cascade($('#Districts'), $('#Sub_id'), apiUrl2, select2Options);
         cascadLoading.then(function (parent, child, items) {
             // Dump response data
+            $("#Sub_id").prop("disabled", true);
+            $("#Sub_id").empty();
+            $("#Sub_id").html('<option value="0">======เลือก==========</option>');
             console.log(items);
         });
-     cascadLoading2.then(function (parent, child, items) {
+        cascadLoading2.then(function (parent, child, items) {
             // Dump response data
             console.log(items);
         });

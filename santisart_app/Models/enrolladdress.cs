@@ -14,22 +14,24 @@ namespace santisart_app.Models
     
     public partial class enrolladdress
     {
-        public Nullable<int> number { get; set; }
         public Nullable<int> Sub_id { get; set; }
-        public string tambol { get; set; }
-        public string amper { get; set; }
-        public string province { get; set; }
-        public string codeCity { get; set; }
+        public Nullable<int> student_id { get; set; }
+        public int addressId { get; set; }
+        public Nullable<int> staff_id { get; set; }
+        public string Soi { get; set; }
+        public string Road { get; set; }
+        public Nullable<int> DistrictId { get; set; }
+        public Nullable<int> ProvinceID { get; set; }
         public Nullable<int> status { get; set; }
         public Nullable<int> codeAddress { get; set; }
         public string nameVil { get; set; }
         public Nullable<int> Active { get; set; }
         public Nullable<System.DateTime> timestamp { get; set; }
-        public Nullable<int> student_id { get; set; }
-        public int addressId { get; set; }
-        public Nullable<int> staff_id { get; set; }
+        public Nullable<int> numberHome { get; set; }
     
-        public virtual Subdistrict Subdistrict { get; set; }
+        public virtual District District { get; set; }
+        public virtual Province Province { get; set; }
         public virtual Student Student { get; set; }
+        public virtual Subdistrict Subdistrict { get; set; }
     }
 }

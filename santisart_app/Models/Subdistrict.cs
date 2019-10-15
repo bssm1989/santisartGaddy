@@ -11,8 +11,7 @@ namespace santisart_app.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Subdistrict
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,10 +22,7 @@ namespace santisart_app.Models
     
         public int Sub_id { get; set; }
         public int Code { get; set; }
-        [DisplayAttribute(Name = "µÓºÅ1")]
         public string NameInThai { get; set; }
-  
-
         public string NameInEnglish { get; set; }
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }

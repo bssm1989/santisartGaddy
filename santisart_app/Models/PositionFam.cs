@@ -12,25 +12,18 @@ namespace santisart_app.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class District
+    public partial class PositionFam
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public District()
+        public PositionFam()
         {
-            this.Subdistricts = new HashSet<Subdistrict>();
-            this.enrolladdresses = new HashSet<enrolladdress>();
+            this.Families = new HashSet<Family>();
         }
     
-        public int Id { get; set; }
-        public int Code { get; set; }
-        public string NameInThai { get; set; }
-        public string NameInEnglish { get; set; }
-        public int ProvinceId { get; set; }
+        public int PositionId { get; set; }
+        public string PositionName { get; set; }
     
-        public virtual Province Province { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Subdistrict> Subdistricts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<enrolladdress> enrolladdresses { get; set; }
+        public virtual ICollection<Family> Families { get; set; }
     }
 }

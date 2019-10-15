@@ -18,6 +18,7 @@ namespace santisart_app.Models
         public Province()
         {
             this.Districts = new HashSet<District>();
+            this.enrolladdresses = new HashSet<enrolladdress>();
         }
     
         public int Id { get; set; }
@@ -27,5 +28,7 @@ namespace santisart_app.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<District> Districts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<enrolladdress> enrolladdresses { get; set; }
     }
 }

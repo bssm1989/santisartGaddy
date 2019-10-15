@@ -180,20 +180,20 @@
     <Key>
       <PropertyRef Name="addressId" />
     </Key>
-    <Property Name="number" Type="int" />
     <Property Name="Sub_id" Type="int" />
-    <Property Name="tambol" Type="varchar" MaxLength="50" />
-    <Property Name="amper" Type="varchar" MaxLength="50" />
-    <Property Name="province" Type="varchar" MaxLength="50" />
-    <Property Name="codeCity" Type="varchar" MaxLength="5" />
+    <Property Name="student_id" Type="int" />
+    <Property Name="addressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="staff_id" Type="int" />
+    <Property Name="Soi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Road" Type="nvarchar" MaxLength="50" />
+    <Property Name="DistrictId" Type="int" />
+    <Property Name="ProvinceID" Type="int" />
     <Property Name="status" Type="int" />
     <Property Name="codeAddress" Type="int" />
     <Property Name="nameVil" Type="nvarchar" MaxLength="100" />
     <Property Name="Active" Type="int" />
     <Property Name="timestamp" Type="datetime" />
-    <Property Name="student_id" Type="int" />
-    <Property Name="addressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="staff_id" Type="int" />
+    <Property Name="numberHome" Type="int" />
   </EntityType>
   <EntityType Name="EnrollClass">
     <Key>
@@ -328,6 +328,9 @@
     <Property Name="Staft" Type="int" />
     <Property Name="Gender" Type="varchar" MaxLength="10" />
     <Property Name="Idcard" Type="varchar" MaxLength="13" />
+    <Property Name="PositionFam_id" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Tel" Type="varchar" MaxLength="15" />
   </EntityType>
   <EntityType Name="FinishType">
     <Key>
@@ -375,6 +378,13 @@
     <Property Name="PosName" Type="nvarchar" MaxLength="50" />
     <Property Name="PosLevel" Type="int" />
     <Property Name="PosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PositionFam">
+    <Key>
+      <PropertyRef Name="PositionId" />
+    </Key>
+    <Property Name="PositionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PositionName" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Provinces">
     <Key>
@@ -716,20 +726,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_codeZity">
-    <End Role="Subdistricts" Type="Self.Subdistricts" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="enrolladdress" Type="Self.enrolladdress" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Subdistricts">
-        <PropertyRef Name="Sub_id" />
-      </Principal>
-      <Dependent Role="enrolladdress">
-        <PropertyRef Name="Sub_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="Fk_couse1">
     <End Role="Course" Type="Self.Course" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -769,6 +765,20 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
       </Principal>
       <Dependent Role="EnrollCouse">
         <PropertyRef Name="DepartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_district">
+    <End Role="Districts" Type="Self.Districts" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="enrolladdress" Type="Self.enrolladdress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Districts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="enrolladdress">
+        <PropertyRef Name="DistrictId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -936,6 +946,32 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Fk_pos_fam">
+    <End Role="PositionFam" Type="Self.PositionFam" Multiplicity="0..1" />
+    <End Role="Family" Type="Self.Family" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PositionFam">
+        <PropertyRef Name="PositionId" />
+      </Principal>
+      <Dependent Role="Family">
+        <PropertyRef Name="PositionFam_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_province">
+    <End Role="Provinces" Type="Self.Provinces" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="enrolladdress" Type="Self.enrolladdress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provinces">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="enrolladdress">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Fk_room">
     <End Role="RoomSession" Type="Self.RoomSession" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -989,6 +1025,20 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
       </Principal>
       <Dependent Role="Enroll_student_class">
         <PropertyRef Name="Student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_subdistrict">
+    <End Role="Subdistricts" Type="Self.Subdistricts" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="enrolladdress" Type="Self.enrolladdress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subdistricts">
+        <PropertyRef Name="Sub_id" />
+      </Principal>
+      <Dependent Role="enrolladdress">
+        <PropertyRef Name="Sub_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1077,6 +1127,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
     <EntitySet Name="Food" EntityType="Self.Food" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Monthly" EntityType="Self.Monthly" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Position" EntityType="Self.Position" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="PositionFam" EntityType="Self.PositionFam" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Provinces" EntityType="Self.Provinces" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="RoomSession" EntityType="Self.RoomSession" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Students" EntityType="Self.Students" Schema="santisart" store:Type="Tables" />
@@ -1280,10 +1331,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
       <End Role="ClassInSchool" EntitySet="ClassInSchool" />
       <End Role="EnrollCouse" EntitySet="EnrollCouse" />
     </AssociationSet>
-    <AssociationSet Name="fk_codeZity" Association="Self.fk_codeZity">
-      <End Role="Subdistricts" EntitySet="Subdistricts" />
-      <End Role="enrolladdress" EntitySet="enrolladdress" />
-    </AssociationSet>
     <AssociationSet Name="Fk_couse1" Association="Self.Fk_couse1">
       <End Role="Course" EntitySet="Course" />
       <End Role="EnrollCouse" EntitySet="EnrollCouse" />
@@ -1295,6 +1342,10 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
     <AssociationSet Name="FK_depart1" Association="Self.FK_depart1">
       <End Role="Department" EntitySet="Department" />
       <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+    </AssociationSet>
+    <AssociationSet Name="fk_district" Association="Self.fk_district">
+      <End Role="Districts" EntitySet="Districts" />
+      <End Role="enrolladdress" EntitySet="enrolladdress" />
     </AssociationSet>
     <AssociationSet Name="FK_Districts_Provinces" Association="Self.FK_Districts_Provinces">
       <End Role="Provinces" EntitySet="Provinces" />
@@ -1344,6 +1395,14 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
       <End Role="FinishType" EntitySet="FinishType" />
       <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudent" />
     </AssociationSet>
+    <AssociationSet Name="Fk_pos_fam" Association="Self.Fk_pos_fam">
+      <End Role="PositionFam" EntitySet="PositionFam" />
+      <End Role="Family" EntitySet="Family" />
+    </AssociationSet>
+    <AssociationSet Name="fk_province" Association="Self.fk_province">
+      <End Role="Provinces" EntitySet="Provinces" />
+      <End Role="enrolladdress" EntitySet="enrolladdress" />
+    </AssociationSet>
     <AssociationSet Name="Fk_room" Association="Self.Fk_room">
       <End Role="RoomSession" EntitySet="RoomSession" />
       <End Role="Enroll_RoomSession_Emp" EntitySet="Enroll_RoomSession_Emp" />
@@ -1359,6 +1418,10 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
     <AssociationSet Name="Fk_student2" Association="Self.Fk_student2">
       <End Role="Students" EntitySet="Students" />
       <End Role="Enroll_student_class" EntitySet="Enroll_student_class" />
+    </AssociationSet>
+    <AssociationSet Name="fk_subdistrict" Association="Self.fk_subdistrict">
+      <End Role="Subdistricts" EntitySet="Subdistricts" />
+      <End Role="enrolladdress" EntitySet="enrolladdress" />
     </AssociationSet>
     <AssociationSet Name="FK_Subdistricts_Districts2" Association="Self.FK_Subdistricts_Districts2">
       <End Role="Districts" EntitySet="Districts" />

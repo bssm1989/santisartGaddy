@@ -307,24 +307,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Families">
-      <EntityTypeMapping TypeName="santisartModel2.Family">
-        <MappingFragment StoreEntitySet="Family">
-          <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
-          <ScalarProperty Name="Fam_Title" ColumnName="Fam_Title" />
-          <ScalarProperty Name="Fam_Name" ColumnName="Fam_Name" />
-          <ScalarProperty Name="Fam_Lname" ColumnName="Fam_Lname" />
-          <ScalarProperty Name="birthday" ColumnName="birthday" />
-          <ScalarProperty Name="Career" ColumnName="Career" />
-          <ScalarProperty Name="Income" ColumnName="Income" />
-          <ScalarProperty Name="Education" ColumnName="Education" />
-          <ScalarProperty Name="Timestam" ColumnName="Timestam" />
-          <ScalarProperty Name="Staft" ColumnName="Staft" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Idcard" ColumnName="Idcard" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="FinishTypes">
       <EntityTypeMapping TypeName="santisartModel2.FinishType">
         <MappingFragment StoreEntitySet="FinishType">
@@ -675,23 +657,52 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PositionFams">
+      <EntityTypeMapping TypeName="santisartModel2.PositionFam">
+        <MappingFragment StoreEntitySet="PositionFam">
+          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Families">
+      <EntityTypeMapping TypeName="santisartModel2.Family">
+        <MappingFragment StoreEntitySet="Family">
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="PositionFam_id" ColumnName="PositionFam_id" />
+          <ScalarProperty Name="Idcard" ColumnName="Idcard" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Staft" ColumnName="Staft" />
+          <ScalarProperty Name="Timestam" ColumnName="Timestam" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Income" ColumnName="Income" />
+          <ScalarProperty Name="Career" ColumnName="Career" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="Fam_Lname" ColumnName="Fam_Lname" />
+          <ScalarProperty Name="Fam_Name" ColumnName="Fam_Name" />
+          <ScalarProperty Name="Fam_Title" ColumnName="Fam_Title" />
+          <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="enrolladdresses">
       <EntityTypeMapping TypeName="santisartModel2.enrolladdress">
         <MappingFragment StoreEntitySet="enrolladdress">
-          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
-          <ScalarProperty Name="addressId" ColumnName="addressId" />
-          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="numberHome" ColumnName="numberHome" />
           <ScalarProperty Name="timestamp" ColumnName="timestamp" />
           <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="nameVil" ColumnName="nameVil" />
           <ScalarProperty Name="codeAddress" ColumnName="codeAddress" />
           <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="codeCity" ColumnName="codeCity" />
-          <ScalarProperty Name="province" ColumnName="province" />
-          <ScalarProperty Name="amper" ColumnName="amper" />
-          <ScalarProperty Name="tambol" ColumnName="tambol" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="Road" ColumnName="Road" />
+          <ScalarProperty Name="Soi" ColumnName="Soi" />
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          <ScalarProperty Name="addressId" ColumnName="addressId" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
           <ScalarProperty Name="Sub_id" ColumnName="Sub_id" />
-          <ScalarProperty Name="number" ColumnName="number" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

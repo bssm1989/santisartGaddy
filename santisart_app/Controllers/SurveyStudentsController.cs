@@ -118,7 +118,7 @@ namespace santisart_app.Controllers
         }
         public ActionResult editSurvey()
         {
-                var studentSurvey = new SurveyStudent();
+            var studentSurvey = new SurveyStudent();
             if (true)
             {
                 Student student = db.Students.Find(705);
@@ -128,39 +128,60 @@ namespace santisart_app.Controllers
                     studentSurvey.students = student;
                     //father&mother
                     List<EnrollFamilyStudent> ParentList = new List<EnrollFamilyStudent>();
-                    ParentList.Add( db.EnrollFamilyStudents.AsNoTracking()
+                    ParentList.Add(db.EnrollFamilyStudents.AsNoTracking()
                         .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "father").FirstOrDefault());
-                    ParentList.Add( db.EnrollFamilyStudents.AsNoTracking()
+                    ParentList.Add(db.EnrollFamilyStudents.AsNoTracking()
                         .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "mother").FirstOrDefault());
-                    ParentList.Add( db.EnrollFamilyStudents.AsNoTracking()
+                    ParentList.Add(db.EnrollFamilyStudents.AsNoTracking()
                         .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "potentate").FirstOrDefault());
                     enrolladdress adress = db.enrolladdresses.AsNoTracking()
-                        .Where(x => x.student_id == student.Student_id).FirstOrDefault();
+                        .Where(x => x.student_id == student.Student_id&&x.Active==1).FirstOrDefault();
                     studentSurvey.address = adress;
                     studentSurvey.enrollFamily = ParentList;
+                    var selectProvince = new[] { 75, 76, 77, 71 };
+                    var fillterSubDistrict = new List<Subdistrict>();
+                    var fillterDistrict = new List<District>();
+                    var fillterProvince = new List<Province>();
+                   //int intDist = fillterSubDistrict[0].DistrictId != null ? fillterSubDistrict[0].District.ProvinceId : 0;
+                        //int intDist = fillterSubDistrict[0].DistrictId != null ? adress.ProvinceID : 0;
+
+                        //intDist = fillterDistrict[0].ProvinceId != null ? fillterDistrict[0].ProvinceId : 0;
+                        //if (fillterDistrict[0].ProvinceId != 0)
+                        fillterProvince = db.Provinces.Where(x => selectProvince.Contains(x.Id)).ToList();
+                    //var selectDistrict = fillterProvince.Select(y => y.Id).ToList();
+                    ////var filteredOrders = orders.Order.Where(o => allowedStatus.Contains(o.StatusCode));
+                    //var selectSubDis = fillterDistrict.Select(x => x.Id).ToList();
+
+                    if (adress.DistrictId != null)
+                        fillterSubDistrict = db.Subdistricts.Where(x => x.DistrictId == adress.DistrictId).ToList();
+                    if (adress.ProvinceID != 0)
+                    {
+                        fillterDistrict = db.Districts.Where(x => x.ProvinceId == adress.ProvinceID).ToList();
+                    }
+                    if (adress.ProvinceID != null)
+                    {
+
+                        ViewBag.Provices = new SelectList(fillterProvince, "Id", "NameInThai", adress.ProvinceID);
+                        ViewBag.Districts = new SelectList(fillterDistrict, "Id", "NameInThai", adress.DistrictId);
+                        ViewBag.Sub_id = new SelectList(fillterSubDistrict, "Sub_id", "NameInThai", adress.Sub_id);
+                    }
+                    else
+                    {
+
+                        ViewBag.Provices = new SelectList(fillterProvince, "Id", "NameInThai");
+                        ViewBag.Districts = new SelectList(fillterDistrict, "Id", "NameInThai");
+                        ViewBag.Sub_id = new SelectList(fillterSubDistrict, "Sub_id", "NameInThai");
+                    }
                     
-                    var selectProvince = new[] { 75, 76, 77,71 };
-                    var fillterProvince = db.Provinces.Where(x=>selectProvince.Contains(x.Id));
-                    var selectDistrict = fillterProvince.Select(y => y.Id).ToList();
-                    //var filteredOrders = orders.Order.Where(o => allowedStatus.Contains(o.StatusCode));
-                    var fillterDistrict = db.Districts.Where(x => selectProvince.Contains(x.ProvinceId));
-                    var selectSubDis = fillterDistrict.Select(x => x.Id).ToList();
-                    var fillterSubDistrict = db.Subdistricts.Where(x => selectSubDis.Contains(x.DistrictId));
-                    ViewBag.Districts = new SelectList(fillterDistrict, "Id", "NameInThai", 
-                                                    db.enrolladdresses.Where(x=>x.student_id==student.Student_id)
-                                                    .FirstOrDefault().Sub_id);
-                    ViewBag.Sub_id = new SelectList(fillterSubDistrict, "Sub_id", "NameInThai",
-                                                    db.enrolladdresses.Where(x => x.student_id == student.Student_id)
-                                                    .FirstOrDefault().Sub_id);
-                    ViewBag.Provices = new SelectList(fillterProvince, "Id", "NameInThai",
-                                                    db.enrolladdresses.Where(x => x.student_id == student.Student_id)
-                                                    .FirstOrDefault().Sub_id);
+                        ViewBag.PositionFam = new SelectList(db.PositionFams, "PositionId", "PositionName");
+                    
                 }
             }
-                return View(studentSurvey);
-            
-            
-        }public ActionResult testdropdown()
+            return View(studentSurvey);
+
+
+        }
+        public ActionResult testdropdown()
         {
             ViewBag.sub_id = new SelectList(db.Districts, "Sub_id", "NameInThai");
             return View(db.enrolladdresses.Find(1));
@@ -174,7 +195,8 @@ namespace santisart_app.Controllers
                 if (student.enrollFamily != null&&student.address!=null)
                 {
                     SaveSurvey(student);
-                    SaveAddress(student.address);
+                    
+                    SaveAddress(student);
                 }
 
                 return RedirectToAction("Index");
@@ -182,18 +204,32 @@ namespace santisart_app.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         }
 
-        private ActionResult SaveAddress(enrolladdress address)
+        private ActionResult SaveAddress(SurveyStudent student)
         {
             
             try
             {
-                var unactive=db.enrolladdresses.Find(address.addressId);
+                //if(address.addressId!=0)
+                if(student.address.addressId!=0)
+                {
+                var unactive=db.enrolladdresses.Find(student.address.addressId);
                 unactive.Active = 0;
-                address.timestamp = DateTime.Now;
-                address.Active = 1;
-                address.staff_id = Convert.ToInt32(Session["UserID"]);
-                var record = db.enrolladdresses.Add(address);
-                db.SaveChanges();
+                }
+                var address = student.address;
+                    address.timestamp = DateTime.Now;
+                    address.Active = 1;
+                if (student.Sub_id != 0)
+                    address.Sub_id = student.Sub_id;
+                if (student.Districts != 0)
+                    address.DistrictId = student.Districts;
+                if (student.Provices != 0)
+                    address.ProvinceID = student.Provices;
+                  
+                    address.staff_id = Convert.ToInt32(Session["UserID"]);
+                    db.enrolladdresses.Add(address);
+                    db.SaveChanges();
+                
+               
                 return RedirectToAction("Index");
             }
             catch (Exception)

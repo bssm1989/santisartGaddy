@@ -255,7 +255,7 @@
     <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="staftId" Type="Int32" />
     <NavigationProperty Name="Student" Relationship="Self.Fk_enroll_Studnet" FromRole="EnrollFamilyStudent" ToRole="Students" />
-    <NavigationProperty Name="Family" Relationship="Self.fk_fam" FromRole="EnrollFamilyStudent" ToRole="Family" />
+    <NavigationProperty Name="Family" Relationship="santisartModel2.fk_fam" FromRole="EnrollFamilyStudent" ToRole="Family" />
   </EntityType>
   <EntityType Name="EnrollFinishStudent">
     <Key>
@@ -320,24 +320,6 @@
     <NavigationProperty Name="EnrollEmpCouses" Relationship="Self.Fk_year2" FromRole="EnrollYearSemester" ToRole="EnrollEmpCouse" />
     <NavigationProperty Name="EnrollStudentCouses" Relationship="Self.Fk_yearSem" FromRole="EnrollYearSemester" ToRole="EnrollStudentCouse" />
     <NavigationProperty Name="YearEdu" Relationship="Self.Fk_Year" FromRole="EnrollYearSemester" ToRole="YearEdu" />
-  </EntityType>
-  <EntityType Name="Family">
-    <Key>
-      <PropertyRef Name="FamilyId" />
-    </Key>
-    <Property Name="FamilyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fam_Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Fam_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="Fam_Lname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="birthday" Type="DateTime" Precision="0" />
-    <Property Name="Career" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Income" Type="Int32" />
-    <Property Name="Education" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Timestam" Type="DateTime" Precision="3" />
-    <Property Name="Staft" Type="Int32" />
-    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="EnrollFamilyStudents" Relationship="Self.fk_fam" FromRole="Family" ToRole="EnrollFamilyStudent" />
   </EntityType>
   <EntityType Name="FinishType">
     <Key>
@@ -904,20 +886,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_fam">
-    <End Role="Family" Type="Self.Family" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="EnrollFamilyStudent" Type="Self.EnrollFamilyStudent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Family">
-        <PropertyRef Name="FamilyId" />
-      </Principal>
-      <Dependent Role="EnrollFamilyStudent">
-        <PropertyRef Name="FamilyId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="Fk_finsh_form">
     <End Role="FinishType" Type="Self.FinishType" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -998,7 +966,6 @@
     <EntitySet Name="EnrollFinishStudents" EntityType="Self.EnrollFinishStudent" />
     <EntitySet Name="EnrollStudentCouses" EntityType="Self.EnrollStudentCouse" />
     <EntitySet Name="EnrollYearSemesters" EntityType="Self.EnrollYearSemester" />
-    <EntitySet Name="Families" EntityType="Self.Family" />
     <EntitySet Name="FinishTypes" EntityType="Self.FinishType" />
     <EntitySet Name="Foods" EntityType="Self.Food" />
     <EntitySet Name="Monthlies" EntityType="Self.Monthly" />
@@ -1088,10 +1055,6 @@
       <End Role="Students" EntitySet="Students" />
       <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudents" />
     </AssociationSet>
-    <AssociationSet Name="fk_fam" Association="Self.fk_fam">
-      <End Role="Family" EntitySet="Families" />
-      <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudents" />
-    </AssociationSet>
     <AssociationSet Name="Fk_finsh_form" Association="Self.Fk_finsh_form">
       <End Role="FinishType" EntitySet="FinishTypes" />
       <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudents" />
@@ -1119,13 +1082,31 @@
       <End Role="District" EntitySet="Districts" />
       <End Role="Subdistrict" EntitySet="Subdistricts" />
     </AssociationSet>
+    <EntitySet Name="PositionFams" EntityType="santisartModel2.PositionFam" />
+    <EntitySet Name="Families" EntityType="santisartModel2.Family" />
+    <AssociationSet Name="fk_fam" Association="santisartModel2.fk_fam">
+      <End Role="Family" EntitySet="Families" />
+      <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudents" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_pos_fam" Association="santisartModel2.Fk_pos_fam">
+      <End Role="PositionFam" EntitySet="PositionFams" />
+      <End Role="Family" EntitySet="Families" />
+    </AssociationSet>
     <EntitySet Name="enrolladdresses" EntityType="santisartModel2.enrolladdress" />
-    <AssociationSet Name="fk_codeZity" Association="santisartModel2.fk_codeZity">
-      <End Role="Subdistrict" EntitySet="Subdistricts" />
+    <AssociationSet Name="fk_district" Association="santisartModel2.fk_district">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="enrolladdress" EntitySet="enrolladdresses" />
+    </AssociationSet>
+    <AssociationSet Name="fk_province" Association="santisartModel2.fk_province">
+      <End Role="Province" EntitySet="Provinces" />
       <End Role="enrolladdress" EntitySet="enrolladdresses" />
     </AssociationSet>
     <AssociationSet Name="fk_student_address" Association="santisartModel2.fk_student_address">
       <End Role="Student" EntitySet="Students" />
+      <End Role="enrolladdress" EntitySet="enrolladdresses" />
+    </AssociationSet>
+    <AssociationSet Name="fk_subdistrict" Association="santisartModel2.fk_subdistrict">
+      <End Role="Subdistrict" EntitySet="Subdistricts" />
       <End Role="enrolladdress" EntitySet="enrolladdresses" />
     </AssociationSet>
   </EntityContainer>
@@ -1140,6 +1121,7 @@
     <Property Name="ProvinceId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Province" Relationship="santisartModel2.FK_Districts_Provinces" FromRole="District" ToRole="Province" />
     <NavigationProperty Name="Subdistricts" Relationship="santisartModel2.FK_Subdistricts_Districts2" FromRole="District" ToRole="Subdistrict" />
+    <NavigationProperty Name="enrolladdresses" Relationship="santisartModel2.fk_district" FromRole="District" ToRole="enrolladdress" />
   </EntityType>
   <EntityType Name="Province">
     <Key>
@@ -1150,6 +1132,7 @@
     <Property Name="NameInThai" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="NameInEnglish" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Districts" Relationship="santisartModel2.FK_Districts_Provinces" FromRole="Province" ToRole="District" />
+    <NavigationProperty Name="enrolladdresses" Relationship="santisartModel2.fk_province" FromRole="Province" ToRole="enrolladdress" />
   </EntityType>
   <EntityType Name="Subdistrict">
     <Key>
@@ -1164,7 +1147,7 @@
     <Property Name="DistrictId" Type="Int32" Nullable="false" />
     <Property Name="ZipCode" Type="Int32" />
     <NavigationProperty Name="District" Relationship="santisartModel2.FK_Subdistricts_Districts2" FromRole="Subdistrict" ToRole="District" />
-    <NavigationProperty Name="enrolladdresses" Relationship="santisartModel2.fk_codeZity" FromRole="Subdistrict" ToRole="enrolladdress" />
+    <NavigationProperty Name="enrolladdresses" Relationship="santisartModel2.fk_subdistrict" FromRole="Subdistrict" ToRole="enrolladdress" />
   </EntityType>
   <Association Name="FK_Districts_Provinces">
     <End Type="santisartModel2.Province" Role="Province" Multiplicity="1" />
@@ -1190,38 +1173,110 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="PositionFam">
+    <Key>
+      <PropertyRef Name="PositionId" />
+    </Key>
+    <Property Name="PositionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PositionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Families" Relationship="santisartModel2.Fk_pos_fam" FromRole="PositionFam" ToRole="Family" />
+  </EntityType>
+  <EntityType Name="Family">
+    <Key>
+      <PropertyRef Name="FamilyId" />
+    </Key>
+    <Property Name="FamilyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fam_Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fam_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Fam_Lname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="birthday" Type="DateTime" Precision="0" />
+    <Property Name="Career" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Income" Type="Int32" />
+    <Property Name="Education" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestam" Type="DateTime" Precision="3" />
+    <Property Name="Staft" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="PositionFam_id" Type="Int32" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="Tel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EnrollFamilyStudents" Relationship="santisartModel2.fk_fam" FromRole="Family" ToRole="EnrollFamilyStudent" />
+    <NavigationProperty Name="PositionFam" Relationship="santisartModel2.Fk_pos_fam" FromRole="Family" ToRole="PositionFam" />
+  </EntityType>
+  <Association Name="fk_fam">
+    <End Type="santisartModel2.Family" Role="Family" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="santisartModel2.EnrollFamilyStudent" Role="EnrollFamilyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Family">
+        <PropertyRef Name="FamilyId" />
+      </Principal>
+      <Dependent Role="EnrollFamilyStudent">
+        <PropertyRef Name="FamilyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_pos_fam">
+    <End Type="santisartModel2.PositionFam" Role="PositionFam" Multiplicity="0..1" />
+    <End Type="santisartModel2.Family" Role="Family" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PositionFam">
+        <PropertyRef Name="PositionId" />
+      </Principal>
+      <Dependent Role="Family">
+        <PropertyRef Name="PositionFam_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityType Name="enrolladdress">
     <Key>
       <PropertyRef Name="addressId" />
     </Key>
-    <Property Name="number" Type="Int32" />
     <Property Name="Sub_id" Type="Int32" />
-    <Property Name="tambol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="amper" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="codeCity" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="student_id" Type="Int32" />
+    <Property Name="addressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staff_id" Type="Int32" />
+    <Property Name="Soi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Road" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DistrictId" Type="Int32" />
+    <Property Name="ProvinceID" Type="Int32" />
     <Property Name="status" Type="Int32" />
     <Property Name="codeAddress" Type="Int32" />
     <Property Name="nameVil" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Active" Type="Int32" />
     <Property Name="timestamp" Type="DateTime" Precision="3" />
-    <Property Name="student_id" Type="Int32" />
-    <Property Name="addressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="staff_id" Type="Int32" />
-    <NavigationProperty Name="Subdistrict" Relationship="santisartModel2.fk_codeZity" FromRole="enrolladdress" ToRole="Subdistrict" />
+    <Property Name="numberHome" Type="Int32" />
+    <NavigationProperty Name="District" Relationship="santisartModel2.fk_district" FromRole="enrolladdress" ToRole="District" />
+    <NavigationProperty Name="Province" Relationship="santisartModel2.fk_province" FromRole="enrolladdress" ToRole="Province" />
     <NavigationProperty Name="Student" Relationship="santisartModel2.fk_student_address" FromRole="enrolladdress" ToRole="Student" />
+    <NavigationProperty Name="Subdistrict" Relationship="santisartModel2.fk_subdistrict" FromRole="enrolladdress" ToRole="Subdistrict" />
   </EntityType>
-  <Association Name="fk_codeZity">
-    <End Type="santisartModel2.Subdistrict" Role="Subdistrict" Multiplicity="0..1">
+  <Association Name="fk_district">
+    <End Type="santisartModel2.District" Role="District" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
     <End Type="santisartModel2.enrolladdress" Role="enrolladdress" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Subdistrict">
-        <PropertyRef Name="Sub_id" />
+      <Principal Role="District">
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="enrolladdress">
-        <PropertyRef Name="Sub_id" />
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_province">
+    <End Type="santisartModel2.Province" Role="Province" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="santisartModel2.enrolladdress" Role="enrolladdress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="enrolladdress">
+        <PropertyRef Name="ProvinceID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1236,6 +1291,20 @@
       </Principal>
       <Dependent Role="enrolladdress">
         <PropertyRef Name="student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_subdistrict">
+    <End Type="santisartModel2.Subdistrict" Role="Subdistrict" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="santisartModel2.enrolladdress" Role="enrolladdress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subdistrict">
+        <PropertyRef Name="Sub_id" />
+      </Principal>
+      <Dependent Role="enrolladdress">
+        <PropertyRef Name="Sub_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
