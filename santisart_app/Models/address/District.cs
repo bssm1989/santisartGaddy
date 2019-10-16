@@ -32,6 +32,17 @@ namespace santisart_app.Models
 
         public string NameInEnglish { get; set; }
     }
+    [MetadataType(typeof(PositionFamMetadata))]
+    public partial class PositionFam
+    {
+
+    }
+    public class PositionFamMetadata
+    {
+        [DisplayAttribute(Name = "ตำแหน่งหน้าที่")]
+        public string PositionName { get; set; }
+    }
+
     [MetadataType(typeof(enrolladdressMetadata))]
     public partial class enrolladdress
     {
@@ -40,6 +51,8 @@ namespace santisart_app.Models
 
     public class enrolladdressMetadata
     {
+        [Required]
+        //[StringLength(3)]
         [DisplayAttribute(Name = "ชื่อหมู่บ้าน")]
         public string nameVil { get; set; }
         [DisplayAttribute(Name = "บ้านเลขที่")]
@@ -73,6 +86,10 @@ namespace santisart_app.Models
         [DisplayAttribute(Name = "วัน/เดือน/ปี เกิด")]
         public Nullable<System.DateTime> birthday { get; set; }
         [DisplayAttribute(Name = "เบอร์โทรติดต่อ")]
+
+        [MaxLength(12)]
+        [MinLength(10)]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "เบอร์โทรต้องเป็นตัวเลขเท่านั้น")]
 
         public string Tel { get; set; }
 

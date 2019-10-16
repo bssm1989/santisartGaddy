@@ -7,14 +7,14 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "surveyForm" }))
 {
     @Html.AntiForgeryToken()
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>ข้อมูลนักเรียน @Model.students.Student_name  @Model.students.Student_lname<small>different form elements</small></h2>
+                    <h2>ข้อมูลนักเรียน @Model.students.Student_name</h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li>
                             <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -39,10 +39,6 @@
                 <div class="x_content">
                     <br>
                     <div class="form-horizontal">
-                        <h4>EnrollFamilyStudent</h4>
-                        <hr />
-                        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.HiddenFor(model => model)*@
                         @Html.HiddenFor(model => model.students.Student_id)
                         <div class="form-group">
                             @Html.LabelFor(model => model.students.Student_name, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
@@ -70,7 +66,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>บิดาของ @Model.students.Student_name  @Model.students.Student_lname<small>different form elements</small></h2>
+                    <h2>บิดาของ @Model.students.Student_name</h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li>
                             <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -95,11 +91,6 @@
                 <div class="x_content">
                     <br>
                     <div class="form-horizontal">
-                        <h4>EnrollFamilyStudent</h4>
-                        <hr />
-                        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.HiddenFor(model => model)*@
-
                         @Html.HiddenFor(model => model.enrollFamily[0].Family.FamilyId)
                         @Html.HiddenFor(model => model.enrollFamily[0].EnrollFamStudentId)
 
@@ -132,14 +123,15 @@
                             </div>
                         </div>
 
-                         <div class="form-group">
-                            @Html.LabelFor(model => model.enrollFamily[0].Family.PositionFam.PositionName, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
-                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                 @Html.DropDownList("PositionFam", null, "======เลือก==========",
-                                htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
-                                 @Html.ValidationMessageFor(model => model.enrollFamily[0].Family.Tel, "", new { @class = "text-danger" })
-                             </div>
-                        </div>
+                        <div class="form-group">
+                                @Html.LabelFor(model => model.enrollFamily[0].Family.PositionFam.PositionName, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                 <div class="col-md-6 col-sm-6 col-xs-12">
+                                     @Html.HiddenFor(model => model.enrollFamily[0].Family.PositionFam_id)
+                                     @Html.DropDownList("PositionFam", null, "======เลือก==========",
+                                    htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
+                                     @Html.ValidationMessageFor(model => model.enrollFamily[0].Family.Tel, "", new { @class = "text-danger" })
+                                 </div>
+                            </div>
 
 
 
@@ -152,7 +144,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>มารดาของ @Model.students.Student_name  @Model.students.Student_lname<small>different form elements</small></h2>
+                    <h2>มารดาของ @Model.students.Student_name</h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li>
                             <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -177,10 +169,6 @@
                 <div class="x_content">
                     <br>
                     <div class="form-horizontal">
-                        <h4>EnrollFamilyStudent</h4>
-                        <hr />
-                        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.HiddenFor(model => model)*@
                         @Html.HiddenFor(model => model.enrollFamily[1].Family.FamilyId)
                         @Html.HiddenFor(model => model.enrollFamily[1].EnrollFamStudentId)
                         <div class="form-group">
@@ -223,7 +211,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>ผู้ปกครอง @Model.students.Student_name  @Model.students.Student_lname<small>different form elements</small></h2>
+                    <h2>ผู้ปกครอง @Model.students.Student_name</h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li>
                             <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -248,10 +236,6 @@
                 <div class="x_content">
                     <br>
                     <div class="form-horizontal">
-                        <h4>EnrollFamilyStudent</h4>
-                        <hr />
-                        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.HiddenFor(model => model)*@
                         @Html.HiddenFor(model => model.enrollFamily[2].Family.FamilyId)
                         @Html.HiddenFor(model => model.enrollFamily[2].EnrollFamStudentId)
                         <div class="form-group">
@@ -294,7 +278,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>ที่อยู่ @Model.students.Student_name  @Model.students.Student_lname<small>different form elements</small></h2>
+                    <h2>ที่อยู่ @Model.students.Student_name</h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li>
                             <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -319,12 +303,9 @@
                 <div class="x_content">
                     <br>
                     <div class="form-horizontal">
-                        <h4>EnrollFamilyStudent</h4>
-                        <hr />
-                         <div class="form-group">
-                            @*@Html.LabelFor(model => model.address.sub_id, "subDis", htmlAttributes: new { @class = "control-label col-md-2" })*@
+                        <div class="form-group">
                             <div class="col-md-10">
-                              </div>
+                            </div>
                         </div>
 
                         @Html.HiddenFor(model => model.address.student_id)
@@ -343,14 +324,14 @@
                                 @Html.ValidationMessageFor(model => model.address.numberHome, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                         <div class="form-group">
+                        <div class="form-group">
                             @Html.LabelFor(model => model.address.Soi, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 @Html.EditorFor(model => model.address.Soi, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
                                 @Html.ValidationMessageFor(model => model.address.Soi, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                         <div class="form-group">
+                        <div class="form-group">
                             @Html.LabelFor(model => model.address.Road, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 @Html.EditorFor(model => model.address.Road, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
@@ -372,7 +353,7 @@
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 @Html.DropDownList("Districts", null, "======เลือก==========",
                                htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
-                                 @Html.ValidationMessageFor(model => model.Districts, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.Districts, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="form-group">
@@ -389,7 +370,7 @@
 
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-6 col-sm-6 col-xs-12">
-                                <input type="submit" value="Save" class="btn btn-default" />
+                                <input type="submit"id="surveySubmit" value="Save" class="btn btn-default" />
                             </div>
                         </div>
                     </div>
@@ -401,6 +382,16 @@
 
 <div>
     @Html.ActionLink("Back to List", "Index")
+    <div class="modal hide" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-header">
+            <h1>Please Wait</h1>
+        </div>
+        <div class="modal-body">
+            <div id="ajax_loader">
+                <img src="~/Images/ajax-loader.gif" style="display: block; margin-left: auto; margin-right: auto;">
+            </div>
+        </div>
+    </div>
 </div>
 <script>
 
@@ -454,16 +445,32 @@
         var cascadLoading2 = new Select2Cascade($('#Districts'), $('#Sub_id'), apiUrl2, select2Options);
         cascadLoading.then(function (parent, child, items) {
             // Dump response data
-            $("#Sub_id").prop("disabled", true);
+            $('#pleaseWaitDialog').modal();
             $("#Sub_id").empty();
             $("#Sub_id").html('<option value="0">======เลือก==========</option>');
+            $("#Sub_id").prop("disabled", true);
             console.log(items);
+            $('#pleaseWaitDialog').modal('hide');
         });
         cascadLoading2.then(function (parent, child, items) {
             // Dump response data//////////////////////////////////////////
             console.log(items);
         });
+
+        $("#surveySubmit").on('click', function () {
+            debugger;
+            $(".selectpicker option:selected").each(function (index) {
+                console.log(index + ": " + $(this).val());
+                if (this.value == "")
+                    this.value = 0;
+            });
+        });
     });
 
 
 </script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

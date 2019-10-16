@@ -1,8 +1,8 @@
 ﻿using System.Web.Optimization;
 using WebHelpers.Mvc5;
 
-namespace santisart_app.App_Start
-{
+namespace santisart_app
+{ 
     public class BundleConfig
     {
         public static void RegisterBundles(BundleCollection bundles)
@@ -169,8 +169,8 @@ namespace santisart_app.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                       "~/Scripts/jquery-{version}.js"));
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include());
+            //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include("~/Scripts/jquery.validate*"));
 
             // Utilisez la version de développement de Modernizr pour le développement et l'apprentissage. Puis, une fois
             // prêt pour la production, utilisez l'outil de génération à l'adresse https://modernizr.com pour sélectionner uniquement les tests dont vous avez besoin.

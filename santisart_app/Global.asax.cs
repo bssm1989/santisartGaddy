@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using santisart_app.App_Start;
+using santisart_app;
 using santisart_app.Controllers;
 
 namespace santisart_app

@@ -11,7 +11,8 @@ namespace santisart_app.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class enrolladdress
     {
         public Nullable<int> Sub_id { get; set; }
@@ -24,6 +25,7 @@ namespace santisart_app.Models
         public Nullable<int> ProvinceID { get; set; }
         public Nullable<int> status { get; set; }
         public Nullable<int> codeAddress { get; set; }
+
         public string nameVil { get; set; }
         public Nullable<int> Active { get; set; }
         public Nullable<System.DateTime> timestamp { get; set; }
