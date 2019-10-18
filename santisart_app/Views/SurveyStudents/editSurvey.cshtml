@@ -127,7 +127,7 @@
                                 @Html.LabelFor(model => model.enrollFamily[0].Family.PositionFam.PositionName, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                                  <div class="col-md-6 col-sm-6 col-xs-12">
                                      @Html.HiddenFor(model => model.enrollFamily[0].Family.PositionFam_id)
-                                     @Html.DropDownList("PositionFam", null, "======เลือก==========",
+                                     @Html.DropDownList("PositionFam", null, "==========เลือก==========",
                                     htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
                                      @Html.ValidationMessageFor(model => model.enrollFamily[0].Family.Tel, "", new { @class = "text-danger" })
                                  </div>
