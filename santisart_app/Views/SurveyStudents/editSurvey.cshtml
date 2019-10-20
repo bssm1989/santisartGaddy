@@ -131,7 +131,7 @@
                                     htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
                                      @Html.ValidationMessageFor(model => model.enrollFamily[0].Family.Tel, "", new { @class = "text-danger" })
                                  </div>
-                            </div>
+                        </div>
 
 
 
@@ -459,10 +459,11 @@
 
         $("#surveySubmit").on('click', function () {
             debugger;
-            $(".selectpicker option:selected").each(function (index) {
+            $(".selectpicker").each(function (index) {
                 console.log(index + ": " + $(this).val());
                 if (this.value == "")
                     this.value = 0;
+                $($($(".selectpicker")[0]).parent().parent()).find("input").val()
             });
         });
     });
