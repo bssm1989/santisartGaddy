@@ -135,6 +135,37 @@ namespace santisart_app.Controllers
                         .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "mother").FirstOrDefault());
                     ParentList.Add(db.EnrollFamilyStudents.AsNoTracking()
                         .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "potentate").FirstOrDefault());
+                    if (ParentList[0]==null)
+                    {
+                        ParentList[0] = new EnrollFamilyStudent();
+                        ParentList[0].Family = new Family();
+                    } if (ParentList[1]==null)
+                    {
+                        ParentList[1] = new EnrollFamilyStudent();
+                        ParentList[1].Family = new Family();
+                    } if (ParentList[2]==null)
+                    {
+                        ParentList[2] = new EnrollFamilyStudent();
+                        ParentList[2].Family = new Family();
+                    }
+                    if (ParentList[0].FamilyId == ParentList[2].FamilyId)
+                    {
+                        studentSurvey.checkFa= "checked";
+                    }
+                    else
+                    {
+                        studentSurvey.checkFa= "";
+
+                    }
+                    if (ParentList[1].FamilyId == ParentList[2].FamilyId)
+                    {
+                        studentSurvey.checkMo= "checked";
+                    }
+                    else
+                    {
+                        studentSurvey.checkMo= "";
+
+                    }
                     enrolladdress adress = db.enrolladdresses.AsNoTracking()
                         .Where(x => x.student_id == student.Student_id&&x.Active==1).FirstOrDefault();
                     studentSurvey.address = adress;
@@ -143,16 +174,7 @@ namespace santisart_app.Controllers
                     var fillterSubDistrict = new List<Subdistrict>();
                     var fillterDistrict = new List<District>();
                     var fillterProvince = new List<Province>();
-                   //int intDist = fillterSubDistrict[0].DistrictId != null ? fillterSubDistrict[0].District.ProvinceId : 0;
-                        //int intDist = fillterSubDistrict[0].DistrictId != null ? adress.ProvinceID : 0;
-
-                        //intDist = fillterDistrict[0].ProvinceId != null ? fillterDistrict[0].ProvinceId : 0;
-                        //if (fillterDistrict[0].ProvinceId != 0)
-                        fillterProvince = db.Provinces.Where(x => selectProvince.Contains(x.Id)).ToList();
-                    //var selectDistrict = fillterProvince.Select(y => y.Id).ToList();
-                    ////var filteredOrders = orders.Order.Where(o => allowedStatus.Contains(o.StatusCode));
-                    //var selectSubDis = fillterDistrict.Select(x => x.Id).ToList();
-
+                      fillterProvince = db.Provinces.Where(x => selectProvince.Contains(x.Id)).ToList();
                     if (adress.DistrictId != null)
                         fillterSubDistrict = db.Subdistricts.Where(x => x.DistrictId == adress.DistrictId).ToList();
                     if (adress.ProvinceID != 0)
@@ -173,9 +195,8 @@ namespace santisart_app.Controllers
                         ViewBag.Districts = new SelectList(fillterDistrict, "Id", "NameInThai");
                         ViewBag.Sub_id = new SelectList(fillterSubDistrict, "Sub_id", "NameInThai");
                     }
-                    
-                        ViewBag.PositionFam = new SelectList(db.PositionFams, "PositionId", "PositionName");
-                    
+                    studentSurvey.PosFamDropdown= new SelectList(db.PositionFams, "PositionId", "PositionName");
+                   
                 }
             }
             return View(studentSurvey);
@@ -246,10 +267,13 @@ namespace santisart_app.Controllers
         {
             if (surveyStudents != null)
             {
-               //family
+                //family
+                using (var db2 = new santisartEntities3())
+                {
+
                     foreach (var  parent in surveyStudents.enrollFamily)
                     {
-                        var record = db.Families.Find(parent.Family.FamilyId);
+                        var record = db2.Families.Find(parent.Family.FamilyId);
                         if (record != null)
                         {
                             
@@ -265,9 +289,12 @@ namespace santisart_app.Controllers
                             record.Staft=parent.Family.Staft;
                             record.Gender=parent.Family.Gender;
                             record.Idcard=parent.Family.Idcard;
+                        record.PositionFam_id = parent.Family.PositionFam_id;
                         }
                 }
-                    db.SaveChanges();
+                    db2.SaveChanges();
+                }
+                   
                
             }
         }

@@ -124,15 +124,33 @@
                         </div>
 
                         <div class="form-group">
-                                @Html.LabelFor(model => model.enrollFamily[0].Family.PositionFam.PositionName, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
-                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                     @Html.HiddenFor(model => model.enrollFamily[0].Family.PositionFam_id)
-                                     @Html.DropDownList("PositionFam", null, "==========เลือก==========",
-                                    htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12",@value="5", @data_live_search = "true" })
-                                     @Html.ValidationMessageFor(model => model.enrollFamily[0].Family.Tel, "", new { @class = "text-danger" })
-                                 </div>
+                            @Html.LabelFor(model => model.enrollFamily[0].Family.PositionFam.PositionName, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.HiddenFor(model => model.enrollFamily[0].Family.PositionFam_id)
+                                @Html.DropDownList("PositionFam", new SelectList(Model.PosFamDropdown, "Value", "Text", Model.SelectedId = Model.enrollFamily[0].Family.PositionFam_id ?? 0), "==========เลือก==========",
+                               htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
+                                @Html.ValidationMessageFor(model => model.enrollFamily[0].Family.Tel, "", new { @class = "text-danger" })
+                            </div>
                         </div>
-
+                    
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="checkbox">
+                                    <label class="">
+                                        <div class="icheckbox_flat-green checked" style="position: relative;">
+                                            <input id="checkFather" type="checkbox" class="flat" style="position: absolute; opacity: 0;" @Model.checkFa>
+                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                            </ins>
+                                        </div> ผู้ปกครอง
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-6 col-sm-6 col-xs-12">
+                                <input type="submit" id="surveySubmit" value="Save" class="btn btn-default" />
+                            </div>
+                        </div>
 
 
                     </div>
@@ -199,7 +217,28 @@
                                 @Html.ValidationMessageFor(model => model.enrollFamily[1].Family.Tel, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.enrollFamily[1].Family.PositionFam.PositionName, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.HiddenFor(model => model.enrollFamily[1].Family.PositionFam_id)
+                                @Html.DropDownList("PositionFam", new SelectList(Model.PosFamDropdown, "Value", "Text", Model.SelectedId = Model.enrollFamily[1].Family.PositionFam_id ?? 0), "==========เลือก==========",
+                               htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
+                                @Html.ValidationMessageFor(model => model.enrollFamily[1].Family.Tel, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="checkbox">
+                                    <label class="">
+                                        <div class="icheckbox_flat-green checked" style="position: relative;">
+                                            <input id="checkMother" type="checkbox" class="flat" style="position: absolute; opacity: 0;" @Model.checkMo >
+                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                            </ins>
+                                        </div> ผู้ปกครอง
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
 
 
                     </div>
@@ -266,7 +305,15 @@
                                 @Html.ValidationMessageFor(model => model.enrollFamily[2].Family.Tel, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.enrollFamily[2].Family.PositionFam.PositionName, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.HiddenFor(model => model.enrollFamily[2].Family.PositionFam_id)
+                                @Html.DropDownList("PositionFam", new SelectList(Model.PosFamDropdown, "Value", "Text", Model.SelectedId = Model.enrollFamily[2].Family.PositionFam_id ?? 0), "==========เลือก==========",
+                               htmlAttributes: new { @class = "form-control selectpicker col-md-7 col-xs-12", @data_live_search = "true" })
+                                @Html.ValidationMessageFor(model => model.enrollFamily[2].Family.Tel, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
 
                     </div>
@@ -368,11 +415,6 @@
 
 
 
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-6 col-sm-6 col-xs-12">
-                                <input type="submit"id="surveySubmit" value="Save" class="btn btn-default" />
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -432,8 +474,17 @@
         return Select2Cascade;
 
     })(window, $);
-
     $(document).ready(function () {
+    $('#checkMother').on('ifChecked', function (event) {
+
+        $('#checkFather').iCheck('uncheck');
+    });
+    $('#checkFather').on('ifChecked', function (event) {
+
+        $('#checkMother').iCheck('uncheck');
+    });
+    
+
         var select2Options = { width: 'resolve' };
         // Loading raw JSON files of a secret gist - https://gist.github.com/ajaxray/32c5a57fafc3f6bc4c430153d66a55f5
         //var apiUrl = 'https://gist.githubusercontent.com/ajaxray/32c5a57fafc3f6bc4c430153d66a55f5/raw/260a653e6347fb6d2360e8ec376a2dc4888c1afa/:parentId:.json';
@@ -458,16 +509,17 @@
         });
 
         $("#surveySubmit").on('click', function () {
-            debugger;
+            
             $(".selectpicker").each(function (index) {
-                console.log(index + ": " + $(this).val());
+                
                 if (this.value == "")
                     this.value = 0;
                 if ($(this).attr("name") == "PositionFam") {
-                    $($($(".selectpicker")[0]).parent().parent())
+                    $($($(this)).parent().parent())
                         .find("input").val($(this).val())
                     
                 }
+                console.log(index + ": " + $(this).val());
             });
         });
     });
