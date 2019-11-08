@@ -130,11 +130,11 @@ namespace santisart_app.Controllers
                     //father&mother
                     List<EnrollFamilyStudent> ParentList = new List<EnrollFamilyStudent>();
                     ParentList.Add(db.EnrollFamilyStudents.AsNoTracking()
-                        .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "father").FirstOrDefault());
+                        .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "father" &&x.status=="1").FirstOrDefault());
                     ParentList.Add(db.EnrollFamilyStudents.AsNoTracking()
-                        .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "mother").FirstOrDefault());
+                        .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "mother" && x.status == "1").FirstOrDefault());
                     ParentList.Add(db.EnrollFamilyStudents.AsNoTracking()
-                        .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "potentate").FirstOrDefault());
+                        .Where(x => x.StudentId == student.Student_id && x.TypeFamily == "potentate" && x.status == "1").FirstOrDefault());
                     if (ParentList[0]==null)
                     {
                         ParentList[0] = new EnrollFamilyStudent();
@@ -151,6 +151,8 @@ namespace santisart_app.Controllers
                     if (ParentList[0].FamilyId == ParentList[2].FamilyId)
                     {
                         studentSurvey.checkFa= "checked";
+                        ParentList[2] = new EnrollFamilyStudent();
+                        ParentList[2].Family = new Family();
                     }
                     else
                     {
@@ -160,6 +162,8 @@ namespace santisart_app.Controllers
                     if (ParentList[1].FamilyId == ParentList[2].FamilyId)
                     {
                         studentSurvey.checkMo= "checked";
+                        ParentList[2] = new EnrollFamilyStudent();
+                        ParentList[2].Family = new Family();
                     }
                     else
                     {
@@ -226,7 +230,7 @@ namespace santisart_app.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         }
 
-        private ActionResult SaveAddress(SurveyStudent student)
+        public void SaveAddress(SurveyStudent student)
         {
             
             try
@@ -252,7 +256,7 @@ namespace santisart_app.Controllers
                     db.SaveChanges();
                 
                
-                return RedirectToAction("Index");
+                
             }
             catch (Exception)
             {
@@ -270,27 +274,86 @@ namespace santisart_app.Controllers
                 //family
                 using (var db2 = new santisartEntities3())
                 {
+                    int fatherId=0, motherId=0;
+                    int index = 0;
+                    db2.EnrollFamilyStudents
+                    .Where(x => x.StudentId == surveyStudents.students.Student_id)
+                    .ToList().ForEach(y => y.status = "0"); 
 
                     foreach (var  parent in surveyStudents.enrollFamily)
                     {
-                        var record = db2.Families.Find(parent.Family.FamilyId);
-                        if (record != null)
+                       
+                        if (index == 2 && !(parent.TypeFamily == "potentate"))
                         {
-                            
-                            record.FamilyId=parent.Family.FamilyId;
-                            record.Fam_Title=parent.Family.Fam_Title;
-                            record.Fam_Name=parent.Family.Fam_Name;
-                            record.Fam_Lname=parent.Family.Fam_Lname;
-                            record.birthday=parent.Family.birthday;
-                            record.Career=parent.Family.Career;
-                            record.Income=parent.Family.Income;
-                            record.Education=parent.Family.Education;
-                            record.Timestam=parent.Family.Timestam;
-                            record.Staft=parent.Family.Staft;
-                            record.Gender=parent.Family.Gender;
-                            record.Idcard=parent.Family.Idcard;
-                        record.PositionFam_id = parent.Family.PositionFam_id;
+
+                            if (parent.TypeFamily == "father")
+                            {
+                                int studentId = surveyStudents.students.Student_id;
+                               
+                                var recordEnrollFam = new EnrollFamilyStudent();
+                                recordEnrollFam.FamilyId = fatherId;
+                                recordEnrollFam.status = "1";
+                                recordEnrollFam.StudentId = surveyStudents.students.Student_id;
+                                recordEnrollFam.Timestamp = DateTime.Now;
+                                recordEnrollFam.staftId = Convert.ToInt32(Session["UserID"]); ;
+                                recordEnrollFam.TypeFamily = "potentate";
+                                db2.EnrollFamilyStudents.Add(recordEnrollFam);
+                            }
+                            else
+                            {
+                                int studentId = surveyStudents.students.Student_id;
+
+                                var recordEnrollFam = new EnrollFamilyStudent();
+                                recordEnrollFam.FamilyId = motherId;
+                                recordEnrollFam.status = "1";
+                                recordEnrollFam.StudentId = surveyStudents.students.Student_id;
+                                recordEnrollFam.Timestamp = DateTime.Now;
+                                recordEnrollFam.staftId = Convert.ToInt32(Session["UserID"]); ;
+                                recordEnrollFam.TypeFamily ="potentate";
+                                db2.EnrollFamilyStudents.Add(recordEnrollFam);
+                            }
+
                         }
+                        else
+                        {
+                            var record = new Family();
+                            record.Fam_Title = parent.Family.Fam_Title;
+                            record.Fam_Name = parent.Family.Fam_Name;
+                            record.Fam_Lname = parent.Family.Fam_Lname;
+                            record.birthday = parent.Family.birthday;
+                            record.Career = parent.Family.Career;
+                            record.Income = parent.Family.Income;
+                            record.Education = parent.Family.Education;
+                            record.Timestam = DateTime.Now;
+                            record.Staft = parent.Family.Staft;
+                            record.Gender = parent.Family.Gender;
+                            record.Idcard = parent.Family.Idcard;
+                            record.PositionFam_id = parent.Family.PositionFam_id;
+                            record.Staft = Convert.ToInt32(Session["UserID"]); ;
+                            db2.Families.Add(record);
+                            db2.SaveChanges();
+                            int idFamParent = record.FamilyId;
+                            var recordEnrollFam = new EnrollFamilyStudent();
+                            recordEnrollFam.FamilyId = idFamParent;
+                            recordEnrollFam.status = "1";
+                            recordEnrollFam.StudentId = surveyStudents.students.Student_id;
+                            recordEnrollFam.Timestamp = DateTime.Now;
+                            recordEnrollFam.staftId = Convert.ToInt32(Session["UserID"]); ;
+                            recordEnrollFam.TypeFamily = parent.TypeFamily;
+                            db2.EnrollFamilyStudents.Add(recordEnrollFam);
+                            if (index == 0)
+                            {
+                                fatherId = record.FamilyId;
+                            }
+                            else
+                            {
+                                motherId = record.FamilyId;
+                            }
+                        }
+
+                        index++;
+                        
+
                 }
                     db2.SaveChanges();
                 }

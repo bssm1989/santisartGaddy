@@ -73,14 +73,14 @@
         <AssociationConnector Association="santisartModel2.FK_Districts_Provinces" />
         <AssociationConnector Association="santisartModel2.FK_Subdistricts_Districts2" />
         <EntityTypeShape EntityType="santisartModel2.PositionFam" Width="1.5" PointX="15.375" PointY="18.375" />
-        <EntityTypeShape EntityType="santisartModel2.Family" Width="1.5" PointX="17.625" PointY="17" />
-        <AssociationConnector Association="santisartModel2.fk_fam" />
-        <AssociationConnector Association="santisartModel2.Fk_pos_fam" />
         <EntityTypeShape EntityType="santisartModel2.enrolladdress" Width="1.5" PointX="6" PointY="9.375" />
         <AssociationConnector Association="santisartModel2.fk_district" />
         <AssociationConnector Association="santisartModel2.fk_province" />
         <AssociationConnector Association="santisartModel2.fk_student_address" />
         <AssociationConnector Association="santisartModel2.fk_subdistrict" />
+        <EntityTypeShape EntityType="santisartModel2.Family" Width="1.5" PointX="17.625" PointY="17" />
+        <AssociationConnector Association="santisartModel2.fk_fam" />
+        <AssociationConnector Association="santisartModel2.Fk_pos_fam" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

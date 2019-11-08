@@ -69,7 +69,7 @@ namespace santisart_app.Models
         public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<Subdistrict> Subdistricts { get; set; }
         public virtual DbSet<PositionFam> PositionFams { get; set; }
-        public virtual DbSet<Family> Families { get; set; }
         public virtual DbSet<enrolladdress> enrolladdresses { get; set; }
+        public virtual DbSet<Family> Families { get; set; }
     }
 }

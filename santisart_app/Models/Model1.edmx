@@ -326,7 +326,7 @@
           <Property Name="Fam_Name" Type="nvarchar" MaxLength="150" />
           <Property Name="Fam_Lname" Type="nvarchar" MaxLength="150" />
           <Property Name="birthday" Type="date" />
-          <Property Name="Career" Type="varchar" MaxLength="100" />
+          <Property Name="Career" Type="nvarchar" MaxLength="100" />
           <Property Name="Income" Type="int" />
           <Property Name="Education" Type="nvarchar" MaxLength="100" />
           <Property Name="Timestam" Type="datetime" />
@@ -2532,15 +2532,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
             <End Role="Subdistrict" EntitySet="Subdistricts" />
           </AssociationSet>
           <EntitySet Name="PositionFams" EntityType="santisartModel2.PositionFam" />
-          <EntitySet Name="Families" EntityType="santisartModel2.Family" />
-          <AssociationSet Name="fk_fam" Association="santisartModel2.fk_fam">
-            <End Role="Family" EntitySet="Families" />
-            <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudents" />
-          </AssociationSet>
-          <AssociationSet Name="Fk_pos_fam" Association="santisartModel2.Fk_pos_fam">
-            <End Role="PositionFam" EntitySet="PositionFams" />
-            <End Role="Family" EntitySet="Families" />
-          </AssociationSet>
           <EntitySet Name="enrolladdresses" EntityType="santisartModel2.enrolladdress" />
           <AssociationSet Name="fk_district" Association="santisartModel2.fk_district">
             <End Role="District" EntitySet="Districts" />
@@ -2557,6 +2548,15 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
           <AssociationSet Name="fk_subdistrict" Association="santisartModel2.fk_subdistrict">
             <End Role="Subdistrict" EntitySet="Subdistricts" />
             <End Role="enrolladdress" EntitySet="enrolladdresses" />
+          </AssociationSet>
+          <EntitySet Name="Families" EntityType="santisartModel2.Family" />
+          <AssociationSet Name="fk_fam" Association="santisartModel2.fk_fam">
+            <End Role="Family" EntitySet="Families" />
+            <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudents" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_pos_fam" Association="santisartModel2.Fk_pos_fam">
+            <End Role="PositionFam" EntitySet="PositionFams" />
+            <End Role="Family" EntitySet="Families" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="District">
@@ -2630,54 +2630,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
           <Property Name="PositionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Families" Relationship="santisartModel2.Fk_pos_fam" FromRole="PositionFam" ToRole="Family" />
         </EntityType>
-        <EntityType Name="Family">
-          <Key>
-            <PropertyRef Name="FamilyId" />
-          </Key>
-          <Property Name="FamilyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fam_Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Fam_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Fam_Lname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="birthday" Type="DateTime" Precision="0" />
-          <Property Name="Career" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Income" Type="Int32" />
-          <Property Name="Education" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Timestam" Type="DateTime" Precision="3" />
-          <Property Name="Staft" Type="Int32" />
-          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Name="PositionFam_id" Type="Int32" />
-          <Property Name="Active" Type="Int32" />
-          <Property Name="Tel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="EnrollFamilyStudents" Relationship="santisartModel2.fk_fam" FromRole="Family" ToRole="EnrollFamilyStudent" />
-          <NavigationProperty Name="PositionFam" Relationship="santisartModel2.Fk_pos_fam" FromRole="Family" ToRole="PositionFam" />
-        </EntityType>
-        <Association Name="fk_fam">
-          <End Type="santisartModel2.Family" Role="Family" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="santisartModel2.EnrollFamilyStudent" Role="EnrollFamilyStudent" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Family">
-              <PropertyRef Name="FamilyId" />
-            </Principal>
-            <Dependent Role="EnrollFamilyStudent">
-              <PropertyRef Name="FamilyId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Fk_pos_fam">
-          <End Type="santisartModel2.PositionFam" Role="PositionFam" Multiplicity="0..1" />
-          <End Type="santisartModel2.Family" Role="Family" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PositionFam">
-              <PropertyRef Name="PositionId" />
-            </Principal>
-            <Dependent Role="Family">
-              <PropertyRef Name="PositionFam_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="enrolladdress">
           <Key>
             <PropertyRef Name="addressId" />
@@ -2754,6 +2706,54 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
             </Principal>
             <Dependent Role="enrolladdress">
               <PropertyRef Name="Sub_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="FamilyId" />
+          </Key>
+          <Property Name="FamilyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fam_Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fam_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Fam_Lname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <Property Name="Career" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Income" Type="Int32" />
+          <Property Name="Education" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Timestam" Type="DateTime" Precision="3" />
+          <Property Name="Staft" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="PositionFam_id" Type="Int32" />
+          <Property Name="Active" Type="Int32" />
+          <Property Name="Tel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EnrollFamilyStudents" Relationship="santisartModel2.fk_fam" FromRole="Family" ToRole="EnrollFamilyStudent" />
+          <NavigationProperty Name="PositionFam" Relationship="santisartModel2.Fk_pos_fam" FromRole="Family" ToRole="PositionFam" />
+        </EntityType>
+        <Association Name="fk_fam">
+          <End Type="santisartModel2.Family" Role="Family" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisartModel2.EnrollFamilyStudent" Role="EnrollFamilyStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Family">
+              <PropertyRef Name="FamilyId" />
+            </Principal>
+            <Dependent Role="EnrollFamilyStudent">
+              <PropertyRef Name="FamilyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_pos_fam">
+          <End Type="santisartModel2.PositionFam" Role="PositionFam" Multiplicity="0..1" />
+          <End Type="santisartModel2.Family" Role="Family" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PositionFam">
+              <PropertyRef Name="PositionId" />
+            </Principal>
+            <Dependent Role="Family">
+              <PropertyRef Name="PositionFam_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3427,6 +3427,26 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="enrolladdresses">
+            <EntityTypeMapping TypeName="santisartModel2.enrolladdress">
+              <MappingFragment StoreEntitySet="enrolladdress">
+                <ScalarProperty Name="numberHome" ColumnName="numberHome" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="nameVil" ColumnName="nameVil" />
+                <ScalarProperty Name="codeAddress" ColumnName="codeAddress" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+                <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+                <ScalarProperty Name="Road" ColumnName="Road" />
+                <ScalarProperty Name="Soi" ColumnName="Soi" />
+                <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+                <ScalarProperty Name="addressId" ColumnName="addressId" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="Sub_id" ColumnName="Sub_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Families">
             <EntityTypeMapping TypeName="santisartModel2.Family">
               <MappingFragment StoreEntitySet="Family">
@@ -3445,26 +3465,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
                 <ScalarProperty Name="Fam_Name" ColumnName="Fam_Name" />
                 <ScalarProperty Name="Fam_Title" ColumnName="Fam_Title" />
                 <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="enrolladdresses">
-            <EntityTypeMapping TypeName="santisartModel2.enrolladdress">
-              <MappingFragment StoreEntitySet="enrolladdress">
-                <ScalarProperty Name="numberHome" ColumnName="numberHome" />
-                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="nameVil" ColumnName="nameVil" />
-                <ScalarProperty Name="codeAddress" ColumnName="codeAddress" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
-                <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
-                <ScalarProperty Name="Road" ColumnName="Road" />
-                <ScalarProperty Name="Soi" ColumnName="Soi" />
-                <ScalarProperty Name="staff_id" ColumnName="staff_id" />
-                <ScalarProperty Name="addressId" ColumnName="addressId" />
-                <ScalarProperty Name="student_id" ColumnName="student_id" />
-                <ScalarProperty Name="Sub_id" ColumnName="Sub_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

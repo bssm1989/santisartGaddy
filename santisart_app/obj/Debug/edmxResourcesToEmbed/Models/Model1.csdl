@@ -1083,15 +1083,6 @@
       <End Role="Subdistrict" EntitySet="Subdistricts" />
     </AssociationSet>
     <EntitySet Name="PositionFams" EntityType="santisartModel2.PositionFam" />
-    <EntitySet Name="Families" EntityType="santisartModel2.Family" />
-    <AssociationSet Name="fk_fam" Association="santisartModel2.fk_fam">
-      <End Role="Family" EntitySet="Families" />
-      <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudents" />
-    </AssociationSet>
-    <AssociationSet Name="Fk_pos_fam" Association="santisartModel2.Fk_pos_fam">
-      <End Role="PositionFam" EntitySet="PositionFams" />
-      <End Role="Family" EntitySet="Families" />
-    </AssociationSet>
     <EntitySet Name="enrolladdresses" EntityType="santisartModel2.enrolladdress" />
     <AssociationSet Name="fk_district" Association="santisartModel2.fk_district">
       <End Role="District" EntitySet="Districts" />
@@ -1108,6 +1099,15 @@
     <AssociationSet Name="fk_subdistrict" Association="santisartModel2.fk_subdistrict">
       <End Role="Subdistrict" EntitySet="Subdistricts" />
       <End Role="enrolladdress" EntitySet="enrolladdresses" />
+    </AssociationSet>
+    <EntitySet Name="Families" EntityType="santisartModel2.Family" />
+    <AssociationSet Name="fk_fam" Association="santisartModel2.fk_fam">
+      <End Role="Family" EntitySet="Families" />
+      <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudents" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_pos_fam" Association="santisartModel2.Fk_pos_fam">
+      <End Role="PositionFam" EntitySet="PositionFams" />
+      <End Role="Family" EntitySet="Families" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="District">
@@ -1181,54 +1181,6 @@
     <Property Name="PositionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Families" Relationship="santisartModel2.Fk_pos_fam" FromRole="PositionFam" ToRole="Family" />
   </EntityType>
-  <EntityType Name="Family">
-    <Key>
-      <PropertyRef Name="FamilyId" />
-    </Key>
-    <Property Name="FamilyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fam_Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Fam_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="Fam_Lname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="birthday" Type="DateTime" Precision="0" />
-    <Property Name="Career" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Income" Type="Int32" />
-    <Property Name="Education" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Timestam" Type="DateTime" Precision="3" />
-    <Property Name="Staft" Type="Int32" />
-    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-    <Property Name="PositionFam_id" Type="Int32" />
-    <Property Name="Active" Type="Int32" />
-    <Property Name="Tel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="EnrollFamilyStudents" Relationship="santisartModel2.fk_fam" FromRole="Family" ToRole="EnrollFamilyStudent" />
-    <NavigationProperty Name="PositionFam" Relationship="santisartModel2.Fk_pos_fam" FromRole="Family" ToRole="PositionFam" />
-  </EntityType>
-  <Association Name="fk_fam">
-    <End Type="santisartModel2.Family" Role="Family" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="santisartModel2.EnrollFamilyStudent" Role="EnrollFamilyStudent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Family">
-        <PropertyRef Name="FamilyId" />
-      </Principal>
-      <Dependent Role="EnrollFamilyStudent">
-        <PropertyRef Name="FamilyId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Fk_pos_fam">
-    <End Type="santisartModel2.PositionFam" Role="PositionFam" Multiplicity="0..1" />
-    <End Type="santisartModel2.Family" Role="Family" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PositionFam">
-        <PropertyRef Name="PositionId" />
-      </Principal>
-      <Dependent Role="Family">
-        <PropertyRef Name="PositionFam_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="enrolladdress">
     <Key>
       <PropertyRef Name="addressId" />
@@ -1305,6 +1257,54 @@
       </Principal>
       <Dependent Role="enrolladdress">
         <PropertyRef Name="Sub_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Family">
+    <Key>
+      <PropertyRef Name="FamilyId" />
+    </Key>
+    <Property Name="FamilyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fam_Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fam_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Fam_Lname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="birthday" Type="DateTime" Precision="0" />
+    <Property Name="Career" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Income" Type="Int32" />
+    <Property Name="Education" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestam" Type="DateTime" Precision="3" />
+    <Property Name="Staft" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Idcard" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="PositionFam_id" Type="Int32" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="Tel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EnrollFamilyStudents" Relationship="santisartModel2.fk_fam" FromRole="Family" ToRole="EnrollFamilyStudent" />
+    <NavigationProperty Name="PositionFam" Relationship="santisartModel2.Fk_pos_fam" FromRole="Family" ToRole="PositionFam" />
+  </EntityType>
+  <Association Name="fk_fam">
+    <End Type="santisartModel2.Family" Role="Family" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="santisartModel2.EnrollFamilyStudent" Role="EnrollFamilyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Family">
+        <PropertyRef Name="FamilyId" />
+      </Principal>
+      <Dependent Role="EnrollFamilyStudent">
+        <PropertyRef Name="FamilyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_pos_fam">
+    <End Type="santisartModel2.PositionFam" Role="PositionFam" Multiplicity="0..1" />
+    <End Type="santisartModel2.Family" Role="Family" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PositionFam">
+        <PropertyRef Name="PositionId" />
+      </Principal>
+      <Dependent Role="Family">
+        <PropertyRef Name="PositionFam_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
