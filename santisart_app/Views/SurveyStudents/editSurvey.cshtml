@@ -497,10 +497,7 @@
             $("#potentate").slideUp("slow");
             $("#enrollFamily_2__TypeFamily").val($("#enrollFamily_1__TypeFamily").val());
          
-            $('.iCheck-helper').click(function () {
-                checkChecked();
-
-            });
+           
 
         });
         $('#checkFather').on('ifChecked', function (event) {
@@ -508,13 +505,13 @@
             $('#checkMother').iCheck('uncheck');
             $("#potentate").slideUp("slow");
             $("#enrollFamily_2__TypeFamily").val($("#enrollFamily_0__TypeFamily").val());
-            $('.iCheck-helper').click(function () {
+          
+        });
+        
+        $('.iCheck-helper').click(function () {
             checkChecked();
 
         });
-        });
-        
-
         var select2Options = { width: 'resolve' };
         // Loading raw JSON files of a secret gist - https://gist.github.com/ajaxray/32c5a57fafc3f6bc4c430153d66a55f5
         //var apiUrl = 'https://gist.githubusercontent.com/ajaxray/32c5a57fafc3f6bc4c430153d66a55f5/raw/260a653e6347fb6d2360e8ec376a2dc4888c1afa/:parentId:.json';

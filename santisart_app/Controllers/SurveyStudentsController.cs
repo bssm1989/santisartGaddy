@@ -117,12 +117,12 @@ namespace santisart_app.Controllers
                 throw;
             }
         }
-        public ActionResult editSurvey()
+        public ActionResult editSurvey(int? id)
         {
             var studentSurvey = new SurveyStudent();
             if (true)
             {
-                Student student = db.Students.Find(705);
+                Student student = db.Students.Find(id);
                 if (student != null)
                 {
                     //baby
@@ -148,7 +148,7 @@ namespace santisart_app.Controllers
                         ParentList[2] = new EnrollFamilyStudent();
                         ParentList[2].Family = new Family();
                     }
-                    if (ParentList[0].FamilyId == ParentList[2].FamilyId)
+                    if (ParentList[0].FamilyId == ParentList[2].FamilyId&& ParentList[0].FamilyId!=null)
                     {
                         studentSurvey.checkFa= "checked";
                         ParentList[2] = new EnrollFamilyStudent();
@@ -159,7 +159,7 @@ namespace santisart_app.Controllers
                         studentSurvey.checkFa= "";
 
                     }
-                    if (ParentList[1].FamilyId == ParentList[2].FamilyId)
+                    if (ParentList[1].FamilyId == ParentList[2].FamilyId && ParentList[1].FamilyId != null)
                     {
                         studentSurvey.checkMo= "checked";
                         ParentList[2] = new EnrollFamilyStudent();
@@ -170,9 +170,20 @@ namespace santisart_app.Controllers
                         studentSurvey.checkMo= "";
 
                     }
-                    enrolladdress adress = db.enrolladdresses.AsNoTracking()
+
+                    enrolladdress adress = new enrolladdress()
+                    {
+                        DistrictId=1,
+                        ProvinceID=2
+
+                    };
+                    adress=db.enrolladdresses.AsNoTracking()
                         .Where(x => x.student_id == student.Student_id&&x.Active==1).FirstOrDefault();
                     studentSurvey.address = adress;
+                    if (adress == null)
+                    {
+                        adress = new enrolladdress();
+                    }
                     studentSurvey.enrollFamily = ParentList;
                     var selectProvince = new[] { 75, 76, 77, 71 };
                     var fillterSubDistrict = new List<Subdistrict>();
@@ -203,6 +214,7 @@ namespace santisart_app.Controllers
                    
                 }
             }
+  
             return View(studentSurvey);
 
 

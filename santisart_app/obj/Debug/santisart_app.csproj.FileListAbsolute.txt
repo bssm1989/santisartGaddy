@@ -652,8 +652,8 @@ C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\System.Web.WebPage
 C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\WebHelpers.Mvc5.xml
 C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\Antlr3.Runtime.pdb
 C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\System.Web.Optimization.xml
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\santisart_app.csprojAssemblyReference.cache
 C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\santisart_app.csproj.CoreCompileInputs.cache
 C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\santisart_app.csproj.CopyComplete
 C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\santisart_app.dll
 C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\santisart_app.pdb
+C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\santisart_app.csprojAssemblyReference.cache
