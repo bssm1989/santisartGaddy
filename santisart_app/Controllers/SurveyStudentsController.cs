@@ -171,12 +171,8 @@ namespace santisart_app.Controllers
 
                     }
 
-                    enrolladdress adress = new enrolladdress()
-                    {
-                        DistrictId=1,
-                        ProvinceID=2
-
-                    };
+                    enrolladdress adress = new enrolladdress();
+                   
                     adress=db.enrolladdresses.AsNoTracking()
                         .Where(x => x.student_id == student.Student_id&&x.Active==1).FirstOrDefault();
                     studentSurvey.address = adress;
@@ -248,12 +244,13 @@ namespace santisart_app.Controllers
             try
             {
                 //if(address.addressId!=0)
-                if(student.address.addressId!=0)
-                {
+                if(student.address.addressId!=null)
+                { 
                 var unactive=db.enrolladdresses.Find(student.address.addressId);
                 unactive.Active = 0;
                 }
                 var address = student.address;
+            address.student_id = student.students.Student_id;
                     address.timestamp = DateTime.Now;
                     address.Active = 1;
                 if (student.Sub_id != 0)
@@ -306,6 +303,7 @@ namespace santisart_app.Controllers
                                 recordEnrollFam.FamilyId = fatherId;
                                 recordEnrollFam.status = "1";
                                 recordEnrollFam.StudentId = surveyStudents.students.Student_id;
+                             
                                 recordEnrollFam.Timestamp = DateTime.Now;
                                 recordEnrollFam.staftId = Convert.ToInt32(Session["UserID"]); ;
                                 recordEnrollFam.TypeFamily = "potentate";
@@ -338,6 +336,7 @@ namespace santisart_app.Controllers
                             record.Education = parent.Family.Education;
                             record.Timestam = DateTime.Now;
                             record.Staft = parent.Family.Staft;
+                            record.Tel = parent.Family.Tel;
                             record.Gender = parent.Family.Gender;
                             record.Idcard = parent.Family.Idcard;
                             record.PositionFam_id = parent.Family.PositionFam_id;
