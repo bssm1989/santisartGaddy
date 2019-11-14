@@ -51,7 +51,7 @@ namespace santisart_app.Models
 
     public class enrolladdressMetadata
     {
-        [Required]
+        //[Required]
         //[StringLength(3)]
         [DisplayAttribute(Name = "ชื่อหมู่บ้าน")]
         public string nameVil { get; set; }

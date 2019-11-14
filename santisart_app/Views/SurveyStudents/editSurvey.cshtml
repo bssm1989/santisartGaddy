@@ -5,9 +5,20 @@
     ViewBag.Title = "Edit";
 }
 @{var stylePotentate = "";
+    var typeFamVal = "";
     if (Model.checkFa == "checked" || Model.checkMo == "checked")
     {
         stylePotentate = "style=display:none";
+        typeFamVal = "father";
+
+    }
+    else if(Model.checkMo == "checked"){
+        stylePotentate = "style=display:none";
+        typeFamVal = "mothre";
+    }
+    else
+    {
+        typeFamVal = "potentate";
     }
 }
 <h2>Edit</h2>
@@ -286,7 +297,7 @@
                         @Html.HiddenFor(model => model.enrollFamily[2].Family.FamilyId)
                         @Html.HiddenFor(model => model.enrollFamily[2].EnrollFamStudentId)
                         @Html.HiddenFor(model => model.enrollFamily[2].TypeFamily,
-                                       new { Value = "potentate" })
+                                       new { Value = typeFamVal })
                         <div class="form-group">
                             @Html.LabelFor(model => model.enrollFamily[2].Family.Fam_Name, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                             <div class="col-md-6 col-sm-6 col-xs-12">

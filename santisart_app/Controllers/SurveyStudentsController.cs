@@ -241,8 +241,8 @@ namespace santisart_app.Controllers
         public void SaveAddress(SurveyStudent student)
         {
             
-            try
-            {
+            //try
+            //{
                 //if(address.addressId!=0)
                 if(student.address.addressId!=null)
                 { 
@@ -266,12 +266,12 @@ namespace santisart_app.Controllers
                 
                
                 
-            }
-            catch (Exception)
-            {
+            //}
+            //catch (Exception)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
            
 
         }
