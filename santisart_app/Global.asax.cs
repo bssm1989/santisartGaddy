@@ -18,21 +18,21 @@ namespace santisart_app
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
-        protected void Application_Error(object sender, EventArgs e)
-        {
-           // System.Diagnostics.Debugger.Break();
-            var exception = Server.GetLastError();
-            var httpContext = ((HttpApplication)sender).Context;
-            httpContext.Response.Clear();
-            httpContext.ClearError();
+        //protected void Application_Error(object sender, EventArgs e)
+        //{
+        //   //System.Diagnostics.Debugger.Break();
+        //    var exception = Server.GetLastError();
+        //    var httpContext = ((HttpApplication)sender).Context;
+        //    httpContext.Response.Clear();
+        //    httpContext.ClearError();
 
-            if (new HttpRequestWrapper(httpContext.Request).IsAjaxRequest())
-            {
-                return;
-            }
+        //    if (new HttpRequestWrapper(httpContext.Request).IsAjaxRequest())
+        //    {
+        //        return;
+        //    }
 
-            ExecuteErrorController(httpContext, exception as HttpException);
-        }
+        //    ExecuteErrorController(httpContext, exception as HttpException);
+        //}
 
         private void ExecuteErrorController(HttpContext httpContext, HttpException exception)
         {

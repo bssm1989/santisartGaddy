@@ -1,0 +1,56 @@
+﻿
+@model santisart_app.Models.UserProfile
+
+@{ Layout = null;
+    ViewBag.Title = "Login";
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+<div class="container">
+   <hr>
+    <div class="row-center">
+   
+        <div class="card">
+            <article class="card-body">
+                @using (Html.BeginForm("Login", "UserProfiles", FormMethod.Post))
+                {
+                <fieldset>
+                    <legend>ระบบแอดมินโรงเรียนสันติศาสน์วิทยา</legend>
+
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    @if (@ViewBag.Message != null)
+                    {
+                        <div style="border: 1px solid red">
+                            @ViewBag.Message
+                        </div>
+                    }
+                    <div class="form-group">
+                        @Html.LabelFor(a => a.UserName)
+                        @Html.TextBoxFor(a => a.UserName, new { @class = "form-control", placeholder = "ชื่อล็อกอิน" })
+                        @Html.ValidationMessageFor(a => a.UserName)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(a => a.Password)
+
+                        @Html.PasswordFor(a => a.Password, new { @class = "form-control", placeholder = "******" })
+
+                        @Html.ValidationMessageFor(a => a.Password)
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label> <input type="checkbox"> Save password </label>
+                        </div> <!-- checkbox .// -->
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Login </button>
+                    </div>
+                </fieldset>
+                }
+                </article>
+            </div>
+            </div>

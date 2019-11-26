@@ -1,0 +1,41 @@
+﻿@model IEnumerable<santisart_app.Models.Students>
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    
+        <script type="text/javascript" language="javascript" class="init">
+
+         $(document).ready(function () {
+
+           var table= $('#datatable1').DataTable({  "pageLength": 50,  
+                select: {
+                    style: 'multi'
+                }
+            })
+            $('#datatable1 tbody').mouseup(function () {
+
+               // callPaid(table);
+
+            });
+           
+      
+            table.on('select.dt', function () {
+                var array = [];
+
+                table.rows('.selected').every(function (rowIdx) {
+                    array.push(table.row(rowIdx).id())
+                })
+
+                console.log("id"+array);
+              //  callPaid(table)
+            })
+        }); 
+        </script>
+   
+</head>
+<h2>Index</h2>
+
+
+          

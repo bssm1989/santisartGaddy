@@ -4048,6 +4048,7 @@
     </Content>
     <None Include="Properties\PublishProfiles\admin.santisartwitt.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\admin.santisartwitt.com - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\admin.santisartwitt.com - Web Deploy2.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />

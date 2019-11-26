@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8bba9739a5e340ecbf0a385d9c653487" Name="Diagram1" ZoomLevel="100" ShowGrid="true">
+        <EntityTypeShape EntityType="santisartModel2.attendance" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.attendance_day" Width="1.5" PointX="5.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Class" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.ClassInSchool" Width="1.5" PointX="1.5" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.ContestEducationSchool" Width="1.5" PointX="7.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Course" Width="1.5" PointX="1.5" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Department" Width="1.5" PointX="1.5" PointY="49.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Employee" Width="1.5" PointX="1.5" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Enroll_EduContest" Width="1.5" PointX="8.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Enroll_Emp_Pos" Width="1.5" PointX="3.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Enroll_paid" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Enroll_pay" Width="1.5" PointX="8.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Enroll_RoomSession_Emp" Width="1.5" PointX="6.75" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Enroll_student_all_event" Width="1.5" PointX="10.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Enroll_student_class" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollClass" Width="1.5" PointX="0.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollCouse" Width="1.5" PointX="1.5" PointY="41" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollEmpCouse" Width="1.5" PointX="0.75" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollEmpCouseClass" Width="1.5" PointX="3" PointY="37" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollFamilyStudent" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollFinishStudent" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollStudentCouse" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollYearSemester" Width="1.5" PointX="1.5" PointY="52.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.FinishType" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Food" Width="1.5" PointX="10.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Monthly" Width="1.5" PointX="11.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Position" Width="1.5" PointX="1.5" PointY="60" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.RoomSession" Width="1.5" PointX="4.5" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Student" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.Students_food" Width="1.5" PointX="12.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.UserProfile" Width="1.5" PointX="12.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.YearEdu" Width="1.5" PointX="1.5" PointY="56.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.C_enrollattstudent" Width="1.5" PointX="10.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollStudentAttdance" Width="1.5" PointX="12.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.student2561" Width="1.5" PointX="14.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.student2561_copy1" Width="1.5" PointX="14.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.student2561_food" Width="1.5" PointX="7.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.studentEduContest2561" Width="1.5" PointX="14.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.View_Couse" Width="1.5" PointX="16.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="santisartModel2.ViewEmpPos" Width="1.5" PointX="9.75" PointY="17.625" IsExpanded="true" />
+        <AssociationConnector Association="santisartModel2.C__fk_class" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.FK_class1" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_couse1" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.FK_depart1" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_emp_enr" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_emp2" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_enr_pos" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_room" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.fk_class" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_enrollStudent" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_student2" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_EnClass" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_couse2" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_EmpCouse" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_year2" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_EmpCouseClass" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_enroll_Studnet" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_finsh_form" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_stud" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_yearSem" ManuallyRouted="false" />
+        <AssociationConnector Association="santisartModel2.Fk_Year" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="santisartModel2.District" Width="1.5" PointX="1.5" PointY="1.375" />
+        <EntityTypeShape EntityType="santisartModel2.Province" Width="1.5" PointX="1.5" PointY="20.25" />
+        <EntityTypeShape EntityType="santisartModel2.Subdistrict" Width="1.5" PointX="3.75" PointY="0.75" />
+        <AssociationConnector Association="santisartModel2.FK_Districts_Provinces" />
+        <AssociationConnector Association="santisartModel2.FK_Subdistricts_Districts2" />
+        <EntityTypeShape EntityType="santisartModel2.PositionFam" Width="1.5" PointX="15.375" PointY="18.375" />
+        <EntityTypeShape EntityType="santisartModel2.enrolladdress" Width="1.5" PointX="6" PointY="9.375" />
+        <AssociationConnector Association="santisartModel2.fk_district" />
+        <AssociationConnector Association="santisartModel2.fk_province" />
+        <AssociationConnector Association="santisartModel2.fk_student_address" />
+        <AssociationConnector Association="santisartModel2.fk_subdistrict" />
+        <EntityTypeShape EntityType="santisartModel2.Family" Width="1.5" PointX="17.625" PointY="17" />
+        <AssociationConnector Association="santisartModel2.fk_fam" />
+        <AssociationConnector Association="santisartModel2.Fk_pos_fam" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

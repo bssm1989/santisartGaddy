@@ -215,6 +215,10 @@ namespace santisart_app.Controllers
 
 
         }
+        public ActionResult listStudentFamAdd()
+        {
+            return View();
+        }
         public ActionResult testdropdown()
         {
             ViewBag.sub_id = new SelectList(db.Districts, "Sub_id", "NameInThai");

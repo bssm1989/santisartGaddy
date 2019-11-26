@@ -1,0 +1,123 @@
+﻿@model IEnumerable<santisart_app.Models.Enroll_Emp_Pos_copy1>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpLname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpBirthday)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpIdcard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpPsis_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpTimestamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpTelephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.Empbank_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpGender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrEmpPosStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrEmpPosTimestamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_copy1.EmpGender)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpLname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpBirthday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpIdcard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpPsis_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpTimestamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpTelephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.Empbank_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpGender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnrEmpPosStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnrEmpPosTimestamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_copy1.EmpGender)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EnrEmpPosId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EnrEmpPosId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EnrEmpPosId })
+        </td>
+    </tr>
+}
+
+</table>

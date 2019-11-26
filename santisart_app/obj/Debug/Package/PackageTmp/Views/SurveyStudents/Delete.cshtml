@@ -1,0 +1,136 @@
+﻿@model santisart_app.Models.Student
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_lname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_birthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_birthday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_idcard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_idcard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_psis_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_psis_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_timestamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_ArabName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_ArabName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_OldSchool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_OldSchool)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Studnet_Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Studnet_Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_firsttime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_firsttime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.enrolladdress.tambol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enrolladdress.tambol)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
