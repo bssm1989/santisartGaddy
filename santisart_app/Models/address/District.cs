@@ -57,6 +57,8 @@ namespace santisart_app.Models
         public string nameVil { get; set; }
         [DisplayAttribute(Name = "บ้านเลขที่")]
         public int  numberHome { get; set; }
+        [DisplayAttribute(Name = "หมูที่")]
+        public int codeAddress { get; set; }
 
         [DisplayAttribute(Name = "ชอย")]
         public string Soi { get; set; }

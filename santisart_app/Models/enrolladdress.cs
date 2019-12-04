@@ -16,7 +16,7 @@ namespace santisart_app.Models
     {
         public Nullable<int> Sub_id { get; set; }
         public Nullable<int> student_id { get; set; }
-        public Nullable<int> addressId { get; set; }
+        public int addressId { get; set; }
         public Nullable<int> staff_id { get; set; }
         public string Soi { get; set; }
         public string Road { get; set; }

@@ -9,6 +9,7 @@ namespace santisart_app.Models
 {
     public class SurveyStudent
     {
+        
         public Student students{ get; set; }
         public List<EnrollFamilyStudent> enrollFamily{ get; set; }
         

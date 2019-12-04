@@ -17,7 +17,6 @@ namespace santisart_app.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public District()
         {
-            this.Subdistricts = new HashSet<Subdistrict>();
             this.enrolladdresses = new HashSet<enrolladdress>();
         }
     
@@ -27,9 +26,6 @@ namespace santisart_app.Models
         public string NameInEnglish { get; set; }
         public int ProvinceId { get; set; }
     
-        public virtual Province Province { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Subdistrict> Subdistricts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<enrolladdress> enrolladdresses { get; set; }
     }

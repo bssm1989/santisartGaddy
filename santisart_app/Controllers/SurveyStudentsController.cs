@@ -215,9 +215,58 @@ namespace santisart_app.Controllers
 
 
         }
+            
+           
         public ActionResult listStudentFamAdd()
         {
-            return View();
+            var listEnrolladdress = db.enrolladdresses.Where(x => x.Active == 1).OrderByDescending(x=>x.timestamp).Take(10);
+            var surveyStudentList = new List<surveyList>();
+
+            foreach (var item in listEnrolladdress)
+            {
+                var families = item.Student.EnrollFamilyStudents.Where(
+                            x => x.status == "1");
+                var FatherName = families.Where(x => x.TypeFamily == "father").FirstOrDefault();
+                var MotherName = families.Where(x => x.TypeFamily == "mother").FirstOrDefault();
+                var PotentateName = families.Where(x => x.TypeFamily == "potentate").FirstOrDefault();
+                //var  TeststudentName = item.Student.Student_name + " " + item.Student.Student_lname;
+                //var  TestFatherName = FatherName != null ? FatherName.Family.Fam_Name + " " + FatherName.Family.Fam_Lname : " ";
+                //var  TestMotherName = MotherName != null ? MotherName.Family.Fam_Name + " " + MotherName.Family.Fam_Lname : " ";
+                //var  TestPotentateName = PotentateName != null ? PotentateName.Family.Fam_Name + " " + PotentateName.Family.Fam_Lname : "";
+                //var  TestFatherCareer = FatherName != null ? FatherName.Family.Career ?? "" : "";
+                //var  TestMotherCareer = MotherName != null ? MotherName.Family.Career ?? "" : "";
+                //var  TestPotentateCareer = PotentateName != null ? PotentateName.Family.Career ?? "" : "";
+                //var  TestFatherPosition = FatherName != null ? FatherName.Family.PositionFam!=null? FatherName.Family.PositionFam.PositionName :"": "";
+                //var  TestMotherPosition = MotherName != null ? MotherName.Family.PositionFam!=null? MotherName.Family.PositionFam.PositionName :"": "";
+                    //var test1= item.codeAddress                                        ;
+                    //var test2= item.Soi != null ? " soi " + item.Soi : ""                  ;
+                    //var test3= item.numberHome != null ? " mou "+item.numberHome : "";
+                    //var test4=  item.Sub_id != null ? " tumbol "+item.Subdistrict.NameInThai : ""                            ;
+                    //var test6= item.DistrictId != null ? " aumper " +item.District.NameInThai : ""                               ;
+                    //var test8= item.ProvinceID != null ? " " + item.Province.NameInThai : "";
+               
+                surveyStudentList.Add(new surveyList
+                {
+                    studentName = item.Student.Student_name + " " + item.Student.Student_lname,
+                    FatherName = FatherName != null ? FatherName.Family.Fam_Name + " " + FatherName.Family.Fam_Lname : " ",
+                    MotherName = MotherName != null ? MotherName.Family.Fam_Name + " " + MotherName.Family.Fam_Lname : " ",
+                    PotentateName = PotentateName != null ? PotentateName.Family.Fam_Name + " " + PotentateName.Family.Fam_Lname : "",
+                    FatherCareer = FatherName != null ? FatherName.Family.Career ?? "" : "",
+                    MotherCareer = MotherName != null ? MotherName.Family.Career ?? "" : "",
+                    PotentateCareer = PotentateName != null ? PotentateName.Family.Career ?? "" : "",
+                    FatherPosition = FatherName != null ? FatherName.Family.PositionFam != null ? FatherName.Family.PositionFam.PositionName : "" : "",
+                    MotherPosition = MotherName != null ? MotherName.Family.PositionFam != null ? MotherName.Family.PositionFam.PositionName : "" : "",
+                    address = item.numberHome 
+                    +(item.codeAddress!=null?" หมู่ที่ "+item.codeAddress:"")
+                    +(item.Soi != null ? " ซอย " + item.Soi : "")
+                    +( item.Sub_id!=null?" ต."+item.Subdistrict.NameInThai:""         )
+                    +( item.DistrictId!=null?" อ."+item.District.NameInThai:""        )
+                    +( item.ProvinceID!=null?" "+item.Province.NameInThai:""              )
+                }) ;
+            }
+
+                
+            return View(surveyStudentList);
         }
         public ActionResult testdropdown()
         {

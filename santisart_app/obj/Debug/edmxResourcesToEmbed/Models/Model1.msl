@@ -4,621 +4,79 @@
     <EntitySetMapping Name="attendances">
       <EntityTypeMapping TypeName="santisartModel2.attendance">
         <MappingFragment StoreEntitySet="attendance">
-          <ScalarProperty Name="att_id" ColumnName="att_id" />
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="datestamp" ColumnName="datestamp" />
-          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
-          <ScalarProperty Name="qira_id" ColumnName="qira_id" />
-          <ScalarProperty Name="page" ColumnName="page" />
-          <ScalarProperty Name="attday_id" ColumnName="attday_id" />
           <ScalarProperty Name="Timestamp_teach" ColumnName="Timestamp_teach" />
+          <ScalarProperty Name="attday_id" ColumnName="attday_id" />
+          <ScalarProperty Name="page" ColumnName="page" />
+          <ScalarProperty Name="qira_id" ColumnName="qira_id" />
+          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+          <ScalarProperty Name="datestamp" ColumnName="datestamp" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+          <ScalarProperty Name="att_id" ColumnName="att_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="attendance_day">
       <EntityTypeMapping TypeName="santisartModel2.attendance_day">
         <MappingFragment StoreEntitySet="attendance_day">
-          <ScalarProperty Name="attday_id" ColumnName="attday_id" />
-          <ScalarProperty Name="attday_date" ColumnName="attday_date" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
-          <ScalarProperty Name="year_index" ColumnName="year_index" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="year_index" ColumnName="year_index" />
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="attday_date" ColumnName="attday_date" />
+          <ScalarProperty Name="attday_id" ColumnName="attday_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Classes">
       <EntityTypeMapping TypeName="santisartModel2.Class">
         <MappingFragment StoreEntitySet="Class">
-          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
-          <ScalarProperty Name="Status_class" ColumnName="Status_class" />
-          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
-          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
-          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
           <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+          <ScalarProperty Name="Status_class" ColumnName="Status_class" />
+          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ClassInSchools">
       <EntityTypeMapping TypeName="santisartModel2.ClassInSchool">
         <MappingFragment StoreEntitySet="ClassInSchool">
-          <ScalarProperty Name="ClassShortName" ColumnName="ClassShortName" />
-          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
           <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="ClassShortName" ColumnName="ClassShortName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ContestEducationSchools">
       <EntityTypeMapping TypeName="santisartModel2.ContestEducationSchool">
         <MappingFragment StoreEntitySet="ContestEducationSchool">
-          <ScalarProperty Name="TypeContest_id" ColumnName="TypeContest_id" />
-          <ScalarProperty Name="NameContest" ColumnName="NameContest" />
-          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-          <ScalarProperty Name="group" ColumnName="group" />
           <ScalarProperty Name="Day_contest" ColumnName="Day_contest" />
+          <ScalarProperty Name="group" ColumnName="group" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+          <ScalarProperty Name="NameContest" ColumnName="NameContest" />
+          <ScalarProperty Name="TypeContest_id" ColumnName="TypeContest_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Courses">
       <EntityTypeMapping TypeName="santisartModel2.Course">
         <MappingFragment StoreEntitySet="Course">
-          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
-          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
-          <ScalarProperty Name="CourseType" ColumnName="CourseType" />
           <ScalarProperty Name="CourseStatus" ColumnName="CourseStatus" />
+          <ScalarProperty Name="CourseType" ColumnName="CourseType" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Departments">
       <EntityTypeMapping TypeName="santisartModel2.Department">
         <MappingFragment StoreEntitySet="Department">
-          <ScalarProperty Name="DepartName" ColumnName="DepartName" />
-          <ScalarProperty Name="DepartStatus" ColumnName="DepartStatus" />
           <ScalarProperty Name="Depart_Id" ColumnName="Depart_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Employees">
-      <EntityTypeMapping TypeName="santisartModel2.Employee">
-        <MappingFragment StoreEntitySet="Employee">
-          <ScalarProperty Name="EmpTitle" ColumnName="EmpTitle" />
-          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
-          <ScalarProperty Name="EmpLname" ColumnName="EmpLname" />
-          <ScalarProperty Name="EmpBirthday" ColumnName="EmpBirthday" />
-          <ScalarProperty Name="EmpIdcard" ColumnName="EmpIdcard" />
-          <ScalarProperty Name="EmpPsis_id" ColumnName="EmpPsis_id" />
-          <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
-          <ScalarProperty Name="EmpTimestamp" ColumnName="EmpTimestamp" />
-          <ScalarProperty Name="EmpTelephone" ColumnName="EmpTelephone" />
-          <ScalarProperty Name="Empbank_id" ColumnName="Empbank_id" />
-          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
-          <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Enroll_EduContest">
-      <EntityTypeMapping TypeName="santisartModel2.Enroll_EduContest">
-        <MappingFragment StoreEntitySet="Enroll_EduContest">
-          <ScalarProperty Name="EduContest_id" ColumnName="EduContest_id" />
-          <ScalarProperty Name="Type_id" ColumnName="Type_id" />
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Timestamp__" ColumnName="Timestamp&#xD;&#xA;" />
-          <ScalarProperty Name="result" ColumnName="result" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Enroll_Emp_Pos">
-      <EntityTypeMapping TypeName="santisartModel2.Enroll_Emp_Pos">
-        <MappingFragment StoreEntitySet="Enroll_Emp_Pos">
-          <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
-          <ScalarProperty Name="Position_id" ColumnName="Position_id" />
-          <ScalarProperty Name="EnrEmpPosStatus" ColumnName="EnrEmpPosStatus" />
-          <ScalarProperty Name="EnrEmpPosTimestamp" ColumnName="EnrEmpPosTimestamp" />
-          <ScalarProperty Name="EnrEmpPosId" ColumnName="EnrEmpPosId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Enroll_paid">
-      <EntityTypeMapping TypeName="santisartModel2.Enroll_paid">
-        <MappingFragment StoreEntitySet="Enroll_paid">
-          <ScalarProperty Name="Paid_id" ColumnName="Paid_id" />
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Monthly_id" ColumnName="Monthly_id" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-          <ScalarProperty Name="Staff_paid_id" ColumnName="Staff_paid_id" />
-          <ScalarProperty Name="Student_type_id" ColumnName="Student_type_id" />
-          <ScalarProperty Name="Paid" ColumnName="Paid" />
-          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
-          <ScalarProperty Name="Pay_id" ColumnName="Pay_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Enroll_pay">
-      <EntityTypeMapping TypeName="santisartModel2.Enroll_pay">
-        <MappingFragment StoreEntitySet="Enroll_pay">
-          <ScalarProperty Name="Pay_id" ColumnName="Pay_id" />
-          <ScalarProperty Name="Paid_id" ColumnName="Paid_id" />
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Pay" ColumnName="Pay" />
-          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-          <ScalarProperty Name="Id_token" ColumnName="Id_token" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Enroll_RoomSession_Emp">
-      <EntityTypeMapping TypeName="santisartModel2.Enroll_RoomSession_Emp">
-        <MappingFragment StoreEntitySet="Enroll_RoomSession_Emp">
-          <ScalarProperty Name="EnrollRoomEmpId" ColumnName="EnrollRoomEmpId" />
-          <ScalarProperty Name="userid" ColumnName="userid" />
-          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
-          <ScalarProperty Name="staft" ColumnName="staft" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="value" ColumnName="value" />
-          <ScalarProperty Name="RoomSessionId" ColumnName="RoomSessionId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Enroll_student_all_event">
-      <EntityTypeMapping TypeName="santisartModel2.Enroll_student_all_event">
-        <MappingFragment StoreEntitySet="Enroll_student_all_event">
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
-          <ScalarProperty Name="Enrol_stu_class_id" ColumnName="Enrol_stu_class_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Enroll_student_class">
-      <EntityTypeMapping TypeName="santisartModel2.Enroll_student_class">
-        <MappingFragment StoreEntitySet="Enroll_student_class">
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
-          <ScalarProperty Name="Enrol_stu_class_id" ColumnName="Enrol_stu_class_id" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EnrollClasses">
-      <EntityTypeMapping TypeName="santisartModel2.EnrollClass">
-        <MappingFragment StoreEntitySet="EnrollClass">
-          <ScalarProperty Name="Status_class" ColumnName="Status_class" />
-          <ScalarProperty Name="ClassSchoolid" ColumnName="ClassSchoolid" />
-          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
-          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
-          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
-          <ScalarProperty Name="EnrollClass_id" ColumnName="EnrollClass_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EnrollCouses">
-      <EntityTypeMapping TypeName="santisartModel2.EnrollCouse">
-        <MappingFragment StoreEntitySet="EnrollCouse">
-          <ScalarProperty Name="CouseTxtId" ColumnName="CouseTxtId" />
-          <ScalarProperty Name="CouseId" ColumnName="CouseId" />
-          <ScalarProperty Name="DepartId" ColumnName="DepartId" />
-          <ScalarProperty Name="CouseTime" ColumnName="CouseTime" />
-          <ScalarProperty Name="CouseWeight__" ColumnName="CouseWeight&#xD;&#xA;" />
-          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
-          <ScalarProperty Name="semester__" ColumnName="semester&#xD;&#xA;" />
-          <ScalarProperty Name="EnrollCouseID" ColumnName="EnrollCouseID" />
-          <ScalarProperty Name="CouseExcel" ColumnName="CouseExcel" />
-          <ScalarProperty Name="ExcelAdress" ColumnName="ExcelAdress" />
-          <ScalarProperty Name="IndexSort" ColumnName="IndexSort" />
-          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EnrollEmpCouses">
-      <EntityTypeMapping TypeName="santisartModel2.EnrollEmpCouse">
-        <MappingFragment StoreEntitySet="EnrollEmpCouse">
-          <ScalarProperty Name="EnCouseId" ColumnName="EnCouseId" />
-          <ScalarProperty Name="EnEmpCosTimestamp" ColumnName="EnEmpCosTimestamp" />
-          <ScalarProperty Name="EnrollEmpCouseId" ColumnName="EnrollEmpCouseId" />
-          <ScalarProperty Name="EnEmpId" ColumnName="EnEmpId" />
-          <ScalarProperty Name="EnYearSemId" ColumnName="EnYearSemId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EnrollEmpCouseClasses">
-      <EntityTypeMapping TypeName="santisartModel2.EnrollEmpCouseClass">
-        <MappingFragment StoreEntitySet="EnrollEmpCouseClass">
-          <ScalarProperty Name="EnrollEmpCouseClassId" ColumnName="EnrollEmpCouseClassId" />
-          <ScalarProperty Name="EnEmpCouseId" ColumnName="EnEmpCouseId" />
-          <ScalarProperty Name="EnClassId" ColumnName="EnClassId" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EnrollFamilyStudents">
-      <EntityTypeMapping TypeName="santisartModel2.EnrollFamilyStudent">
-        <MappingFragment StoreEntitySet="EnrollFamilyStudent">
-          <ScalarProperty Name="EnrollFamStudentId" ColumnName="EnrollFamStudentId" />
-          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
-          <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
-          <ScalarProperty Name="TypeFamily" ColumnName="TypeFamily" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="staftId" ColumnName="staftId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EnrollFinishStudents">
-      <EntityTypeMapping TypeName="santisartModel2.EnrollFinishStudent">
-        <MappingFragment StoreEntitySet="EnrollFinishStudent">
-          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
-          <ScalarProperty Name="FinishTypeId" ColumnName="FinishTypeId" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="TimeStam" ColumnName="TimeStam" />
-          <ScalarProperty Name="Staff" ColumnName="Staff" />
-          <ScalarProperty Name="FinishId" ColumnName="FinishId" />
-          <ScalarProperty Name="FinishCouse" ColumnName="FinishCouse" />
-          <ScalarProperty Name="DayRequstFinish" ColumnName="DayRequstFinish" />
-          <ScalarProperty Name="DayFinished" ColumnName="DayFinished" />
-          <ScalarProperty Name="DayToFinished" ColumnName="DayToFinished" />
-          <ScalarProperty Name="Reader" ColumnName="Reader" />
-          <ScalarProperty Name="Physical" ColumnName="Physical" />
-          <ScalarProperty Name="Activity" ColumnName="Activity" />
-          <ScalarProperty Name="CouseBasic" ColumnName="CouseBasic" />
-          <ScalarProperty Name="CouseAdd" ColumnName="CouseAdd" />
-          <ScalarProperty Name="Reader2" ColumnName="Reader2" />
-          <ScalarProperty Name="Activity2" ColumnName="Activity2" />
-          <ScalarProperty Name="physical2" ColumnName="physical2" />
-          <ScalarProperty Name="ExcelForm" ColumnName="ExcelForm" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EnrollStudentCouses">
-      <EntityTypeMapping TypeName="santisartModel2.EnrollStudentCouse">
-        <MappingFragment StoreEntitySet="EnrollStudentCouse">
-          <ScalarProperty Name="studentId" ColumnName="studentId" />
-          <ScalarProperty Name="EnrollCouseId" ColumnName="EnrollCouseId" />
-          <ScalarProperty Name="Score1" ColumnName="Score1" />
-          <ScalarProperty Name="Grade" ColumnName="Grade" />
-          <ScalarProperty Name="TeacerId" ColumnName="TeacerId" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-          <ScalarProperty Name="YearEdu" ColumnName="YearEdu" />
-          <ScalarProperty Name="Staff" ColumnName="Staff" />
-          <ScalarProperty Name="Semester" ColumnName="Semester" />
-          <ScalarProperty Name="EnrollStudentClassId" ColumnName="EnrollStudentClassId" />
-          <ScalarProperty Name="EnYearSemId" ColumnName="EnYearSemId" />
-          <ScalarProperty Name="EnEmpCouseId" ColumnName="EnEmpCouseId" />
-          <ScalarProperty Name="EnEmpCouseClassId" ColumnName="EnEmpCouseClassId" />
-          <ScalarProperty Name="EnrollStudentCouseId" ColumnName="EnrollStudentCouseId" />
-          <ScalarProperty Name="Score2" ColumnName="Score2" />
-          <ScalarProperty Name="Score3" ColumnName="Score3" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EnrollYearSemesters">
-      <EntityTypeMapping TypeName="santisartModel2.EnrollYearSemester">
-        <MappingFragment StoreEntitySet="EnrollYearSemester">
-          <ScalarProperty Name="YearEduId" ColumnName="YearEduId" />
-          <ScalarProperty Name="Semester" ColumnName="Semester" />
-          <ScalarProperty Name="EnrollYearSemesterId" ColumnName="EnrollYearSemesterId" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="FinishTypes">
-      <EntityTypeMapping TypeName="santisartModel2.FinishType">
-        <MappingFragment StoreEntitySet="FinishType">
-          <ScalarProperty Name="FormName" ColumnName="FormName" />
-          <ScalarProperty Name="FormIndex" ColumnName="FormIndex" />
-          <ScalarProperty Name="FinishFormID" ColumnName="FinishFormID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Foods">
-      <EntityTypeMapping TypeName="santisartModel2.Food">
-        <MappingFragment StoreEntitySet="Food">
-          <ScalarProperty Name="Food_id" ColumnName="Food_id" />
-          <ScalarProperty Name="Food_id_student" ColumnName="Food_id_student" />
-          <ScalarProperty Name="Food_name" ColumnName="Food_name" />
-          <ScalarProperty Name="Food_lastname" ColumnName="Food_lastname" />
-          <ScalarProperty Name="Food_month_th" ColumnName="Food_month_th" />
-          <ScalarProperty Name="Food_month_index" ColumnName="Food_month_index" />
-          <ScalarProperty Name="Food_paid" ColumnName="Food_paid" />
-          <ScalarProperty Name="Food_full_paid" ColumnName="Food_full_paid" />
-          <ScalarProperty Name="Food_class" ColumnName="Food_class" />
-          <ScalarProperty Name="Food_year" ColumnName="Food_year" />
-          <ScalarProperty Name="Food_timesatamp" ColumnName="Food_timesatamp" />
-          <ScalarProperty Name="Food_update" ColumnName="Food_update" />
-          <ScalarProperty Name="Food_paid_id" ColumnName="Food_paid_id" />
-          <ScalarProperty Name="Food_title" ColumnName="Food_title" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Monthlies">
-      <EntityTypeMapping TypeName="santisartModel2.Monthly">
-        <MappingFragment StoreEntitySet="Monthly">
-          <ScalarProperty Name="Monthly_id" ColumnName="Monthly_id" />
-          <ScalarProperty Name="Month_name" ColumnName="Month_name" />
-          <ScalarProperty Name="Month_year" ColumnName="Month_year" />
-          <ScalarProperty Name="Month_course" ColumnName="Month_course" />
-          <ScalarProperty Name="Month_status" ColumnName="Month_status" />
-          <ScalarProperty Name="Month_yearindex" ColumnName="Month_yearindex" />
-          <ScalarProperty Name="Month_Sort" ColumnName="Month_Sort" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Positions">
-      <EntityTypeMapping TypeName="santisartModel2.Position">
-        <MappingFragment StoreEntitySet="Position">
-          <ScalarProperty Name="PosName" ColumnName="PosName" />
-          <ScalarProperty Name="PosLevel" ColumnName="PosLevel" />
-          <ScalarProperty Name="PosId" ColumnName="PosId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="RoomSessions">
-      <EntityTypeMapping TypeName="santisartModel2.RoomSession">
-        <MappingFragment StoreEntitySet="RoomSession">
-          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-          <ScalarProperty Name="Value" ColumnName="Value" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="RoomSessionId" ColumnName="RoomSessionId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Students">
-      <EntityTypeMapping TypeName="santisartModel2.Student">
-        <MappingFragment StoreEntitySet="Students">
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
-          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
-          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
-          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
-          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
-          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
-          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
-          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
-          <ScalarProperty Name="Student_ArabName" ColumnName="Student_ArabName" />
-          <ScalarProperty Name="Student_OldSchool" ColumnName="Student_OldSchool" />
-          <ScalarProperty Name="Studnet_Gender" ColumnName="Studnet_Gender" />
-          <ScalarProperty Name="Student_firsttime" ColumnName="Student_firsttime" />
-          <ScalarProperty Name="Student_tel" ColumnName="Student_tel" />
-          <ScalarProperty Name="adressid" ColumnName="adressid" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Students_food">
-      <EntityTypeMapping TypeName="santisartModel2.Students_food">
-        <MappingFragment StoreEntitySet="Students_food">
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
-          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
-          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
-          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
-          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
-          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
-          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
-          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="UserProfiles">
-      <EntityTypeMapping TypeName="santisartModel2.UserProfile">
-        <MappingFragment StoreEntitySet="UserProfile">
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="YearEdus">
-      <EntityTypeMapping TypeName="santisartModel2.YearEdu">
-        <MappingFragment StoreEntitySet="YearEdu">
-          <ScalarProperty Name="yearName" ColumnName="yearName" />
-          <ScalarProperty Name="YearEduId" ColumnName="YearEduId" />
-          <ScalarProperty Name="YearNameEng" ColumnName="YearNameEng" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="C_enrollattstudent">
-      <EntityTypeMapping TypeName="santisartModel2.C_enrollattstudent">
-        <MappingFragment StoreEntitySet="_enrollattstudent">
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
-          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
-          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
-          <ScalarProperty Name="att_id" ColumnName="att_id" />
-          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
-          <ScalarProperty Name="qira_id" ColumnName="qira_id" />
-          <ScalarProperty Name="page" ColumnName="page" />
-          <ScalarProperty Name="attday_id" ColumnName="attday_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EnrollStudentAttdances">
-      <EntityTypeMapping TypeName="santisartModel2.EnrollStudentAttdance">
-        <MappingFragment StoreEntitySet="EnrollStudentAttdance">
-          <ScalarProperty Name="att_id" ColumnName="att_id" />
-          <ScalarProperty Name="qira_id" ColumnName="qira_id" />
-          <ScalarProperty Name="page" ColumnName="page" />
-          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
-          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
-          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
-          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
-          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
-          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
-          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
-          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
-          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
-          <ScalarProperty Name="attday_id" ColumnName="attday_id" />
-          <ScalarProperty Name="attday_date" ColumnName="attday_date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="student2561">
-      <EntityTypeMapping TypeName="santisartModel2.student2561">
-        <MappingFragment StoreEntitySet="student2561">
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
-          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
-          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
-          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
-          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
-          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
-          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
-          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
-          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
-          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
-          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
-          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
-          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="student2561_copy1">
-      <EntityTypeMapping TypeName="santisartModel2.student2561_copy1">
-        <MappingFragment StoreEntitySet="student2561_copy1">
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
-          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
-          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
-          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
-          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
-          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
-          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
-          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
-          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
-          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
-          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
-          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
-          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="student2561_food">
-      <EntityTypeMapping TypeName="santisartModel2.student2561_food">
-        <MappingFragment StoreEntitySet="student2561_food">
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
-          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
-          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
-          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
-          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
-          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
-          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
-          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
-          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
-          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
-          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
-          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
-          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="studentEduContest2561">
-      <EntityTypeMapping TypeName="santisartModel2.studentEduContest2561">
-        <MappingFragment StoreEntitySet="studentEduContest2561">
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
-          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
-          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
-          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
-          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
-          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
-          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
-          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
-          <ScalarProperty Name="TypeContest_id" ColumnName="TypeContest_id" />
-          <ScalarProperty Name="NameContest" ColumnName="NameContest" />
-          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-          <ScalarProperty Name="group" ColumnName="group" />
-          <ScalarProperty Name="Day_contest" ColumnName="Day_contest" />
-          <ScalarProperty Name="EduContest_id" ColumnName="EduContest_id" />
-          <ScalarProperty Name="result" ColumnName="result" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="View_Couse">
-      <EntityTypeMapping TypeName="santisartModel2.View_Couse">
-        <MappingFragment StoreEntitySet="View_Couse">
-          <ScalarProperty Name="CouseTxtId" ColumnName="CouseTxtId" />
-          <ScalarProperty Name="DepartId" ColumnName="DepartId" />
-          <ScalarProperty Name="CouseTime" ColumnName="CouseTime" />
-          <ScalarProperty Name="CouseWeight__" ColumnName="CouseWeight&#xD;&#xA;" />
-          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
-          <ScalarProperty Name="semester__" ColumnName="semester&#xD;&#xA;" />
-          <ScalarProperty Name="EnrollCouseID" ColumnName="EnrollCouseID" />
-          <ScalarProperty Name="CouseExcel" ColumnName="CouseExcel" />
-          <ScalarProperty Name="CouseId" ColumnName="CouseId" />
-          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
-          <ScalarProperty Name="CourseType" ColumnName="CourseType" />
-          <ScalarProperty Name="CourseStatus" ColumnName="CourseStatus" />
-          <ScalarProperty Name="EnrollStudentCouseId" ColumnName="EnrollStudentCouseId" />
-          <ScalarProperty Name="Score1" ColumnName="Score1" />
-          <ScalarProperty Name="Grade" ColumnName="Grade" />
-          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
-          <ScalarProperty Name="YearEdu" ColumnName="YearEdu" />
-          <ScalarProperty Name="Staff" ColumnName="Staff" />
-          <ScalarProperty Name="Semester" ColumnName="Semester" />
-          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
-          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
-          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
-          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
-          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
-          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
-          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
-          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
-          <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
-          <ScalarProperty Name="Position_id" ColumnName="Position_id" />
-          <ScalarProperty Name="EnrEmpPosStatus" ColumnName="EnrEmpPosStatus" />
-          <ScalarProperty Name="EnrEmpPosTimestamp" ColumnName="EnrEmpPosTimestamp" />
-          <ScalarProperty Name="EnrEmpPosId" ColumnName="EnrEmpPosId" />
-          <ScalarProperty Name="EmpTitle" ColumnName="EmpTitle" />
-          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
-          <ScalarProperty Name="EmpLname" ColumnName="EmpLname" />
-          <ScalarProperty Name="EmpBirthday" ColumnName="EmpBirthday" />
-          <ScalarProperty Name="EmpIdcard" ColumnName="EmpIdcard" />
-          <ScalarProperty Name="EmpPsis_id" ColumnName="EmpPsis_id" />
-          <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
-          <ScalarProperty Name="EmpTimestamp" ColumnName="EmpTimestamp" />
-          <ScalarProperty Name="EmpTelephone" ColumnName="EmpTelephone" />
-          <ScalarProperty Name="Empbank_id" ColumnName="Empbank_id" />
-          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
-          <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
-          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
-          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ViewEmpPos">
-      <EntityTypeMapping TypeName="santisartModel2.ViewEmpPos">
-        <MappingFragment StoreEntitySet="ViewEmpPos">
-          <ScalarProperty Name="EmpTitle" ColumnName="EmpTitle" />
-          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
-          <ScalarProperty Name="EmpLname" ColumnName="EmpLname" />
-          <ScalarProperty Name="EmpBirthday" ColumnName="EmpBirthday" />
-          <ScalarProperty Name="EmpIdcard" ColumnName="EmpIdcard" />
-          <ScalarProperty Name="EmpPsis_id" ColumnName="EmpPsis_id" />
-          <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
-          <ScalarProperty Name="EmpTimestamp" ColumnName="EmpTimestamp" />
-          <ScalarProperty Name="EmpTelephone" ColumnName="EmpTelephone" />
-          <ScalarProperty Name="Empbank_id" ColumnName="Empbank_id" />
-          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
-          <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
-          <ScalarProperty Name="EnrEmpPosId" ColumnName="EnrEmpPosId" />
-          <ScalarProperty Name="EnrEmpPosStatus" ColumnName="EnrEmpPosStatus" />
-          <ScalarProperty Name="EnrEmpPosTimestamp" ColumnName="EnrEmpPosTimestamp" />
-          <ScalarProperty Name="PosName" ColumnName="PosName" />
-          <ScalarProperty Name="PosLevel" ColumnName="PosLevel" />
-          <ScalarProperty Name="PosId" ColumnName="PosId" />
+          <ScalarProperty Name="DepartStatus" ColumnName="DepartStatus" />
+          <ScalarProperty Name="DepartName" ColumnName="DepartName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -633,35 +91,105 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Provinces">
-      <EntityTypeMapping TypeName="santisartModel2.Province">
-        <MappingFragment StoreEntitySet="Provinces">
-          <ScalarProperty Name="NameInEnglish" ColumnName="NameInEnglish" />
-          <ScalarProperty Name="NameInThai" ColumnName="NameInThai" />
-          <ScalarProperty Name="Code" ColumnName="Code" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="santisartModel2.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="Empbank_id" ColumnName="Empbank_id" />
+          <ScalarProperty Name="EmpTelephone" ColumnName="EmpTelephone" />
+          <ScalarProperty Name="EmpTimestamp" ColumnName="EmpTimestamp" />
+          <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
+          <ScalarProperty Name="EmpPsis_id" ColumnName="EmpPsis_id" />
+          <ScalarProperty Name="EmpIdcard" ColumnName="EmpIdcard" />
+          <ScalarProperty Name="EmpBirthday" ColumnName="EmpBirthday" />
+          <ScalarProperty Name="EmpLname" ColumnName="EmpLname" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmpTitle" ColumnName="EmpTitle" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Subdistricts">
-      <EntityTypeMapping TypeName="santisartModel2.Subdistrict">
-        <MappingFragment StoreEntitySet="Subdistricts">
-          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
-          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
-          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
-          <ScalarProperty Name="NameInEnglish" ColumnName="NameInEnglish" />
-          <ScalarProperty Name="NameInThai" ColumnName="NameInThai" />
-          <ScalarProperty Name="Code" ColumnName="Code" />
-          <ScalarProperty Name="Sub_id" ColumnName="Sub_id" />
+    <EntitySetMapping Name="Enroll_EduContest">
+      <EntityTypeMapping TypeName="santisartModel2.Enroll_EduContest">
+        <MappingFragment StoreEntitySet="Enroll_EduContest">
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="Timestamp__" ColumnName="Timestamp&#xD;&#xA;" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+          <ScalarProperty Name="Type_id" ColumnName="Type_id" />
+          <ScalarProperty Name="EduContest_id" ColumnName="EduContest_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PositionFams">
-      <EntityTypeMapping TypeName="santisartModel2.PositionFam">
-        <MappingFragment StoreEntitySet="PositionFam">
-          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
-          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+    <EntitySetMapping Name="Enroll_Emp_Pos">
+      <EntityTypeMapping TypeName="santisartModel2.Enroll_Emp_Pos">
+        <MappingFragment StoreEntitySet="Enroll_Emp_Pos">
+          <ScalarProperty Name="EnrEmpPosId" ColumnName="EnrEmpPosId" />
+          <ScalarProperty Name="EnrEmpPosTimestamp" ColumnName="EnrEmpPosTimestamp" />
+          <ScalarProperty Name="EnrEmpPosStatus" ColumnName="EnrEmpPosStatus" />
+          <ScalarProperty Name="Position_id" ColumnName="Position_id" />
+          <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enroll_paid">
+      <EntityTypeMapping TypeName="santisartModel2.Enroll_paid">
+        <MappingFragment StoreEntitySet="Enroll_paid">
+          <ScalarProperty Name="Pay_id" ColumnName="Pay_id" />
+          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Student_type_id" ColumnName="Student_type_id" />
+          <ScalarProperty Name="Staff_paid_id" ColumnName="Staff_paid_id" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="Monthly_id" ColumnName="Monthly_id" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+          <ScalarProperty Name="Paid_id" ColumnName="Paid_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enroll_pay">
+      <EntityTypeMapping TypeName="santisartModel2.Enroll_pay">
+        <MappingFragment StoreEntitySet="Enroll_pay">
+          <ScalarProperty Name="Id_token" ColumnName="Id_token" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+          <ScalarProperty Name="Pay" ColumnName="Pay" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+          <ScalarProperty Name="Paid_id" ColumnName="Paid_id" />
+          <ScalarProperty Name="Pay_id" ColumnName="Pay_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enroll_RoomSession_Emp">
+      <EntityTypeMapping TypeName="santisartModel2.Enroll_RoomSession_Emp">
+        <MappingFragment StoreEntitySet="Enroll_RoomSession_Emp">
+          <ScalarProperty Name="RoomSessionId" ColumnName="RoomSessionId" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="staft" ColumnName="staft" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="EnrollRoomEmpId" ColumnName="EnrollRoomEmpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enroll_student_all_event">
+      <EntityTypeMapping TypeName="santisartModel2.Enroll_student_all_event">
+        <MappingFragment StoreEntitySet="Enroll_student_all_event">
+          <ScalarProperty Name="Enrol_stu_class_id" ColumnName="Enrol_stu_class_id" />
+          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enroll_student_class">
+      <EntityTypeMapping TypeName="santisartModel2.Enroll_student_class">
+        <MappingFragment StoreEntitySet="Enroll_student_class">
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="Enrol_stu_class_id" ColumnName="Enrol_stu_class_id" />
+          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -685,6 +213,131 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="EnrollClasses">
+      <EntityTypeMapping TypeName="santisartModel2.EnrollClass">
+        <MappingFragment StoreEntitySet="EnrollClass">
+          <ScalarProperty Name="EnrollClass_id" ColumnName="EnrollClass_id" />
+          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+          <ScalarProperty Name="ClassSchoolid" ColumnName="ClassSchoolid" />
+          <ScalarProperty Name="Status_class" ColumnName="Status_class" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnrollCouses">
+      <EntityTypeMapping TypeName="santisartModel2.EnrollCouse">
+        <MappingFragment StoreEntitySet="EnrollCouse">
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="IndexSort" ColumnName="IndexSort" />
+          <ScalarProperty Name="ExcelAdress" ColumnName="ExcelAdress" />
+          <ScalarProperty Name="CouseExcel" ColumnName="CouseExcel" />
+          <ScalarProperty Name="EnrollCouseID" ColumnName="EnrollCouseID" />
+          <ScalarProperty Name="semester__" ColumnName="semester&#xD;&#xA;" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="CouseWeight__" ColumnName="CouseWeight&#xD;&#xA;" />
+          <ScalarProperty Name="CouseTime" ColumnName="CouseTime" />
+          <ScalarProperty Name="DepartId" ColumnName="DepartId" />
+          <ScalarProperty Name="CouseId" ColumnName="CouseId" />
+          <ScalarProperty Name="CouseTxtId" ColumnName="CouseTxtId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnrollEmpCouses">
+      <EntityTypeMapping TypeName="santisartModel2.EnrollEmpCouse">
+        <MappingFragment StoreEntitySet="EnrollEmpCouse">
+          <ScalarProperty Name="EnYearSemId" ColumnName="EnYearSemId" />
+          <ScalarProperty Name="EnEmpId" ColumnName="EnEmpId" />
+          <ScalarProperty Name="EnrollEmpCouseId" ColumnName="EnrollEmpCouseId" />
+          <ScalarProperty Name="EnEmpCosTimestamp" ColumnName="EnEmpCosTimestamp" />
+          <ScalarProperty Name="EnCouseId" ColumnName="EnCouseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnrollEmpCouseClasses">
+      <EntityTypeMapping TypeName="santisartModel2.EnrollEmpCouseClass">
+        <MappingFragment StoreEntitySet="EnrollEmpCouseClass">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="EnClassId" ColumnName="EnClassId" />
+          <ScalarProperty Name="EnEmpCouseId" ColumnName="EnEmpCouseId" />
+          <ScalarProperty Name="EnrollEmpCouseClassId" ColumnName="EnrollEmpCouseClassId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnrollFamilyStudents">
+      <EntityTypeMapping TypeName="santisartModel2.EnrollFamilyStudent">
+        <MappingFragment StoreEntitySet="EnrollFamilyStudent">
+          <ScalarProperty Name="staftId" ColumnName="staftId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="TypeFamily" ColumnName="TypeFamily" />
+          <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="EnrollFamStudentId" ColumnName="EnrollFamStudentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnrollFinishStudents">
+      <EntityTypeMapping TypeName="santisartModel2.EnrollFinishStudent">
+        <MappingFragment StoreEntitySet="EnrollFinishStudent">
+          <ScalarProperty Name="ExcelForm" ColumnName="ExcelForm" />
+          <ScalarProperty Name="physical2" ColumnName="physical2" />
+          <ScalarProperty Name="Activity2" ColumnName="Activity2" />
+          <ScalarProperty Name="Reader2" ColumnName="Reader2" />
+          <ScalarProperty Name="CouseAdd" ColumnName="CouseAdd" />
+          <ScalarProperty Name="CouseBasic" ColumnName="CouseBasic" />
+          <ScalarProperty Name="Activity" ColumnName="Activity" />
+          <ScalarProperty Name="Physical" ColumnName="Physical" />
+          <ScalarProperty Name="Reader" ColumnName="Reader" />
+          <ScalarProperty Name="DayToFinished" ColumnName="DayToFinished" />
+          <ScalarProperty Name="DayFinished" ColumnName="DayFinished" />
+          <ScalarProperty Name="DayRequstFinish" ColumnName="DayRequstFinish" />
+          <ScalarProperty Name="FinishCouse" ColumnName="FinishCouse" />
+          <ScalarProperty Name="FinishId" ColumnName="FinishId" />
+          <ScalarProperty Name="Staff" ColumnName="Staff" />
+          <ScalarProperty Name="TimeStam" ColumnName="TimeStam" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FinishTypeId" ColumnName="FinishTypeId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnrollStudentCouses">
+      <EntityTypeMapping TypeName="santisartModel2.EnrollStudentCouse">
+        <MappingFragment StoreEntitySet="EnrollStudentCouse">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Score3" ColumnName="Score3" />
+          <ScalarProperty Name="Score2" ColumnName="Score2" />
+          <ScalarProperty Name="EnrollStudentCouseId" ColumnName="EnrollStudentCouseId" />
+          <ScalarProperty Name="EnEmpCouseClassId" ColumnName="EnEmpCouseClassId" />
+          <ScalarProperty Name="EnEmpCouseId" ColumnName="EnEmpCouseId" />
+          <ScalarProperty Name="EnYearSemId" ColumnName="EnYearSemId" />
+          <ScalarProperty Name="EnrollStudentClassId" ColumnName="EnrollStudentClassId" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Staff" ColumnName="Staff" />
+          <ScalarProperty Name="YearEdu" ColumnName="YearEdu" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="TeacerId" ColumnName="TeacerId" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Score1" ColumnName="Score1" />
+          <ScalarProperty Name="EnrollCouseId" ColumnName="EnrollCouseId" />
+          <ScalarProperty Name="studentId" ColumnName="studentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnrollYearSemesters">
+      <EntityTypeMapping TypeName="santisartModel2.EnrollYearSemester">
+        <MappingFragment StoreEntitySet="EnrollYearSemester">
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EnrollYearSemesterId" ColumnName="EnrollYearSemesterId" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="YearEduId" ColumnName="YearEduId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Families">
       <EntityTypeMapping TypeName="santisartModel2.Family">
         <MappingFragment StoreEntitySet="Family">
@@ -703,6 +356,399 @@
           <ScalarProperty Name="Fam_Name" ColumnName="Fam_Name" />
           <ScalarProperty Name="Fam_Title" ColumnName="Fam_Title" />
           <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinishTypes">
+      <EntityTypeMapping TypeName="santisartModel2.FinishType">
+        <MappingFragment StoreEntitySet="FinishType">
+          <ScalarProperty Name="FinishFormID" ColumnName="FinishFormID" />
+          <ScalarProperty Name="FormIndex" ColumnName="FormIndex" />
+          <ScalarProperty Name="FormName" ColumnName="FormName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Foods">
+      <EntityTypeMapping TypeName="santisartModel2.Food">
+        <MappingFragment StoreEntitySet="Food">
+          <ScalarProperty Name="Food_title" ColumnName="Food_title" />
+          <ScalarProperty Name="Food_paid_id" ColumnName="Food_paid_id" />
+          <ScalarProperty Name="Food_update" ColumnName="Food_update" />
+          <ScalarProperty Name="Food_timesatamp" ColumnName="Food_timesatamp" />
+          <ScalarProperty Name="Food_year" ColumnName="Food_year" />
+          <ScalarProperty Name="Food_class" ColumnName="Food_class" />
+          <ScalarProperty Name="Food_full_paid" ColumnName="Food_full_paid" />
+          <ScalarProperty Name="Food_paid" ColumnName="Food_paid" />
+          <ScalarProperty Name="Food_month_index" ColumnName="Food_month_index" />
+          <ScalarProperty Name="Food_month_th" ColumnName="Food_month_th" />
+          <ScalarProperty Name="Food_lastname" ColumnName="Food_lastname" />
+          <ScalarProperty Name="Food_name" ColumnName="Food_name" />
+          <ScalarProperty Name="Food_id_student" ColumnName="Food_id_student" />
+          <ScalarProperty Name="Food_id" ColumnName="Food_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Monthlies">
+      <EntityTypeMapping TypeName="santisartModel2.Monthly">
+        <MappingFragment StoreEntitySet="Monthly">
+          <ScalarProperty Name="Month_Sort" ColumnName="Month_Sort" />
+          <ScalarProperty Name="Month_yearindex" ColumnName="Month_yearindex" />
+          <ScalarProperty Name="Month_status" ColumnName="Month_status" />
+          <ScalarProperty Name="Month_course" ColumnName="Month_course" />
+          <ScalarProperty Name="Month_year" ColumnName="Month_year" />
+          <ScalarProperty Name="Month_name" ColumnName="Month_name" />
+          <ScalarProperty Name="Monthly_id" ColumnName="Monthly_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="santisartModel2.Position">
+        <MappingFragment StoreEntitySet="Position">
+          <ScalarProperty Name="PosId" ColumnName="PosId" />
+          <ScalarProperty Name="PosLevel" ColumnName="PosLevel" />
+          <ScalarProperty Name="PosName" ColumnName="PosName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PositionFams">
+      <EntityTypeMapping TypeName="santisartModel2.PositionFam">
+        <MappingFragment StoreEntitySet="PositionFam">
+          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="santisartModel2.Province">
+        <MappingFragment StoreEntitySet="Provinces">
+          <ScalarProperty Name="NameInEnglish" ColumnName="NameInEnglish" />
+          <ScalarProperty Name="NameInThai" ColumnName="NameInThai" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomSessions">
+      <EntityTypeMapping TypeName="santisartModel2.RoomSession">
+        <MappingFragment StoreEntitySet="RoomSession">
+          <ScalarProperty Name="RoomSessionId" ColumnName="RoomSessionId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="santisartModel2.Student">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="adressid" ColumnName="adressid" />
+          <ScalarProperty Name="Student_tel" ColumnName="Student_tel" />
+          <ScalarProperty Name="Student_firsttime" ColumnName="Student_firsttime" />
+          <ScalarProperty Name="Studnet_Gender" ColumnName="Studnet_Gender" />
+          <ScalarProperty Name="Student_OldSchool" ColumnName="Student_OldSchool" />
+          <ScalarProperty Name="Student_ArabName" ColumnName="Student_ArabName" />
+          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
+          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
+          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
+          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
+          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students_food">
+      <EntityTypeMapping TypeName="santisartModel2.Students_food">
+        <MappingFragment StoreEntitySet="Students_food">
+          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
+          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
+          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
+          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
+          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studentsDatas">
+      <EntityTypeMapping TypeName="santisartModel2.studentsData">
+        <MappingFragment StoreEntitySet="studentsData">
+          <ScalarProperty Name="r15" ColumnName="r15" />
+          <ScalarProperty Name="relationPoten" ColumnName="relationPoten" />
+          <ScalarProperty Name="nationPoten" ColumnName="nationPoten" />
+          <ScalarProperty Name="statusPoten" ColumnName="statusPoten" />
+          <ScalarProperty Name="namePoten" ColumnName="namePoten" />
+          <ScalarProperty Name="titlePoten" ColumnName="titlePoten" />
+          <ScalarProperty Name="idcardPoten" ColumnName="idcardPoten" />
+          <ScalarProperty Name="nationMother" ColumnName="nationMother" />
+          <ScalarProperty Name="statusMother" ColumnName="statusMother" />
+          <ScalarProperty Name="nameMother" ColumnName="nameMother" />
+          <ScalarProperty Name="titleMother" ColumnName="titleMother" />
+          <ScalarProperty Name="idcardMother" ColumnName="idcardMother" />
+          <ScalarProperty Name="nationFather" ColumnName="nationFather" />
+          <ScalarProperty Name="statusFather" ColumnName="statusFather" />
+          <ScalarProperty Name="nameFather" ColumnName="nameFather" />
+          <ScalarProperty Name="titleFather" ColumnName="titleFather" />
+          <ScalarProperty Name="idcardFather" ColumnName="idcardFather" />
+          <ScalarProperty Name="firstTimeClassroom" ColumnName="firstTimeClassroom" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="posscode" ColumnName="posscode" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="ampher" ColumnName="ampher" />
+          <ScalarProperty Name="tambol" ColumnName="tambol" />
+          <ScalarProperty Name="road" ColumnName="road" />
+          <ScalarProperty Name="soi" ColumnName="soi" />
+          <ScalarProperty Name="groupAddress" ColumnName="groupAddress" />
+          <ScalarProperty Name="numaddress" ColumnName="numaddress" />
+          <ScalarProperty Name="codeaddress" ColumnName="codeaddress" />
+          <ScalarProperty Name="offam" ColumnName="offam" />
+          <ScalarProperty Name="timeSave" ColumnName="timeSave" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="nation" ColumnName="nation" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="classroom" ColumnName="classroom" />
+          <ScalarProperty Name="idstudent" ColumnName="idstudent" />
+          <ScalarProperty Name="idcard" ColumnName="idcard" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subdistricts">
+      <EntityTypeMapping TypeName="santisartModel2.Subdistrict">
+        <MappingFragment StoreEntitySet="Subdistricts">
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="NameInEnglish" ColumnName="NameInEnglish" />
+          <ScalarProperty Name="NameInThai" ColumnName="NameInThai" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Sub_id" ColumnName="Sub_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="santisartModel2.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YearEdus">
+      <EntityTypeMapping TypeName="santisartModel2.YearEdu">
+        <MappingFragment StoreEntitySet="YearEdu">
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="YearNameEng" ColumnName="YearNameEng" />
+          <ScalarProperty Name="YearEduId" ColumnName="YearEduId" />
+          <ScalarProperty Name="yearName" ColumnName="yearName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C_enrollattstudent">
+      <EntityTypeMapping TypeName="santisartModel2.C_enrollattstudent">
+        <MappingFragment StoreEntitySet="_enrollattstudent">
+          <ScalarProperty Name="attday_id" ColumnName="attday_id" />
+          <ScalarProperty Name="page" ColumnName="page" />
+          <ScalarProperty Name="qira_id" ColumnName="qira_id" />
+          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+          <ScalarProperty Name="att_id" ColumnName="att_id" />
+          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnrollStudentAttdances">
+      <EntityTypeMapping TypeName="santisartModel2.EnrollStudentAttdance">
+        <MappingFragment StoreEntitySet="EnrollStudentAttdance">
+          <ScalarProperty Name="attday_date" ColumnName="attday_date" />
+          <ScalarProperty Name="attday_id" ColumnName="attday_id" />
+          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+          <ScalarProperty Name="page" ColumnName="page" />
+          <ScalarProperty Name="qira_id" ColumnName="qira_id" />
+          <ScalarProperty Name="att_id" ColumnName="att_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student2561">
+      <EntityTypeMapping TypeName="santisartModel2.student2561">
+        <MappingFragment StoreEntitySet="student2561">
+          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
+          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
+          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
+          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
+          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student2561_copy1">
+      <EntityTypeMapping TypeName="santisartModel2.student2561_copy1">
+        <MappingFragment StoreEntitySet="student2561_copy1">
+          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
+          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
+          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
+          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
+          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student2561_food">
+      <EntityTypeMapping TypeName="santisartModel2.student2561_food">
+        <MappingFragment StoreEntitySet="student2561_food">
+          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
+          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
+          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
+          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
+          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studentEduContest2561">
+      <EntityTypeMapping TypeName="santisartModel2.studentEduContest2561">
+        <MappingFragment StoreEntitySet="studentEduContest2561">
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="EduContest_id" ColumnName="EduContest_id" />
+          <ScalarProperty Name="Day_contest" ColumnName="Day_contest" />
+          <ScalarProperty Name="group" ColumnName="group" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="Staff_id" ColumnName="Staff_id" />
+          <ScalarProperty Name="NameContest" ColumnName="NameContest" />
+          <ScalarProperty Name="TypeContest_id" ColumnName="TypeContest_id" />
+          <ScalarProperty Name="Class_id" ColumnName="Class_id" />
+          <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+          <ScalarProperty Name="Class_year_index" ColumnName="Class_year_index" />
+          <ScalarProperty Name="Class_room" ColumnName="Class_room" />
+          <ScalarProperty Name="Class_name_id" ColumnName="Class_name_id" />
+          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Couse">
+      <EntityTypeMapping TypeName="santisartModel2.View_Couse">
+        <MappingFragment StoreEntitySet="View_Couse">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+          <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="Empbank_id" ColumnName="Empbank_id" />
+          <ScalarProperty Name="EmpTelephone" ColumnName="EmpTelephone" />
+          <ScalarProperty Name="EmpTimestamp" ColumnName="EmpTimestamp" />
+          <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
+          <ScalarProperty Name="EmpPsis_id" ColumnName="EmpPsis_id" />
+          <ScalarProperty Name="EmpIdcard" ColumnName="EmpIdcard" />
+          <ScalarProperty Name="EmpBirthday" ColumnName="EmpBirthday" />
+          <ScalarProperty Name="EmpLname" ColumnName="EmpLname" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmpTitle" ColumnName="EmpTitle" />
+          <ScalarProperty Name="EnrEmpPosId" ColumnName="EnrEmpPosId" />
+          <ScalarProperty Name="EnrEmpPosTimestamp" ColumnName="EnrEmpPosTimestamp" />
+          <ScalarProperty Name="EnrEmpPosStatus" ColumnName="EnrEmpPosStatus" />
+          <ScalarProperty Name="Position_id" ColumnName="Position_id" />
+          <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+          <ScalarProperty Name="Student_timestamp" ColumnName="Student_timestamp" />
+          <ScalarProperty Name="Student_status" ColumnName="Student_status" />
+          <ScalarProperty Name="Student_psis_id" ColumnName="Student_psis_id" />
+          <ScalarProperty Name="Student_idcard" ColumnName="Student_idcard" />
+          <ScalarProperty Name="Student_birthday" ColumnName="Student_birthday" />
+          <ScalarProperty Name="Student_lname" ColumnName="Student_lname" />
+          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+          <ScalarProperty Name="Student_title" ColumnName="Student_title" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Staff" ColumnName="Staff" />
+          <ScalarProperty Name="YearEdu" ColumnName="YearEdu" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Score1" ColumnName="Score1" />
+          <ScalarProperty Name="EnrollStudentCouseId" ColumnName="EnrollStudentCouseId" />
+          <ScalarProperty Name="CourseStatus" ColumnName="CourseStatus" />
+          <ScalarProperty Name="CourseType" ColumnName="CourseType" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="CouseId" ColumnName="CouseId" />
+          <ScalarProperty Name="CouseExcel" ColumnName="CouseExcel" />
+          <ScalarProperty Name="EnrollCouseID" ColumnName="EnrollCouseID" />
+          <ScalarProperty Name="semester__" ColumnName="semester&#xD;&#xA;" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="CouseWeight__" ColumnName="CouseWeight&#xD;&#xA;" />
+          <ScalarProperty Name="CouseTime" ColumnName="CouseTime" />
+          <ScalarProperty Name="DepartId" ColumnName="DepartId" />
+          <ScalarProperty Name="CouseTxtId" ColumnName="CouseTxtId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewEmpPos">
+      <EntityTypeMapping TypeName="santisartModel2.ViewEmpPos">
+        <MappingFragment StoreEntitySet="ViewEmpPos">
+          <ScalarProperty Name="PosId" ColumnName="PosId" />
+          <ScalarProperty Name="PosLevel" ColumnName="PosLevel" />
+          <ScalarProperty Name="PosName" ColumnName="PosName" />
+          <ScalarProperty Name="EnrEmpPosTimestamp" ColumnName="EnrEmpPosTimestamp" />
+          <ScalarProperty Name="EnrEmpPosStatus" ColumnName="EnrEmpPosStatus" />
+          <ScalarProperty Name="EnrEmpPosId" ColumnName="EnrEmpPosId" />
+          <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="Empbank_id" ColumnName="Empbank_id" />
+          <ScalarProperty Name="EmpTelephone" ColumnName="EmpTelephone" />
+          <ScalarProperty Name="EmpTimestamp" ColumnName="EmpTimestamp" />
+          <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
+          <ScalarProperty Name="EmpPsis_id" ColumnName="EmpPsis_id" />
+          <ScalarProperty Name="EmpIdcard" ColumnName="EmpIdcard" />
+          <ScalarProperty Name="EmpBirthday" ColumnName="EmpBirthday" />
+          <ScalarProperty Name="EmpLname" ColumnName="EmpLname" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmpTitle" ColumnName="EmpTitle" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

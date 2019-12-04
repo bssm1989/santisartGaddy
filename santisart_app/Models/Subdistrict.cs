@@ -29,7 +29,6 @@ namespace santisart_app.Models
         public int DistrictId { get; set; }
         public Nullable<int> ZipCode { get; set; }
     
-        public virtual District District { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<enrolladdress> enrolladdresses { get; set; }
     }

@@ -31,7 +31,7 @@
     </Key>
     <Property Name="Class_id" Type="int" Nullable="false" />
     <Property Name="Status_class" Type="int" />
-    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
     <Property Name="Teacher_id" Type="int" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
@@ -439,6 +439,51 @@
     <Property Name="Student_status" Type="varchar" MaxLength="25" />
     <Property Name="Student_timestamp" Type="datetime" />
   </EntityType>
+  <EntityType Name="studentsData">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idcard" Type="nvarchar" MaxLength="50" />
+    <Property Name="idstudent" Type="nvarchar" MaxLength="50" />
+    <Property Name="classroom" Type="nvarchar" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="birthday" Type="nvarchar" MaxLength="50" />
+    <Property Name="sex" Type="nvarchar" MaxLength="50" />
+    <Property Name="nation" Type="nvarchar" MaxLength="50" />
+    <Property Name="region" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="timeSave" Type="nvarchar" MaxLength="50" />
+    <Property Name="offam" Type="nvarchar" MaxLength="50" />
+    <Property Name="codeaddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="numaddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="groupAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="soi" Type="nvarchar" MaxLength="50" />
+    <Property Name="road" Type="nvarchar" MaxLength="50" />
+    <Property Name="tambol" Type="nvarchar" MaxLength="50" />
+    <Property Name="ampher" Type="nvarchar" MaxLength="50" />
+    <Property Name="province" Type="nvarchar" MaxLength="50" />
+    <Property Name="posscode" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="firstTimeClassroom" Type="nvarchar" MaxLength="50" />
+    <Property Name="idcardFather" Type="nvarchar" MaxLength="50" />
+    <Property Name="titleFather" Type="nvarchar" MaxLength="50" />
+    <Property Name="nameFather" Type="nvarchar" MaxLength="50" />
+    <Property Name="statusFather" Type="nvarchar" MaxLength="50" />
+    <Property Name="nationFather" Type="nvarchar" MaxLength="50" />
+    <Property Name="idcardMother" Type="nvarchar" MaxLength="50" />
+    <Property Name="titleMother" Type="nvarchar" MaxLength="50" />
+    <Property Name="nameMother" Type="nvarchar" MaxLength="50" />
+    <Property Name="statusMother" Type="nvarchar" MaxLength="50" />
+    <Property Name="nationMother" Type="nvarchar" MaxLength="50" />
+    <Property Name="idcardPoten" Type="nvarchar" MaxLength="50" />
+    <Property Name="titlePoten" Type="nvarchar" MaxLength="50" />
+    <Property Name="namePoten" Type="nvarchar" MaxLength="50" />
+    <Property Name="statusPoten" Type="nvarchar" MaxLength="50" />
+    <Property Name="nationPoten" Type="nvarchar" MaxLength="50" />
+    <Property Name="relationPoten" Type="nvarchar" MaxLength="50" />
+    <Property Name="r15" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Subdistricts">
     <Key>
       <PropertyRef Name="Sub_id" />
@@ -472,15 +517,15 @@
     <Property Name="EndDate" Type="date" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'santisart.santisart._enrollattstudent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ph16923171543_.santisart._enrollattstudent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="_enrollattstudent">
     <Key>
       <PropertyRef Name="Student_id" />
     </Key>
     <Property Name="Student_id" Type="int" Nullable="false" />
     <Property Name="Student_title" Type="varchar" MaxLength="10" />
-    <Property Name="Student_name" Type="varchar" MaxLength="100" />
-    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="nvarchar" MaxLength="100" />
     <Property Name="att_id" Type="int" />
     <Property Name="Staff_id" Type="int" />
     <Property Name="qira_id" Type="int" />
@@ -488,7 +533,7 @@ warning 6002: The table/view 'santisart.santisart._enrollattstudent' does not ha
     <Property Name="attday_id" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'santisart.santisart.EnrollStudentAttdance' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ph16923171543_.santisart.EnrollStudentAttdance' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="EnrollStudentAttdance">
     <Key>
       <PropertyRef Name="att_id" />
@@ -499,10 +544,10 @@ warning 6002: The table/view 'santisart.santisart.EnrollStudentAttdance' does no
     <Property Name="Staff_id" Type="int" />
     <Property Name="Student_id" Type="int" />
     <Property Name="Student_title" Type="varchar" MaxLength="10" />
-    <Property Name="Student_name" Type="varchar" MaxLength="100" />
-    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="nvarchar" MaxLength="100" />
     <Property Name="Student_timestamp" Type="datetime" />
-    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
     <Property Name="Teacher_id" Type="int" />
@@ -511,7 +556,7 @@ warning 6002: The table/view 'santisart.santisart.EnrollStudentAttdance' does no
     <Property Name="attday_date" Type="date" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'santisart.santisart.student2561' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ph16923171543_.santisart.student2561' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="student2561">
     <Key>
       <PropertyRef Name="Student_id" />
@@ -519,21 +564,21 @@ warning 6002: The table/view 'santisart.santisart.student2561' does not have a p
     </Key>
     <Property Name="Student_id" Type="int" Nullable="false" />
     <Property Name="Student_title" Type="varchar" MaxLength="10" />
-    <Property Name="Student_name" Type="varchar" MaxLength="100" />
-    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="nvarchar" MaxLength="100" />
     <Property Name="Student_birthday" Type="datetime" />
     <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
     <Property Name="Student_psis_id" Type="int" />
     <Property Name="Student_status" Type="varchar" MaxLength="25" />
     <Property Name="Student_timestamp" Type="datetime" />
-    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
     <Property Name="Teacher_id" Type="int" />
     <Property Name="Class_id" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'santisart.santisart.student2561_copy1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ph16923171543_.santisart.student2561_copy1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="student2561_copy1">
     <Key>
       <PropertyRef Name="Student_id" />
@@ -541,21 +586,21 @@ warning 6002: The table/view 'santisart.santisart.student2561_copy1' does not ha
     </Key>
     <Property Name="Student_id" Type="int" Nullable="false" />
     <Property Name="Student_title" Type="varchar" MaxLength="10" />
-    <Property Name="Student_name" Type="varchar" MaxLength="100" />
-    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="nvarchar" MaxLength="100" />
     <Property Name="Student_birthday" Type="datetime" />
     <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
     <Property Name="Student_psis_id" Type="int" />
     <Property Name="Student_status" Type="varchar" MaxLength="25" />
     <Property Name="Student_timestamp" Type="datetime" />
-    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
     <Property Name="Teacher_id" Type="int" />
     <Property Name="Class_id" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'santisart.santisart.student2561_food' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ph16923171543_.santisart.student2561_food' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="student2561_food">
     <Key>
       <PropertyRef Name="Student_id" />
@@ -563,21 +608,21 @@ warning 6002: The table/view 'santisart.santisart.student2561_food' does not hav
     </Key>
     <Property Name="Student_id" Type="int" Nullable="false" />
     <Property Name="Student_title" Type="varchar" MaxLength="10" />
-    <Property Name="Student_name" Type="varchar" MaxLength="100" />
-    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="nvarchar" MaxLength="100" />
     <Property Name="Student_birthday" Type="datetime" />
     <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
     <Property Name="Student_psis_id" Type="int" />
     <Property Name="Student_status" Type="varchar" MaxLength="25" />
     <Property Name="Student_timestamp" Type="datetime" />
-    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
     <Property Name="Teacher_id" Type="int" />
     <Property Name="Class_id" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'santisart.santisart.studentEduContest2561' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ph16923171543_.santisart.studentEduContest2561' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="studentEduContest2561">
     <Key>
       <PropertyRef Name="Student_id" />
@@ -587,9 +632,9 @@ warning 6002: The table/view 'santisart.santisart.studentEduContest2561' does no
     </Key>
     <Property Name="Student_id" Type="int" Nullable="false" />
     <Property Name="Student_title" Type="varchar" MaxLength="10" />
-    <Property Name="Student_name" Type="varchar" MaxLength="100" />
-    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
-    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
+    <Property Name="Student_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
     <Property Name="Teacher_id" Type="int" />
@@ -604,7 +649,7 @@ warning 6002: The table/view 'santisart.santisart.studentEduContest2561' does no
     <Property Name="result" Type="varchar" MaxLength="255" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'santisart.santisart.View_Couse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ph16923171543_.santisart.View_Couse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="View_Couse">
     <Key>
       <PropertyRef Name="EnrollCouseID" />
@@ -634,8 +679,8 @@ warning 6002: The table/view 'santisart.santisart.View_Couse' does not have a pr
     <Property Name="Staff" Type="int" />
     <Property Name="Semester" Type="int" />
     <Property Name="Student_title" Type="varchar" MaxLength="10" />
-    <Property Name="Student_name" Type="varchar" MaxLength="100" />
-    <Property Name="Student_lname" Type="varchar" MaxLength="100" />
+    <Property Name="Student_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Student_lname" Type="nvarchar" MaxLength="100" />
     <Property Name="Student_birthday" Type="datetime" />
     <Property Name="Student_idcard" Type="varchar" MaxLength="13" />
     <Property Name="Student_psis_id" Type="int" />
@@ -662,7 +707,7 @@ warning 6002: The table/view 'santisart.santisart.View_Couse' does not have a pr
     <Property Name="CourseId" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="ViewEmpPos">
     <Key>
       <PropertyRef Name="EnrEmpPosId" />
@@ -682,7 +727,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
     <Property Name="EnrEmpPosId" Type="int" Nullable="false" />
     <Property Name="EnrEmpPosStatus" Type="int" />
     <Property Name="EnrEmpPosTimestamp" Type="datetime" />
-    <Property Name="PosName" Type="varchar" MaxLength="50" />
+    <Property Name="PosName" Type="nvarchar" MaxLength="50" />
     <Property Name="PosLevel" Type="int" />
     <Property Name="PosId" Type="int" />
   </EntityType>
@@ -779,18 +824,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
       </Principal>
       <Dependent Role="enrolladdress">
         <PropertyRef Name="DistrictId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Districts_Provinces">
-    <End Role="Provinces" Type="Self.Provinces" Multiplicity="1" />
-    <End Role="Districts" Type="Self.Districts" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Provinces">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Districts">
-        <PropertyRef Name="ProvinceId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1042,18 +1075,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Subdistricts_Districts2">
-    <End Role="Districts" Type="Self.Districts" Multiplicity="1" />
-    <End Role="Subdistricts" Type="Self.Subdistricts" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Districts">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Subdistricts">
-        <PropertyRef Name="DistrictId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="Fk_Year">
     <End Role="YearEdu" Type="Self.YearEdu" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -1132,6 +1153,7 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
     <EntitySet Name="RoomSession" EntityType="Self.RoomSession" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Students" EntityType="Self.Students" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Students_food" EntityType="Self.Students_food" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="studentsData" EntityType="Self.studentsData" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Subdistricts" EntityType="Self.Subdistricts" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="YearEdu" EntityType="Self.YearEdu" Schema="santisart" store:Type="Tables" />
@@ -1347,10 +1369,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
       <End Role="Districts" EntitySet="Districts" />
       <End Role="enrolladdress" EntitySet="enrolladdress" />
     </AssociationSet>
-    <AssociationSet Name="FK_Districts_Provinces" Association="Self.FK_Districts_Provinces">
-      <End Role="Provinces" EntitySet="Provinces" />
-      <End Role="Districts" EntitySet="Districts" />
-    </AssociationSet>
     <AssociationSet Name="Fk_emp" Association="Self.Fk_emp">
       <End Role="Employee" EntitySet="Employee" />
       <End Role="Enroll_RoomSession_Emp" EntitySet="Enroll_RoomSession_Emp" />
@@ -1422,10 +1440,6 @@ warning 6002: The table/view 'santisart.santisart.ViewEmpPos' does not have a pr
     <AssociationSet Name="fk_subdistrict" Association="Self.fk_subdistrict">
       <End Role="Subdistricts" EntitySet="Subdistricts" />
       <End Role="enrolladdress" EntitySet="enrolladdress" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Subdistricts_Districts2" Association="Self.FK_Subdistricts_Districts2">
-      <End Role="Districts" EntitySet="Districts" />
-      <End Role="Subdistricts" EntitySet="Subdistricts" />
     </AssociationSet>
     <AssociationSet Name="Fk_Year" Association="Self.Fk_Year">
       <End Role="YearEdu" EntitySet="YearEdu" />
