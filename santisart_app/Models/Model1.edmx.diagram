@@ -23,12 +23,9 @@
         <EntityTypeShape EntityType="santisartModel2.Enroll_student_class" Width="1.5" PointX="3" PointY="6.375" />
         <EntityTypeShape EntityType="santisartModel2.enrolladdress" Width="1.5" PointX="3" PointY="14.25" />
         <EntityTypeShape EntityType="santisartModel2.EnrollClass" Width="1.5" PointX="0.75" PointY="5.125" />
-        <EntityTypeShape EntityType="santisartModel2.EnrollCouse" Width="1.5" PointX="1.5" PointY="28.875" />
-        <EntityTypeShape EntityType="santisartModel2.EnrollEmpCouse" Width="1.5" PointX="0.75" PointY="24.875" />
-        <EntityTypeShape EntityType="santisartModel2.EnrollEmpCouseClass" Width="1.5" PointX="3" PointY="25" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollEmpCouseClass" Width="1.5" PointX="4.125" PointY="24.5" />
         <EntityTypeShape EntityType="santisartModel2.EnrollFamilyStudent" Width="1.5" PointX="3" PointY="10.125" />
         <EntityTypeShape EntityType="santisartModel2.EnrollFinishStudent" Width="1.5" PointX="6" PointY="9" />
-        <EntityTypeShape EntityType="santisartModel2.EnrollStudentCouse" Width="1.5" PointX="5.25" PointY="3.125" />
         <EntityTypeShape EntityType="santisartModel2.EnrollYearSemester" Width="1.5" PointX="1.5" PointY="21.125" />
         <EntityTypeShape EntityType="santisartModel2.Family" Width="1.5" PointX="0.75" PointY="15.375" />
         <EntityTypeShape EntityType="santisartModel2.FinishType" Width="1.5" PointX="3.75" PointY="19.625" />
@@ -45,31 +42,21 @@
         <EntityTypeShape EntityType="santisartModel2.UserProfile" Width="1.5" PointX="8.75" PointY="14.75" />
         <EntityTypeShape EntityType="santisartModel2.YearEdu" Width="1.5" PointX="1.5" PointY="45.25" />
         <AssociationConnector Association="santisartModel2.C__fk_class" />
-        <AssociationConnector Association="santisartModel2.FK_class1" />
-        <AssociationConnector Association="santisartModel2.Fk_couse1" />
-        <AssociationConnector Association="santisartModel2.FK_depart1" />
         <AssociationConnector Association="santisartModel2.fk_district" />
         <AssociationConnector Association="santisartModel2.Fk_emp" />
         <AssociationConnector Association="santisartModel2.Fk_emp_enr" />
-        <AssociationConnector Association="santisartModel2.Fk_emp2" />
         <AssociationConnector Association="santisartModel2.Fk_enr_pos" />
         <AssociationConnector Association="santisartModel2.Fk_room" />
         <AssociationConnector Association="santisartModel2.fk_class" />
-        <AssociationConnector Association="santisartModel2.Fk_enrollStudent" />
         <AssociationConnector Association="santisartModel2.Fk_student2" />
         <AssociationConnector Association="santisartModel2.fk_province" />
         <AssociationConnector Association="santisartModel2.fk_student_address" />
         <AssociationConnector Association="santisartModel2.fk_subdistrict" />
         <AssociationConnector Association="santisartModel2.Fk_EnClass" />
-        <AssociationConnector Association="santisartModel2.Fk_couse2" />
-        <AssociationConnector Association="santisartModel2.Fk_EmpCouse" />
-        <AssociationConnector Association="santisartModel2.Fk_year2" />
-        <AssociationConnector Association="santisartModel2.Fk_EmpCouseClass" />
         <AssociationConnector Association="santisartModel2.Fk_enroll_Studnet" />
         <AssociationConnector Association="santisartModel2.fk_fam" />
         <AssociationConnector Association="santisartModel2.Fk_finsh_form" />
         <AssociationConnector Association="santisartModel2.Fk_stud" />
-        <AssociationConnector Association="santisartModel2.Fk_yearSem" />
         <AssociationConnector Association="santisartModel2.Fk_Year" />
         <AssociationConnector Association="santisartModel2.Fk_pos_fam" />
         <EntityTypeShape EntityType="santisartModel2.C_enrollattstudent" Width="1.5" PointX="5.375" PointY="15.75" />
@@ -80,6 +67,25 @@
         <EntityTypeShape EntityType="santisartModel2.studentEduContest2561" Width="1.5" PointX="17.375" PointY="5.75" />
         <EntityTypeShape EntityType="santisartModel2.View_Couse" Width="1.5" PointX="7.375" PointY="17.75" />
         <EntityTypeShape EntityType="santisartModel2.ViewEmpPos" Width="1.5" PointX="17.375" PointY="11.75" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollCouse" Width="1.5" PointX="17.875" PointY="22.125" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollStudentCouse" Width="1.5" PointX="10.25" PointY="21.5" />
+        <AssociationConnector Association="santisartModel2.FK_class1" />
+        <AssociationConnector Association="santisartModel2.Fk_couse1" />
+        <AssociationConnector Association="santisartModel2.FK_depart1" />
+        <AssociationConnector Association="santisartModel2.Fk_enrollStudent" />
+        <AssociationConnector Association="santisartModel2.Fk_couse" />
+        <AssociationConnector Association="santisartModel2.Fk_EmpCouseClass" ManuallyRouted="true" >
+          <ConnectorPoint PointX="5.5018048855893893" PointY="27.057190755208335" />
+          <ConnectorPoint PointX="5.5018048855893893" PointY="28.626075690122114" />
+          <ConnectorPoint PointX="11.436939172151144" PointY="28.626075690122114" />
+          <ConnectorPoint PointX="11.436939172151144" PointY="26.557109375000003" />
+        </AssociationConnector>
+        <AssociationConnector Association="santisartModel2.Fk_yearSem" />
+        <EntityTypeShape EntityType="santisartModel2.EnrollEmpCouse" Width="1.5" PointX="20.125" PointY="31.375" />
+        <AssociationConnector Association="santisartModel2.Fk_emp2" />
+        <AssociationConnector Association="santisartModel2.couseId" />
+        <AssociationConnector Association="santisartModel2.Fk_EmpCouse" />
+        <AssociationConnector Association="santisartModel2.Fk_year2" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

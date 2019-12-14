@@ -17,8 +17,13 @@ namespace santisart_app.Controllers
         // GET: EnrollFinishStudents
         public ActionResult Index()
         {
-            var enrollFinishStudent = db.EnrollFinishStudents.Include(e => e.Student).Include(e => e.FinishType);
-            return View(enrollFinishStudent.ToList());
+            var enrollFinishStudent = db.EnrollFinishStudents.Include(e => e.Student).Include(e => e.FinishType).ToList();
+            return View(enrollFinishStudent);
+        }
+        public ActionResult Index2()
+        {
+            var enrollFinishStudent = db.EnrollFinishStudents.Include(e => e.Student).Include(e => e.FinishType).ToList();
+            return View(enrollFinishStudent);
         }
 
         // GET: EnrollFinishStudents/Details/5

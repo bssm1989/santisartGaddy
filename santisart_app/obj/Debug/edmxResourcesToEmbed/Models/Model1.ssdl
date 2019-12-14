@@ -745,6 +745,20 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="couseId">
+    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollEmpCouse" Type="Self.EnrollEmpCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollCouse">
+        <PropertyRef Name="EnrollCouseID" />
+      </Principal>
+      <Dependent Role="EnrollEmpCouse">
+        <PropertyRef Name="EnCouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_class">
     <End Role="EnrollClass" Type="Self.EnrollClass" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -771,6 +785,20 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Fk_couse">
+    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollCouse">
+        <PropertyRef Name="EnrollCouseID" />
+      </Principal>
+      <Dependent Role="EnrollStudentCouse">
+        <PropertyRef Name="EnrollCouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Fk_couse1">
     <End Role="Course" Type="Self.Course" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -782,20 +810,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Principal>
       <Dependent Role="EnrollCouse">
         <PropertyRef Name="CouseId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Fk_couse2">
-    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="EnrollEmpCouse" Type="Self.EnrollEmpCouse" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EnrollCouse">
-        <PropertyRef Name="EnrollCouseID" />
-      </Principal>
-      <Dependent Role="EnrollEmpCouse">
-        <PropertyRef Name="EnCouseId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1345,6 +1359,10 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       <End Role="ClassInSchool" EntitySet="ClassInSchool" />
       <End Role="EnrollClass" EntitySet="EnrollClass" />
     </AssociationSet>
+    <AssociationSet Name="couseId" Association="Self.couseId">
+      <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+      <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouse" />
+    </AssociationSet>
     <AssociationSet Name="fk_class" Association="Self.fk_class">
       <End Role="EnrollClass" EntitySet="EnrollClass" />
       <End Role="Enroll_student_class" EntitySet="Enroll_student_class" />
@@ -1353,13 +1371,13 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       <End Role="ClassInSchool" EntitySet="ClassInSchool" />
       <End Role="EnrollCouse" EntitySet="EnrollCouse" />
     </AssociationSet>
+    <AssociationSet Name="Fk_couse" Association="Self.Fk_couse">
+      <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+      <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
+    </AssociationSet>
     <AssociationSet Name="Fk_couse1" Association="Self.Fk_couse1">
       <End Role="Course" EntitySet="Course" />
       <End Role="EnrollCouse" EntitySet="EnrollCouse" />
-    </AssociationSet>
-    <AssociationSet Name="Fk_couse2" Association="Self.Fk_couse2">
-      <End Role="EnrollCouse" EntitySet="EnrollCouse" />
-      <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouse" />
     </AssociationSet>
     <AssociationSet Name="FK_depart1" Association="Self.FK_depart1">
       <End Role="Department" EntitySet="Department" />

@@ -27,8 +27,8 @@ namespace santisart_app.Models
         public Nullable<int> Status { get; set; }
     
         public virtual EnrollClass EnrollClass { get; set; }
-        public virtual EnrollEmpCouse EnrollEmpCouse { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EnrollStudentCouse> EnrollStudentCouses { get; set; }
+        public virtual EnrollEmpCouse EnrollEmpCouse { get; set; }
     }
 }

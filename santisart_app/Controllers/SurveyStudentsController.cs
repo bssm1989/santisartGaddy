@@ -219,7 +219,7 @@ namespace santisart_app.Controllers
            
         public ActionResult listStudentFamAdd()
         {
-            var listEnrolladdress = db.enrolladdresses.Where(x => x.Active == 1).OrderByDescending(x=>x.timestamp).Take(10);
+            var listEnrolladdress = db.enrolladdresses.Where(x => x.Active == 1).OrderByDescending(x => x.timestamp);//.Take(10);
             var surveyStudentList = new List<surveyList>();
 
             foreach (var item in listEnrolladdress)

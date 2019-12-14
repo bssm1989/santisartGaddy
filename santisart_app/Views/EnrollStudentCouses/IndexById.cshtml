@@ -1,41 +1,55 @@
-﻿@model IEnumerable<santisart_app.Models.EnrollStudentCouses>
-@using System.Linq
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
-<div id="vue-app">
-    {{message}}
-</div>
-<script src="~/Content/ScripJs/vue-app.js"></script>
-<div class="right" role="main">
-    @*<h2>@Model.First().Enroll_student_class.Students.Student_title @Model.First().Enroll_student_class.Students.Student_name @Model.First().Enroll_student_class.Students.Student_lname</h2>*@
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    @{
-        //var listScore = ;
-        //var listScore2 = ;
-        //ViewBag.studentCouse;
-        int[] enrollClass = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
-        //Model.Where(x => x.EnrollCouses.ClassesId == 13);
-        //foreach (var item in Model.Where(x=>x.EnrollCouses.ClassesId==13).toList())
-        //{
-        //foreach (var item2 in)
-        //{
+﻿
 
-        //}
-        ////}
-    }
-    @foreach (var itemClass in enrollClass)
-    {
-        //var itemCouseByClass = Model.Where(x => x.EnrollCouses.ClassesId == itemClass);
-        if (Model.Where(x => x.EnrollCouses.ClassesId == itemClass).Count() != 0)
+@*@model IEnumerable< santisart_app.Models.EnrollStudentCouse>*@
+@model List<IGrouping<int?, santisart_app.Models.EnrollStudentCouse>>
+    <div class="right" role="main">
+        @*<h2>@Model.First().Enroll_student_class.Students.Student_title @Model.First().Enroll_student_class.Students.Student_name @Model.First().Enroll_student_class.Students.Student_lname</h2>*@
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        @{
+            //var listScore = ;
+            //var listScore2 = ;
+            //ViewBag.studentCouse;
+            int[] enrollClass = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
+            //Model.Where(x => x.EnrollCouses.ClassesId == 13);
+            //foreach (var item in Model.Where(x=>x.EnrollCouses.ClassesId==13).toList())
+            //{
+            //foreach (var item2 in)
+            //{
+
+            //}
+            ////}
+        }
+        @*  @foreach (var item in enrollClass)
         {
-            for (int i = 1; i < 3; i++)
+           @ViewBag.studentCouse;
+            IEnumerable<dynamic>  listTest = ViewBag.studentCouse;
+            //var temp3=listTest.Where(x => x.Enroll_student_class.EnrollEmpCouse.EnrollCouse.ClassId == 1).ToList();
+            var temp3=ViewBag.ClassId;
+            foreach (var item2 in listTest)
+            {
+                var temp1 = item2.Enroll_student_class;
+                var temp2 = temp1;
+            }
+           //@Model.Where(x => x.EnrollStudentClassId == 1)
+          //  Model.Where(x => x.EnEmpCouseClassId)
+        }*@
+        @foreach (var itemClass in Model)
+        {
+
+
+            ////var itemCouseByClass = Model.Where(x => x.EnrollCouses.ClassesId == itemClass);
+
+            //if (Model.Where(x => x.ClassesId == itemClass).Count() != 0)
+
+            foreach (var item in itemClass.GroupBy(x => x.Semester))
             {
                 <div class="row">
                     <div class="col-md-12 col-sm-6 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>ปีการศึกษา @Model.Where(x => x.EnrollCouses.ClassesId == itemClass && x.Semester == i).First().YearEdu <small>เทรอม @i</small></h2>
+                                <h2>ปีการศึกษา  @itemClass[0]<small>เทอม </small></h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li>
                                         <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -63,50 +77,51 @@
 
 
                                         <th>
-                                            @Html.DisplayNameFor(model => model.EnrollCouses.CouseTxtId)
+                                            @*@Html.DisplayNameFor(model => model.First().EnrollCouse.CouseTxtId)*@
+                                            @*@Html.DisplayNameFor(model => model[0][0].FirstOrDefault().EnrollStudentCouses)*@
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.EnrollCouses.Course.CourseName)
+                                            @*@Html.DisplayNameFor(model => model.First().EnrollCouse.Course.CourseName)*@
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.Score)
+                                            @*@Html.DisplayNameFor(model => model.First().Score1)*@
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.Grade)
+                                            @*@Html.DisplayNameFor(model => model.First().Grade)*@
                                         </th>
 
                                         <th>
-                                            @Html.DisplayNameFor(model => model.Staff)
+                                            @*@Html.DisplayNameFor(model => model.First().Staff)*@
                                         </th>
                                         <th></th>
                                     </tr>
 
-                                    @foreach (var item in Model.Where(x => x.EnrollCouses.ClassesId == itemClass && x.Semester == i))
+                                    @*@foreach (var item in Model.Where(x => x.EnrollCouses.ClassesId == itemClass && x.Semester == i))*@
+                                    @foreach (var row in item)
                                     {
+                                        //if (item.ClassId == itemClass)
+                                        //{
+
                                         <tr>
 
 
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.EnrollCouses.CouseTxtId)
+                                                @Html.DisplayFor(modelItem => row.EnrollCouse.CouseTxtId)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.EnrollCouses.Course.CourseName)
+                                                @Html.DisplayFor(modelItem => row.EnrollCouse.Course.CourseName)
+                                            <td>
+                                                @Html.DisplayFor(modelItem => row.Score1)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.Score)
+                                                @Html.DisplayFor(modelItem => row.Grade)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.Grade)
+                                                @Html.DisplayFor(modelItem => row.Staff)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.Staff)
-                                            </td>
-                                            <td>
-                                                @Html.ActionLink("Edit", "Edit", new { id = item.EnrollStudentCouseId }) |
-                                                @Html.ActionLink("Details", "Details", new { id = item.EnrollStudentCouseId }) |
-                                                @Html.ActionLink("Delete", "Delete", new { id = item.EnrollStudentCouseId })
-                                            </td>
                                         </tr>
+                                        @*}*@
                                     }
 
                                 </table>
@@ -117,9 +132,18 @@
                 </div>
             }
 
+
+
+
+
+
+            //}
+
+
         }
 
-
-    }
-
-</div>
+    </div>
+                                            @*@Html.ActionLink("Edit", "Edit", new { id = item.EnrollStudentCouseId }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.EnrollStudentCouseId }) |
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.EnrollStudentCouseId })*@
+                                        </td>
