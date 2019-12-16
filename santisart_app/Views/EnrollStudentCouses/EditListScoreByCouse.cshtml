@@ -1,21 +1,21 @@
 ﻿@model IEnumerable<santisart_app.Models.EnrollStudentCouses>
 @{int indexList = 0; }
 <p>
-    <b>วิชา : </b>@Model.First().EnrollEmpCouseClasses.EnrollEmpCouses.EnrollCouses.Course.CourseName
+    <b>วิชา : </b>@Model.First().EnrollEmpCouseClasses.EnrollEmpCouse.EnrollCouses.Course.CourseName
 </p>
 <p>
-    <b>ครูผู้สอน : </b>@Model.First().EnrollEmpCouseClasses.EnrollEmpCouses.Employees.EmpTitle
-    @Model.First().EnrollEmpCouseClasses.EnrollEmpCouses.Employees.EmpName
-    @Model.First().EnrollEmpCouseClasses.EnrollEmpCouses.Employees.EmpLname
+    <b>ครูผู้สอน : </b>@Model.First().EnrollEmpCouseClasses.EnrollEmpCouse.Employees.EmpTitle
+    @Model.First().EnrollEmpCouseClasses.EnrollEmpCouse.Employees.EmpName
+    @Model.First().EnrollEmpCouseClasses.EnrollEmpCouse.Employees.EmpLname
 </p>
 <p>
-    <b>ชั้นเรียน : </b>@Model.First().Enroll_student_class.EnrollClass.ClassesInSchool.ClassesShortName/@Model.First().Enroll_student_class.EnrollClass.Classes_room
+    <b>ชั้นเรียน : </b>@Model.First().Enroll_student_class.EnrollClass.ClassInSchool.ClassShortName/@Model.First().Enroll_student_class.EnrollClass.Class_room
 </p>
 <p>
-    <b>ปีการศึกษา : </b>@Model.First().EnrollEmpCouseClasses.EnrollEmpCouses.EnrollYearSemesters.YearEdu.yearName
+    <b>ปีการศึกษา : </b>@Model.First().EnrollEmpCouseClasses.EnrollEmpCouse.EnrollYearSemesters.YearEdu.yearName
 </p>
 <p>
-    <b>เทอม : </b>@Model.First().EnrollEmpCouseClasses.EnrollEmpCouses.EnrollYearSemesters.Semester
+    <b>เทอม : </b>@Model.First().EnrollEmpCouseClasses.EnrollEmpCouse.EnrollYearSemesters.Semester
 </p>
 @using (Html.BeginForm())
 {
