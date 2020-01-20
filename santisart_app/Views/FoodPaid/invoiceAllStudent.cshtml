@@ -62,7 +62,7 @@
                     }
         </style>
 </header>
-@for (int i = 0; i < ViewBag.TotalStudents.detailStudent.Count; i++)
+@for (int i = 0; i < ViewBag.TotalStudent.detailStudent.Count; i++)
 {
     //var imagePath = Microsoft.AspNetCore.Server.HttpSys.("~/images/logo-1.jpg");
 
@@ -109,18 +109,18 @@
                     <table style="height: 6px; width: 789px; font-size: 20px;" cellspacing="0" cellpadding="0">
                         <thead>
                             <tr>
-                                <td style="width: 231px;">ชื่อ-สกุล   @ViewBag.TotalStudents.detailStudent[i].Student_name  @ViewBag.TotalStudents.detailStudent[i].Student_lname&nbsp;</td>
-                                <td style="width: 348px;">เลขที่บัตรประชาชน  @ViewBag.TotalStudents.detailStudent[i].Student_idcard   </td>
-                                <td style="width: 188px;">รหัสประจำตัว  @ViewBag.TotalStudents.detailStudent[i].Student_psis_id</td>
+                                <td style="width: 231px;">ชื่อ-สกุล   @ViewBag.TotalStudent.detailStudent[i].Student_name  @ViewBag.TotalStudent.detailStudent[i].Student_lname&nbsp;</td>
+                                <td style="width: 348px;">เลขที่บัตรประชาชน  @ViewBag.TotalStudent.detailStudent[i].Student_idcard   </td>
+                                <td style="width: 188px;">รหัสประจำตัว  @ViewBag.TotalStudent.detailStudent[i].Student_psis_id</td>
                             </tr>
                         </thead>
                     </table>
                     <table style="height: 6px; width: 789px; font-size: 20px;" cellspacing="0" cellpadding="0">
                         <thead>
                             <tr>
-                                <td style="width: 231px;">ปีการศึกษา&nbsp;  @ViewBag.TotalStudents.detailStudent[i].Class_year_index</td>
+                                <td style="width: 231px;">ปีการศึกษา&nbsp;  @ViewBag.TotalStudent.detailStudent[i].Class_year_index</td>
                                 <td style="width: 348px;">ภาคเรียนที่ 2</td>
-                                <td style="width: 188px;">ชั้น  @ViewBag.TotalStudents.detailStudent[i].Classes_name_id</td>
+                                <td style="width: 188px;">ชั้น  @ViewBag.TotalStudent.detailStudent[i].Classes_name_id</td>
                             </tr>
                         </thead>
                     </table>
@@ -141,7 +141,7 @@
             </tr>
             @{
                 int index = 1;
-                foreach (var items in ViewBag.TotalStudents.studentInvoise[i])
+                foreach (var items in ViewBag.TotalStudent.studentInvoise[i])
                 {
                     var sub = items.Month_course - items.totalPaid;
 
@@ -160,7 +160,7 @@
 
             <tr style="height: 18px;">
                 <td style="width: 868px; height: 18px; text-align: right; padding-left: 60px;" colspan="3">รวม&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-                <td style="width: 123px; height: 18px; text-align: center;">@Convert.ToDecimal(((IEnumerable<dynamic>)ViewBag.TotalStudents.studentInvoise[i]).Sum(x => x.Month_course - x.totalPaid)).ToString("#,##0.00") </td>
+                <td style="width: 123px; height: 18px; text-align: center;">@Convert.ToDecimal(((IEnumerable<dynamic>)ViewBag.TotalStudent.studentInvoise[i]).Sum(x => x.Month_course - x.totalPaid)).ToString("#,##0.00") </td>
             </tr>
         </tbody>
     </table>

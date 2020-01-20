@@ -324,7 +324,7 @@ namespace santisart_app.Controllers
             var ps = await (from p in db.Students orderby p.Student_id select p).ToListAsync();
             var ps2 = await (from en in db.Enroll_student_class
                              join cl in db.Classes on en.Class_id equals cl.Class_id
-                             where cl.Class_year_index == 2561
+                             where cl.Class_year_index == 2562
                              select new { cl, en.Student_id } into intermediate
                              join st in db.student2561_food on intermediate.Student_id equals st.Student_id
 

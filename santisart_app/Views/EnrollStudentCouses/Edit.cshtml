@@ -1,4 +1,4 @@
-﻿@model santisart_app.Models.EnrollStudentCouses
+﻿@model santisart_app.Models.EnrollStudentCouse
 
 @{
     ViewBag.Title = "Edit";
@@ -33,10 +33,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Score, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Score1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Score, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Score, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Score1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Score1, "", new { @class = "text-danger" })
             </div>
         </div>
 

@@ -60,15 +60,15 @@ namespace santisart_app.Controllers
             //    var att2 = att[0].TableA.attday_id;
 
             var attbyclass = db.EnrollStudentAttdances.Where(x => x.Class_id ==classId);
-            var studentbyclass = db.student2561.Where(x => x.Class_id == classId).ToList();
+            var studentbyclass = db.Enroll_student_class.Where(x => x.Class_id == classId).ToList();
             var attbymonth = db.attendance_day;
             List<SelectListItem> listClass = new List<SelectListItem>();
-            foreach (var item in db.Classes.Where(x=>x.Status_class==1))
+            foreach (var item in db.EnrollClasses.Where(x=>x.Status_class==1))
             {
                 listClass.Add(new SelectListItem
                 {
-                    Text = item.Class_name_id + "/" + item.Class_room,
-                    Value = item.Class_id.ToString()
+                    Text = item.ClassInSchool.ClassShortName + "/" + item.Class_room,
+                    Value = item.EnrollClass_id.ToString()
                 });
             }
 

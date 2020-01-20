@@ -17,31 +17,31 @@ namespace santisart_app.Controllers
         // GET: EnrollStudentCouses
         public ActionResult IndexById(int? id)
         {
-            List<indexByIdEnrollCouse> enrollStudentCouse =( from x in db.EnrollStudentCouses
-                                                            where x.studentId == id
-                                                            select new indexByIdEnrollCouse
-                                                            {
-                                                                studentId = x.studentId,
-                                                                EnrollCouseId = x.EnrollCouseId,
-                                                                Score1 = x.Score1,
-                                                                Grade = x.Grade,
-                                                                TeacerId = x.TeacerId,
-                                                                Timestamp = x.Timestamp,
-                                                                YearEdu = x.YearEdu,
-                                                                Staff = x.Staff,
-                                                                Semester = x.Semester,
-                                                                EnrollStudentClassId = x.EnrollStudentClassId,
-                                                                EnYearSemId = x.EnYearSemId,
-                                                                EnEmpCouseId = x.EnEmpCouseId,
-                                                                EnEmpCouseClassId = x.EnEmpCouseClassId,
-                                                                EnrollStudentCouseId = x.EnrollStudentCouseId,
-                                                                Score2 = x.Score2,
-                                                                Score3 = x.Score3,
-                                                                Status = x.Status,
-                                                                ClassId = x.EnrollCouse.ClassId,
-                                                                CouseTxtId=x.EnrollCouse.CouseTxtId,
-                                                                CourseName=x.EnrollCouse.Course.CourseName
-                                                            }).ToList();
+            //List<indexByIdEnrollCouse> enrollStudentCouse =( from x in db.EnrollStudentCouses
+            //                                                where x.studentId == id
+            //                                                select new indexByIdEnrollCouse
+            //                                                {
+            //                                                    studentId = x.studentId,
+            //                                                    EnrollCouseId = x.EnrollCouseId,
+            //                                                    Score1 = x.Score1,
+            //                                                    Grade = x.Grade,
+            //                                                    TeacerId = x.TeacerId,
+            //                                                    Timestamp = x.Timestamp,
+            //                                                    YearEdu = x.YearEdu,
+            //                                                    Staff = x.Staff,
+            //                                                    Semester = x.Semester,
+            //                                                    EnrollStudentClassId = x.EnrollStudentClassId,
+            //                                                    EnYearSemId = x.EnYearSemId,
+            //                                                    EnEmpCouseId = x.EnEmpCouseId,
+            //                                                    EnEmpCouseClassId = x.EnEmpCouseClassId,
+            //                                                    EnrollStudentCouseId = x.EnrollStudentCouseId,
+            //                                                    Score2 = x.Score2,
+            //                                                    Score3 = x.Score3,
+            //                                                    Status = x.Status,
+            //                                                    ClassId = x.EnrollCouse.ClassId,
+            //                                                    CouseTxtId=x.EnrollCouse.CouseTxtId,
+            //                                                    CourseName=x.EnrollCouse.Course.CourseName
+            //                                                }).ToList();
             var temp2 = db.EnrollStudentCouses.Where(x => x.studentId == id).GroupBy(x => x.EnrollCouse.ClassId).ToList();
 
             //var temp3 = db.EnrollCouses .Where(x => x.EnrollStudentCouses. == id).GroupBy(x => x.EnrollCouse).ToList();

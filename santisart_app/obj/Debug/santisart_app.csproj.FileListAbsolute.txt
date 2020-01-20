@@ -657,28 +657,7 @@ C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\santisart_ap
 C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\santisart_app.dll
 C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\santisart_app.pdb
 C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\santisart_app.csprojAssemblyReference.cache
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\Microsoft.Build.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\Microsoft.Build.Framework.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\System.Collections.Immutable.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\System.Threading.Tasks.Dataflow.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\cs\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\de\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\en\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\es\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\fr\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\it\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\ja\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\ko\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\pl\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\pt-BR\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\ru\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\tr\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\zh-Hans\Microsoft.Build.resources.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\zh-Hant\Microsoft.Build.resources.dll
 C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\System.Data.Linq.dll
-C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\bin\System.Xml.Linq.dll
 C:\Xamarin\santisart_app (1)\santisartGaddy\santisart_app\bin\santisart_app.dll.config
 C:\Xamarin\santisart_app (1)\santisartGaddy\santisart_app\bin\santisart_app.dll
 C:\Xamarin\santisart_app (1)\santisartGaddy\santisart_app\bin\santisart_app.pdb

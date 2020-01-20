@@ -133,7 +133,7 @@ namespace santisart_app.Controllers
                     Name = member.EmpName + " " + member.EmpLname
                 });
             List<object> newListYear = new List<object>();
-            foreach (var year in db.EnrollYearSemesters.Include(x=>x.YearEdu))
+            foreach (var year in db.EnrollYearSemesters)
                 newListYear.Add(new
                 {
                     Id = year.EnrollYearSemesterId,
