@@ -14,11 +14,21 @@ namespace santisart_app.Models
     
     public partial class ContestEducationSchool
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ContestEducationSchool()
+        {
+            this.Enroll_EduContest = new HashSet<Enroll_EduContest>();
+        }
+    
         public int TypeContest_id { get; set; }
         public string NameContest { get; set; }
         public Nullable<int> Staff_id { get; set; }
         public Nullable<System.DateTime> Timestamp { get; set; }
         public Nullable<int> group { get; set; }
         public Nullable<System.DateTime> Day_contest { get; set; }
+        public Nullable<int> year { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Enroll_EduContest> Enroll_EduContest { get; set; }
     }
 }

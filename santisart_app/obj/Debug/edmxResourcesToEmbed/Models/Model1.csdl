@@ -164,6 +164,14 @@
       <End Role="EnrollYearSemester" EntitySet="EnrollYearSemesters" />
       <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouses" />
     </AssociationSet>
+    <AssociationSet Name="fk_eduContest" Association="santisartModel2.fk_eduContest">
+      <End Role="ContestEducationSchool" EntitySet="ContestEducationSchools" />
+      <End Role="Enroll_EduContest" EntitySet="Enroll_EduContest" />
+    </AssociationSet>
+    <AssociationSet Name="fk_student" Association="santisartModel2.fk_student">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Enroll_EduContest" EntitySet="Enroll_EduContest" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="attendance">
     <Key>
@@ -221,6 +229,8 @@
     <Property Name="Timestamp" Type="DateTime" Precision="3" />
     <Property Name="group" Type="Int32" />
     <Property Name="Day_contest" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Enroll_EduContest" Relationship="santisartModel2.fk_eduContest" FromRole="ContestEducationSchool" ToRole="Enroll_EduContest" />
+    <Property Name="year" Type="Int32" />
   </EntityType>
   <EntityType Name="Course">
     <Key>
@@ -283,6 +293,8 @@
     <Property Name="Student_id" Type="Int32" />
     <Property Name="Timestamp__" Type="DateTime" Precision="3" />
     <Property Name="result" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ContestEducationSchool" Relationship="santisartModel2.fk_eduContest" FromRole="Enroll_EduContest" ToRole="ContestEducationSchool" />
+    <NavigationProperty Name="Student" Relationship="santisartModel2.fk_student" FromRole="Enroll_EduContest" ToRole="Student" />
   </EntityType>
   <EntityType Name="Enroll_Emp_Pos">
     <Key>
@@ -582,6 +594,7 @@
     <NavigationProperty Name="enrolladdresses" Relationship="santisartModel2.fk_student_address" FromRole="Student" ToRole="enrolladdress" />
     <NavigationProperty Name="EnrollFamilyStudents" Relationship="santisartModel2.Fk_enroll_Studnet" FromRole="Student" ToRole="EnrollFamilyStudent" />
     <NavigationProperty Name="EnrollFinishStudents" Relationship="santisartModel2.Fk_stud" FromRole="Student" ToRole="EnrollFinishStudent" />
+    <NavigationProperty Name="Enroll_EduContest" Relationship="santisartModel2.fk_student" FromRole="Student" ToRole="Enroll_EduContest" />
   </EntityType>
   <EntityType Name="Students_food">
     <Key>
@@ -1335,6 +1348,34 @@
       </Principal>
       <Dependent Role="EnrollEmpCouse">
         <PropertyRef Name="EnYearSemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_eduContest">
+    <End Type="santisartModel2.ContestEducationSchool" Role="ContestEducationSchool" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="santisartModel2.Enroll_EduContest" Role="Enroll_EduContest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContestEducationSchool">
+        <PropertyRef Name="TypeContest_id" />
+      </Principal>
+      <Dependent Role="Enroll_EduContest">
+        <PropertyRef Name="Type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_student">
+    <End Type="santisartModel2.Student" Role="Student" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="santisartModel2.Enroll_EduContest" Role="Enroll_EduContest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Student_id" />
+      </Principal>
+      <Dependent Role="Enroll_EduContest">
+        <PropertyRef Name="Student_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

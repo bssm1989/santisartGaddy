@@ -21,6 +21,7 @@ namespace santisart_app.Models
             this.enrolladdresses = new HashSet<enrolladdress>();
             this.EnrollFamilyStudents = new HashSet<EnrollFamilyStudent>();
             this.EnrollFinishStudents = new HashSet<EnrollFinishStudent>();
+            this.Enroll_EduContest = new HashSet<Enroll_EduContest>();
         }
     
         public int Student_id { get; set; }
@@ -47,5 +48,7 @@ namespace santisart_app.Models
         public virtual ICollection<EnrollFamilyStudent> EnrollFamilyStudents { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EnrollFinishStudent> EnrollFinishStudents { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Enroll_EduContest> Enroll_EduContest { get; set; }
     }
 }

@@ -86,6 +86,8 @@
         <AssociationConnector Association="santisartModel2.couseId" />
         <AssociationConnector Association="santisartModel2.Fk_EmpCouse" />
         <AssociationConnector Association="santisartModel2.Fk_year2" />
+        <AssociationConnector Association="santisartModel2.fk_eduContest" />
+        <AssociationConnector Association="santisartModel2.fk_student" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

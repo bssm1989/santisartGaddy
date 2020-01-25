@@ -13,8 +13,12 @@ namespace santisart_app.Controllers
         santisartEntities3 db = new santisartEntities3();
         public ActionResult Index()
         {
-
-            return View(db.studentEduContest2561.OrderBy(x=>x.TypeContest_id).ThenBy(x=>x.group).ThenBy(x=>x.result));
+            return View(db.Enroll_EduContest.OrderBy(x => x.ContestEducationSchool.TypeContest_id));
+            //return View(db.studentEduContest2561.OrderBy(x=>x.TypeContest_id).ThenBy(x=>x.group).ThenBy(x=>x.result));
+        } public ActionResult Index2()
+        {
+            return View(db.Enroll_EduContest.Where(x=>x.ContestEducationSchool.year==2562).OrderBy(x => x.ContestEducationSchool.TypeContest_id));
+            //return View(db.studentEduContest2561.OrderBy(x=>x.TypeContest_id).ThenBy(x=>x.group).ThenBy(x=>x.result));
         }
 
         // GET: eduContest/Details/5
@@ -25,6 +29,10 @@ namespace santisart_app.Controllers
 
         // GET: eduContest/Create
         public ActionResult Create()
+        {
+            return View();
+        }
+        public ActionResult Create2()
         {
             return View();
         }

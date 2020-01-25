@@ -4221,6 +4221,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\SurveyStudents\listStudentFamAdd.cshtml" />
     <Content Include="Views\EnrollFinishStudents\Index2.cshtml" />
+    <Content Include="Views\eduContest\index2.cshtml" />
+    <Content Include="Views\eduContest\Create2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

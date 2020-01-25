@@ -59,6 +59,7 @@
           <Property Name="Timestamp" Type="datetime" />
           <Property Name="group" Type="int" />
           <Property Name="Day_contest" Type="date" />
+          <Property Name="year" Type="int" />
         </EntityType>
         <EntityType Name="Course">
           <Key>
@@ -846,6 +847,20 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_eduContest">
+          <End Role="ContestEducationSchool" Type="Self.ContestEducationSchool" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Enroll_EduContest" Type="Self.Enroll_EduContest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContestEducationSchool">
+              <PropertyRef Name="TypeContest_id" />
+            </Principal>
+            <Dependent Role="Enroll_EduContest">
+              <PropertyRef Name="Type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="Fk_emp">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -1049,6 +1064,20 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
             </Principal>
             <Dependent Role="EnrollFinishStudent">
               <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_student">
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Enroll_EduContest" Type="Self.Enroll_EduContest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="Student_id" />
+            </Principal>
+            <Dependent Role="Enroll_EduContest">
+              <PropertyRef Name="Student_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1392,6 +1421,10 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
             <End Role="Districts" EntitySet="Districts" />
             <End Role="enrolladdress" EntitySet="enrolladdress" />
           </AssociationSet>
+          <AssociationSet Name="fk_eduContest" Association="Self.fk_eduContest">
+            <End Role="ContestEducationSchool" EntitySet="ContestEducationSchool" />
+            <End Role="Enroll_EduContest" EntitySet="Enroll_EduContest" />
+          </AssociationSet>
           <AssociationSet Name="Fk_emp" Association="Self.Fk_emp">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Enroll_RoomSession_Emp" EntitySet="Enroll_RoomSession_Emp" />
@@ -1451,6 +1484,10 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
           <AssociationSet Name="Fk_stud" Association="Self.Fk_stud">
             <End Role="Students" EntitySet="Students" />
             <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudent" />
+          </AssociationSet>
+          <AssociationSet Name="fk_student" Association="Self.fk_student">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Enroll_EduContest" EntitySet="Enroll_EduContest" />
           </AssociationSet>
           <AssociationSet Name="fk_student_address" Association="Self.fk_student_address">
             <End Role="Students" EntitySet="Students" />
@@ -1645,6 +1682,14 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
             <End Role="EnrollYearSemester" EntitySet="EnrollYearSemesters" />
             <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouses" />
           </AssociationSet>
+          <AssociationSet Name="fk_eduContest" Association="santisartModel2.fk_eduContest">
+            <End Role="ContestEducationSchool" EntitySet="ContestEducationSchools" />
+            <End Role="Enroll_EduContest" EntitySet="Enroll_EduContest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_student" Association="santisartModel2.fk_student">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Enroll_EduContest" EntitySet="Enroll_EduContest" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="attendance">
           <Key>
@@ -1702,6 +1747,8 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
           <Property Name="Timestamp" Type="DateTime" Precision="3" />
           <Property Name="group" Type="Int32" />
           <Property Name="Day_contest" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Enroll_EduContest" Relationship="santisartModel2.fk_eduContest" FromRole="ContestEducationSchool" ToRole="Enroll_EduContest" />
+          <Property Name="year" Type="Int32" />
         </EntityType>
         <EntityType Name="Course">
           <Key>
@@ -1764,6 +1811,8 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
           <Property Name="Student_id" Type="Int32" />
           <Property Name="Timestamp__" Type="DateTime" Precision="3" />
           <Property Name="result" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ContestEducationSchool" Relationship="santisartModel2.fk_eduContest" FromRole="Enroll_EduContest" ToRole="ContestEducationSchool" />
+          <NavigationProperty Name="Student" Relationship="santisartModel2.fk_student" FromRole="Enroll_EduContest" ToRole="Student" />
         </EntityType>
         <EntityType Name="Enroll_Emp_Pos">
           <Key>
@@ -2063,6 +2112,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
           <NavigationProperty Name="enrolladdresses" Relationship="santisartModel2.fk_student_address" FromRole="Student" ToRole="enrolladdress" />
           <NavigationProperty Name="EnrollFamilyStudents" Relationship="santisartModel2.Fk_enroll_Studnet" FromRole="Student" ToRole="EnrollFamilyStudent" />
           <NavigationProperty Name="EnrollFinishStudents" Relationship="santisartModel2.Fk_stud" FromRole="Student" ToRole="EnrollFinishStudent" />
+          <NavigationProperty Name="Enroll_EduContest" Relationship="santisartModel2.fk_student" FromRole="Student" ToRole="Enroll_EduContest" />
         </EntityType>
         <EntityType Name="Students_food">
           <Key>
@@ -2819,6 +2869,34 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_eduContest">
+          <End Type="santisartModel2.ContestEducationSchool" Role="ContestEducationSchool" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisartModel2.Enroll_EduContest" Role="Enroll_EduContest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContestEducationSchool">
+              <PropertyRef Name="TypeContest_id" />
+            </Principal>
+            <Dependent Role="Enroll_EduContest">
+              <PropertyRef Name="Type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_student">
+          <End Type="santisartModel2.Student" Role="Student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="santisartModel2.Enroll_EduContest" Role="Enroll_EduContest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="Student_id" />
+            </Principal>
+            <Dependent Role="Enroll_EduContest">
+              <PropertyRef Name="Student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2876,6 +2954,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
           <EntitySetMapping Name="ContestEducationSchools">
             <EntityTypeMapping TypeName="santisartModel2.ContestEducationSchool">
               <MappingFragment StoreEntitySet="ContestEducationSchool">
+                <ScalarProperty Name="year" ColumnName="year" />
                 <ScalarProperty Name="Day_contest" ColumnName="Day_contest" />
                 <ScalarProperty Name="group" ColumnName="group" />
                 <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />

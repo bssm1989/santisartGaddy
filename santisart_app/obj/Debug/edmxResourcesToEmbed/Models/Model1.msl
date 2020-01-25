@@ -52,6 +52,7 @@
     <EntitySetMapping Name="ContestEducationSchools">
       <EntityTypeMapping TypeName="santisartModel2.ContestEducationSchool">
         <MappingFragment StoreEntitySet="ContestEducationSchool">
+          <ScalarProperty Name="year" ColumnName="year" />
           <ScalarProperty Name="Day_contest" ColumnName="Day_contest" />
           <ScalarProperty Name="group" ColumnName="group" />
           <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
