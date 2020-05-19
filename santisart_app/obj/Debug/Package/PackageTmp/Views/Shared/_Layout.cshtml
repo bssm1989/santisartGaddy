@@ -98,19 +98,18 @@
                                 <li>
                                     <a><i class="fa fa-users"></i> พนักงาน <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href='@Url.Action("Index", "Employees")'>รายชื่อ</a></li>
-                                        <li><a href='@Url.Action("Create", "Employees")'>เพิ่มพนักงาน</a></li>
+                                        <li><a href='@Url.Action("Index", "Employee")'>รายชื่อ</a></li>
+                                        <li><a href='@Url.Action("Create", "Employee")'>เพิ่มพนักงาน</a></li>
 
                                         @* <li><a href="index3.html">Dashboard3</a></li>*@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href='@Url.Action("Index", "eduContest")'><i class="fa fa-graduation-cap"></i> งานวิชาการ <span class="fa fa-chevron-down"></span></a>
-                                    @*<ul class="nav child_menu">
-                                            <li><a href="index.html">Dashboard</a></li>
-                                            <li><a href="index2.html">Dashboard2</a></li>
-                                            <li><a href="index3.html">Dashboard3</a></li>
-                                        </ul>*@
+                                    <a ><i class="fa fa-graduation-cap"></i> งานวิชาการ <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                            <li><a href='@Url.Action("Index", "eduContest")'>ประจำปีการศึกษา 2561</a></li>
+                                            <li><a href='@Url.Action("Index2", "eduContest")'>ประจำปีการศึกษา 2562</a></li>
+                                        </ul>
                                 </li>
                                 <li>
                                     <a href='@Url.Action("Index", "Attendance")'><i class="fa fa-edit"></i> Attendance <span class="fa fa-chevron-down"></span></a>
@@ -119,7 +118,7 @@
 
                                 <li><a href='@Url.Action("viewDetail","FoodPaid")'><i class="fa fa-edit"></i> ค่าอาหารนักเรียน <span class="fa fa-chevron-down"></span></a>                 </li>
                                 <li><a href='@Url.Action("Index", "EnrollRoomSessionEmp")'><i class="fa fa-edit"></i> ตั้งค่าสิทธิห้อง <span class="fa fa-chevron-down"></span></a>           </li>
-                                <li><a href='@Url.Action("Index", "EnrollFinishStudents")'><i class="fa fa-edit"></i> ผลสัมฤทธิ์ทางการเรียน <span class="fa fa-chevron-down"></span></a>     </li>
+                                <li><a href='@Url.Action("Index", "EnrollFinishStudent")'><i class="fa fa-edit"></i> ผลสัมฤทธิ์ทางการเรียน <span class="fa fa-chevron-down"></span></a>     </li>
                                 <li>
                                     <a>
                                         <i class="fa fa-edit"></i> รายวิชา<span class="fa fa-chevron-down"></span>
@@ -129,7 +128,7 @@
                                         <li><a href='@Url.Action("EditList", "EnrollCouses")'>แก้รายวิชา</a></li>
                                     </ul>
                                 </li>
-                                <li><a href='@Url.Action("Index", "EnrollEmpCouses")'><i class="fa fa-edit"></i> การสอน <span class="fa fa-chevron-down"></span></a>     </li>
+                                <li><a href='@Url.Action("Index", "EnrollEmpCouse")'><i class="fa fa-edit"></i> การสอน <span class="fa fa-chevron-down"></span></a>     </li>
                             </ul>
                         </div>
                     </div>

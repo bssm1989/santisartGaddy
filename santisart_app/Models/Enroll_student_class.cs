@@ -14,12 +14,6 @@ namespace santisart_app.Models
     
     public partial class Enroll_student_class
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Enroll_student_class()
-        {
-            this.EnrollStudentCouses = new HashSet<EnrollStudentCouse>();
-        }
-    
         public Nullable<int> Student_id { get; set; }
         public Nullable<int> Class_id { get; set; }
         public int Enrol_stu_class_id { get; set; }
@@ -27,7 +21,5 @@ namespace santisart_app.Models
     
         public virtual EnrollClass EnrollClass { get; set; }
         public virtual Student Student { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EnrollStudentCouse> EnrollStudentCouses { get; set; }
     }
 }

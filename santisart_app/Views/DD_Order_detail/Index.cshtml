@@ -1,0 +1,81 @@
+﻿@model IEnumerable<santisart_app.Models.DD_Order_detail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Selling_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Full_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Barcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status_order)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DD_Inventories.ProductCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DD_Orders.Order_number)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Selling_Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Full_Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Barcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status_order)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DD_Inventories.ProductCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DD_Orders.Order_number)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.index }) |
+            @Html.ActionLink("Details", "Details", new { id=item.index }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.index })
+        </td>
+    </tr>
+}
+
+</table>

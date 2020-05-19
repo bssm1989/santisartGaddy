@@ -1,0 +1,143 @@
+﻿@model IEnumerable<santisart_app.Models.DD_Orders>
+
+@{
+    ViewBag.Title = "Index";
+    var index = 1;
+}
+
+<script>
+    $(document).ready(function () {
+        $('#table_id').DataTable();
+    });
+</script>
+
+<h2>Index</h2>
+
+<link href=" https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css" rel="stylesheet" />
+<link href="  https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<style>
+   table.dataTable tbody th, table.dataTable tbody td {
+    padding: 5px 10px;
+}
+</style>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="table_id" class="display">
+    <thead>
+        <tr>
+
+            <th>index</th>
+            <th>
+                @Html.DisplayNameFor(model => model.DD_customer.Profile_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sales_Channel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Checkout_at)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paid_at)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Shipping_fee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill_discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipping_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Canceled_at)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Canceled_reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seller_notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyer_notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order_number_Line)
+            </th>
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        </tr>
+    </thead><tbody>
+    @foreach (var item in Model)
+    {
+                <tr>
+                    <td>@index</td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DD_customer.Profile_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sales_Channel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Checkout_at)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Paid_at)
+                    </td>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Shipping_fee)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bill_discount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Payment_status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Shipping_status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Order_status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Canceled_at)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Canceled_reason)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Seller_notes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Buyer_notes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Order_number_Line)
+                    </td>
+
+
+
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.index }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.index }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.index })
+                    </td>
+                </tr>
+        index++;
+    }
+</tbody>
+</table>

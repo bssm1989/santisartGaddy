@@ -6,7 +6,7 @@
 <div class="left">
     <h2>@ViewBag.Emp.EmpTitle @ViewBag.Emp.EmpName @ViewBag.Emp.EmpLname</h2>
     <h3>สอนวิชา:@ViewBag.Couse.CouseTxtId @ViewBag.Couse.Course.CourseName</h3>
-    <h4>ชั้น:@ViewBag.Couse.ClassesInSchool.ClassesName</h4>
+    <h4>ชั้น:@ViewBag.Couse.ClassInSchool.ClassName</h4>
 </div>
 <h1></h1>
 @using (Html.BeginForm())
@@ -22,13 +22,13 @@
                 @Html.DisplayNameFor(model => model.Teacher_id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Classes_room)
+                @Html.DisplayNameFor(model => model.Class_room)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Classes_year_index)
+                @Html.DisplayNameFor(model => model.Class_year_index)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ClassesInSchool.ClassesShortName)
+                @Html.DisplayNameFor(model => model.ClassInSchool.ClassShortName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.EnrollClass_id) 
@@ -44,7 +44,7 @@
             <tr>
                 
                 <input type="hidden" value="@ViewBag.EnEmpCouseId" name="EnrollEmpCouseClass2[@indexClass].EnEmpCouseId" />
-                <input type="hidden" value="@item.ClassesSchoolid" name="EnrollEmpCouseClass2[@indexClass].Status"/>
+                <input type="hidden" value="@item.ClassSchoolid" name="EnrollEmpCouseClass2[@indexClass].Status"/>
                 <td>
 
                     @if (item.EnrollEmpCouseClasses.Where(z => z.Status != 0).Count() > 0)
@@ -91,13 +91,13 @@
                     @Html.DisplayFor(modelItem => item.Teacher_id)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Classes_room)
+                    @Html.DisplayFor(modelItem => item.Class_room)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Classes_year_index)
+                    @Html.DisplayFor(modelItem => item.Class_year_index)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ClassesInSchool.ClassesShortName)
+                    @Html.DisplayFor(modelItem => item.ClassInSchool.ClassShortName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.EnrollClass_id)

@@ -1,0 +1,90 @@
+﻿@model santisart_app.Models.DD_Order_detail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DD_Order_detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Selling_Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Selling_Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Full_Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Full_Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Barcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Barcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status_order)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status_order)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item_quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item_quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DD_Inventories.ProductCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DD_Inventories.ProductCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DD_Orders.Order_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DD_Orders.Order_number)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.index }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

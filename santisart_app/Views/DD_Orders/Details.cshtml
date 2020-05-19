@@ -1,0 +1,226 @@
+﻿@model santisart_app.Models.DD_Orders
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DD_Orders</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sales_Channel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sales_Channel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created_Order_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created_Order_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Checkout_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Checkout_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paid_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paid_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shipping_provider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shipping_provider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shipping_method)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shipping_method)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shipping_fee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shipping_fee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_method)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_method)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Variant_Name1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Variant_Name1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Variant_Name2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Variant_Name2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bill_discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bill_discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rabbit_LINE_Pay_Coupon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rabbit_LINE_Pay_Coupon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LINE_POINTS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LINE_POINTS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tracking_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tracking_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tracking_URL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tracking_URL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shipping_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shipping_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Canceled_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Canceled_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Canceled_reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Canceled_reason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seller_notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seller_notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Buyer_notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Buyer_notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_number_Line)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_number_Line)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DD_customer.Profile_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DD_customer.Profile_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.index }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

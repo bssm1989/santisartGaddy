@@ -48,7 +48,7 @@
             @Html.DisplayNameFor(model => model.Subdistrict.NameInThai)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Student.Student_title)
+            @Html.DisplayNameFor(model => model.students.Student_title)
         </th>
         <th></th>
     </tr>
@@ -92,7 +92,7 @@
             @Html.DisplayFor(modelItem => item.Subdistrict.NameInThai)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Student.Student_title)
+            @Html.DisplayFor(modelItem => item.students.Student_title)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.addressId }) |

@@ -38,8 +38,8 @@ namespace santisart_app.Controllers
         }
         public ActionResult getcountries(string term)
         {
-           return Json(db.student2561.Search(x=>x.Student_name,
-                x => x.Student_lname, x => x.Class_name_id) .Containing(term).Take(5)
+           return Json(db.Students.Search(x=>x.Student_name,
+                x => x.Student_lname) .Containing(term).Take(5)
                 , JsonRequestBehavior.AllowGet);
         }
         public ActionResult getDepartment()

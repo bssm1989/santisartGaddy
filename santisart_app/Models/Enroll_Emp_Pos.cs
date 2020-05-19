@@ -14,6 +14,12 @@ namespace santisart_app.Models
     
     public partial class Enroll_Emp_Pos
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Enroll_Emp_Pos()
+        {
+            this.EnrollStudentCouses = new HashSet<EnrollStudentCous>();
+        }
+    
         public Nullable<int> Employee_id { get; set; }
         public Nullable<int> Position_id { get; set; }
         public Nullable<int> EnrEmpPosStatus { get; set; }
@@ -22,5 +28,7 @@ namespace santisart_app.Models
     
         public virtual Employee Employee { get; set; }
         public virtual Position Position { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EnrollStudentCous> EnrollStudentCouses { get; set; }
     }
 }

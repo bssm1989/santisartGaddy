@@ -31,7 +31,7 @@
     </Key>
     <Property Name="Class_id" Type="int" Nullable="false" />
     <Property Name="Status_class" Type="int" />
-    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
     <Property Name="Teacher_id" Type="int" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
@@ -64,6 +64,77 @@
     <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CourseType" Type="varchar" MaxLength="50" />
     <Property Name="CourseStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="DD_customer">
+    <Key>
+      <PropertyRef Name="index" />
+    </Key>
+    <Property Name="Profile_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Recipient's_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Recipient's_phone" Type="nvarchar" MaxLength="255" />
+    <Property Name="Recipient's_Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Shipping_address" Type="nvarchar" MaxLength="255" />
+    <Property Name="Shipping_city" Type="nvarchar" MaxLength="255" />
+    <Property Name="Shipping_post_code" Type="nvarchar" MaxLength="255" />
+    <Property Name="index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DD_Inventories">
+    <Key>
+      <PropertyRef Name="index" />
+    </Key>
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="10" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Variant" Type="nvarchar" MaxLength="100" />
+    <Property Name="Price" Type="int" />
+    <Property Name="index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DD_Order_detail">
+    <Key>
+      <PropertyRef Name="index" />
+    </Key>
+    <Property Name="Order_number" Type="int" />
+    <Property Name="Selling_Price" Type="int" />
+    <Property Name="Full_Price" Type="int" />
+    <Property Name="Product_code" Type="nvarchar" MaxLength="10" />
+    <Property Name="SKU_code" Type="int" />
+    <Property Name="Barcode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Product_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="status_order" Type="nvarchar" MaxLength="5" />
+    <Property Name="Item_quantity" Type="int" />
+    <Property Name="index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DD_Orders">
+    <Key>
+      <PropertyRef Name="index" />
+    </Key>
+    <Property Name="Order_number" Type="nvarchar" MaxLength="255" />
+    <Property Name="Sales_Channel" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created_Order_at" Type="nvarchar" MaxLength="255" />
+    <Property Name="Checkout_at" Type="nvarchar" MaxLength="255" />
+    <Property Name="Paid_at" Type="nvarchar" MaxLength="255" />
+    <Property Name="Shipping_provider" Type="nvarchar" MaxLength="255" />
+    <Property Name="Shipping_method" Type="nvarchar" MaxLength="255" />
+    <Property Name="Shipping_fee" Type="nvarchar" MaxLength="255" />
+    <Property Name="Payment_method" Type="nvarchar" MaxLength="255" />
+    <Property Name="Variant_Name1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Variant_Name2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bill_discount" Type="nvarchar" MaxLength="255" />
+    <Property Name="Rabbit_LINE_Pay_Coupon" Type="nvarchar" MaxLength="255" />
+    <Property Name="LINE_POINTS" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tracking_code" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tracking_URL" Type="nvarchar" MaxLength="255" />
+    <Property Name="Payment_status" Type="nvarchar" MaxLength="255" />
+    <Property Name="Shipping_status" Type="nvarchar" MaxLength="255" />
+    <Property Name="Order_status" Type="nvarchar" MaxLength="255" />
+    <Property Name="Canceled_at" Type="nvarchar" MaxLength="255" />
+    <Property Name="Canceled_reason" Type="nvarchar" MaxLength="255" />
+    <Property Name="Seller_notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="Buyer_notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="status" Type="nvarchar" MaxLength="255" />
+    <Property Name="Order_number_Line" Type="nvarchar" MaxLength="255" />
+    <Property Name="customerId" Type="int" />
+    <Property Name="index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="Department">
     <Key>
@@ -281,7 +352,7 @@
     <Property Name="physical2" Type="varchar" MaxLength="15" />
     <Property Name="ExcelForm" Type="int" />
   </EntityType>
-  <EntityType Name="EnrollStudentCouse">
+  <EntityType Name="EnrollStudentCouses">
     <Key>
       <PropertyRef Name="EnrollStudentCouseId" />
     </Key>
@@ -376,7 +447,7 @@
     <Key>
       <PropertyRef Name="PosId" />
     </Key>
-    <Property Name="PosName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PosName" Type="varchar" MaxLength="50" />
     <Property Name="PosLevel" Type="int" />
     <Property Name="PosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
@@ -548,7 +619,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.EnrollStudentAttdance' do
     <Property Name="Student_name" Type="nvarchar" MaxLength="100" />
     <Property Name="Student_lname" Type="nvarchar" MaxLength="100" />
     <Property Name="Student_timestamp" Type="datetime" />
-    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
     <Property Name="Teacher_id" Type="int" />
@@ -572,7 +643,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.student2561' does not hav
     <Property Name="Student_psis_id" Type="int" />
     <Property Name="Student_status" Type="varchar" MaxLength="25" />
     <Property Name="Student_timestamp" Type="datetime" />
-    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
     <Property Name="Teacher_id" Type="int" />
@@ -594,7 +665,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.student2561_copy1' does n
     <Property Name="Student_psis_id" Type="int" />
     <Property Name="Student_status" Type="varchar" MaxLength="25" />
     <Property Name="Student_timestamp" Type="datetime" />
-    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
     <Property Name="Teacher_id" Type="int" />
@@ -616,7 +687,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.student2561_food' does no
     <Property Name="Student_psis_id" Type="int" />
     <Property Name="Student_status" Type="varchar" MaxLength="25" />
     <Property Name="Student_timestamp" Type="datetime" />
-    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
     <Property Name="Teacher_id" Type="int" />
@@ -635,7 +706,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.studentEduContest2561' do
     <Property Name="Student_title" Type="varchar" MaxLength="10" />
     <Property Name="Student_name" Type="nvarchar" MaxLength="100" />
     <Property Name="Student_lname" Type="nvarchar" MaxLength="100" />
-    <Property Name="Class_name_id" Type="nchar" MaxLength="5" />
+    <Property Name="Class_name_id" Type="varchar" MaxLength="5" />
     <Property Name="Class_room" Type="int" />
     <Property Name="Class_year_index" Type="int" />
     <Property Name="Teacher_id" Type="int" />
@@ -728,7 +799,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
     <Property Name="EnrEmpPosId" Type="int" Nullable="false" />
     <Property Name="EnrEmpPosStatus" Type="int" />
     <Property Name="EnrEmpPosTimestamp" Type="datetime" />
-    <Property Name="PosName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PosName" Type="varchar" MaxLength="50" />
     <Property Name="PosLevel" Type="int" />
     <Property Name="PosId" Type="int" />
   </EntityType>
@@ -760,6 +831,18 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Customer">
+    <End Role="DD_customer" Type="Self.DD_customer" Multiplicity="0..1" />
+    <End Role="DD_Orders" Type="Self.DD_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DD_customer">
+        <PropertyRef Name="index" />
+      </Principal>
+      <Dependent Role="DD_Orders">
+        <PropertyRef Name="customerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_class">
     <End Role="EnrollClass" Type="Self.EnrollClass" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -783,20 +866,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Principal>
       <Dependent Role="EnrollCouse">
         <PropertyRef Name="ClassId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Fk_couse">
-    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EnrollCouse">
-        <PropertyRef Name="EnrollCouseID" />
-      </Principal>
-      <Dependent Role="EnrollStudentCouse">
-        <PropertyRef Name="EnrollCouseId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -839,20 +908,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Principal>
       <Dependent Role="enrolladdress">
         <PropertyRef Name="DistrictId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_eduContest">
-    <End Role="ContestEducationSchool" Type="Self.ContestEducationSchool" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Enroll_EduContest" Type="Self.Enroll_EduContest" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ContestEducationSchool">
-        <PropertyRef Name="TypeContest_id" />
-      </Principal>
-      <Dependent Role="Enroll_EduContest">
-        <PropertyRef Name="Type_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -912,18 +967,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Fk_EmpCouseClass">
-    <End Role="EnrollEmpCouseClass" Type="Self.EnrollEmpCouseClass" Multiplicity="0..1" />
-    <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EnrollEmpCouseClass">
-        <PropertyRef Name="EnrollEmpCouseClassId" />
-      </Principal>
-      <Dependent Role="EnrollStudentCouse">
-        <PropertyRef Name="EnEmpCouseClassId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="Fk_EnClass">
     <End Role="EnrollClass" Type="Self.EnrollClass" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -952,6 +995,20 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Fk_EnrCouseId1">
+    <End Role="EnrollCouse" Type="Self.EnrollCouse" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollStudentCouses" Type="Self.EnrollStudentCouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollCouse">
+        <PropertyRef Name="EnrollCouseID" />
+      </Principal>
+      <Dependent Role="EnrollStudentCouses">
+        <PropertyRef Name="EnrollCouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Fk_enroll_Studnet">
     <End Role="Students" Type="Self.Students" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -963,20 +1020,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Principal>
       <Dependent Role="EnrollFamilyStudent">
         <PropertyRef Name="StudentId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Fk_enrollStudent">
-    <End Role="Enroll_student_class" Type="Self.Enroll_student_class" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Enroll_student_class">
-        <PropertyRef Name="Enrol_stu_class_id" />
-      </Principal>
-      <Dependent Role="EnrollStudentCouse">
-        <PropertyRef Name="EnrollStudentClassId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1062,20 +1105,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_student">
-    <End Role="Students" Type="Self.Students" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Enroll_EduContest" Type="Self.Enroll_EduContest" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Students">
-        <PropertyRef Name="Student_id" />
-      </Principal>
-      <Dependent Role="Enroll_EduContest">
-        <PropertyRef Name="Student_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_student_address">
     <End Role="Students" Type="Self.Students" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -1087,6 +1116,20 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Principal>
       <Dependent Role="enrolladdress">
         <PropertyRef Name="student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_student1">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollStudentCouses" Type="Self.EnrollStudentCouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="Student_id" />
+      </Principal>
+      <Dependent Role="EnrollStudentCouses">
+        <PropertyRef Name="studentId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1118,6 +1161,20 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Fk_TeacherId1">
+    <End Role="Enroll_Emp_Pos" Type="Self.Enroll_Emp_Pos" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnrollStudentCouses" Type="Self.EnrollStudentCouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Enroll_Emp_Pos">
+        <PropertyRef Name="EnrEmpPosId" />
+      </Principal>
+      <Dependent Role="EnrollStudentCouses">
+        <PropertyRef Name="TeacerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Fk_Year">
     <End Role="YearEdu" Type="Self.YearEdu" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -1146,17 +1203,41 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Fk_yearSem">
-    <End Role="EnrollYearSemester" Type="Self.EnrollYearSemester" Multiplicity="0..1">
+  <Association Name="Fk_YearId1">
+    <End Role="YearEdu" Type="Self.YearEdu" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="EnrollStudentCouse" Type="Self.EnrollStudentCouse" Multiplicity="*" />
+    <End Role="EnrollStudentCouses" Type="Self.EnrollStudentCouses" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="EnrollYearSemester">
-        <PropertyRef Name="EnrollYearSemesterId" />
+      <Principal Role="YearEdu">
+        <PropertyRef Name="YearEduId" />
       </Principal>
-      <Dependent Role="EnrollStudentCouse">
-        <PropertyRef Name="EnYearSemId" />
+      <Dependent Role="EnrollStudentCouses">
+        <PropertyRef Name="YearEdu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="inven">
+    <End Role="DD_Inventories" Type="Self.DD_Inventories" Multiplicity="0..1" />
+    <End Role="DD_Order_detail" Type="Self.DD_Order_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DD_Inventories">
+        <PropertyRef Name="index" />
+      </Principal>
+      <Dependent Role="DD_Order_detail">
+        <PropertyRef Name="SKU_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="order">
+    <End Role="DD_Orders" Type="Self.DD_Orders" Multiplicity="0..1" />
+    <End Role="DD_Order_detail" Type="Self.DD_Order_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DD_Orders">
+        <PropertyRef Name="index" />
+      </Principal>
+      <Dependent Role="DD_Order_detail">
+        <PropertyRef Name="Order_number" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1167,6 +1248,10 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
     <EntitySet Name="ClassInSchool" EntityType="Self.ClassInSchool" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="ContestEducationSchool" EntityType="Self.ContestEducationSchool" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Course" EntityType="Self.Course" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="DD_customer" EntityType="Self.DD_customer" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="DD_Inventories" EntityType="Self.DD_Inventories" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="DD_Order_detail" EntityType="Self.DD_Order_detail" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="DD_Orders" EntityType="Self.DD_Orders" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Department" EntityType="Self.Department" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Districts" EntityType="Self.Districts" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="santisart" store:Type="Tables" />
@@ -1184,7 +1269,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
     <EntitySet Name="EnrollEmpCouseClass" EntityType="Self.EnrollEmpCouseClass" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="EnrollFamilyStudent" EntityType="Self.EnrollFamilyStudent" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="EnrollFinishStudent" EntityType="Self.EnrollFinishStudent" Schema="santisart" store:Type="Tables" />
-    <EntitySet Name="EnrollStudentCouse" EntityType="Self.EnrollStudentCouse" Schema="santisart" store:Type="Tables" />
+    <EntitySet Name="EnrollStudentCouses" EntityType="Self.EnrollStudentCouses" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="EnrollYearSemester" EntityType="Self.EnrollYearSemester" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="Family" EntityType="Self.Family" Schema="santisart" store:Type="Tables" />
     <EntitySet Name="FinishType" EntityType="Self.FinishType" Schema="santisart" store:Type="Tables" />
@@ -1392,6 +1477,10 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       <End Role="EnrollCouse" EntitySet="EnrollCouse" />
       <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouse" />
     </AssociationSet>
+    <AssociationSet Name="Customer" Association="Self.Customer">
+      <End Role="DD_customer" EntitySet="DD_customer" />
+      <End Role="DD_Orders" EntitySet="DD_Orders" />
+    </AssociationSet>
     <AssociationSet Name="fk_class" Association="Self.fk_class">
       <End Role="EnrollClass" EntitySet="EnrollClass" />
       <End Role="Enroll_student_class" EntitySet="Enroll_student_class" />
@@ -1399,10 +1488,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
     <AssociationSet Name="FK_class1" Association="Self.FK_class1">
       <End Role="ClassInSchool" EntitySet="ClassInSchool" />
       <End Role="EnrollCouse" EntitySet="EnrollCouse" />
-    </AssociationSet>
-    <AssociationSet Name="Fk_couse" Association="Self.Fk_couse">
-      <End Role="EnrollCouse" EntitySet="EnrollCouse" />
-      <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
     </AssociationSet>
     <AssociationSet Name="Fk_couse1" Association="Self.Fk_couse1">
       <End Role="Course" EntitySet="Course" />
@@ -1415,10 +1500,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
     <AssociationSet Name="fk_district" Association="Self.fk_district">
       <End Role="Districts" EntitySet="Districts" />
       <End Role="enrolladdress" EntitySet="enrolladdress" />
-    </AssociationSet>
-    <AssociationSet Name="fk_eduContest" Association="Self.fk_eduContest">
-      <End Role="ContestEducationSchool" EntitySet="ContestEducationSchool" />
-      <End Role="Enroll_EduContest" EntitySet="Enroll_EduContest" />
     </AssociationSet>
     <AssociationSet Name="Fk_emp" Association="Self.Fk_emp">
       <End Role="Employee" EntitySet="Employee" />
@@ -1436,10 +1517,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouse" />
       <End Role="EnrollEmpCouseClass" EntitySet="EnrollEmpCouseClass" />
     </AssociationSet>
-    <AssociationSet Name="Fk_EmpCouseClass" Association="Self.Fk_EmpCouseClass">
-      <End Role="EnrollEmpCouseClass" EntitySet="EnrollEmpCouseClass" />
-      <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
-    </AssociationSet>
     <AssociationSet Name="Fk_EnClass" Association="Self.Fk_EnClass">
       <End Role="EnrollClass" EntitySet="EnrollClass" />
       <End Role="EnrollEmpCouseClass" EntitySet="EnrollEmpCouseClass" />
@@ -1448,13 +1525,13 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       <End Role="Position" EntitySet="Position" />
       <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
     </AssociationSet>
+    <AssociationSet Name="Fk_EnrCouseId1" Association="Self.Fk_EnrCouseId1">
+      <End Role="EnrollCouse" EntitySet="EnrollCouse" />
+      <End Role="EnrollStudentCouses" EntitySet="EnrollStudentCouses" />
+    </AssociationSet>
     <AssociationSet Name="Fk_enroll_Studnet" Association="Self.Fk_enroll_Studnet">
       <End Role="Students" EntitySet="Students" />
       <End Role="EnrollFamilyStudent" EntitySet="EnrollFamilyStudent" />
-    </AssociationSet>
-    <AssociationSet Name="Fk_enrollStudent" Association="Self.Fk_enrollStudent">
-      <End Role="Enroll_student_class" EntitySet="Enroll_student_class" />
-      <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
     </AssociationSet>
     <AssociationSet Name="fk_fam" Association="Self.fk_fam">
       <End Role="Family" EntitySet="Family" />
@@ -1480,13 +1557,13 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       <End Role="Students" EntitySet="Students" />
       <End Role="EnrollFinishStudent" EntitySet="EnrollFinishStudent" />
     </AssociationSet>
-    <AssociationSet Name="fk_student" Association="Self.fk_student">
-      <End Role="Students" EntitySet="Students" />
-      <End Role="Enroll_EduContest" EntitySet="Enroll_EduContest" />
-    </AssociationSet>
     <AssociationSet Name="fk_student_address" Association="Self.fk_student_address">
       <End Role="Students" EntitySet="Students" />
       <End Role="enrolladdress" EntitySet="enrolladdress" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_student1" Association="Self.Fk_student1">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="EnrollStudentCouses" EntitySet="EnrollStudentCouses" />
     </AssociationSet>
     <AssociationSet Name="Fk_student2" Association="Self.Fk_student2">
       <End Role="Students" EntitySet="Students" />
@@ -1496,6 +1573,10 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       <End Role="Subdistricts" EntitySet="Subdistricts" />
       <End Role="enrolladdress" EntitySet="enrolladdress" />
     </AssociationSet>
+    <AssociationSet Name="Fk_TeacherId1" Association="Self.Fk_TeacherId1">
+      <End Role="Enroll_Emp_Pos" EntitySet="Enroll_Emp_Pos" />
+      <End Role="EnrollStudentCouses" EntitySet="EnrollStudentCouses" />
+    </AssociationSet>
     <AssociationSet Name="Fk_Year" Association="Self.Fk_Year">
       <End Role="YearEdu" EntitySet="YearEdu" />
       <End Role="EnrollYearSemester" EntitySet="EnrollYearSemester" />
@@ -1504,9 +1585,17 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       <End Role="EnrollYearSemester" EntitySet="EnrollYearSemester" />
       <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouse" />
     </AssociationSet>
-    <AssociationSet Name="Fk_yearSem" Association="Self.Fk_yearSem">
-      <End Role="EnrollYearSemester" EntitySet="EnrollYearSemester" />
-      <End Role="EnrollStudentCouse" EntitySet="EnrollStudentCouse" />
+    <AssociationSet Name="Fk_YearId1" Association="Self.Fk_YearId1">
+      <End Role="YearEdu" EntitySet="YearEdu" />
+      <End Role="EnrollStudentCouses" EntitySet="EnrollStudentCouses" />
+    </AssociationSet>
+    <AssociationSet Name="inven" Association="Self.inven">
+      <End Role="DD_Inventories" EntitySet="DD_Inventories" />
+      <End Role="DD_Order_detail" EntitySet="DD_Order_detail" />
+    </AssociationSet>
+    <AssociationSet Name="order" Association="Self.order">
+      <End Role="DD_Orders" EntitySet="DD_Orders" />
+      <End Role="DD_Order_detail" EntitySet="DD_Order_detail" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

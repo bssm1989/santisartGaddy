@@ -1,4 +1,4 @@
-﻿@model santisart_app.Models.EnrollEmpCouses
+﻿@model santisart_app.Models.EnrollEmpCouse
 
 @{
     ViewBag.Title = "Create";
@@ -18,14 +18,14 @@
             <label class="control-label col-md-2">ชั้นเรียน</label>
 
             <div class="col-md-10">
-                @Html.DropDownList("ClassInSchool", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("ClassInSchools", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.EnCouseId, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.EnYearSemId, "EnYearSemId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("EnYearSemId", new SelectList(string.Empty, "Value", "Text"), "-- ปีการศึกษา--", new { @class = "form-control" })
+                @Html.DropDownList("EnYearSemId",null, "-- ปีการศึกษา--", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.EnYearSemId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EnCouseId, "EnCouseId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("EnCouseId", new SelectList(string.Empty, "Value", "Text"), "-- เลือกวิชาสอน --", new { @class = "form-control" })
+                @Html.DropDownList("EnCouseId", null, "-- เลือกวิชาสอน --", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.EnCouseId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -62,13 +62,14 @@
         $("#ClassInSchool").change(function () {
             $("#EnYearSemId").empty();
             $("#EnCouseId").empty();
+            console.log("test");
             $.ajax({
                 type: 'POST',
                 url: '@Url.Action("getDdEnYear")',
 
                 dataType: 'json',
 
-                data: { id: $("#ClassInSchool").val() },
+                data: { id: $("#ClassInSchools").val() },
 
 
                 success: function (states) {
@@ -88,13 +89,15 @@
         });
         $("#EnYearSemId").change(function () {
             $("#EnCouseId").empty();
+            console.log("test");
+
             $.ajax({
                 type: 'POST',
                 url: '@Url.Action("getDdEnCouse")',
 
                 dataType: 'json',
 
-                data: { id: $("#ClassInSchool").val() },
+                data: { id: $("#ClassInSchools").val() },
 
 
                 success: function (states) {

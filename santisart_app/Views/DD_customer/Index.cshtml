@@ -1,0 +1,69 @@
+﻿@model IEnumerable<santisart_app.Models.DD_customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Profile_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recipient_s_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recipient_s_phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recipient_s_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shipping_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shipping_city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shipping_post_code)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profile_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recipient_s_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recipient_s_phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recipient_s_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shipping_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shipping_city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shipping_post_code)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.index }) |
+            @Html.ActionLink("Details", "Details", new { id=item.index }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.index })
+        </td>
+    </tr>
+}
+
+</table>

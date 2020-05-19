@@ -336,19 +336,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Monthlies">
-      <EntityTypeMapping TypeName="santisartModel2.Monthly">
-        <MappingFragment StoreEntitySet="Monthly">
-          <ScalarProperty Name="Month_Sort" ColumnName="Month_Sort" />
-          <ScalarProperty Name="Month_yearindex" ColumnName="Month_yearindex" />
-          <ScalarProperty Name="Month_status" ColumnName="Month_status" />
-          <ScalarProperty Name="Month_course" ColumnName="Month_course" />
-          <ScalarProperty Name="Month_year" ColumnName="Month_year" />
-          <ScalarProperty Name="Month_name" ColumnName="Month_name" />
-          <ScalarProperty Name="Monthly_id" ColumnName="Monthly_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Positions">
       <EntityTypeMapping TypeName="santisartModel2.Position">
         <MappingFragment StoreEntitySet="Position">
@@ -700,6 +687,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="EnrollEmpCouses">
+      <EntityTypeMapping TypeName="santisartModel2.EnrollEmpCouse">
+        <MappingFragment StoreEntitySet="EnrollEmpCouse">
+          <ScalarProperty Name="EnYearSemId" ColumnName="EnYearSemId" />
+          <ScalarProperty Name="EnEmpId" ColumnName="EnEmpId" />
+          <ScalarProperty Name="EnrollEmpCouseId" ColumnName="EnrollEmpCouseId" />
+          <ScalarProperty Name="EnEmpCosTimestamp" ColumnName="EnEmpCosTimestamp" />
+          <ScalarProperty Name="EnCouseId" ColumnName="EnCouseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="EnrollCouses">
       <EntityTypeMapping TypeName="santisartModel2.EnrollCouse">
         <MappingFragment StoreEntitySet="EnrollCouse">
@@ -720,8 +718,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EnrollStudentCouses">
-      <EntityTypeMapping TypeName="santisartModel2.EnrollStudentCouse">
-        <MappingFragment StoreEntitySet="EnrollStudentCouse">
+      <EntityTypeMapping TypeName="santisartModel2.EnrollStudentCous">
+        <MappingFragment StoreEntitySet="EnrollStudentCouses">
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Score3" ColumnName="Score3" />
           <ScalarProperty Name="Score2" ColumnName="Score2" />
@@ -742,14 +740,91 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EnrollEmpCouses">
-      <EntityTypeMapping TypeName="santisartModel2.EnrollEmpCouse">
-        <MappingFragment StoreEntitySet="EnrollEmpCouse">
-          <ScalarProperty Name="EnYearSemId" ColumnName="EnYearSemId" />
-          <ScalarProperty Name="EnEmpId" ColumnName="EnEmpId" />
-          <ScalarProperty Name="EnrollEmpCouseId" ColumnName="EnrollEmpCouseId" />
-          <ScalarProperty Name="EnEmpCosTimestamp" ColumnName="EnEmpCosTimestamp" />
-          <ScalarProperty Name="EnCouseId" ColumnName="EnCouseId" />
+    <EntitySetMapping Name="Monthlies">
+      <EntityTypeMapping TypeName="santisartModel2.Monthly">
+        <MappingFragment StoreEntitySet="Monthly">
+          <ScalarProperty Name="Month_Sort" ColumnName="Month_Sort" />
+          <ScalarProperty Name="Month_yearindex" ColumnName="Month_yearindex" />
+          <ScalarProperty Name="Month_status" ColumnName="Month_status" />
+          <ScalarProperty Name="Month_course" ColumnName="Month_course" />
+          <ScalarProperty Name="Month_year" ColumnName="Month_year" />
+          <ScalarProperty Name="Month_name" ColumnName="Month_name" />
+          <ScalarProperty Name="Monthly_id" ColumnName="Monthly_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DD_customer">
+      <EntityTypeMapping TypeName="santisartModel2.DD_customer">
+        <MappingFragment StoreEntitySet="DD_customer">
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="Shipping_post_code" ColumnName="Shipping_post_code" />
+          <ScalarProperty Name="Shipping_city" ColumnName="Shipping_city" />
+          <ScalarProperty Name="Shipping_address" ColumnName="Shipping_address" />
+          <ScalarProperty Name="Recipient_s_Email" ColumnName="Recipient's_Email" />
+          <ScalarProperty Name="Recipient_s_phone" ColumnName="Recipient's_phone" />
+          <ScalarProperty Name="Recipient_s_name" ColumnName="Recipient's_name" />
+          <ScalarProperty Name="Profile_Name" ColumnName="Profile_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DD_Inventories">
+      <EntityTypeMapping TypeName="santisartModel2.DD_Inventories">
+        <MappingFragment StoreEntitySet="DD_Inventories">
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Variant" ColumnName="Variant" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DD_Order_detail">
+      <EntityTypeMapping TypeName="santisartModel2.DD_Order_detail">
+        <MappingFragment StoreEntitySet="DD_Order_detail">
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="Item_quantity" ColumnName="Item_quantity" />
+          <ScalarProperty Name="status_order" ColumnName="status_order" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="SKU_code" ColumnName="SKU_code" />
+          <ScalarProperty Name="Product_code" ColumnName="Product_code" />
+          <ScalarProperty Name="Full_Price" ColumnName="Full_Price" />
+          <ScalarProperty Name="Selling_Price" ColumnName="Selling_Price" />
+          <ScalarProperty Name="Order_number" ColumnName="Order_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DD_Orders">
+      <EntityTypeMapping TypeName="santisartModel2.DD_Orders">
+        <MappingFragment StoreEntitySet="DD_Orders">
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="Order_number_Line" ColumnName="Order_number_Line" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Buyer_notes" ColumnName="Buyer_notes" />
+          <ScalarProperty Name="Seller_notes" ColumnName="Seller_notes" />
+          <ScalarProperty Name="Canceled_reason" ColumnName="Canceled_reason" />
+          <ScalarProperty Name="Canceled_at" ColumnName="Canceled_at" />
+          <ScalarProperty Name="Order_status" ColumnName="Order_status" />
+          <ScalarProperty Name="Shipping_status" ColumnName="Shipping_status" />
+          <ScalarProperty Name="Payment_status" ColumnName="Payment_status" />
+          <ScalarProperty Name="Tracking_URL" ColumnName="Tracking_URL" />
+          <ScalarProperty Name="Tracking_code" ColumnName="Tracking_code" />
+          <ScalarProperty Name="LINE_POINTS" ColumnName="LINE_POINTS" />
+          <ScalarProperty Name="Rabbit_LINE_Pay_Coupon" ColumnName="Rabbit_LINE_Pay_Coupon" />
+          <ScalarProperty Name="Bill_discount" ColumnName="Bill_discount" />
+          <ScalarProperty Name="Variant_Name2" ColumnName="Variant_Name2" />
+          <ScalarProperty Name="Variant_Name1" ColumnName="Variant_Name1" />
+          <ScalarProperty Name="Payment_method" ColumnName="Payment_method" />
+          <ScalarProperty Name="Shipping_fee" ColumnName="Shipping_fee" />
+          <ScalarProperty Name="Shipping_method" ColumnName="Shipping_method" />
+          <ScalarProperty Name="Shipping_provider" ColumnName="Shipping_provider" />
+          <ScalarProperty Name="Paid_at" ColumnName="Paid_at" />
+          <ScalarProperty Name="Checkout_at" ColumnName="Checkout_at" />
+          <ScalarProperty Name="Created_Order_at" ColumnName="Created_Order_at" />
+          <ScalarProperty Name="Sales_Channel" ColumnName="Sales_Channel" />
+          <ScalarProperty Name="Order_number" ColumnName="Order_number" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

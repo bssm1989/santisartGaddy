@@ -1,4 +1,4 @@
-﻿@model IEnumerable<santisart_app.Models.studentEduContest2561>
+﻿@model IEnumerable<santisart_app.Models.Enroll_EduContest>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("เพิ่มรายชื่อ", "Create", null,new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("เพิ่มรายชื่อ", "Create", null, new { @class = "btn btn-primary btn-large" })
 </p>
 <div class="row">
     <div class="table-responsive">
@@ -24,24 +24,26 @@
                         ลำดับ
                     </th>
                     <th>
-                       ชื่อ - นามสกุล
+                        ชื่อ - นามสกุล
                     </th>
-                 
+
                     <th class="col-lg-2 col-sm-2 col-md-2">
-                        @Html.DisplayNameFor(model => model.Classes_name_id)
+                        ชั้น
                     </th>
                     <th class="col-lg-2 col-sm-2 col-md-2">
-                        @Html.DisplayNameFor(model => model.NameContest)
+                        @*@Html.DisplayNameFor(model => model.NameContest)*@
+                        กิจกรรม
                     </th>
-                    
-                 
+
+
                     <th class="col-lg-1 col-sm-1 col-md-1">
-                        @Html.DisplayNameFor(model => model.group)
+                        @*@Html.DisplayNameFor(model => model.group)*@
+                        กลุ่ม
                     </th>
                     <th>
-    ผลการแข่งขัน
-</th>
-                    <th >
+                        ผลการแข่งขัน
+                    </th>
+                    <th>
                         วันแข่งขัน
                     </th>
                     <th></th>
@@ -49,48 +51,48 @@
             </thead>
             <tbody>
                 @{var numIndex = 0; }
-                    @foreach (var item in Model)
-                    {
-                        item.Student_title = item.Student_title.Replace("ด.ช.", "เด็กชาย").Replace("ด.ญ.", "เด็กหญิง");
-                        numIndex++;
+                @foreach (var item in Model)
+                {
+                    item.Student.Student_title = item.Student.Student_title.Replace("ด.ช.", "เด็กชาย").Replace("ด.ญ.", "เด็กหญิง");
+                    numIndex++;
                     <tr>
                         <td>
                             <span>@numIndex</span>
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Student_title) @Html.DisplayFor(modelItem => item.Student_name)  @Html.DisplayFor(modelItem => item.Student_lname)
+                            @Html.DisplayFor(modelItem => item.Student.Student_title) @Html.DisplayFor(modelItem => item.Student.Student_name)  @Html.DisplayFor(modelItem => item.Student.Student_lname)
                         </td>
-                      
+
                         <td>
-                            @Html.DisplayFor(modelItem => item.Classes_name_id)/@Html.DisplayFor(modelItem => item.Classes_room)
+                            @*@Html.DisplayFor(modelItem => item.Studen..Class_name_id)/@Html.DisplayFor(modelItem => item.Class_room)*@
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.NameContest)
+                            @Html.DisplayFor(modelItem => item.ContestEducationSchool.NameContest)
                         </td>
-                        
-                        
+
+
                         <td>
-                            @Html.DisplayFor(modelItem => item.group)
-                        </td> 
+                            @Html.DisplayFor(modelItem => item.ContestEducationSchool.group)
+                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.result)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Day_contest)
+                            @Html.DisplayFor(modelItem => item.ContestEducationSchool.Day_contest)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { item.EduContest_id }, new { @class = "btn btn-primary btn-xs" }) 
-                            @Html.ActionLink("รายละเอียด", "Details", new {item.EduContest_id  }, new { @class = "btn btn-info btn-xs" } ) 
-                            @Html.ActionLink("ลบ", "Delete", new { EduContestId=item.EduContest_id }, new { @class = "btn btn-danger btn-xs" } )
+                            @Html.ActionLink("Edit", "Edit", new { item.EduContest_id }, new { @class = "btn btn-primary btn-xs" })
+                            @Html.ActionLink("รายละเอียด", "Details", new { item.EduContest_id }, new { @class = "btn btn-info btn-xs" })
+                            @Html.ActionLink("ลบ", "Delete", new { EduContestId = item.EduContest_id }, new { @class = "btn btn-danger btn-xs" })
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
-     </div>
+    </div>
 </div>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         //var table = $('#datatable1').DataTable( {
         //rowReorder: {
         //    selector: 'td:nth-child(2)'

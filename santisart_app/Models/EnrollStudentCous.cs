@@ -12,7 +12,7 @@ namespace santisart_app.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class EnrollStudentCouse
+    public partial class EnrollStudentCous
     {
         public Nullable<int> studentId { get; set; }
         public Nullable<int> EnrollCouseId { get; set; }
@@ -32,9 +32,9 @@ namespace santisart_app.Models
         public Nullable<double> Score3 { get; set; }
         public Nullable<int> Status { get; set; }
     
-        public virtual Enroll_student_class Enroll_student_class { get; set; }
+        public virtual Enroll_Emp_Pos Enroll_Emp_Pos { get; set; }
         public virtual EnrollCouse EnrollCouse { get; set; }
-        public virtual EnrollEmpCouseClass EnrollEmpCouseClass { get; set; }
-        public virtual EnrollYearSemester EnrollYearSemester { get; set; }
+        public virtual Student Student { get; set; }
+        public virtual YearEdu YearEdu1 { get; set; }
     }
 }

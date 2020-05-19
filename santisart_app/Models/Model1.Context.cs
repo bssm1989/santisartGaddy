@@ -50,7 +50,6 @@ namespace santisart_app.Models
         public virtual DbSet<Family> Families { get; set; }
         public virtual DbSet<FinishType> FinishTypes { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
-        public virtual DbSet<Monthly> Monthlies { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
         public virtual DbSet<PositionFam> PositionFams { get; set; }
         public virtual DbSet<Province> Provinces { get; set; }
@@ -69,8 +68,13 @@ namespace santisart_app.Models
         public virtual DbSet<studentEduContest2561> studentEduContest2561 { get; set; }
         public virtual DbSet<View_Couse> View_Couse { get; set; }
         public virtual DbSet<ViewEmpPos> ViewEmpPos { get; set; }
-        public virtual DbSet<EnrollCouse> EnrollCouses { get; set; }
-        public virtual DbSet<EnrollStudentCouse> EnrollStudentCouses { get; set; }
         public virtual DbSet<EnrollEmpCouse> EnrollEmpCouses { get; set; }
+        public virtual DbSet<EnrollCouse> EnrollCouses { get; set; }
+        public virtual DbSet<EnrollStudentCous> EnrollStudentCouses { get; set; }
+        public virtual DbSet<Monthly> Monthlies { get; set; }
+        public virtual DbSet<DD_customer> DD_customer { get; set; }
+        public virtual DbSet<DD_Inventories> DD_Inventories { get; set; }
+        public virtual DbSet<DD_Order_detail> DD_Order_detail { get; set; }
+        public virtual DbSet<DD_Orders> DD_Orders { get; set; }
     }
 }

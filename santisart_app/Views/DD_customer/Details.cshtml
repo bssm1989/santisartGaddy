@@ -1,0 +1,74 @@
+﻿@model santisart_app.Models.DD_customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DD_customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Profile_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profile_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recipient_s_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recipient_s_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recipient_s_phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recipient_s_phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recipient_s_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recipient_s_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shipping_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shipping_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shipping_city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shipping_city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shipping_post_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shipping_post_code)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.index }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
