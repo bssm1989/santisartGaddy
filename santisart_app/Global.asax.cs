@@ -2,10 +2,13 @@
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Http;
 using System.Web.Optimization;
 using System.Web.Routing;
 using santisart_app;
 using santisart_app.Controllers;
+using AutoMapper;
+using santisart_app.App_Start;
 
 namespace santisart_app
 {
@@ -13,6 +16,10 @@ namespace santisart_app
     {
         protected void Application_Start()
         {
+
+         
+
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
