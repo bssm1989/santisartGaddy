@@ -14,6 +14,7 @@ namespace santisart_app.App_Start
         public MappingProfile()
         {
             CreateMap<DD_Orders, OrdersDto>();
+            CreateMap<DD_customer, CustomerDto>();
         }
     }
 }

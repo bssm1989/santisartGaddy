@@ -35,7 +35,7 @@ namespace santisart_app.Dto
         public string Order_number_Line { get; set; }
         public Nullable<int> customerId { get; set; }
         public int index { get; set; }
-        //public virtual Models.DD_customer DD_customer { get; set; }
+        public CustomerDto DD_customer { get; set; }
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         //public virtual ICollection<Models.DD_Order_detail> DD_Order_detail { get; set; }
     }

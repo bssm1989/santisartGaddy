@@ -4306,6 +4306,7 @@
     <Compile Include="Controllers\studentController.cs" />
     <Compile Include="Controllers\SurveyStudentsController.cs" />
     <Compile Include="Controllers\UserProfilesController.cs" />
+    <Compile Include="Dto\CustomerDto.cs" />
     <Compile Include="Dto\OrdersDto.cs" />
     <Compile Include="Models\address\District.cs" />
     <Compile Include="Models\attdeanceBymonth.cs" />
