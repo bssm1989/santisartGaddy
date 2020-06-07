@@ -22,9 +22,9 @@ namespace santisart_app.Models
     
         public string Order_number { get; set; }
         public string Sales_Channel { get; set; }
-        public string Created_Order_at { get; set; }
-        public string Checkout_at { get; set; }
-        public string Paid_at { get; set; }
+        public Nullable<System.DateTime> Created_Order_at { get; set; }
+        public Nullable<System.DateTime> Checkout_at { get; set; }
+        public Nullable<System.DateTime> Paid_at { get; set; }
         public string Shipping_provider { get; set; }
         public string Shipping_method { get; set; }
         public string Shipping_fee { get; set; }
@@ -39,7 +39,7 @@ namespace santisart_app.Models
         public string Payment_status { get; set; }
         public string Shipping_status { get; set; }
         public string Order_status { get; set; }
-        public string Canceled_at { get; set; }
+        public Nullable<System.DateTime> Canceled_at { get; set; }
         public string Canceled_reason { get; set; }
         public string Seller_notes { get; set; }
         public string Buyer_notes { get; set; }

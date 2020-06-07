@@ -15,6 +15,6 @@ namespace santisart_app.Dto
         public string Shipping_city { get; set; }
         public string Shipping_post_code { get; set; }
         public int index { get; set; }
-        //public virtual ICollection<OrdersDto> DD_Orders { get; set; }
+        public virtual ICollection<OrdersDto> OrdersDto { get; set; }
     }
 }

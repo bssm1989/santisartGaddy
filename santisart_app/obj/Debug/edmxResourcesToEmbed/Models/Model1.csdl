@@ -172,17 +172,17 @@
       <End Role="EnrollStudentCous" EntitySet="EnrollStudentCouses" />
     </AssociationSet>
     <EntitySet Name="Monthlies" EntityType="santisartModel2.Monthly" />
-    <EntitySet Name="DD_customer" EntityType="santisartModel2.DD_customer" />
     <EntitySet Name="DD_Inventories" EntityType="santisartModel2.DD_Inventories" />
     <EntitySet Name="DD_Order_detail" EntityType="santisartModel2.DD_Order_detail" />
-    <EntitySet Name="DD_Orders" EntityType="santisartModel2.DD_Orders" />
-    <AssociationSet Name="Customer" Association="santisartModel2.Customer">
-      <End Role="DD_customer" EntitySet="DD_customer" />
-      <End Role="DD_Orders" EntitySet="DD_Orders" />
-    </AssociationSet>
     <AssociationSet Name="inven" Association="santisartModel2.inven">
       <End Role="DD_Inventories" EntitySet="DD_Inventories" />
       <End Role="DD_Order_detail" EntitySet="DD_Order_detail" />
+    </AssociationSet>
+    <EntitySet Name="DD_customer" EntityType="santisartModel2.DD_customer" />
+    <EntitySet Name="DD_Orders" EntityType="santisartModel2.DD_Orders" />
+    <AssociationSet Name="customer" Association="santisartModel2.customer">
+      <End Role="DD_customer" EntitySet="DD_customer" />
+      <End Role="DD_Orders" EntitySet="DD_Orders" />
     </AssociationSet>
     <AssociationSet Name="order" Association="santisartModel2.order">
       <End Role="DD_Orders" EntitySet="DD_Orders" />
@@ -1397,20 +1397,6 @@
     <Property Name="Month_yearindex" Type="Int32" />
     <Property Name="Month_Sort" Type="Int32" />
   </EntityType>
-  <EntityType Name="DD_customer">
-    <Key>
-      <PropertyRef Name="index" />
-    </Key>
-    <Property Name="Profile_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Recipient_s_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Recipient_s_phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Recipient_s_Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Shipping_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Shipping_city" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Shipping_post_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="DD_Orders" Relationship="santisartModel2.Customer" FromRole="DD_customer" ToRole="DD_Orders" />
-  </EntityType>
   <EntityType Name="DD_Inventories">
     <Key>
       <PropertyRef Name="index" />
@@ -1440,16 +1426,42 @@
     <NavigationProperty Name="DD_Inventories" Relationship="santisartModel2.inven" FromRole="DD_Order_detail" ToRole="DD_Inventories" />
     <NavigationProperty Name="DD_Orders" Relationship="santisartModel2.order" FromRole="DD_Order_detail" ToRole="DD_Orders" />
   </EntityType>
+  <Association Name="inven">
+    <End Type="santisartModel2.DD_Inventories" Role="DD_Inventories" Multiplicity="0..1" />
+    <End Type="santisartModel2.DD_Order_detail" Role="DD_Order_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DD_Inventories">
+        <PropertyRef Name="index" />
+      </Principal>
+      <Dependent Role="DD_Order_detail">
+        <PropertyRef Name="SKU_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DD_customer">
+    <Key>
+      <PropertyRef Name="index" />
+    </Key>
+    <Property Name="Profile_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Recipient_s_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Recipient_s_phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Recipient_s_Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_city" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Shipping_post_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="DD_Orders" Relationship="santisartModel2.customer" FromRole="DD_customer" ToRole="DD_Orders" />
+  </EntityType>
   <EntityType Name="DD_Orders">
     <Key>
       <PropertyRef Name="index" />
     </Key>
-    <Property Name="Order_number" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Order_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Sales_Channel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Created_Order_at" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Checkout_at" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Paid_at" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Shipping_provider" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Created_Order_at" Type="DateTime" Precision="3" />
+    <Property Name="Checkout_at" Type="DateTime" Precision="3" />
+    <Property Name="Paid_at" Type="DateTime" Precision="3" />
+    <Property Name="Shipping_provider" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Shipping_method" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Shipping_fee" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Payment_method" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -1463,7 +1475,7 @@
     <Property Name="Payment_status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Shipping_status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Order_status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Canceled_at" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Canceled_at" Type="DateTime" Precision="3" />
     <Property Name="Canceled_reason" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Seller_notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Buyer_notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -1471,11 +1483,13 @@
     <Property Name="Order_number_Line" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="customerId" Type="Int32" />
     <Property Name="index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="DD_customer" Relationship="santisartModel2.Customer" FromRole="DD_Orders" ToRole="DD_customer" />
+    <NavigationProperty Name="DD_customer" Relationship="santisartModel2.customer" FromRole="DD_Orders" ToRole="DD_customer" />
     <NavigationProperty Name="DD_Order_detail" Relationship="santisartModel2.order" FromRole="DD_Orders" ToRole="DD_Order_detail" />
   </EntityType>
-  <Association Name="Customer">
-    <End Type="santisartModel2.DD_customer" Role="DD_customer" Multiplicity="0..1" />
+  <Association Name="customer">
+    <End Type="santisartModel2.DD_customer" Role="DD_customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Type="santisartModel2.DD_Orders" Role="DD_Orders" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="DD_customer">
@@ -1483,18 +1497,6 @@
       </Principal>
       <Dependent Role="DD_Orders">
         <PropertyRef Name="customerId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="inven">
-    <End Type="santisartModel2.DD_Inventories" Role="DD_Inventories" Multiplicity="0..1" />
-    <End Type="santisartModel2.DD_Order_detail" Role="DD_Order_detail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DD_Inventories">
-        <PropertyRef Name="index" />
-      </Principal>
-      <Dependent Role="DD_Order_detail">
-        <PropertyRef Name="SKU_code" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

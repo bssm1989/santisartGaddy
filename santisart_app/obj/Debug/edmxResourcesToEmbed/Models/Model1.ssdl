@@ -108,12 +108,12 @@
     <Key>
       <PropertyRef Name="index" />
     </Key>
-    <Property Name="Order_number" Type="nvarchar" MaxLength="255" />
+    <Property Name="Order_number" Type="nvarchar" MaxLength="20" />
     <Property Name="Sales_Channel" Type="nvarchar" MaxLength="255" />
-    <Property Name="Created_Order_at" Type="nvarchar" MaxLength="255" />
-    <Property Name="Checkout_at" Type="nvarchar" MaxLength="255" />
-    <Property Name="Paid_at" Type="nvarchar" MaxLength="255" />
-    <Property Name="Shipping_provider" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created_Order_at" Type="datetime" />
+    <Property Name="Checkout_at" Type="datetime" />
+    <Property Name="Paid_at" Type="datetime" />
+    <Property Name="Shipping_provider" Type="nvarchar" MaxLength="20" />
     <Property Name="Shipping_method" Type="nvarchar" MaxLength="255" />
     <Property Name="Shipping_fee" Type="nvarchar" MaxLength="255" />
     <Property Name="Payment_method" Type="nvarchar" MaxLength="255" />
@@ -127,7 +127,7 @@
     <Property Name="Payment_status" Type="nvarchar" MaxLength="255" />
     <Property Name="Shipping_status" Type="nvarchar" MaxLength="255" />
     <Property Name="Order_status" Type="nvarchar" MaxLength="255" />
-    <Property Name="Canceled_at" Type="nvarchar" MaxLength="255" />
+    <Property Name="Canceled_at" Type="datetime" />
     <Property Name="Canceled_reason" Type="nvarchar" MaxLength="255" />
     <Property Name="Seller_notes" Type="nvarchar" MaxLength="255" />
     <Property Name="Buyer_notes" Type="nvarchar" MaxLength="255" />
@@ -831,8 +831,10 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Customer">
-    <End Role="DD_customer" Type="Self.DD_customer" Multiplicity="0..1" />
+  <Association Name="customer">
+    <End Role="DD_customer" Type="Self.DD_customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="DD_Orders" Type="Self.DD_Orders" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="DD_customer">
@@ -1477,7 +1479,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
       <End Role="EnrollCouse" EntitySet="EnrollCouse" />
       <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouse" />
     </AssociationSet>
-    <AssociationSet Name="Customer" Association="Self.Customer">
+    <AssociationSet Name="customer" Association="Self.customer">
       <End Role="DD_customer" EntitySet="DD_customer" />
       <End Role="DD_Orders" EntitySet="DD_Orders" />
     </AssociationSet>

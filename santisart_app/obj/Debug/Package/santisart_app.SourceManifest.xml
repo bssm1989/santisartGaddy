@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<sitemanifest>
-  <IisApp path="C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\Package\PackageTmp" />
-  <setAcl path="C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="C:\XamarinForms-Realm-master\santisartGaddy\santisart_app\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
-</sitemanifest>

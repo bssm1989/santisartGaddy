@@ -113,12 +113,12 @@
           <Key>
             <PropertyRef Name="index" />
           </Key>
-          <Property Name="Order_number" Type="nvarchar" MaxLength="255" />
+          <Property Name="Order_number" Type="nvarchar" MaxLength="20" />
           <Property Name="Sales_Channel" Type="nvarchar" MaxLength="255" />
-          <Property Name="Created_Order_at" Type="nvarchar" MaxLength="255" />
-          <Property Name="Checkout_at" Type="nvarchar" MaxLength="255" />
-          <Property Name="Paid_at" Type="nvarchar" MaxLength="255" />
-          <Property Name="Shipping_provider" Type="nvarchar" MaxLength="255" />
+          <Property Name="Created_Order_at" Type="datetime" />
+          <Property Name="Checkout_at" Type="datetime" />
+          <Property Name="Paid_at" Type="datetime" />
+          <Property Name="Shipping_provider" Type="nvarchar" MaxLength="20" />
           <Property Name="Shipping_method" Type="nvarchar" MaxLength="255" />
           <Property Name="Shipping_fee" Type="nvarchar" MaxLength="255" />
           <Property Name="Payment_method" Type="nvarchar" MaxLength="255" />
@@ -132,7 +132,7 @@
           <Property Name="Payment_status" Type="nvarchar" MaxLength="255" />
           <Property Name="Shipping_status" Type="nvarchar" MaxLength="255" />
           <Property Name="Order_status" Type="nvarchar" MaxLength="255" />
-          <Property Name="Canceled_at" Type="nvarchar" MaxLength="255" />
+          <Property Name="Canceled_at" Type="datetime" />
           <Property Name="Canceled_reason" Type="nvarchar" MaxLength="255" />
           <Property Name="Seller_notes" Type="nvarchar" MaxLength="255" />
           <Property Name="Buyer_notes" Type="nvarchar" MaxLength="255" />
@@ -836,8 +836,10 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Customer">
-          <End Role="DD_customer" Type="Self.DD_customer" Multiplicity="0..1" />
+        <Association Name="customer">
+          <End Role="DD_customer" Type="Self.DD_customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="DD_Orders" Type="Self.DD_Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DD_customer">
@@ -1482,7 +1484,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
             <End Role="EnrollCouse" EntitySet="EnrollCouse" />
             <End Role="EnrollEmpCouse" EntitySet="EnrollEmpCouse" />
           </AssociationSet>
-          <AssociationSet Name="Customer" Association="Self.Customer">
+          <AssociationSet Name="customer" Association="Self.customer">
             <End Role="DD_customer" EntitySet="DD_customer" />
             <End Role="DD_Orders" EntitySet="DD_Orders" />
           </AssociationSet>
@@ -1779,17 +1781,17 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
             <End Role="EnrollStudentCous" EntitySet="EnrollStudentCouses" />
           </AssociationSet>
           <EntitySet Name="Monthlies" EntityType="santisartModel2.Monthly" />
-          <EntitySet Name="DD_customer" EntityType="santisartModel2.DD_customer" />
           <EntitySet Name="DD_Inventories" EntityType="santisartModel2.DD_Inventories" />
           <EntitySet Name="DD_Order_detail" EntityType="santisartModel2.DD_Order_detail" />
-          <EntitySet Name="DD_Orders" EntityType="santisartModel2.DD_Orders" />
-          <AssociationSet Name="Customer" Association="santisartModel2.Customer">
-            <End Role="DD_customer" EntitySet="DD_customer" />
-            <End Role="DD_Orders" EntitySet="DD_Orders" />
-          </AssociationSet>
           <AssociationSet Name="inven" Association="santisartModel2.inven">
             <End Role="DD_Inventories" EntitySet="DD_Inventories" />
             <End Role="DD_Order_detail" EntitySet="DD_Order_detail" />
+          </AssociationSet>
+          <EntitySet Name="DD_customer" EntityType="santisartModel2.DD_customer" />
+          <EntitySet Name="DD_Orders" EntityType="santisartModel2.DD_Orders" />
+          <AssociationSet Name="customer" Association="santisartModel2.customer">
+            <End Role="DD_customer" EntitySet="DD_customer" />
+            <End Role="DD_Orders" EntitySet="DD_Orders" />
           </AssociationSet>
           <AssociationSet Name="order" Association="santisartModel2.order">
             <End Role="DD_Orders" EntitySet="DD_Orders" />
@@ -3004,20 +3006,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
           <Property Name="Month_yearindex" Type="Int32" />
           <Property Name="Month_Sort" Type="Int32" />
         </EntityType>
-        <EntityType Name="DD_customer">
-          <Key>
-            <PropertyRef Name="index" />
-          </Key>
-          <Property Name="Profile_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Recipient_s_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Recipient_s_phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Recipient_s_Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Shipping_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Shipping_city" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Shipping_post_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="DD_Orders" Relationship="santisartModel2.Customer" FromRole="DD_customer" ToRole="DD_Orders" />
-        </EntityType>
         <EntityType Name="DD_Inventories">
           <Key>
             <PropertyRef Name="index" />
@@ -3047,16 +3035,42 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
           <NavigationProperty Name="DD_Inventories" Relationship="santisartModel2.inven" FromRole="DD_Order_detail" ToRole="DD_Inventories" />
           <NavigationProperty Name="DD_Orders" Relationship="santisartModel2.order" FromRole="DD_Order_detail" ToRole="DD_Orders" />
         </EntityType>
+        <Association Name="inven">
+          <End Type="santisartModel2.DD_Inventories" Role="DD_Inventories" Multiplicity="0..1" />
+          <End Type="santisartModel2.DD_Order_detail" Role="DD_Order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DD_Inventories">
+              <PropertyRef Name="index" />
+            </Principal>
+            <Dependent Role="DD_Order_detail">
+              <PropertyRef Name="SKU_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DD_customer">
+          <Key>
+            <PropertyRef Name="index" />
+          </Key>
+          <Property Name="Profile_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Recipient_s_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Recipient_s_phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Recipient_s_Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Shipping_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Shipping_city" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Shipping_post_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="DD_Orders" Relationship="santisartModel2.customer" FromRole="DD_customer" ToRole="DD_Orders" />
+        </EntityType>
         <EntityType Name="DD_Orders">
           <Key>
             <PropertyRef Name="index" />
           </Key>
-          <Property Name="Order_number" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Order_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Sales_Channel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Created_Order_at" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Checkout_at" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Paid_at" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Shipping_provider" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Created_Order_at" Type="DateTime" Precision="3" />
+          <Property Name="Checkout_at" Type="DateTime" Precision="3" />
+          <Property Name="Paid_at" Type="DateTime" Precision="3" />
+          <Property Name="Shipping_provider" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Shipping_method" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Shipping_fee" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Payment_method" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -3070,7 +3084,7 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
           <Property Name="Payment_status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Shipping_status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Order_status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Canceled_at" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Canceled_at" Type="DateTime" Precision="3" />
           <Property Name="Canceled_reason" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Seller_notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Buyer_notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -3078,11 +3092,13 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
           <Property Name="Order_number_Line" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="customerId" Type="Int32" />
           <Property Name="index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="DD_customer" Relationship="santisartModel2.Customer" FromRole="DD_Orders" ToRole="DD_customer" />
+          <NavigationProperty Name="DD_customer" Relationship="santisartModel2.customer" FromRole="DD_Orders" ToRole="DD_customer" />
           <NavigationProperty Name="DD_Order_detail" Relationship="santisartModel2.order" FromRole="DD_Orders" ToRole="DD_Order_detail" />
         </EntityType>
-        <Association Name="Customer">
-          <End Type="santisartModel2.DD_customer" Role="DD_customer" Multiplicity="0..1" />
+        <Association Name="customer">
+          <End Type="santisartModel2.DD_customer" Role="DD_customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="santisartModel2.DD_Orders" Role="DD_Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DD_customer">
@@ -3090,18 +3106,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
             </Principal>
             <Dependent Role="DD_Orders">
               <PropertyRef Name="customerId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="inven">
-          <End Type="santisartModel2.DD_Inventories" Role="DD_Inventories" Multiplicity="0..1" />
-          <End Type="santisartModel2.DD_Order_detail" Role="DD_Order_detail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DD_Inventories">
-              <PropertyRef Name="index" />
-            </Principal>
-            <Dependent Role="DD_Order_detail">
-              <PropertyRef Name="SKU_code" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3875,20 +3879,6 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DD_customer">
-            <EntityTypeMapping TypeName="santisartModel2.DD_customer">
-              <MappingFragment StoreEntitySet="DD_customer">
-                <ScalarProperty Name="index" ColumnName="index" />
-                <ScalarProperty Name="Shipping_post_code" ColumnName="Shipping_post_code" />
-                <ScalarProperty Name="Shipping_city" ColumnName="Shipping_city" />
-                <ScalarProperty Name="Shipping_address" ColumnName="Shipping_address" />
-                <ScalarProperty Name="Recipient_s_Email" ColumnName="Recipient's_Email" />
-                <ScalarProperty Name="Recipient_s_phone" ColumnName="Recipient's_phone" />
-                <ScalarProperty Name="Recipient_s_name" ColumnName="Recipient's_name" />
-                <ScalarProperty Name="Profile_Name" ColumnName="Profile_Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="DD_Inventories">
             <EntityTypeMapping TypeName="santisartModel2.DD_Inventories">
               <MappingFragment StoreEntitySet="DD_Inventories">
@@ -3914,6 +3904,20 @@ warning 6002: The table/view 'ph16923171543_.santisart.ViewEmpPos' does not have
                 <ScalarProperty Name="Full_Price" ColumnName="Full_Price" />
                 <ScalarProperty Name="Selling_Price" ColumnName="Selling_Price" />
                 <ScalarProperty Name="Order_number" ColumnName="Order_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DD_customer">
+            <EntityTypeMapping TypeName="santisartModel2.DD_customer">
+              <MappingFragment StoreEntitySet="DD_customer">
+                <ScalarProperty Name="index" ColumnName="index" />
+                <ScalarProperty Name="Shipping_post_code" ColumnName="Shipping_post_code" />
+                <ScalarProperty Name="Shipping_city" ColumnName="Shipping_city" />
+                <ScalarProperty Name="Shipping_address" ColumnName="Shipping_address" />
+                <ScalarProperty Name="Recipient_s_Email" ColumnName="Recipient's_Email" />
+                <ScalarProperty Name="Recipient_s_phone" ColumnName="Recipient's_phone" />
+                <ScalarProperty Name="Recipient_s_name" ColumnName="Recipient's_name" />
+                <ScalarProperty Name="Profile_Name" ColumnName="Profile_Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

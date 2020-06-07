@@ -8,11 +8,15 @@ namespace santisart_app.Dto
 {
     public class OrdersDto
     {
+        public OrdersDto()
+        {
+            this.DD_order_detail = new HashSet<OrderDetailDto>();
+        }
         public string Order_number { get; set; }
         public string Sales_Channel { get; set; }
-        public string Created_Order_at { get; set; }
-        public string Checkout_at { get; set; }
-        public string Paid_at { get; set; }
+        public Nullable<System.DateTime> Created_Order_at { get; set; }
+        public Nullable<System.DateTime> Checkout_at { get; set; }
+        public Nullable<System.DateTime> Paid_at { get; set; }
         public string Shipping_provider { get; set; }
         public string Shipping_method { get; set; }
         public string Shipping_fee { get; set; }
@@ -27,16 +31,16 @@ namespace santisart_app.Dto
         public string Payment_status { get; set; }
         public string Shipping_status { get; set; }
         public string Order_status { get; set; }
-        public string Canceled_at { get; set; }
+        public Nullable<System.DateTime> Canceled_at { get; set; }
         public string Canceled_reason { get; set; }
-        public string Seller_notes { get; set; }
+        public string Seller_notes { get; set; } 
         public string Buyer_notes { get; set; }
         public string status { get; set; }
         public string Order_number_Line { get; set; }
-        public Nullable<int> customerId { get; set; }
+        public int customerId { get; set; }
         public int index { get; set; }
         public CustomerDto DD_customer { get; set; }
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        //public virtual ICollection<Models.DD_Order_detail> DD_Order_detail { get; set; }
+        public  ICollection<OrderDetailDto> DD_order_detail { get; set; }
     }
 }

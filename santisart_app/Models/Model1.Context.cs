@@ -72,9 +72,9 @@ namespace santisart_app.Models
         public virtual DbSet<EnrollCouse> EnrollCouses { get; set; }
         public virtual DbSet<EnrollStudentCous> EnrollStudentCouses { get; set; }
         public virtual DbSet<Monthly> Monthlies { get; set; }
-        public virtual DbSet<DD_customer> DD_customer { get; set; }
         public virtual DbSet<DD_Inventories> DD_Inventories { get; set; }
         public virtual DbSet<DD_Order_detail> DD_Order_detail { get; set; }
+        public virtual DbSet<DD_customer> DD_customer { get; set; }
         public virtual DbSet<DD_Orders> DD_Orders { get; set; }
     }
 }

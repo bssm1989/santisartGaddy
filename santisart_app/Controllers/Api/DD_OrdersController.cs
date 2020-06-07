@@ -8,8 +8,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using AutoMapper;
+using santisart_app.App_Start;
+using santisart_app.Dto;
 using santisart_app.Models;
-
+using AutoMapper.QueryableExtensions;
 namespace santisart_app.Controllers.Api
 {
     public class DD_OrdersController : ApiController
@@ -17,39 +20,54 @@ namespace santisart_app.Controllers.Api
         private santisartEntities3 db = new santisartEntities3();
 
         // GET: api/DD_Orders
-        public IQueryable<DD_Orders> GetDD_Orders()
+        public IQueryable<OrdersDto> GetDD_Orders()
         {
-            return db.DD_Orders;
+            var config = new MapperConfiguration(cfg => {
+                cfg.AddProfile<MappingProfile>();
+            });
+
+            var mapper = config.CreateMapper();
+            //Mapper.Map<DD_Orders, OrdersDto>();
+            //var getLIst = db.DD_Orders.Select(mapper.Map<DD_Orders, OrdersDto>).AsQueryable();
+            //return mapper.Map < DD_Orders,OrdersDto >(db.DD_Orders);
+            return db.DD_Orders.ProjectTo<OrdersDto>(config).AsQueryable().Where(x => x.Order_status != "Canceled");//.ProjectTo<OrdersDto>();
         }
+
 
         // GET: api/DD_Orders/5
         [ResponseType(typeof(DD_Orders))]
         public IHttpActionResult GetDD_Orders(int id)
         {
+            var config = new MapperConfiguration(cfg => {
+                cfg.AddProfile<MappingProfile>();
+            });
+            var mapper = config.CreateMapper();
+
+  
             DD_Orders dD_Orders = db.DD_Orders.Find(id);
             if (dD_Orders == null)
             {
                 return NotFound();
             }
 
-            return Ok(dD_Orders);
+            return Ok( mapper.Map<DD_Orders,OrdersDto>(dD_Orders));
         }
 
         // PUT: api/DD_Orders/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutDD_Orders(int id, DD_Orders dD_Orders)
+        public IHttpActionResult PutDD_Orders(int id, OrdersDto  orderDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != dD_Orders.index)
+            if (id != orderDto.index)
             {
                 return BadRequest();
             }
 
-            db.Entry(dD_Orders).State = EntityState.Modified;
+            db.Entry(orderDto).State = EntityState.Modified;
 
             try
             {
@@ -72,17 +90,22 @@ namespace santisart_app.Controllers.Api
 
         // POST: api/DD_Orders
         [ResponseType(typeof(DD_Orders))]
-        public IHttpActionResult PostDD_Orders(DD_Orders dD_Orders)
+        public IHttpActionResult PostDD_Orders(OrdersDto orderDto)
         {
+            var config = new MapperConfiguration(cfg => {
+                cfg.AddProfile<MappingProfile>();
+            });
+            var mapper = config.CreateMapper(); 
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            db.DD_Orders.Add(dD_Orders);
+            var order = mapper.Map<OrdersDto, DD_Orders>(orderDto);
+            db.DD_Orders.Add(order);
             db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = dD_Orders.index }, dD_Orders);
+            orderDto.index = order.index;
+            return CreatedAtRoute("DefaultApi", new { id = order.index }, order);
         }
 
         // DELETE: api/DD_Orders/5

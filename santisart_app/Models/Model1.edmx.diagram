@@ -83,12 +83,12 @@
         <AssociationConnector Association="santisartModel2.Fk_student1" />
         <AssociationConnector Association="santisartModel2.Fk_YearId1" />
         <EntityTypeShape EntityType="santisartModel2.Monthly" Width="1.5" PointX="4.375" PointY="0.75" />
-        <EntityTypeShape EntityType="santisartModel2.DD_customer" Width="1.5" PointX="17.375" PointY="20.125" />
         <EntityTypeShape EntityType="santisartModel2.DD_Inventories" Width="1.5" PointX="19.625" PointY="14.25" />
         <EntityTypeShape EntityType="santisartModel2.DD_Order_detail" Width="1.5" PointX="21.875" PointY="19.75" />
-        <EntityTypeShape EntityType="santisartModel2.DD_Orders" Width="1.5" PointX="19.625" PointY="18.125" />
-        <AssociationConnector Association="santisartModel2.Customer" />
         <AssociationConnector Association="santisartModel2.inven" />
+        <EntityTypeShape EntityType="santisartModel2.DD_customer" Width="1.5" PointX="17.375" PointY="23" />
+        <EntityTypeShape EntityType="santisartModel2.DD_Orders" Width="1.5" PointX="19.625" PointY="21.125" />
+        <AssociationConnector Association="santisartModel2.customer" />
         <AssociationConnector Association="santisartModel2.order" />
         </Diagram>
     </edmx:Diagrams>

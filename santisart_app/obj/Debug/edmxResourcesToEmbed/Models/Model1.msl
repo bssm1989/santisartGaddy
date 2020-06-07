@@ -753,20 +753,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DD_customer">
-      <EntityTypeMapping TypeName="santisartModel2.DD_customer">
-        <MappingFragment StoreEntitySet="DD_customer">
-          <ScalarProperty Name="index" ColumnName="index" />
-          <ScalarProperty Name="Shipping_post_code" ColumnName="Shipping_post_code" />
-          <ScalarProperty Name="Shipping_city" ColumnName="Shipping_city" />
-          <ScalarProperty Name="Shipping_address" ColumnName="Shipping_address" />
-          <ScalarProperty Name="Recipient_s_Email" ColumnName="Recipient's_Email" />
-          <ScalarProperty Name="Recipient_s_phone" ColumnName="Recipient's_phone" />
-          <ScalarProperty Name="Recipient_s_name" ColumnName="Recipient's_name" />
-          <ScalarProperty Name="Profile_Name" ColumnName="Profile_Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="DD_Inventories">
       <EntityTypeMapping TypeName="santisartModel2.DD_Inventories">
         <MappingFragment StoreEntitySet="DD_Inventories">
@@ -792,6 +778,20 @@
           <ScalarProperty Name="Full_Price" ColumnName="Full_Price" />
           <ScalarProperty Name="Selling_Price" ColumnName="Selling_Price" />
           <ScalarProperty Name="Order_number" ColumnName="Order_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DD_customer">
+      <EntityTypeMapping TypeName="santisartModel2.DD_customer">
+        <MappingFragment StoreEntitySet="DD_customer">
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="Shipping_post_code" ColumnName="Shipping_post_code" />
+          <ScalarProperty Name="Shipping_city" ColumnName="Shipping_city" />
+          <ScalarProperty Name="Shipping_address" ColumnName="Shipping_address" />
+          <ScalarProperty Name="Recipient_s_Email" ColumnName="Recipient's_Email" />
+          <ScalarProperty Name="Recipient_s_phone" ColumnName="Recipient's_phone" />
+          <ScalarProperty Name="Recipient_s_name" ColumnName="Recipient's_name" />
+          <ScalarProperty Name="Profile_Name" ColumnName="Profile_Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

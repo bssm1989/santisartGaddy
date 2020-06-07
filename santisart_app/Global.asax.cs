@@ -16,8 +16,7 @@ namespace santisart_app
     {
         protected void Application_Start()
         {
-
-         
+            
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
