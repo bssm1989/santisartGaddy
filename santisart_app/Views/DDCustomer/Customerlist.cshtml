@@ -1,0 +1,189 @@
+﻿@{
+    Layout = "";
+}
+
+<head>
+
+    @*<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+        <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.bootstrap4.min.css">
+        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.bootstrap4.min.js"></script>
+        <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.colVis.min.js"></script>*@
+
+    @*<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.css" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/select/1.1.2/css/select.dataTables.css" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.0.2/css/responsive.dataTables.css" />*@
+
+
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.1.2/css/select.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.0.2/css/responsive.dataTables.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/select/1.1.2/js/dataTables.select.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.0.2/js/dataTables.responsive.js"></script>
+    <script type="text/javascript" language="javascript" src="https://luca-vercelli.github.io/DataTable-AltEditor/src/dataTables.altEditor.free.js"></script>
+
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript" class="init">
+
+    
+  
+        // `d` is the original data object for the row
+      
+
+    $(document).ready(function () {
+
+        var table = $('#example1').DataTable({
+
+            ajax: {
+                url: '/api/DD_customer',
+                dataSrc: '',
+            },
+            columns: [
+               
+                {
+                    title:'Id',
+                    data: 'index'
+                }, {
+                   title: 'Profile Name',
+                   data: 'Profile_Name'
+                }
+                , {
+                   title: 'ชื่อ - นามสกุล',
+                    data: 'Recipient_s_name'
+                } , {
+                   title: 'เบอร์โทร',
+                     data: 'Recipient_s_phone'
+                }, {
+                   title: 'ที่อยู่',
+                     data: 'Shipping_address'
+                }, {
+                   title: 'จังหวัด',
+                     data: 'Shipping_city'
+                }
+                
+            ],
+            dom: 'Bfrtip', // Needs button container
+            select: 'single',
+            responsive: true,
+            altEditor: true, // Enable altEditor
+            buttons: [
+                {
+                    text: 'Add',
+                    name: 'add', // do not change name
+                },
+                {
+                    extend: 'selected', // Bind to Selected row
+                    text: 'Edit',
+                    name: 'edit', // do not change name
+                },
+                {
+                    extend: 'selected', // Bind to Selected row
+                    text: 'Delete',
+                    name: 'delete', // do not change name
+                },
+                {
+                    text: 'Refresh',
+                    name: 'refresh', // do not change name
+                },
+            ],
+            onAddRow: function (datatable, rowdata, success, error) {
+                $.ajax({
+                    // a tipycal url would be / with type='PUT'
+                    url: "/api/DD_custome",
+                    type: 'POST',
+                    data: rowdata,
+                    success: success,
+                    error: error,
+                });
+            },
+            onDeleteRow: function (datatable, rowdata, success, error) {
+                $.ajax({
+                    // a tipycal url would be /{id} with type='DELETE'
+                    url: url_ws_mock_ok,
+                    type: 'GET',
+                    data: rowdata,
+                    success: success,
+                    error: error,
+                });
+            },
+            onEditRow: function (datatable, rowdata, success, error) {
+                $.ajax({
+                    // a tipycal url would be /{id} with type='POST'
+                    url: url_ws_mock_ok,
+                    type: 'GET',
+                    data: rowdata,
+                    success: success,
+                    error: error,
+                });
+            },
+       
+        });
+       
+    });
+
+
+
+    </script>
+</head>
+<style>
+    table.dataTable tbody th, table.dataTable tbody td {
+        padding: 5px 10px;
+    }
+
+    td.details-control {
+        background: url('https://datatables.net/examples/resources/details_open.png') no-repeat center center;
+        cursor: pointer;
+    }
+
+    tr.shown td.details-control {
+        background: url('https://datatables.net/examples/resources/details_close.png') no-repeat center center;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>ลูกค้า</h2>'
+      
+
+        <div class="row">
+            
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+    
+            <table id="example1" cellpadding="0" cellspacing="0" border="0" class="dataTable table table-striped" style="width:100%">
+               
+            </table>
+  
+                
+            </div>
+        </div>
+       
+        </div>
+        <div class="row">
+        
+        </div>
+   
+</body>

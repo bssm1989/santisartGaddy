@@ -19,6 +19,8 @@ namespace santisart_app
             builder.EntitySet<OrdersDto>("DD_Orders1");
             builder.EntitySet<CustomerDto>("CustomerDto");
             builder.EntitySet<OrderDetailDto>("OrderDetailDto");
+            builder.EntitySet<OrderDetailDto>("DD_Order_detail1");
+
             config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
             config.MapHttpAttributeRoutes();
 

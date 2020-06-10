@@ -4305,6 +4305,12 @@
     <Content Include="Views\DD_Order_detail\Edit.cshtml" />
     <Content Include="Views\DD_Order_detail\Index.cshtml" />
     <Content Include="Views\DDOrder\list.cshtml" />
+    <Content Include="Views\DDCustomer\Customerlist.cshtml" />
+    <Content Include="Views\DD_customer1\Create.cshtml" />
+    <Content Include="Views\DD_customer1\Delete.cshtml" />
+    <Content Include="Views\DD_customer1\Details.cshtml" />
+    <Content Include="Views\DD_customer1\Edit.cshtml" />
+    <Content Include="Views\DD_customer1\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4315,13 +4321,18 @@
   <ItemGroup>
     <Compile Include="App_Start\MappingProfile.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\DD_customerController.cs" />
     <Compile Include="Controllers\Api\DD_Orders1Controller.cs" />
     <Compile Include="Controllers\Api\DD_Orders2Controller.cs" />
     <Compile Include="Controllers\Api\DD_OrdersController.cs" />
+    <Compile Include="Controllers\Api\DD_Order_detailController.cs" />
     <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\DDCustomerController.cs" />
     <Compile Include="Controllers\DDOrderController.cs" />
+    <Compile Include="Controllers\DD_customer1Controller.cs" />
     <Compile Include="Controllers\DD_customerController.cs" />
     <Compile Include="Controllers\DD_InventoriesController.cs" />
+    <Compile Include="Controllers\DD_Order_detail1Controller.cs" />
     <Compile Include="Controllers\DD_Order_detailController.cs" />
     <Compile Include="Controllers\eduContestController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />

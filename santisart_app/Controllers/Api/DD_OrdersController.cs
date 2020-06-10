@@ -30,7 +30,7 @@ namespace santisart_app.Controllers.Api
             //Mapper.Map<DD_Orders, OrdersDto>();
             //var getLIst = db.DD_Orders.Select(mapper.Map<DD_Orders, OrdersDto>).AsQueryable();
             //return mapper.Map < DD_Orders,OrdersDto >(db.DD_Orders);
-            return db.DD_Orders.ProjectTo<OrdersDto>(config).AsQueryable().Where(x => x.Order_status != "Canceled");//.ProjectTo<OrdersDto>();
+            return db.DD_Orders.ProjectTo<OrdersDto>(config).AsQueryable();//.Where(x => x.Order_status != "Canceled");//.ProjectTo<OrdersDto>();
         }
 
 

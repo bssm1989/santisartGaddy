@@ -8,10 +8,10 @@ namespace santisart_app.Dto
 {
     public class OrdersDto
     {
-        public OrdersDto()
-        {
-            this.DD_order_detail = new HashSet<OrderDetailDto>();
-        }
+        //public OrdersDto()
+        //{
+        //    this.DD_order_detail = new HashSet<OrderDetailDto>();
+        //}
         public string Order_number { get; set; }
         public string Sales_Channel { get; set; }
         public Nullable<System.DateTime> Created_Order_at { get; set; }
@@ -41,6 +41,6 @@ namespace santisart_app.Dto
         public int index { get; set; }
         public CustomerDto DD_customer { get; set; }
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public  ICollection<OrderDetailDto> DD_order_detail { get; set; }
+        //public  ICollection<OrderDetailDto> DD_order_detail { get; set; }
     }
 }
