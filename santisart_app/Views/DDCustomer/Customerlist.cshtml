@@ -64,22 +64,22 @@
             columns: [
                
                 {
-                    title:'Id',
-                    data: 'index'
-                }, {
                    title: 'Profile Name',
                    data: 'Profile_Name'
                 }
                 , {
                    title: 'ชื่อ - นามสกุล',
                     data: 'Recipient_s_name'
-                } , {
+                }
+                , {
                    title: 'เบอร์โทร',
                      data: 'Recipient_s_phone'
-                }, {
+                }
+                , {
                    title: 'ที่อยู่',
                      data: 'Shipping_address'
-                }, {
+                }
+                , {
                    title: 'จังหวัด',
                      data: 'Shipping_city'
                 }
@@ -112,7 +112,7 @@
             onAddRow: function (datatable, rowdata, success, error) {
                 $.ajax({
                     // a tipycal url would be / with type='PUT'
-                    url: "/api/DD_custome",
+                    url: "/api/DD_customer",
                     type: 'POST',
                     data: rowdata,
                     success: success,
@@ -164,7 +164,7 @@
 </style>
 <body>
     <div class="container">
-        <h2>ลูกค้า</h2>'
+        <h2>ลูกค้า</h2>
       
 
         <div class="row">

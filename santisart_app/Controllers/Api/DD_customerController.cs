@@ -104,7 +104,7 @@ namespace santisart_app.Controllers.Api
             });
 
             var mapper = config.CreateMapper();
-            var customer = mapper.Map<CustomerDto, DD_customer>(customerDto);
+            var customer =  mapper.Map<CustomerDto, DD_customer>(customerDto);
             db.DD_customer.Add(customer);
             db.SaveChanges();
 
